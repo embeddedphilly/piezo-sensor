@@ -22,12 +22,6 @@
   <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\PIEZO.c" value="ARM_C_FILE;PIEZO" />
   <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\PIEZO.h" value="NONE;PIEZO" />
   <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\PIEZO_aliases.h" value="NONE;PIEZO" />
-  <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\BUT_1.c" value="ARM_C_FILE;BUT_1" />
-  <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\BUT_1.h" value="NONE;BUT_1" />
-  <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\BUT_1_aliases.h" value="NONE;BUT_1" />
-  <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\BUT_DEBOUNCED.c" value="ARM_C_FILE;BUT_DEBOUNCED" />
-  <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\BUT_DEBOUNCED.h" value="NONE;BUT_DEBOUNCED" />
-  <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\BUT_DEBOUNCED_aliases.h" value="NONE;BUT_DEBOUNCED" />
   <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\cm0gcc.ld" value="NONE;cy_boot" />
   <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\Cm0RealView.scat" value="NONE;cy_boot" />
   <file name="C:\Users\TinyWindows\Documents\PSoC Creator\My First Project\My First Project.cydsn\codegentemp\Cm0Start.c" value="ARM_C_FILE;cy_boot" />

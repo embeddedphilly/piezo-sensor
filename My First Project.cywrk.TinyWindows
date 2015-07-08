@@ -24,13 +24,6 @@
 <v>My First Project\My First Project\Source Files\main.c</v>
 <v>My First Project\My First Project\Generated_Source</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_1\BUT_1.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_1\BUT_1.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_1\BUT_1_aliases.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_DEBOUNCED</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_DEBOUNCED\BUT_DEBOUNCED.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_DEBOUNCED\BUT_DEBOUNCED.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_DEBOUNCED\BUT_DEBOUNCED_aliases.h</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1\Clock_1.c</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1\Clock_1.h</v>
@@ -87,11 +80,6 @@
 <v>My First Project\My First Project\Source Files\main.c</v>
 <v>My First Project\My First Project\Generated_Source</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_1</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_DEBOUNCED</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_DEBOUNCED\BUT_DEBOUNCED.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_DEBOUNCED\BUT_DEBOUNCED.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\BUT_DEBOUNCED\BUT_DEBOUNCED_aliases.h</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1\Clock_1.c</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1\Clock_1.h</v>
@@ -122,6 +110,11 @@
 <v>My First Project\My First Project\Generated_Source\PSoC4\PIEZO\PIEZO_aliases.h</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4\PWM_1</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4\PWM_1\PWM_1.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\PWM_1\PWM_1.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\PWM_1\PWM_1_PM.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\cydevice_trm.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -146,8 +139,6 @@
 <v>My First Project\My First Project\CortexM0\ARM_GCC_473</v>
 <v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug</v>
 <v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\BUT_1.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\BUT_DEBOUNCED.lst</v>
 <v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\Clock_1.lst</v>
 <v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\Cm0Start.lst</v>
 <v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\CyBootAsmGnu.lst</v>
@@ -170,28 +161,6 @@
 <VisibleNodeIds>
 <v>My First Project</v>
 <v>My First Project\My First Project</v>
-<v>My First Project\My First Project\CortexM0</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\BUT_1.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\BUT_DEBOUNCED.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\Clock_1.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\Cm0Start.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\CyFlash.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\CyLib.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\cymetadata.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\cyPm.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\cyutils.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\main.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\PIEZO.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\PWM_1.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\Listing Files\PWM_1_PM.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\My First Project.elf</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\My First Project.hex</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_473\Debug\My First Project.map</v>
 <v>My First Project\My First Project\My First Project.rpt</v>
 <v>My First Project\My First Project\My First Project_timing.html</v>
 </VisibleNodeIds>

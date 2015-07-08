@@ -22,10 +22,6 @@
 #include <Clock_1.h>
 #include <PIEZO.h>
 #include <PIEZO_aliases.h>
-#include <BUT_1.h>
-#include <BUT_1_aliases.h>
-#include <BUT_DEBOUNCED.h>
-#include <BUT_DEBOUNCED_aliases.h>
 #include <core_cm0_psoc4.h>
 #include <core_cm0.h>
 #include <CyFlash.h>

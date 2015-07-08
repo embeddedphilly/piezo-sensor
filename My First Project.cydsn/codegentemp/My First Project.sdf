@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2015-06-30T00:51:59Z")
+ (DATE "2015-07-08T22:22:55Z")
  (DESIGN "My First Project")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "cydsfit")
@@ -12,15 +12,9 @@
   (INSTANCE *)
   (DELAY
    (ABSOLUTE
-    (INTERCONNECT BUT_DEBOUNCED\(0\).pad_out BUT_DEBOUNCED\(0\).pad_in (0.000:0.000:0.000))
-    (INTERCONNECT ClockBlock.hfclk BUT_1\(0\).in_clock (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.ff_div_8 \\PWM_1\:cy_m0s8_tcpwm_1\\.clock (0.000:0.000:0.000))
     (INTERCONNECT \\PWM_1\:cy_m0s8_tcpwm_1\\.line_out PIEZO\(0\).pin_input (5.988:5.988:5.988))
-    (INTERCONNECT BUT_1\(0\).fb BUT_DEBOUNCED\(0\).pin_input (2.653:2.653:2.653))
     (INTERCONNECT PIEZO\(0\).pad_out PIEZO\(0\).pad_in (0.000:0.000:0.000))
-    (INTERCONNECT BUT_1\(0\)_PAD BUT_1\(0\).pad_in (0.000:0.000:0.000))
-    (INTERCONNECT BUT_DEBOUNCED\(0\).pad_out BUT_DEBOUNCED\(0\)_PAD (0.000:0.000:0.000))
-    (INTERCONNECT BUT_DEBOUNCED\(0\)_PAD BUT_DEBOUNCED\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT PIEZO\(0\).pad_out PIEZO\(0\)_PAD (0.000:0.000:0.000))
     (INTERCONNECT PIEZO\(0\)_PAD PIEZO\(0\).pad_in (0.000:0.000:0.000))
    )

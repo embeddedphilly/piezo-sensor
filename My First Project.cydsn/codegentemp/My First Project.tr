@@ -17,8 +17,8 @@
                     1::Clock Frequency Summary
 ===================================================================== 
 Number of clocks: 7
-Clock: Clock_1       | N/A  | Target: 0.09 MHz   | 
-Clock: Clock_1(FFB)  | N/A  | Target: 0.09 MHz   | 
+Clock: Clock_1       | N/A  | Target: 2.00 MHz   | 
+Clock: Clock_1(FFB)  | N/A  | Target: 2.00 MHz   | 
 Clock: CyHFCLK       | N/A  | Target: 24.00 MHz  | 
 Clock: CyILO         | N/A  | Target: 0.03 MHz   | 
 Clock: CyIMO         | N/A  | Target: 24.00 MHz  | 
@@ -57,10 +57,9 @@ Port Name  Setup to Clk  Clock Name:Phase
 -----------------------3.2::Clock to Out
 ----------------------------------------
 
-Port Name             Clock to Out  Clock Name:Phase  
---------------------  ------------  ----------------  
-BUT_DEBOUNCED(0)_PAD  22927         CyHFCLK:R         
-PIEZO(0)_PAD          23282         Clock_1(FFB):R    
+Port Name     Clock to Out  Clock Name:Phase  
+------------  ------------  ----------------  
+PIEZO(0)_PAD  23282         Clock_1(FFB):R    
 
 
                          3.3::Pad to Pad
