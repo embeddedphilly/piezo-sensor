@@ -1,0 +1,551 @@
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccmEAEcr.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	2
+  19              		.global	main
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	main, %function
+  23              	main:
+  24              	.LFB33:
+  25              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** 
+  14:.\main.c      **** int main()
+  15:.\main.c      **** {
+  26              		.loc 1 15 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 84B0     		sub	sp, sp, #16
+  34              	.LCFI1:
+  35              		.cfi_def_cfa_offset 24
+  36 0004 00AF     		add	r7, sp, #0
+  37              	.LCFI2:
+  38              		.cfi_def_cfa_register 7
+  16:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  17:.\main.c      ****     PWM_1_Start();
+  39              		.loc 1 17 0
+  40 0006 FFF7FEFF 		bl	PWM_1_Start
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccmEAEcr.s 			page 2
+
+
+  18:.\main.c      ****     
+  19:.\main.c      **** 
+  20:.\main.c      ****     int state = 0;
+  41              		.loc 1 20 0
+  42 000a 0023     		mov	r3, #0
+  43 000c FB60     		str	r3, [r7, #12]
+  21:.\main.c      ****     int set = 0;
+  44              		.loc 1 21 0
+  45 000e 0023     		mov	r3, #0
+  46 0010 BB60     		str	r3, [r7, #8]
+  22:.\main.c      ****     int read_val = 0;
+  47              		.loc 1 22 0
+  48 0012 0023     		mov	r3, #0
+  49 0014 7B60     		str	r3, [r7, #4]
+  50 0016 00E0     		b	.L5
+  51              	.L6:
+  23:.\main.c      ****     
+  24:.\main.c      ****     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
+  25:.\main.c      ****     for(;;)
+  26:.\main.c      ****     {
+  27:.\main.c      ****         /* Place your application code here. */
+  28:.\main.c      ****         
+  29:.\main.c      ****         if(BUT_DEBOUNCED_Read() == 0) {
+  30:.\main.c      ****             set = 0;
+  31:.\main.c      ****         }
+  32:.\main.c      ****         read_val = BUT_DEBOUNCED_Read();
+  33:.\main.c      ****         if(set == 0 && BUT_DEBOUNCED_Read() == 1) {
+  34:.\main.c      ****             set = 1;
+  35:.\main.c      ****             if(state == 1) {
+  36:.\main.c      ****                 state = 0;
+  37:.\main.c      ****                 PWM_1_WritePeriod(200);
+  38:.\main.c      ****                 PWM_1_WriteCompare(100);
+  39:.\main.c      ****             } else {
+  40:.\main.c      ****                 state = 1;
+  41:.\main.c      ****                 PWM_1_WritePeriod(178);
+  42:.\main.c      ****                 PWM_1_WriteCompare(89);
+  43:.\main.c      ****             }
+  44:.\main.c      ****         }
+  45:.\main.c      ****         
+  46:.\main.c      ****     }
+  52              		.loc 1 46 0
+  53 0018 C046     		mov	r8, r8
+  54              	.L5:
+  29:.\main.c      ****         if(BUT_DEBOUNCED_Read() == 0) {
+  55              		.loc 1 29 0
+  56 001a FFF7FEFF 		bl	BUT_DEBOUNCED_Read
+  57 001e 031C     		mov	r3, r0
+  58 0020 002B     		cmp	r3, #0
+  59 0022 01D1     		bne	.L2
+  30:.\main.c      ****             set = 0;
+  60              		.loc 1 30 0
+  61 0024 0023     		mov	r3, #0
+  62 0026 BB60     		str	r3, [r7, #8]
+  63              	.L2:
+  32:.\main.c      ****         read_val = BUT_DEBOUNCED_Read();
+  64              		.loc 1 32 0
+  65 0028 FFF7FEFF 		bl	BUT_DEBOUNCED_Read
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccmEAEcr.s 			page 3
+
+
+  66 002c 031C     		mov	r3, r0
+  67 002e 7B60     		str	r3, [r7, #4]
+  33:.\main.c      ****         if(set == 0 && BUT_DEBOUNCED_Read() == 1) {
+  68              		.loc 1 33 0
+  69 0030 BB68     		ldr	r3, [r7, #8]
+  70 0032 002B     		cmp	r3, #0
+  71 0034 F0D1     		bne	.L6
+  33:.\main.c      ****         if(set == 0 && BUT_DEBOUNCED_Read() == 1) {
+  72              		.loc 1 33 0 is_stmt 0 discriminator 1
+  73 0036 FFF7FEFF 		bl	BUT_DEBOUNCED_Read
+  74 003a 031C     		mov	r3, r0
+  75 003c 012B     		cmp	r3, #1
+  76 003e EBD1     		bne	.L6
+  34:.\main.c      ****             set = 1;
+  77              		.loc 1 34 0 is_stmt 1
+  78 0040 0123     		mov	r3, #1
+  79 0042 BB60     		str	r3, [r7, #8]
+  35:.\main.c      ****             if(state == 1) {
+  80              		.loc 1 35 0
+  81 0044 FB68     		ldr	r3, [r7, #12]
+  82 0046 012B     		cmp	r3, #1
+  83 0048 08D1     		bne	.L4
+  36:.\main.c      ****                 state = 0;
+  84              		.loc 1 36 0
+  85 004a 0023     		mov	r3, #0
+  86 004c FB60     		str	r3, [r7, #12]
+  37:.\main.c      ****                 PWM_1_WritePeriod(200);
+  87              		.loc 1 37 0
+  88 004e C820     		mov	r0, #200
+  89 0050 FFF7FEFF 		bl	PWM_1_WritePeriod
+  38:.\main.c      ****                 PWM_1_WriteCompare(100);
+  90              		.loc 1 38 0
+  91 0054 6420     		mov	r0, #100
+  92 0056 FFF7FEFF 		bl	PWM_1_WriteCompare
+  93              		.loc 1 46 0
+  94 005a DDE7     		b	.L6
+  95              	.L4:
+  40:.\main.c      ****                 state = 1;
+  96              		.loc 1 40 0
+  97 005c 0123     		mov	r3, #1
+  98 005e FB60     		str	r3, [r7, #12]
+  41:.\main.c      ****                 PWM_1_WritePeriod(178);
+  99              		.loc 1 41 0
+ 100 0060 B220     		mov	r0, #178
+ 101 0062 FFF7FEFF 		bl	PWM_1_WritePeriod
+  42:.\main.c      ****                 PWM_1_WriteCompare(89);
+ 102              		.loc 1 42 0
+ 103 0066 5920     		mov	r0, #89
+ 104 0068 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 105              		.loc 1 46 0
+ 106 006c D4E7     		b	.L6
+ 107              		.cfi_endproc
+ 108              	.LFE33:
+ 109              		.size	main, .-main
+ 110 006e C046     		.text
+ 111              	.Letext0:
+ 112              		.section	.debug_info,"",%progbits
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccmEAEcr.s 			page 4
+
+
+ 113              	.Ldebug_info0:
+ 114 0000 CC000000 		.4byte	0xcc
+ 115 0004 0200     		.2byte	0x2
+ 116 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 117 000a 04       		.byte	0x4
+ 118 000b 01       		.uleb128 0x1
+ 119 000c 13000000 		.4byte	.LASF15
+ 120 0010 01       		.byte	0x1
+ 121 0011 3A010000 		.4byte	.LASF16
+ 122 0015 E0000000 		.4byte	.LASF17
+ 123 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 124 001d 00000000 		.4byte	0
+ 125 0021 00000000 		.4byte	0
+ 126 0025 00000000 		.4byte	.Ldebug_line0
+ 127 0029 02       		.uleb128 0x2
+ 128 002a 01       		.byte	0x1
+ 129 002b 06       		.byte	0x6
+ 130 002c CE000000 		.4byte	.LASF0
+ 131 0030 02       		.uleb128 0x2
+ 132 0031 01       		.byte	0x1
+ 133 0032 08       		.byte	0x8
+ 134 0033 8E000000 		.4byte	.LASF1
+ 135 0037 02       		.uleb128 0x2
+ 136 0038 02       		.byte	0x2
+ 137 0039 05       		.byte	0x5
+ 138 003a AA000000 		.4byte	.LASF2
+ 139 003e 02       		.uleb128 0x2
+ 140 003f 02       		.byte	0x2
+ 141 0040 07       		.byte	0x7
+ 142 0041 BB000000 		.4byte	.LASF3
+ 143 0045 02       		.uleb128 0x2
+ 144 0046 04       		.byte	0x4
+ 145 0047 05       		.byte	0x5
+ 146 0048 A1000000 		.4byte	.LASF4
+ 147 004c 02       		.uleb128 0x2
+ 148 004d 04       		.byte	0x4
+ 149 004e 07       		.byte	0x7
+ 150 004f 65000000 		.4byte	.LASF5
+ 151 0053 02       		.uleb128 0x2
+ 152 0054 08       		.byte	0x8
+ 153 0055 05       		.byte	0x5
+ 154 0056 00000000 		.4byte	.LASF6
+ 155 005a 02       		.uleb128 0x2
+ 156 005b 08       		.byte	0x8
+ 157 005c 07       		.byte	0x7
+ 158 005d 77000000 		.4byte	.LASF7
+ 159 0061 03       		.uleb128 0x3
+ 160 0062 04       		.byte	0x4
+ 161 0063 05       		.byte	0x5
+ 162 0064 696E7400 		.ascii	"int\000"
+ 163 0068 02       		.uleb128 0x2
+ 164 0069 04       		.byte	0x4
+ 165 006a 07       		.byte	0x7
+ 166 006b 43010000 		.4byte	.LASF8
+ 167 006f 02       		.uleb128 0x2
+ 168 0070 04       		.byte	0x4
+ 169 0071 04       		.byte	0x4
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccmEAEcr.s 			page 5
+
+
+ 170 0072 34010000 		.4byte	.LASF9
+ 171 0076 02       		.uleb128 0x2
+ 172 0077 08       		.byte	0x8
+ 173 0078 04       		.byte	0x4
+ 174 0079 B4000000 		.4byte	.LASF10
+ 175 007d 02       		.uleb128 0x2
+ 176 007e 01       		.byte	0x1
+ 177 007f 08       		.byte	0x8
+ 178 0080 9C000000 		.4byte	.LASF11
+ 179 0084 02       		.uleb128 0x2
+ 180 0085 04       		.byte	0x4
+ 181 0086 07       		.byte	0x7
+ 182 0087 50010000 		.4byte	.LASF12
+ 183 008b 04       		.uleb128 0x4
+ 184 008c 01       		.byte	0x1
+ 185 008d 0E000000 		.4byte	.LASF18
+ 186 0091 01       		.byte	0x1
+ 187 0092 0E       		.byte	0xe
+ 188 0093 61000000 		.4byte	0x61
+ 189 0097 00000000 		.4byte	.LFB33
+ 190 009b 6E000000 		.4byte	.LFE33
+ 191 009f 00000000 		.4byte	.LLST0
+ 192 00a3 01       		.byte	0x1
+ 193 00a4 05       		.uleb128 0x5
+ 194 00a5 DA000000 		.4byte	.LASF13
+ 195 00a9 01       		.byte	0x1
+ 196 00aa 14       		.byte	0x14
+ 197 00ab 61000000 		.4byte	0x61
+ 198 00af 02       		.byte	0x2
+ 199 00b0 91       		.byte	0x91
+ 200 00b1 74       		.sleb128 -12
+ 201 00b2 06       		.uleb128 0x6
+ 202 00b3 73657400 		.ascii	"set\000"
+ 203 00b7 01       		.byte	0x1
+ 204 00b8 15       		.byte	0x15
+ 205 00b9 61000000 		.4byte	0x61
+ 206 00bd 02       		.byte	0x2
+ 207 00be 91       		.byte	0x91
+ 208 00bf 70       		.sleb128 -16
+ 209 00c0 05       		.uleb128 0x5
+ 210 00c1 5C000000 		.4byte	.LASF14
+ 211 00c5 01       		.byte	0x1
+ 212 00c6 16       		.byte	0x16
+ 213 00c7 61000000 		.4byte	0x61
+ 214 00cb 02       		.byte	0x2
+ 215 00cc 91       		.byte	0x91
+ 216 00cd 6C       		.sleb128 -20
+ 217 00ce 00       		.byte	0
+ 218 00cf 00       		.byte	0
+ 219              		.section	.debug_abbrev,"",%progbits
+ 220              	.Ldebug_abbrev0:
+ 221 0000 01       		.uleb128 0x1
+ 222 0001 11       		.uleb128 0x11
+ 223 0002 01       		.byte	0x1
+ 224 0003 25       		.uleb128 0x25
+ 225 0004 0E       		.uleb128 0xe
+ 226 0005 13       		.uleb128 0x13
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccmEAEcr.s 			page 6
+
+
+ 227 0006 0B       		.uleb128 0xb
+ 228 0007 03       		.uleb128 0x3
+ 229 0008 0E       		.uleb128 0xe
+ 230 0009 1B       		.uleb128 0x1b
+ 231 000a 0E       		.uleb128 0xe
+ 232 000b 55       		.uleb128 0x55
+ 233 000c 06       		.uleb128 0x6
+ 234 000d 11       		.uleb128 0x11
+ 235 000e 01       		.uleb128 0x1
+ 236 000f 52       		.uleb128 0x52
+ 237 0010 01       		.uleb128 0x1
+ 238 0011 10       		.uleb128 0x10
+ 239 0012 06       		.uleb128 0x6
+ 240 0013 00       		.byte	0
+ 241 0014 00       		.byte	0
+ 242 0015 02       		.uleb128 0x2
+ 243 0016 24       		.uleb128 0x24
+ 244 0017 00       		.byte	0
+ 245 0018 0B       		.uleb128 0xb
+ 246 0019 0B       		.uleb128 0xb
+ 247 001a 3E       		.uleb128 0x3e
+ 248 001b 0B       		.uleb128 0xb
+ 249 001c 03       		.uleb128 0x3
+ 250 001d 0E       		.uleb128 0xe
+ 251 001e 00       		.byte	0
+ 252 001f 00       		.byte	0
+ 253 0020 03       		.uleb128 0x3
+ 254 0021 24       		.uleb128 0x24
+ 255 0022 00       		.byte	0
+ 256 0023 0B       		.uleb128 0xb
+ 257 0024 0B       		.uleb128 0xb
+ 258 0025 3E       		.uleb128 0x3e
+ 259 0026 0B       		.uleb128 0xb
+ 260 0027 03       		.uleb128 0x3
+ 261 0028 08       		.uleb128 0x8
+ 262 0029 00       		.byte	0
+ 263 002a 00       		.byte	0
+ 264 002b 04       		.uleb128 0x4
+ 265 002c 2E       		.uleb128 0x2e
+ 266 002d 01       		.byte	0x1
+ 267 002e 3F       		.uleb128 0x3f
+ 268 002f 0C       		.uleb128 0xc
+ 269 0030 03       		.uleb128 0x3
+ 270 0031 0E       		.uleb128 0xe
+ 271 0032 3A       		.uleb128 0x3a
+ 272 0033 0B       		.uleb128 0xb
+ 273 0034 3B       		.uleb128 0x3b
+ 274 0035 0B       		.uleb128 0xb
+ 275 0036 49       		.uleb128 0x49
+ 276 0037 13       		.uleb128 0x13
+ 277 0038 11       		.uleb128 0x11
+ 278 0039 01       		.uleb128 0x1
+ 279 003a 12       		.uleb128 0x12
+ 280 003b 01       		.uleb128 0x1
+ 281 003c 40       		.uleb128 0x40
+ 282 003d 06       		.uleb128 0x6
+ 283 003e 9642     		.uleb128 0x2116
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccmEAEcr.s 			page 7
+
+
+ 284 0040 0C       		.uleb128 0xc
+ 285 0041 00       		.byte	0
+ 286 0042 00       		.byte	0
+ 287 0043 05       		.uleb128 0x5
+ 288 0044 34       		.uleb128 0x34
+ 289 0045 00       		.byte	0
+ 290 0046 03       		.uleb128 0x3
+ 291 0047 0E       		.uleb128 0xe
+ 292 0048 3A       		.uleb128 0x3a
+ 293 0049 0B       		.uleb128 0xb
+ 294 004a 3B       		.uleb128 0x3b
+ 295 004b 0B       		.uleb128 0xb
+ 296 004c 49       		.uleb128 0x49
+ 297 004d 13       		.uleb128 0x13
+ 298 004e 02       		.uleb128 0x2
+ 299 004f 0A       		.uleb128 0xa
+ 300 0050 00       		.byte	0
+ 301 0051 00       		.byte	0
+ 302 0052 06       		.uleb128 0x6
+ 303 0053 34       		.uleb128 0x34
+ 304 0054 00       		.byte	0
+ 305 0055 03       		.uleb128 0x3
+ 306 0056 08       		.uleb128 0x8
+ 307 0057 3A       		.uleb128 0x3a
+ 308 0058 0B       		.uleb128 0xb
+ 309 0059 3B       		.uleb128 0x3b
+ 310 005a 0B       		.uleb128 0xb
+ 311 005b 49       		.uleb128 0x49
+ 312 005c 13       		.uleb128 0x13
+ 313 005d 02       		.uleb128 0x2
+ 314 005e 0A       		.uleb128 0xa
+ 315 005f 00       		.byte	0
+ 316 0060 00       		.byte	0
+ 317 0061 00       		.byte	0
+ 318              		.section	.debug_loc,"",%progbits
+ 319              	.Ldebug_loc0:
+ 320              	.LLST0:
+ 321 0000 00000000 		.4byte	.LFB33
+ 322 0004 02000000 		.4byte	.LCFI0
+ 323 0008 0200     		.2byte	0x2
+ 324 000a 7D       		.byte	0x7d
+ 325 000b 00       		.sleb128 0
+ 326 000c 02000000 		.4byte	.LCFI0
+ 327 0010 04000000 		.4byte	.LCFI1
+ 328 0014 0200     		.2byte	0x2
+ 329 0016 7D       		.byte	0x7d
+ 330 0017 08       		.sleb128 8
+ 331 0018 04000000 		.4byte	.LCFI1
+ 332 001c 06000000 		.4byte	.LCFI2
+ 333 0020 0200     		.2byte	0x2
+ 334 0022 7D       		.byte	0x7d
+ 335 0023 18       		.sleb128 24
+ 336 0024 06000000 		.4byte	.LCFI2
+ 337 0028 6E000000 		.4byte	.LFE33
+ 338 002c 0200     		.2byte	0x2
+ 339 002e 77       		.byte	0x77
+ 340 002f 18       		.sleb128 24
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccmEAEcr.s 			page 8
+
+
+ 341 0030 00000000 		.4byte	0
+ 342 0034 00000000 		.4byte	0
+ 343              		.section	.debug_aranges,"",%progbits
+ 344 0000 1C000000 		.4byte	0x1c
+ 345 0004 0200     		.2byte	0x2
+ 346 0006 00000000 		.4byte	.Ldebug_info0
+ 347 000a 04       		.byte	0x4
+ 348 000b 00       		.byte	0
+ 349 000c 0000     		.2byte	0
+ 350 000e 0000     		.2byte	0
+ 351 0010 00000000 		.4byte	.LFB33
+ 352 0014 6E000000 		.4byte	.LFE33-.LFB33
+ 353 0018 00000000 		.4byte	0
+ 354 001c 00000000 		.4byte	0
+ 355              		.section	.debug_ranges,"",%progbits
+ 356              	.Ldebug_ranges0:
+ 357 0000 00000000 		.4byte	.LFB33
+ 358 0004 6E000000 		.4byte	.LFE33
+ 359 0008 00000000 		.4byte	0
+ 360 000c 00000000 		.4byte	0
+ 361              		.section	.debug_line,"",%progbits
+ 362              	.Ldebug_line0:
+ 363 0000 54000000 		.section	.debug_str,"MS",%progbits,1
+ 363      02001F00 
+ 363      00000201 
+ 363      FB0E0D00 
+ 363      01010101 
+ 364              	.LASF6:
+ 365 0000 6C6F6E67 		.ascii	"long long int\000"
+ 365      206C6F6E 
+ 365      6720696E 
+ 365      7400
+ 366              	.LASF18:
+ 367 000e 6D61696E 		.ascii	"main\000"
+ 367      00
+ 368              	.LASF15:
+ 369 0013 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 369      4320342E 
+ 369      372E3320 
+ 369      32303133 
+ 369      30333132 
+ 370 0046 616E6368 		.ascii	"anch revision 196615]\000"
+ 370      20726576 
+ 370      6973696F 
+ 370      6E203139 
+ 370      36363135 
+ 371              	.LASF14:
+ 372 005c 72656164 		.ascii	"read_val\000"
+ 372      5F76616C 
+ 372      00
+ 373              	.LASF5:
+ 374 0065 6C6F6E67 		.ascii	"long unsigned int\000"
+ 374      20756E73 
+ 374      69676E65 
+ 374      6420696E 
+ 374      7400
+ 375              	.LASF7:
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccmEAEcr.s 			page 9
+
+
+ 376 0077 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 376      206C6F6E 
+ 376      6720756E 
+ 376      7369676E 
+ 376      65642069 
+ 377              	.LASF1:
+ 378 008e 756E7369 		.ascii	"unsigned char\000"
+ 378      676E6564 
+ 378      20636861 
+ 378      7200
+ 379              	.LASF11:
+ 380 009c 63686172 		.ascii	"char\000"
+ 380      00
+ 381              	.LASF4:
+ 382 00a1 6C6F6E67 		.ascii	"long int\000"
+ 382      20696E74 
+ 382      00
+ 383              	.LASF2:
+ 384 00aa 73686F72 		.ascii	"short int\000"
+ 384      7420696E 
+ 384      7400
+ 385              	.LASF10:
+ 386 00b4 646F7562 		.ascii	"double\000"
+ 386      6C6500
+ 387              	.LASF3:
+ 388 00bb 73686F72 		.ascii	"short unsigned int\000"
+ 388      7420756E 
+ 388      7369676E 
+ 388      65642069 
+ 388      6E7400
+ 389              	.LASF0:
+ 390 00ce 7369676E 		.ascii	"signed char\000"
+ 390      65642063 
+ 390      68617200 
+ 391              	.LASF13:
+ 392 00da 73746174 		.ascii	"state\000"
+ 392      6500
+ 393              	.LASF17:
+ 394 00e0 433A5C55 		.ascii	"C:\\Users\\TinyWindows\\Documents\\PSoC Creator\\My"
+ 394      73657273 
+ 394      5C54696E 
+ 394      7957696E 
+ 394      646F7773 
+ 395 010e 20466972 		.ascii	" First Project\\My First Project.cydsn\000"
+ 395      73742050 
+ 395      726F6A65 
+ 395      63745C4D 
+ 395      79204669 
+ 396              	.LASF9:
+ 397 0134 666C6F61 		.ascii	"float\000"
+ 397      7400
+ 398              	.LASF16:
+ 399 013a 2E5C6D61 		.ascii	".\\main.c\000"
+ 399      696E2E63 
+ 399      00
+ 400              	.LASF8:
+ 401 0143 756E7369 		.ascii	"unsigned int\000"
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccmEAEcr.s 			page 10
+
+
+ 401      676E6564 
+ 401      20696E74 
+ 401      00
+ 402              	.LASF12:
+ 403 0150 73697A65 		.ascii	"sizetype\000"
+ 403      74797065 
+ 403      00
+ 404              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
