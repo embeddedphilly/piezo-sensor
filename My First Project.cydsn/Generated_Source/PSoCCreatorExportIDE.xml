@@ -72,12 +72,6 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PIEZO.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PIEZO.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\PIEZO_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\BUT_1.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\BUT_1.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\BUT_1_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\BUT_DEBOUNCED.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\BUT_DEBOUNCED.h</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\BUT_DEBOUNCED_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\prebuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\postbuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\CyElfTool.exe</File>
