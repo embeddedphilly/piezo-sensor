@@ -1,6 +1,6 @@
 /*******************************************************************************
-* File Name: PIEZO.c  
-* Version 1.90
+* File Name: PIEZO_PIN.c  
+* Version 2.5
 *
 * Description:
 *  This file contains API to enable firmware control of a Pins component.
@@ -8,25 +8,25 @@
 * Note:
 *
 ********************************************************************************
-* Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions, 
 * disclaimers, and limitations in the end user license agreement accompanying 
 * the software package with which this file was provided.
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "PIEZO.h"
+#include "PIEZO_PIN.h"
 
 #define SetP4PinDriveMode(shift, mode)  \
     do { \
-        PIEZO_PC =   (PIEZO_PC & \
-                                (uint32)(~(uint32)(PIEZO_DRIVE_MODE_IND_MASK << (PIEZO_DRIVE_MODE_BITS * (shift))))) | \
-                                (uint32)((uint32)(mode) << (PIEZO_DRIVE_MODE_BITS * (shift))); \
+        PIEZO_PIN_PC =   (PIEZO_PIN_PC & \
+                                (uint32)(~(uint32)(PIEZO_PIN_DRIVE_MODE_IND_MASK << (PIEZO_PIN_DRIVE_MODE_BITS * (shift))))) | \
+                                (uint32)((uint32)(mode) << (PIEZO_PIN_DRIVE_MODE_BITS * (shift))); \
     } while (0)
 
 
 /*******************************************************************************
-* Function Name: PIEZO_Write
+* Function Name: PIEZO_PIN_Write
 ********************************************************************************
 *
 * Summary:
@@ -39,36 +39,45 @@
 *  None 
 *  
 *******************************************************************************/
-void PIEZO_Write(uint8 value) 
+void PIEZO_PIN_Write(uint8 value) 
 {
-    uint8 drVal = (uint8)(PIEZO_DR & (uint8)(~PIEZO_MASK));
-    drVal = (drVal | ((uint8)(value << PIEZO_SHIFT) & PIEZO_MASK));
-    PIEZO_DR = (uint32)drVal;
+    uint8 drVal = (uint8)(PIEZO_PIN_DR & (uint8)(~PIEZO_PIN_MASK));
+    drVal = (drVal | ((uint8)(value << PIEZO_PIN_SHIFT) & PIEZO_PIN_MASK));
+    PIEZO_PIN_DR = (uint32)drVal;
 }
 
 
 /*******************************************************************************
-* Function Name: PIEZO_SetDriveMode
+* Function Name: PIEZO_PIN_SetDriveMode
 ********************************************************************************
 *
 * Summary:
 *  Change the drive mode on the pins of the port.
 * 
 * Parameters:  
-*  mode:  Change the pins to this drive mode.
+*  mode:  Change the pins to one of the following drive modes.
+*
+*  PIEZO_PIN_DM_STRONG     Strong Drive 
+*  PIEZO_PIN_DM_OD_HI      Open Drain, Drives High 
+*  PIEZO_PIN_DM_OD_LO      Open Drain, Drives Low 
+*  PIEZO_PIN_DM_RES_UP     Resistive Pull Up 
+*  PIEZO_PIN_DM_RES_DWN    Resistive Pull Down 
+*  PIEZO_PIN_DM_RES_UPDWN  Resistive Pull Up/Down 
+*  PIEZO_PIN_DM_DIG_HIZ    High Impedance Digital 
+*  PIEZO_PIN_DM_ALG_HIZ    High Impedance Analog 
 *
 * Return: 
 *  None
 *
 *******************************************************************************/
-void PIEZO_SetDriveMode(uint8 mode) 
+void PIEZO_PIN_SetDriveMode(uint8 mode) 
 {
-	SetP4PinDriveMode(PIEZO__0__SHIFT, mode);
+	SetP4PinDriveMode(PIEZO_PIN__0__SHIFT, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: PIEZO_Read
+* Function Name: PIEZO_PIN_Read
 ********************************************************************************
 *
 * Summary:
@@ -82,17 +91,17 @@ void PIEZO_SetDriveMode(uint8 mode)
 *  Returns the current value of the Digital Port as a right justified number
 *  
 * Note:
-*  Macro PIEZO_ReadPS calls this function. 
+*  Macro PIEZO_PIN_ReadPS calls this function. 
 *  
 *******************************************************************************/
-uint8 PIEZO_Read(void) 
+uint8 PIEZO_PIN_Read(void) 
 {
-    return (uint8)((PIEZO_PS & PIEZO_MASK) >> PIEZO_SHIFT);
+    return (uint8)((PIEZO_PIN_PS & PIEZO_PIN_MASK) >> PIEZO_PIN_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: PIEZO_ReadDataReg
+* Function Name: PIEZO_PIN_ReadDataReg
 ********************************************************************************
 *
 * Summary:
@@ -105,17 +114,17 @@ uint8 PIEZO_Read(void)
 *  Returns the current value assigned to the Digital Port's data output register
 *  
 *******************************************************************************/
-uint8 PIEZO_ReadDataReg(void) 
+uint8 PIEZO_PIN_ReadDataReg(void) 
 {
-    return (uint8)((PIEZO_DR & PIEZO_MASK) >> PIEZO_SHIFT);
+    return (uint8)((PIEZO_PIN_DR & PIEZO_PIN_MASK) >> PIEZO_PIN_SHIFT);
 }
 
 
 /* If Interrupts Are Enabled for this Pins component */ 
-#if defined(PIEZO_INTSTAT) 
+#if defined(PIEZO_PIN_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: PIEZO_ClearInterrupt
+    * Function Name: PIEZO_PIN_ClearInterrupt
     ********************************************************************************
     *
     * Summary:
@@ -129,11 +138,11 @@ uint8 PIEZO_ReadDataReg(void)
     *  Returns the value of the interrupt status register
     *  
     *******************************************************************************/
-    uint8 PIEZO_ClearInterrupt(void) 
+    uint8 PIEZO_PIN_ClearInterrupt(void) 
     {
-		uint8 maskedStatus = (uint8)(PIEZO_INTSTAT & PIEZO_MASK);
-		PIEZO_INTSTAT = maskedStatus;
-        return maskedStatus >> PIEZO_SHIFT;
+		uint8 maskedStatus = (uint8)(PIEZO_PIN_INTSTAT & PIEZO_PIN_MASK);
+		PIEZO_PIN_INTSTAT = maskedStatus;
+        return maskedStatus >> PIEZO_PIN_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

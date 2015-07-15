@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: PWM_1.c
-* Version 1.0
+* Version 1.10
 *
 * Description:
 *  This file provides the source code to the API for the PWM_1
@@ -10,7 +10,7 @@
 *  None
 *
 ********************************************************************************
-* Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2013-2014, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -126,6 +126,11 @@ void PWM_1_Init(void)
     /* Set other values from customizer */
     #if (PWM_1__TIMER == PWM_1_CONFIG)
         PWM_1_WritePeriod(PWM_1_TC_PERIOD_VALUE );
+
+        #if (PWM_1__COUNT_DOWN == PWM_1_TC_COUNTER_MODE)
+            PWM_1_WriteCounter(PWM_1_TC_PERIOD_VALUE );
+        #endif  /* (PWM_1__COUNT_DOWN == PWM_1_TC_COUNTER_MODE) */
+
         #if (PWM_1__COMPARE == PWM_1_TC_COMP_CAP_MODE)
             PWM_1_WriteCompare(PWM_1_TC_COMPARE_VALUE);
 
@@ -162,6 +167,7 @@ void PWM_1_Init(void)
             #endif  /* ( PWM_1_PWM_LEFT == PWM_1_PWM_ALIGN) */
 
             #if (PWM_1__RIGHT == PWM_1_PWM_ALIGN)
+                PWM_1_WriteCounter(PWM_1_PWM_PERIOD_VALUE);
                 PWM_1_TRIG_CONTROL2_REG = PWM_1_PWM_MODE_RIGHT;
             #endif  /* ( PWM_1_PWM_RIGHT == PWM_1_PWM_ALIGN) */
 
@@ -199,7 +205,7 @@ void PWM_1_Enable(void)
     PWM_1_BLOCK_CONTROL_REG |= PWM_1_MASK;
     CyExitCriticalSection(enableInterrupts);
 
-    /* Statr Timer or PWM if start input is absent */
+    /* Start Timer or PWM if start input is absent */
     #if (PWM_1__PWM_SEL == PWM_1_CONFIG)
         #if (0u == PWM_1_PWM_START_SIGNAL_PRESENT)
             PWM_1_TriggerCommand(PWM_1_MASK, PWM_1_CMD_START);
@@ -219,7 +225,7 @@ void PWM_1_Enable(void)
 ********************************************************************************
 *
 * Summary:
-*  Initialize the PWM_1 with default customizer
+*  Initializes the PWM_1 with default customizer
 *  values when called the first time and enables the PWM_1.
 *  For subsequent calls the configuration is left unchanged and the component is
 *  just enabled.
@@ -234,8 +240,8 @@ void PWM_1_Enable(void)
 *  PWM_1_initVar: global variable is used to indicate initial
 *  configuration of this component.  The variable is initialized to zero and set
 *  to 1 the first time PWM_1_Start() is called. This allows
-*  enable/disable component without re-initialization in all subsequent calls
-*  to the PWM_1_Start() routine.
+*  enabling/disabling a component without re-initialization in all subsequent
+*  calls to the PWM_1_Start() routine.
 *
 *******************************************************************************/
 void PWM_1_Start(void)
@@ -319,8 +325,8 @@ void PWM_1_SetMode(uint32 mode)
 ********************************************************************************
 *
 * Summary:
-*  Sets the the Quadrature Decoder to one of 3 supported modes.
-*  Is functionality is only applicable to Quadrature Decoder operation.
+*  Sets the the Quadrature Decoder to one of the 3 supported modes.
+*  Its functionality is only applicable to Quadrature Decoder operation.
 *
 * Parameters:
 *  qdMode: Quadrature Decoder mode
@@ -353,7 +359,7 @@ void PWM_1_SetQDMode(uint32 qdMode)
 *
 * Summary:
 *  Sets the prescaler value that is applied to the clock input.  Not applicable
-*  to PWM with dead time mode or Quadrature Decoder mode.
+*  to a PWM with the dead time mode or Quadrature Decoder mode.
 *
 * Parameters:
 *  prescaler: Prescaler divider value
@@ -391,7 +397,7 @@ void PWM_1_SetPrescaler(uint32 prescaler)
 * Summary:
 *  Writes the register that controls whether the PWM_1 runs
 *  continuously or stops when terminal count is reached.  By default the
-*  PWM_1 operates in continuous mode.
+*  PWM_1 operates in the continuous mode.
 *
 * Parameters:
 *  oneShotEnable
@@ -425,19 +431,19 @@ void PWM_1_SetOneShot(uint32 oneShotEnable)
 *  Writes the control register that determines what mode of operation the PWM
 *  output lines are driven in.  There is a setting for what to do on a
 *  comparison match (CC_MATCH), on an overflow (OVERFLOW) and on an underflow
-*  (UNDERFLOW).  The value for each of the 3 must be ORed together to form the
-*  mode.
+*  (UNDERFLOW).  The value for each of the three must be ORed together to form
+*  the mode.
 *
 * Parameters:
-*  modeMask: Combination of the 3 mode settings.  Mask must include a value for
-*  each of the 3 or use one of the preconfigured PWM settings.
+*  modeMask: A combination of three mode settings.  Mask must include a value
+*  for each of the three or use one of the preconfigured PWM settings.
 *   Values:
 *     - CC_MATCH_SET        - Set on comparison match
 *     - CC_MATCH_CLEAR      - Clear on comparison match
 *     - CC_MATCH_INVERT     - Invert on comparison match
 *     - CC_MATCH_NO_CHANGE  - No change on comparison match
 *     - OVERLOW_SET         - Set on overflow
-*     - OVERLOW_CLEAR       - Clear on overflow
+*     - OVERLOW_CLEAR       - Clear on  overflow
 *     - OVERLOW_INVERT      - Invert on overflow
 *     - OVERLOW_NO_CHANGE   - No change on overflow
 *     - UNDERFLOW_SET       - Set on underflow
@@ -448,7 +454,7 @@ void PWM_1_SetOneShot(uint32 oneShotEnable)
 *                             with up counting mode
 *     - PWM_MODE_RIGHT      - Setting for right aligned PWM.  Should be combined
 *                             with down counting mode
-*     - PWM_MODE_CENTER     - Setting for center aligned PWM.  Should be 
+*     - PWM_MODE_CENTER     - Setting for center aligned PWM.  Should be
 *                             combined with up/down 0 mode
 *     - PWM_MODE_ASYM       - Setting for asymmetric PWM.  Should be combined
 *                             with up/down 1 mode
@@ -470,16 +476,16 @@ void PWM_1_SetPWMMode(uint32 modeMask)
 *
 * Summary:
 *  Writes the register that controls whether the PWM kill signal (stop input)
-*  causes an asynchronous or synchronous kill operation.  By default the kill
-*  operation is asynchronous.  This functionality is only applicable to PWM and
-*  PWM with dead time modes.
+*  causes asynchronous or synchronous kill operation.  By default the kill
+*  operation is asynchronous.  This functionality is only applicable to the PWM
+*  and PWM with dead time modes.
 *
 *  For Synchronous mode the kill signal disables both the line and line_n
 *  signals until the next terminal count.
 *
 *  For Asynchronous mode the kill signal disables both the line and line_n
 *  signals when the kill signal is present.  This mode should only be used
-*  when the kill signal (stop input) is configured in pass through mode
+*  when the kill signal (stop input) is configured in the pass through mode
 *  (Level sensitive signal).
 
 *
@@ -549,7 +555,7 @@ void PWM_1_SetPWMStopOnKill(uint32 stopOnKillEnable)
 *  Writes the dead time control value.  This value delays the rising edge of
 *  both the line and line_n signals the designated number of cycles resulting
 *  in both signals being inactive for that many cycles.  This functionality is
-*  only applicable to the PWM in dead time mode.
+*  only applicable to the PWM in the dead time mode.
 
 *
 * Parameters:
@@ -655,10 +661,10 @@ uint32 PWM_1_ReadCounter(void)
 *
 * Summary:
 *  Sets the counter mode.  Applicable to all modes except Quadrature Decoder
-*  and PWM with pseudo random output.
+*  and the PWM with a pseudo random output.
 *
 * Parameters:
-*  counterMode: Enumerated couner type values
+*  counterMode: Enumerated counter type values
 *   Values:
 *     - PWM_1_COUNT_UP       - Counts up
 *     - PWM_1_COUNT_DOWN     - Counts down
@@ -733,9 +739,9 @@ uint32 PWM_1_ReadPeriod(void)
 *
 * Summary:
 *  Writes the register that controls whether the compare registers are
-*  swapped. When enabled in Timer/Counter mode(without capture) the swap occurs
-*  at a TC event. In PWM mode the swap occurs at the next TC event following
-*  a hardware switch event.
+*  swapped. When enabled in the Timer/Counter mode(without capture) the swap
+*  occurs at a TC event. In the PWM mode the swap occurs at the next TC event
+*  following a hardware switch event.
 *
 * Parameters:
 *  swapEnable
@@ -807,8 +813,8 @@ uint32 PWM_1_ReadPeriodBuf(void)
 * Summary:
 *  Writes the register that controls whether the period registers are
 *  swapped. When enabled in Timer/Counter mode the swap occurs at a TC event.
-*  In PWM mode the swap occurs at the next TC event following a hardware switch
-*  event.
+*  In the PWM mode the swap occurs at the next TC event following a hardware
+*  switch event.
 *
 * Parameters:
 *  swapEnable
@@ -851,7 +857,28 @@ void PWM_1_SetPeriodSwap(uint32 swapEnable)
 *******************************************************************************/
 void PWM_1_WriteCompare(uint32 compare)
 {
-    PWM_1_COMP_CAP_REG = (compare & PWM_1_16BIT_MASK);
+    #if (PWM_1_CY_TCPWM_V2)
+        uint32 currentMode;
+    #endif /* (PWM_1_CY_TCPWM_V2) */
+
+    #if (PWM_1_CY_TCPWM_V2)
+        currentMode = ((PWM_1_CONTROL_REG & PWM_1_UPDOWN_MASK) >> PWM_1_UPDOWN_SHIFT);
+
+        if (PWM_1__COUNT_DOWN == currentMode)
+        {
+            PWM_1_COMP_CAP_REG = ((compare + 1u) & PWM_1_16BIT_MASK);
+        }
+        else if (PWM_1__COUNT_UP == currentMode)
+        {
+            PWM_1_COMP_CAP_REG = ((compare - 1u) & PWM_1_16BIT_MASK);
+        }
+        else
+        {
+            PWM_1_COMP_CAP_REG = (compare & PWM_1_16BIT_MASK);
+        }
+    #else
+        PWM_1_COMP_CAP_REG = (compare & PWM_1_16BIT_MASK);
+    #endif /* (PWM_1_CY_TCPWM_V2) */
 }
 
 
@@ -872,7 +899,30 @@ void PWM_1_WriteCompare(uint32 compare)
 *******************************************************************************/
 uint32 PWM_1_ReadCompare(void)
 {
-    return (PWM_1_COMP_CAP_REG & PWM_1_16BIT_MASK);
+    #if (PWM_1_CY_TCPWM_V2)
+        uint32 currentMode;
+        uint32 regVal;
+    #endif /* (PWM_1_CY_TCPWM_V2) */
+
+    #if (PWM_1_CY_TCPWM_V2)
+        currentMode = ((PWM_1_CONTROL_REG & PWM_1_UPDOWN_MASK) >> PWM_1_UPDOWN_SHIFT);
+
+        if (PWM_1__COUNT_DOWN == currentMode)
+        {
+            regVal = ((PWM_1_COMP_CAP_REG - 1u) & PWM_1_16BIT_MASK);
+        }
+        else if (PWM_1__COUNT_UP == currentMode)
+        {
+            regVal = ((PWM_1_COMP_CAP_REG + 1u) & PWM_1_16BIT_MASK);
+        }
+        else
+        {
+            regVal = (PWM_1_COMP_CAP_REG & PWM_1_16BIT_MASK);
+        }
+        return (regVal);
+    #else
+        return (PWM_1_COMP_CAP_REG & PWM_1_16BIT_MASK);
+    #endif /* (PWM_1_CY_TCPWM_V2) */
 }
 
 
@@ -893,7 +943,28 @@ uint32 PWM_1_ReadCompare(void)
 *******************************************************************************/
 void PWM_1_WriteCompareBuf(uint32 compareBuf)
 {
-   PWM_1_COMP_CAP_BUF_REG = (compareBuf & PWM_1_16BIT_MASK);
+    #if (PWM_1_CY_TCPWM_V2)
+        uint32 currentMode;
+    #endif /* (PWM_1_CY_TCPWM_V2) */
+
+    #if (PWM_1_CY_TCPWM_V2)
+        currentMode = ((PWM_1_CONTROL_REG & PWM_1_UPDOWN_MASK) >> PWM_1_UPDOWN_SHIFT);
+
+        if (PWM_1__COUNT_DOWN == currentMode)
+        {
+            PWM_1_COMP_CAP_BUF_REG = ((compareBuf + 1u) & PWM_1_16BIT_MASK);
+        }
+        else if (PWM_1__COUNT_UP == currentMode)
+        {
+            PWM_1_COMP_CAP_BUF_REG = ((compareBuf - 1u) & PWM_1_16BIT_MASK);
+        }
+        else
+        {
+            PWM_1_COMP_CAP_BUF_REG = (compareBuf & PWM_1_16BIT_MASK);
+        }
+    #else
+        PWM_1_COMP_CAP_BUF_REG = (compareBuf & PWM_1_16BIT_MASK);
+    #endif /* (PWM_1_CY_TCPWM_V2) */
 }
 
 
@@ -914,7 +985,30 @@ void PWM_1_WriteCompareBuf(uint32 compareBuf)
 *******************************************************************************/
 uint32 PWM_1_ReadCompareBuf(void)
 {
-    return (PWM_1_COMP_CAP_BUF_REG & PWM_1_16BIT_MASK);
+    #if (PWM_1_CY_TCPWM_V2)
+        uint32 currentMode;
+        uint32 regVal;
+    #endif /* (PWM_1_CY_TCPWM_V2) */
+
+    #if (PWM_1_CY_TCPWM_V2)
+        currentMode = ((PWM_1_CONTROL_REG & PWM_1_UPDOWN_MASK) >> PWM_1_UPDOWN_SHIFT);
+
+        if (PWM_1__COUNT_DOWN == currentMode)
+        {
+            regVal = ((PWM_1_COMP_CAP_BUF_REG - 1u) & PWM_1_16BIT_MASK);
+        }
+        else if (PWM_1__COUNT_UP == currentMode)
+        {
+            regVal = ((PWM_1_COMP_CAP_BUF_REG + 1u) & PWM_1_16BIT_MASK);
+        }
+        else
+        {
+            regVal = (PWM_1_COMP_CAP_BUF_REG & PWM_1_16BIT_MASK);
+        }
+        return (regVal);
+    #else
+        return (PWM_1_COMP_CAP_BUF_REG & PWM_1_16BIT_MASK);
+    #endif /* (PWM_1_CY_TCPWM_V2) */
 }
 
 
@@ -924,7 +1018,7 @@ uint32 PWM_1_ReadCompareBuf(void)
 *
 * Summary:
 *  Reads the captured counter value. This API is applicable only for
-*  Timer/Counter with capture mode and Quadrature Decoder modes.
+*  Timer/Counter with the capture mode and Quadrature Decoder modes.
 *
 * Parameters:
 *  None
@@ -945,7 +1039,7 @@ uint32 PWM_1_ReadCapture(void)
 *
 * Summary:
 *  Reads the capture buffer register. This API is applicable only for
-*  Timer/Counter with capture mode and Quadrature Decoder modes.
+*  Timer/Counter with the capture mode and Quadrature Decoder modes.
 *
 * Parameters:
 *  None
@@ -1135,7 +1229,7 @@ void PWM_1_SetCountMode(uint32 triggerMode)
 *  instance.  This allows multiple TCPWM instances to be synchronized.
 *
 * Parameters:
-*  mask: Combination of mask bits for each instance of the TCPWM that the
+*  mask: A combination of mask bits for each instance of the TCPWM that the
 *        command should apply to.  This function from one instance can be used
 *        to apply the command to any of the instances in the design.
 *        The mask value for a specific instance is available with the MASK

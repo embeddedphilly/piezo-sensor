@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: PWM_1.h
-* Version 1.0
+* Version 1.10
 *
 * Description:
 *  This file provides constants and parameter values for the PWM_1
@@ -10,7 +10,7 @@
 *  None
 *
 ********************************************************************************
-* Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2013-2014, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -43,6 +43,8 @@ extern uint8  PWM_1_initVar;
 /***************************************
 *   Conditional Compilation Parameters
 ****************************************/
+
+#define PWM_1_CY_TCPWM_V2                    (CYIPBLOCK_m0s8tcpwm_VERSION == 2u)
 
 /* TCPWM Configuration */
 #define PWM_1_CONFIG                         (7lu)
@@ -230,14 +232,14 @@ extern uint8  PWM_1_initVar;
                                                                   PWM_1_INV_COMPL_OUT_SHIFT))
 
 /* Trigger modes */
-#define PWM_1_TRIG_RISING                    (PWM_1__TRIG_RISING)
-#define PWM_1_TRIG_FALLING                   (PWM_1__TRIG_FALLING)
-#define PWM_1_TRIG_BOTH                      (PWM_1__TRIG_BOTH)
-#define PWM_1_TRIG_LEVEL                     (PWM_1__TRIG_LEVEL)
+#define PWM_1_TRIG_RISING                    ((uint32)PWM_1__TRIG_RISING)
+#define PWM_1_TRIG_FALLING                   ((uint32)PWM_1__TRIG_FALLING)
+#define PWM_1_TRIG_BOTH                      ((uint32)PWM_1__TRIG_BOTH)
+#define PWM_1_TRIG_LEVEL                     ((uint32)PWM_1__TRIG_LEVEL)
 
 /* Interrupt mask */
-#define PWM_1_INTR_MASK_TC                   (PWM_1__INTR_MASK_TC)
-#define PWM_1_INTR_MASK_CC_MATCH             (PWM_1__INTR_MASK_CC_MATCH)
+#define PWM_1_INTR_MASK_TC                   ((uint32)PWM_1__INTR_MASK_TC)
+#define PWM_1_INTR_MASK_CC_MATCH             ((uint32)PWM_1__INTR_MASK_CC_MATCH)
 
 /* PWM Output Controls */
 #define PWM_1_CC_MATCH_SET                   (0x00u)

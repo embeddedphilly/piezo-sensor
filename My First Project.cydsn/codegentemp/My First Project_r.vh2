@@ -1,10 +1,10 @@
 -- Project:   My First Project
--- Generated: 07/08/2015 18:22:53
+-- Generated: 07/14/2015 20:16:38
 -- 
 
 ENTITY \My First Project\ IS
     PORT(
-        PIEZO(0)_PAD : OUT std_ulogic);
+        PIEZO_PIN(0)_PAD : OUT std_ulogic);
     ATTRIBUTE voltage_VDDD OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 3.3e0;
 END \My First Project\;
@@ -25,7 +25,7 @@ ARCHITECTURE __DEFAULT__ OF \My First Project\ IS
     SIGNAL Net_35 : bit;
     SIGNAL Net_36 : bit;
     SIGNAL Net_37 : bit;
-    SIGNAL PIEZO(0)__PA : bit;
+    SIGNAL PIEZO_PIN(0)__PA : bit;
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
@@ -36,8 +36,8 @@ ARCHITECTURE __DEFAULT__ OF \My First Project\ IS
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
     ATTRIBUTE Location OF ClockGenBlock : LABEL IS "F(CLK_GEN,0)";
-    ATTRIBUTE lib_model OF PIEZO(0) : LABEL IS "iocell1";
-    ATTRIBUTE Location OF PIEZO(0) : LABEL IS "P0[4]";
+    ATTRIBUTE lib_model OF PIEZO_PIN(0) : LABEL IS "iocell1";
+    ATTRIBUTE Location OF PIEZO_PIN(0) : LABEL IS "P0[4]";
     ATTRIBUTE Location OF \PWM_1:cy_m0s8_tcpwm_1\ : LABEL IS "F(TCPWM,0)";
     COMPONENT abufcell
     END COMPONENT;
@@ -710,7 +710,8 @@ ARCHITECTURE __DEFAULT__ OF \My First Project\ IS
             sample_in : IN std_ulogic;
             clk1 : IN std_ulogic;
             clk2 : IN std_ulogic;
-            irq : OUT std_ulogic);
+            irq : OUT std_ulogic;
+            comp : OUT std_ulogic);
     END COMPONENT;
     COMPONENT p4csidac7cell
         PORT (
@@ -957,7 +958,7 @@ BEGIN
 
     ClockGenBlock:m0s8clockgenblockcell;
 
-    PIEZO:logicalport
+    PIEZO_PIN:logicalport
         GENERIC MAP(
             drive_mode => "110",
             ibuf_enabled => "1",
@@ -1023,20 +1024,20 @@ BEGIN
             out_clock_en => open,
             out_reset => open);
 
-    PIEZO(0):iocell
+    PIEZO_PIN(0):iocell
         GENERIC MAP(
             in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
-            logicalport => "PIEZO",
+            logicalport => "PIEZO_PIN",
             logicalport_pin_id => 0,
             io_capabilities => "0000000000000000000000000010000000000000000000000000000000000001")
         PORT MAP(
-            pa_out => PIEZO(0)__PA,
+            pa_out => PIEZO_PIN(0)__PA,
             oe => open,
             pin_input => Net_17,
-            pad_out => PIEZO(0)_PAD,
-            pad_in => PIEZO(0)_PAD,
+            pad_out => PIEZO_PIN(0)_PAD,
+            pad_in => PIEZO_PIN(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',

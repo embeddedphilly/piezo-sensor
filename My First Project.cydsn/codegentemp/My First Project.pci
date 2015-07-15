@@ -1,9 +1,9 @@
 # My First Project
-# 2015-07-08 22:22:52Z
+# 2015-07-15 00:16:37Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
 # IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 3
 set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
-set_io "PIEZO(0)" iocell 0 4
+set_io "PIEZO_PIN(0)" iocell 0 4

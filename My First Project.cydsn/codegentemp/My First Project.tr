@@ -57,9 +57,9 @@ Port Name  Setup to Clk  Clock Name:Phase
 -----------------------3.2::Clock to Out
 ----------------------------------------
 
-Port Name     Clock to Out  Clock Name:Phase  
-------------  ------------  ----------------  
-PIEZO(0)_PAD  23282         Clock_1(FFB):R    
+Port Name         Clock to Out  Clock Name:Phase  
+----------------  ------------  ----------------  
+PIEZO_PIN(0)_PAD  23282         Clock_1(FFB):R    
 
 
                          3.3::Pad to Pad

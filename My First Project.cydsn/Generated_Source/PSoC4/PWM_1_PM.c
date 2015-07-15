@@ -1,16 +1,16 @@
 /*******************************************************************************
 * File Name: PWM_1_PM.c
-* Version 1.0
+* Version 1.10
 *
 * Description:
-*  This file contains the setup, control and status commands to support
-*  component operations in low power mode.
+*  This file contains the setup, control, and status commands to support
+*  the component operations in the low power mode.
 *
 * Note:
 *  None
 *
 ********************************************************************************
-* Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2013-2014, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
