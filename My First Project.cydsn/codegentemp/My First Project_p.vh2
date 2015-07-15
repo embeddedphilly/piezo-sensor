@@ -1,5 +1,5 @@
 -- Project:   My First Project
--- Generated: 07/15/2015 14:42:40
+-- Generated: 07/15/2015 18:13:58
 -- PSoC Creator  3.2
 
 ENTITY \My First Project\ IS
@@ -31,8 +31,8 @@ ARCHITECTURE __DEFAULT__ OF \My First Project\ IS
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
-    SIGNAL one : bit;
-    ATTRIBUTE POWER OF one : SIGNAL IS true;
+    SIGNAL tmpOE__PIEZO_PIN_net_0 : bit;
+    ATTRIBUTE POWER OF tmpOE__PIEZO_PIN_net_0 : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     ATTRIBUTE Location OF ClockGenBlock : LABEL IS "F(CLK_GEN,0)";
@@ -227,7 +227,7 @@ BEGIN
             ibuf_enabled => "1",
             id => "52f31aa9-2f0a-497d-9a1f-1424095e13e6",
             init_dr_st => "1",
-            input_buffer_sel => "",
+            input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "1",
             input_sync_mode => "0",
@@ -249,9 +249,9 @@ BEGIN
             output_mode => "0",
             output_reset => 0,
             output_sync => "0",
-            ovt_hyst_trim => "",
-            ovt_needed => "",
-            ovt_slew_control => "",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
             pa_in_clock => -1,
             pa_in_clock_en => -1,
             pa_in_reset => -1,
@@ -265,7 +265,7 @@ BEGIN
             port_alias_required => 0,
             sio_group_cnt => 0,
             sio_hifreq => "",
-            sio_hyst => "0",
+            sio_hyst => "1",
             sio_ibuf => "00000000",
             sio_info => "00",
             sio_obuf => "00000000",

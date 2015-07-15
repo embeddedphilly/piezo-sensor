@@ -19,7 +19,7 @@ int main()
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     PWM_1_Start();
 
-    piezo_tempo(240);
+    piezo_tempo(100);
     
     //uint16 melody[] = {A4, B4, C4, 0, F4, 0, G4}; 
     
@@ -50,7 +50,14 @@ int main()
       D4, B4, 0, 0
     };
     
-    piezo_melody(melody, 80, QUARTER);
+    uint16 melody_simple[] = {
+        C4, WHOLE,      D4, WHOLE,
+        E4, WHOLE,      F4, WHOLE,
+        G4, WHOLE,      A4, WHOLE,
+        B4, WHOLE,      C5, WHOLE
+    };
+    
+    piezo_melody(melody_simple, 16);
     
     
     

@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: PWM_1.h
-* Version 1.10
+* Version 2.0
 *
 * Description:
 *  This file provides constants and parameter values for the PWM_1
@@ -19,6 +19,8 @@
 #if !defined(CY_TCPWM_PWM_1_H)
 #define CY_TCPWM_PWM_1_H
 
+
+#include "CyLib.h"
 #include "cytypes.h"
 #include "cyfitter.h"
 
@@ -45,6 +47,7 @@ extern uint8  PWM_1_initVar;
 ****************************************/
 
 #define PWM_1_CY_TCPWM_V2                    (CYIPBLOCK_m0s8tcpwm_VERSION == 2u)
+#define PWM_1_CY_TCPWM_4000                  (CY_PSOC4_4000)
 
 /* TCPWM Configuration */
 #define PWM_1_CONFIG                         (7lu)
@@ -262,12 +265,25 @@ extern uint8  PWM_1_initVar;
 #define PWM_1_PWM_MODE_RIGHT                 (PWM_1_CC_MATCH_SET          |   \
                                                          PWM_1_OVERLOW_NO_CHANGE     |   \
                                                          PWM_1_UNDERFLOW_CLEAR)
-#define PWM_1_PWM_MODE_CENTER                (PWM_1_CC_MATCH_INVERT       |   \
-                                                         PWM_1_OVERLOW_NO_CHANGE     |   \
-                                                         PWM_1_UNDERFLOW_CLEAR)
-#define PWM_1_PWM_MODE_ASYM                  (PWM_1_CC_MATCH_NO_CHANGE    |   \
+#define PWM_1_PWM_MODE_ASYM                  (PWM_1_CC_MATCH_INVERT       |   \
                                                          PWM_1_OVERLOW_SET           |   \
-                                                         PWM_1_UNDERFLOW_CLEAR )
+                                                         PWM_1_UNDERFLOW_CLEAR)
+
+#if (PWM_1_CY_TCPWM_V2)
+    #if(PWM_1_CY_TCPWM_4000)
+        #define PWM_1_PWM_MODE_CENTER                (PWM_1_CC_MATCH_INVERT       |   \
+                                                                 PWM_1_OVERLOW_NO_CHANGE     |   \
+                                                                 PWM_1_UNDERFLOW_CLEAR)
+    #else
+        #define PWM_1_PWM_MODE_CENTER                (PWM_1_CC_MATCH_INVERT       |   \
+                                                                 PWM_1_OVERLOW_SET           |   \
+                                                                 PWM_1_UNDERFLOW_CLEAR)
+    #endif /* (PWM_1_CY_TCPWM_4000) */
+#else
+    #define PWM_1_PWM_MODE_CENTER                (PWM_1_CC_MATCH_INVERT       |   \
+                                                             PWM_1_OVERLOW_NO_CHANGE     |   \
+                                                             PWM_1_UNDERFLOW_CLEAR)
+#endif /* (PWM_1_CY_TCPWM_NEW) */
 
 /* Command operations without condition */
 #define PWM_1_CMD_CAPTURE                    (0u)
@@ -458,7 +474,69 @@ void   PWM_1_Wakeup(void);
 *    Initial Constants
 ***************************************/
 
+#define PWM_1_CTRL_QUAD_BASE_CONFIG                                                          \
+        (((uint32)(PWM_1_QUAD_ENCODING_MODES     << PWM_1_QUAD_MODE_SHIFT))       |\
+         ((uint32)(PWM_1_CONFIG                  << PWM_1_MODE_SHIFT)))
+
+#define PWM_1_CTRL_PWM_BASE_CONFIG                                                           \
+        (((uint32)(PWM_1_PWM_STOP_EVENT          << PWM_1_PWM_STOP_KILL_SHIFT))   |\
+         ((uint32)(PWM_1_PWM_OUT_INVERT          << PWM_1_INV_OUT_SHIFT))         |\
+         ((uint32)(PWM_1_PWM_OUT_N_INVERT        << PWM_1_INV_COMPL_OUT_SHIFT))   |\
+         ((uint32)(PWM_1_PWM_MODE                << PWM_1_MODE_SHIFT)))
+
+#define PWM_1_CTRL_PWM_RUN_MODE                                                              \
+            ((uint32)(PWM_1_PWM_RUN_MODE         << PWM_1_ONESHOT_SHIFT))
+            
+#define PWM_1_CTRL_PWM_ALIGN                                                                 \
+            ((uint32)(PWM_1_PWM_ALIGN            << PWM_1_UPDOWN_SHIFT))
+
+#define PWM_1_CTRL_PWM_KILL_EVENT                                                            \
+             ((uint32)(PWM_1_PWM_KILL_EVENT      << PWM_1_PWM_SYNC_KILL_SHIFT))
+
+#define PWM_1_CTRL_PWM_DEAD_TIME_CYCLE                                                       \
+            ((uint32)(PWM_1_PWM_DEAD_TIME_CYCLE  << PWM_1_PRESCALER_SHIFT))
+
+#define PWM_1_CTRL_PWM_PRESCALER                                                             \
+            ((uint32)(PWM_1_PWM_PRESCALER        << PWM_1_PRESCALER_SHIFT))
+
+#define PWM_1_CTRL_TIMER_BASE_CONFIG                                                         \
+        (((uint32)(PWM_1_TC_PRESCALER            << PWM_1_PRESCALER_SHIFT))       |\
+         ((uint32)(PWM_1_TC_COUNTER_MODE         << PWM_1_UPDOWN_SHIFT))          |\
+         ((uint32)(PWM_1_TC_RUN_MODE             << PWM_1_ONESHOT_SHIFT))         |\
+         ((uint32)(PWM_1_TC_COMP_CAP_MODE        << PWM_1_MODE_SHIFT)))
+        
+#define PWM_1_QUAD_SIGNALS_MODES                                                             \
+        (((uint32)(PWM_1_QUAD_PHIA_SIGNAL_MODE   << PWM_1_COUNT_SHIFT))           |\
+         ((uint32)(PWM_1_QUAD_INDEX_SIGNAL_MODE  << PWM_1_RELOAD_SHIFT))          |\
+         ((uint32)(PWM_1_QUAD_STOP_SIGNAL_MODE   << PWM_1_STOP_SHIFT))            |\
+         ((uint32)(PWM_1_QUAD_PHIB_SIGNAL_MODE   << PWM_1_START_SHIFT)))
+
+#define PWM_1_PWM_SIGNALS_MODES                                                              \
+        (((uint32)(PWM_1_PWM_SWITCH_SIGNAL_MODE  << PWM_1_CAPTURE_SHIFT))         |\
+         ((uint32)(PWM_1_PWM_COUNT_SIGNAL_MODE   << PWM_1_COUNT_SHIFT))           |\
+         ((uint32)(PWM_1_PWM_RELOAD_SIGNAL_MODE  << PWM_1_RELOAD_SHIFT))          |\
+         ((uint32)(PWM_1_PWM_STOP_SIGNAL_MODE    << PWM_1_STOP_SHIFT))            |\
+         ((uint32)(PWM_1_PWM_START_SIGNAL_MODE   << PWM_1_START_SHIFT)))
+
+#define PWM_1_TIMER_SIGNALS_MODES                                                            \
+        (((uint32)(PWM_1_TC_CAPTURE_SIGNAL_MODE  << PWM_1_CAPTURE_SHIFT))         |\
+         ((uint32)(PWM_1_TC_COUNT_SIGNAL_MODE    << PWM_1_COUNT_SHIFT))           |\
+         ((uint32)(PWM_1_TC_RELOAD_SIGNAL_MODE   << PWM_1_RELOAD_SHIFT))          |\
+         ((uint32)(PWM_1_TC_STOP_SIGNAL_MODE     << PWM_1_STOP_SHIFT))            |\
+         ((uint32)(PWM_1_TC_START_SIGNAL_MODE    << PWM_1_START_SHIFT)))
+        
+#define PWM_1_TIMER_UPDOWN_CNT_USED                                                          \
+                ((PWM_1__COUNT_UPDOWN0 == PWM_1_TC_COUNTER_MODE)                  ||\
+                 (PWM_1__COUNT_UPDOWN1 == PWM_1_TC_COUNTER_MODE))
+
+#define PWM_1_PWM_UPDOWN_CNT_USED                                                            \
+                ((PWM_1__CENTER == PWM_1_PWM_ALIGN)                               ||\
+                 (PWM_1__ASYMMETRIC == PWM_1_PWM_ALIGN))               
+        
 #define PWM_1_PWM_PR_INIT_VALUE              (1u)
+#define PWM_1_QUAD_PERIOD_INIT_VALUE         (0x8000u)
+
+
 
 #endif /* End CY_TCPWM_PWM_1_H */
 

@@ -2,7 +2,7 @@
 --	Conversion of My First Project.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Jul 15 14:42:39 2015
+--	Wed Jul 15 18:13:56 2015
 --
 
 USE cypress.cypress.all;
@@ -12,31 +12,37 @@ ATTRIBUTE part_name of top_RTL:TYPE IS "cpsoc3";
 END top_RTL;
 --------------------------------------------------------
 ARCHITECTURE R_T_L OF top_RTL IS
-SIGNAL Net_12 : bit;
-SIGNAL zero : bit;
-SIGNAL one : bit;
+SIGNAL \PWM_1:Net_81\ : bit;
+SIGNAL \PWM_1:Net_75\ : bit;
+SIGNAL \PWM_1:Net_69\ : bit;
+SIGNAL \PWM_1:Net_66\ : bit;
+SIGNAL \PWM_1:Net_82\ : bit;
+SIGNAL \PWM_1:Net_72\ : bit;
 SIGNAL Net_36 : bit;
 SIGNAL Net_35 : bit;
 SIGNAL Net_37 : bit;
 SIGNAL Net_17 : bit;
 SIGNAL Net_18 : bit;
 SIGNAL Net_34 : bit;
+SIGNAL Net_12 : bit;
 SIGNAL tmpOE__PIEZO_PIN_net_0 : bit;
 SIGNAL tmpFB_0__PIEZO_PIN_net_0 : bit;
 SIGNAL tmpIO_0__PIEZO_PIN_net_0 : bit;
 TERMINAL tmpSIOVREF__PIEZO_PIN_net_0 : bit;
+SIGNAL zero : bit;
+SIGNAL one : bit;
 SIGNAL tmpINTERRUPT_0__PIEZO_PIN_net_0 : bit;
 BEGIN
 
 zero <=  ('0') ;
 
-one <=  ('1') ;
+tmpOE__PIEZO_PIN_net_0 <=  ('1') ;
 
 \PWM_1:cy_m0s8_tcpwm_1\:cy_m0s8_tcpwm_v1_0
 	GENERIC MAP(cy_registers=>"")
 	PORT MAP(clock=>Net_12,
 		capture=>zero,
-		count=>one,
+		count=>tmpOE__PIEZO_PIN_net_0,
 		reload=>zero,
 		stop=>zero,
 		start=>zero,
@@ -51,7 +57,7 @@ Clock_1:cy_clock_v1_0
 		id=>"c76bd55c-022b-4457-bf8f-af8f30084447",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"516528925.619835",
+		period=>"500000000",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>Net_12,
@@ -87,7 +93,7 @@ PIEZO_PIN:cy_psoc3_pins_v1_10
 		por_state=>4,
 		sio_group_cnt=>0,
 		sio_hifreq=>"",
-		sio_hyst=>"0",
+		sio_hyst=>"1",
 		sio_ibuf=>"00000000",
 		sio_info=>"00",
 		sio_obuf=>"00000000",
@@ -107,11 +113,11 @@ PIEZO_PIN:cy_psoc3_pins_v1_10
 		pa_out_clock=>-1,
 		pa_out_clock_en=>-1,
 		pa_out_reset=>-1,
-		ovt_needed=>"",
-		ovt_slew_control=>"",
-		ovt_hyst_trim=>"",
-		input_buffer_sel=>"")
-	PORT MAP(oe=>(one),
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(tmpOE__PIEZO_PIN_net_0),
 		y=>Net_17,
 		fb=>(tmpFB_0__PIEZO_PIN_net_0),
 		analog=>(open),
@@ -119,10 +125,10 @@ PIEZO_PIN:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__PIEZO_PIN_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>one,
+		in_clock_en=>tmpOE__PIEZO_PIN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>one,
+		out_clock_en=>tmpOE__PIEZO_PIN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__PIEZO_PIN_net_0);
 

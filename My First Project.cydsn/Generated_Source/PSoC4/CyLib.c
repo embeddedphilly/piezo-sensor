@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: CyLib.c
-* Version 4.11
+* Version 5.0
 *
 *  Description:
 *   Provides a system API for the clocking, interrupts, and watchdog timer.
@@ -10,13 +10,17 @@
 *   System Reference Guide provided with PSoC Creator.
 *
 ********************************************************************************
-* Copyright 2010-2014, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2010-2015, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
 *******************************************************************************/
 
 #include "CyLib.h"
+
+#if(CY_IP_SRSSV2 && CY_IP_FMLT)
+    #include "CyFlash.h"
+#endif /* (CY_IP_SRSSV2 && CY_IP_FMLT) */
 
 
 /* Do not use these definitions directly in your application */
@@ -27,12 +31,54 @@ uint32 cydelay32kMs   = CY_DELAY_MS_OVERFLOW * ((CYDEV_BCLK__SYSCLK__HZ + CY_DEL
                         CY_DELAY_1K_THRESHOLD);
 
 
+static cySysTickCallback CySysTickCallbacks[CY_SYS_SYST_NUM_OF_CALLBACKS];
+static void CySysTickServiceCallbacks(void);
+#if (CY_PSOC4_4100M || CY_PSOC4_4200M)
+    static uint32 CySysClkImoGetWcoLock(void);
+#endif  /* (CY_PSOC4_4100M || CY_PSOC4_4200M) */
+
+
+/*******************************************************************************
+* Indicates whether or not the SysTick has been initialized. The variable is
+* initialized to 0 and set to 1 the first time CySysTickStart() is called.
+*
+* This allows the component to restart without reinitialization after the first
+* call to the CySysTickStart() routine.
+*
+* If reinitialization of the SysTick is required, call CySysTickInit() before
+* calling CySysTickStart(). Alternatively, the SysTick can be reinitialized by
+* calling the CySysTickInit() and CySysTickEnable() functions.
+*******************************************************************************/
+uint32 CySysTickInitVar = 0u;
+
+
+#if(CY_IP_SRSSV2)
+        /* Conversion between CySysClkWriteImoFreq() parameter and register's value */
+        const uint8 cyImoFreqMhz2Reg[CY_SYS_CLK_IMO_FREQ_TABLE_SIZE] = {
+            /*  3 MHz */ 0x03u,  /*  4 MHz */ 0x04u,  /*  5 MHz */ 0x05u,  /*  6 MHz */ 0x06u,
+            /*  7 MHz */ 0x07u,  /*  8 MHz */ 0x08u,  /*  9 MHz */ 0x09u,  /* 10 MHz */ 0x0Au,
+            /* 11 MHz */ 0x0Bu,  /* 12 MHz */ 0x0Cu,  /* 13 MHz */ 0x0Eu,  /* 14 MHz */ 0x0Fu,
+            /* 15 MHz */ 0x10u,  /* 16 MHz */ 0x11u,  /* 17 MHz */ 0x12u,  /* 18 MHz */ 0x13u,
+            /* 19 MHz */ 0x14u,  /* 20 MHz */ 0x15u,  /* 21 MHz */ 0x16u,  /* 22 MHz */ 0x17u,
+            /* 23 MHz */ 0x18u,  /* 24 MHz */ 0x19u,  /* 25 MHz */ 0x1Bu,  /* 26 MHz */ 0x1Cu,
+            /* 27 MHz */ 0x1Du,  /* 28 MHz */ 0x1Eu,  /* 29 MHz */ 0x1Fu,  /* 30 MHz */ 0x20u,
+            /* 31 MHz */ 0x21u,  /* 32 MHz */ 0x22u,  /* 33 MHz */ 0x23u,  /* 34 MHz */ 0x25u,
+            /* 35 MHz */ 0x26u,  /* 36 MHz */ 0x27u,  /* 37 MHz */ 0x28u,  /* 38 MHz */ 0x29u,
+            /* 39 MHz */ 0x2Au,  /* 40 MHz */ 0x2Bu,  /* 41 MHz */ 0x2Eu,  /* 42 MHz */ 0x2Fu,
+            /* 43 MHz */ 0x30u,  /* 44 MHz */ 0x31u,  /* 45 MHz */ 0x32u,  /* 46 MHz */ 0x33u,
+            /* 47 MHz */ 0x34u,  /* 48 MHz */ 0x35u };
+#endif /* (CY_IP_SRSSV2) */
+
+
 /*******************************************************************************
 * Function Name: CySysClkImoStart
 ********************************************************************************
 *
 * Summary:
 *  Enables the IMO.
+*
+*  For PSoC 4100M / PSoC 4200M devices, this function will also enable WCO lock
+*  if selected in the Design Wide Resources tab.
 *
 * Parameters:
 *  None
@@ -44,6 +90,13 @@ uint32 cydelay32kMs   = CY_DELAY_MS_OVERFLOW * ((CYDEV_BCLK__SYSCLK__HZ + CY_DEL
 void CySysClkImoStart(void)
 {
     CY_SYS_CLK_IMO_CONFIG_REG |= CY_SYS_CLK_IMO_CONFIG_ENABLE;
+
+    #if (CY_PSOC4_4100M || CY_PSOC4_4200M)
+        #if (CYDEV_IMO_TRIMMED_BY_WCO == 1u)
+            CySysClkImoEnableWcoLock();
+        #endif  /* (CYDEV_IMO_TRIMMED_BY_WCO == 1u) */
+    #endif  /* (CY_PSOC4_4100M || CY_PSOC4_4200M) */
+
 }
 
 
@@ -54,6 +107,9 @@ void CySysClkImoStart(void)
 * Summary:
 *  Disables the IMO.
 *
+*  For PSoC 4100M/PSoC 4200M devices , this function will also disable WCO lock
+*  if already enabled.
+*
 * Parameters:
 *  None
 *
@@ -63,53 +119,130 @@ void CySysClkImoStart(void)
 *******************************************************************************/
 void CySysClkImoStop(void)
 {
+    #if (CY_PSOC4_4100M || CY_PSOC4_4200M)
+        CySysClkImoDisableWcoLock();
+    #endif  /* #if (CY_PSOC4_4100M || CY_PSOC4_4200M) */
+
     CY_SYS_CLK_IMO_CONFIG_REG &= ( uint32 ) ( ~( uint32 )CY_SYS_CLK_IMO_CONFIG_ENABLE);
 }
 
+#if (CY_PSOC4_4100M || CY_PSOC4_4200M)
 
-/*******************************************************************************
-* Function Name: CySysClkIloStart
-********************************************************************************
-*
-* Summary:
-*  Enables the ILO.
-*
-* Parameters:
-*  None
-*
-* Return:
-*  None
-*
-*******************************************************************************/
-void CySysClkIloStart(void)
-{
-    CY_SYS_CLK_ILO_CONFIG_REG |= CY_SYS_CLK_ILO_CONFIG_ENABLE;
-}
+    /*******************************************************************************
+    * Function Name: CySysClkImoEnableWcoLock
+    ********************************************************************************
+    *
+    * Summary:
+    *  Enables the IMO to WCO lock feature. This function works only if the WCO is
+    *  already enabled. If the WCO is not enabled then this function returns
+    *  without enabling the lock feature.
+    *
+    *  This function is applicable for PSoC 4100M/PSoC 4200M devices only.
+    *
+    * Parameters:
+    *  None
+    *
+    * Return:
+    *  None
+    *
+    *******************************************************************************/
+    void CySysClkImoEnableWcoLock(void)
+    {
+        uint32 i;
+        uint32 freq = CY_SYS_CLK_IMO_MIN_FREQ_MHZ;
+        uint8  interruptState;
+        uint32 regTmp;
+        volatile uint32 flashCtlReg;
+
+        if (0u != CySysClkWcoEnabled())
+        {
+            interruptState = CyEnterCriticalSection();
+
+            /* Get current IMO frequency based on the register value */
+            for(i = 0u; i < CY_SYS_CLK_IMO_FREQ_TABLE_SIZE; i++)
+            {
+                if ((uint8) (CY_SYS_CLK_IMO_TRIM2_REG & CY_SYS_CLK_IMO_FREQ_BITS_MASK) == cyImoFreqMhz2Reg[i])
+                {
+                    freq = i + CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET;
+                    break;
+                }
+            }
+
+            if ((CY_SYS_CLK_IMO_TRIM4_REG & CY_SYS_CLK_IMO_TRIM4_GAIN_MASK) == 0u)
+            {
+			    CY_SYS_CLK_IMO_TRIM4_REG = (CY_SYS_CLK_IMO_TRIM4_REG & (uint32) ~CY_SYS_CLK_IMO_TRIM4_GAIN_MASK) |
+			             				    CY_SYS_CLK_IMO_TRIM4_GAIN;
+            }
+
+            regTmp  = CY_SYS_CLK_WCO_DPLL_REG & ~(CY_SYS_CLK_WCO_DPLL_MULT_MASK |
+                                                  CY_SYS_CLK_WCO_CONFIG_DPLL_LF_IGAIN_MASK |
+                                                  CY_SYS_CLK_WCO_CONFIG_DPLL_LF_PGAIN_MASK);
+
+            /* Set multiplier to determine IMO frequency in multiples of the WCO frequency */
+            regTmp |= (CY_SYS_CLK_WCO_DPLL_MULT_VALUE(freq) & CY_SYS_CLK_WCO_DPLL_MULT_MASK);
+
+            /* Set DPLL Loop Filter Integral and Proportional Gains Setting */
+            regTmp |= (CY_SYS_CLK_WCO_CONFIG_DPLL_LF_IGAIN | CY_SYS_CLK_WCO_CONFIG_DPLL_LF_PGAIN);
+
+            CY_SYS_CLK_WCO_DPLL_REG = regTmp;
+
+            flashCtlReg = CY_FLASH_CTL_REG;
+            CySysFlashSetWaitCycles(CY_SYS_CLK_IMO_MAX_FREQ_MHZ);
+            CY_SYS_CLK_WCO_CONFIG_REG |= CY_SYS_CLK_WCO_CONFIG_DPLL_ENABLE;
+            CyDelay(320u);
+            CY_FLASH_CTL_REG = flashCtlReg;
+
+            CyExitCriticalSection(interruptState);
+        }
+    }
 
 
-/*******************************************************************************
-* Function Name: CySysClkIloStop
-********************************************************************************
-*
-* Summary:
-*  Disables the ILO.
-*
-* Parameters:
-*  None
-*
-* Return:
-*  None
-*
-* Side Effects:
-*  This function will have no effect if the WDT is locked (CySysWdtLock() is
-*  called). Call CySysWdtUnlock() to unlock the WDT and be able to stop ILO.
-*  Note that ILO is required for the WDT's operation.
-*
-*******************************************************************************/
-void CySysClkIloStop(void)
-{
-    CY_SYS_CLK_ILO_CONFIG_REG &= ( uint32 ) ( ~( uint32 )CY_SYS_CLK_ILO_CONFIG_ENABLE);
-}
+    /*******************************************************************************
+    * Function Name: CySysClkImoDisableWcoLock
+    ********************************************************************************
+    *
+    * Summary:
+    *  Disables the IMO to WCO lock feature.
+    *
+    *  This function is applicable for PSoC 4100M/PSoC 4200M devices only.
+    *
+    * Parameters:
+    *  None
+    *
+    * Return:
+    *  None
+    *
+    *******************************************************************************/
+    void CySysClkImoDisableWcoLock(void)
+    {
+        CY_SYS_CLK_WCO_CONFIG_REG &= (uint32) ~CY_SYS_CLK_WCO_CONFIG_DPLL_ENABLE;
+    }
+
+
+    /*******************************************************************************
+    * Function Name: CySysClkImoGetWcoLock
+    ********************************************************************************
+    *
+    * Summary:
+    *  Reports the IMO to WCO lock enable state.
+    *
+    *  This function is applicable for PSoC 4100M/PSoC 4200M devices only.
+    *
+    * Parameters:
+    *  None
+    *
+    * Return:
+    *  1 if IMO to WCO lock is enabled, and 0 if IMO to WCO lock is disabled.
+    *
+    *******************************************************************************/
+    static uint32 CySysClkImoGetWcoLock(void)
+    {
+        return ((0u != (CY_SYS_CLK_WCO_CONFIG_REG & CY_SYS_CLK_WCO_CONFIG_DPLL_ENABLE)) ?
+                (uint32) 1u :
+                (uint32) 0u);
+    }
+
+#endif /* (CY_PSOC4_4100M || CY_PSOC4_4200M) */
 
 
 /*******************************************************************************
@@ -121,21 +254,26 @@ void CySysClkIloStop(void)
 *
 * Parameters:
 *  clkSelect: One of the available HFCLK direct sources:
-*   Value        Define                    Source
-*    0            CY_SYS_CLK_HFCLK_IMO      IMO
-*    1            CY_SYS_CLK_HFCLK_EXTCLK   External clock pin
+*   Define                    Source
+*    CY_SYS_CLK_HFCLK_IMO     IMO
+*    CY_SYS_CLK_HFCLK_EXTCLK  External clock pin
+*    CY_SYS_CLK_HFCLK_ECO     External crystal oscillator
+*                             (applicable only for PSoC 4100-BL / PSoC 4200-BL)
 *
 * Return:
 *  None
 *
 * Side Effects:
 *  The new source must be running and stable before calling this function.
-*  Direct source is a default option for HFCLK.
+*
+*  PSoC 4000:
+*  The SYSCLK has a maximum speed of 16 MHz, so HFCLK and SYSCLK dividers should
+*  be selected in a way to not to exceed 16 MHz for the System clock.
 *
 *  If the SYSCLK clock frequency increases during device operation, call
 *  CySysFlashSetWaitCycles() with the appropriate parameter to adjust the number
-*  of clock cycles the cache will wait before sampling data comes back from Flash.
-*  If the SYSCLK clock frequency decreases, you can call
+*  of clock cycles the cache will wait before sampling data comes back from
+*  Flash. If the SYSCLK clock frequency decreases, you can call
 *  CySysFlashSetWaitCycles() to improve the CPU performance. See
 *  CySysFlashSetWaitCycles() description for more information.
 *
@@ -158,7 +296,7 @@ void CySysClkWriteHfclkDirect(uint32 clkSelect)
 ********************************************************************************
 *
 * Summary:
-*  Selects SYSCLK from HFCLK pre-scaler value.
+*  Selects the prescaler divide amount for SYSCLK from HFCLK.
 *
 * Parameters:
 *  divider: Power of 2 prescaler selection
@@ -183,8 +321,8 @@ void CySysClkWriteHfclkDirect(uint32 clkSelect)
 *
 *  If the SYSCLK clock frequency increases during the device operation, call
 *  CySysFlashSetWaitCycles() with the appropriate parameter to adjust the number
-*  of clock cycles the cache will wait before sampling data comes?? back from Flash.
-*  If the SYSCLK clock frequency decreases, you can call
+*  of clock cycles the cache will wait before sampling data comes back from
+*  Flash. If the SYSCLK clock frequency decreases, you can call
 *  CySysFlashSetWaitCycles() to improve the CPU performance. See
 *  CySysFlashSetWaitCycles() description for more information.
 *
@@ -204,69 +342,101 @@ void CySysClkWriteSysclkDiv(uint32 divider)
 }
 
 
-#if(CY_PSOC4A)
-
-    /*******************************************************************************
-    * Function Name: CySysClkWriteImoFreq
-    ********************************************************************************
-    *
-    * Summary:
-    *  Sets the frequency of the IMO.
-    *
-    * Parameters:
-    *  freq: Valid range [3-48].  Frequency for operation of the IMO.
-    *  Note: Invalid frequency will be ignored.
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  If the SYSCLK clock frequency increases during the device operation, call
-    *  CySysFlashSetWaitCycles() with the appropriate parameter to adjust the number
-    *  of clock cycles the cache will wait before sampling data comes back from Flash.
-    *  If the SYSCLK clock frequency decreases, you can call
-    *  CySysFlashSetWaitCycles() to improve the CPU performance.
-    *  See CySysFlashSetWaitCycles() description for more information.
-    *
-    *******************************************************************************/
+/*******************************************************************************
+* Function Name: CySysClkWriteImoFreq
+********************************************************************************
+*
+* Summary:
+*  Sets the frequency of the IMO.
+*
+*  If IMO is currently driving the HFCLK, and if the HFCLK frequency decreases,
+*  you can call CySysFlashSetWaitCycles () to improve CPU performance. See
+*  CySysFlashSetWaitCycles () for more information.
+*
+*  For PSoC 4000 family of devices, maximum HFCLK frequency is 16 MHz. If IMO is
+*  configured to frequencies above 16 MHz, ensure to set the appropriate HFCLK
+*  predivider value first.
+*
+*  For PSoC 4100M/PSoC 4200M devices, if WCO lock feature is enabled then this
+*  API will disable the lock, write the new IMO frequency and then re-enable the
+*  lock.
+*
+* Parameters:
+*  All PSoC 4 families excluding PSoC 4000: Valid range [3-48] with step size
+*  equals 1.
+*
+*  PSoC 4000: Valid range [24-48] with step size equals 4.
+*
+*  Note: The CPU is halted if new frequency is invalid and project is
+*  compiled in debug mode.
+*
+* Return:
+*  None
+*
+* Side Effects:
+*  If the SYSCLK clock frequency increases during the device operation, call
+*  CySysFlashSetWaitCycles() with the appropriate parameter to adjust the number
+*  of clock cycles the cache will wait before sampling data comes back from
+*  Flash. If the SYSCLK clock frequency decreases, you can call
+*  CySysFlashSetWaitCycles() to improve the CPU performance. See
+*  CySysFlashSetWaitCycles() description for more information.
+*
+*  PSoC 4000: The System Clock (SYSCLK) has maximum speed of 16 MHz, so HFCLK
+*  and SYSCLK dividers should be selected in a way, to not to exceed 16 MHz for
+*  the System clock.
+*
+*******************************************************************************/
+#if(CY_IP_SRSSV2)
     void CySysClkWriteImoFreq(uint32 freq)
     {
-        uint8  bgTrim4;
-        uint8  bgTrim5;
-        uint32 currentFreq = CY_SYS_CLK_IMO_MAX_FREQ_MHZ;
+        #if (CY_IP_FMLT)
+            volatile uint32   parameters[2u];
+            volatile uint32   regValues[4u];
+        #else
+            uint8  bgTrim4;
+            uint8  bgTrim5;
+            uint8  newImoTrim2Value;
+            uint8  currentImoTrim2Value;
+        #endif /* (CY_IP_FM) */
+
+        #if (CY_PSOC4_4100M || CY_PSOC4_4200M)
+            uint32 wcoLock = 0u;
+        #endif  /* #if (CY_PSOC4_4100M || CY_PSOC4_4200M) */
+
         uint8  interruptState;
-        uint32 i;
 
-        /* Convertion between CySysClkWriteImoFreq() parameter and register's value */
-        static const uint8 cyImoFreqMhz2Reg[CY_SYS_CLK_IMO_FREQ_TABLE_SIZE] = {
-            /*  3 MHz */ 0x03u,  /*  4 MHz */ 0x04u,  /*  5 MHz */ 0x05u,  /*  6 MHz */ 0x06u,
-            /*  7 MHz */ 0x07u,  /*  8 MHz */ 0x08u,  /*  9 MHz */ 0x09u,  /* 10 MHz */ 0x0Au,
-            /* 11 MHz */ 0x0Bu,  /* 12 MHz */ 0x0Cu,  /* 13 MHz */ 0x0Eu,  /* 14 MHz */ 0x0Fu,
-            /* 15 MHz */ 0x10u,  /* 16 MHz */ 0x11u,  /* 17 MHz */ 0x12u,  /* 18 MHz */ 0x13u,
-            /* 19 MHz */ 0x14u,  /* 20 MHz */ 0x15u,  /* 21 MHz */ 0x16u,  /* 22 MHz */ 0x17u,
-            /* 23 MHz */ 0x18u,  /* 24 MHz */ 0x19u,  /* 25 MHz */ 0x1Bu,  /* 26 MHz */ 0x1Cu,
-            /* 27 MHz */ 0x1Du,  /* 28 MHz */ 0x1Eu,  /* 29 MHz */ 0x1Fu,  /* 30 MHz */ 0x20u,
-            /* 31 MHz */ 0x21u,  /* 32 MHz */ 0x22u,  /* 33 MHz */ 0x23u,  /* 34 MHz */ 0x25u,
-            /* 35 MHz */ 0x26u,  /* 36 MHz */ 0x27u,  /* 37 MHz */ 0x28u,  /* 38 MHz */ 0x29u,
-            /* 39 MHz */ 0x2Au,  /* 40 MHz */ 0x2Bu,  /* 41 MHz */ 0x2Eu,  /* 42 MHz */ 0x2Fu,
-            /* 43 MHz */ 0x30u,  /* 44 MHz */ 0x31u,  /* 45 MHz */ 0x32u,  /* 46 MHz */ 0x33u,
-            /* 47 MHz */ 0x34u,  /* 48 MHz */ 0x35u };
 
+        interruptState = CyEnterCriticalSection();
+
+        #if (CY_PSOC4_4100M || CY_PSOC4_4200M)
+            if(0u != CySysClkImoGetWcoLock())
+            {
+                wcoLock = 1u;
+                CySysClkImoDisableWcoLock();
+            }
+        #endif  /* #if (CY_PSOC4_4100M || CY_PSOC4_4200M) */
+
+        #if (CY_IP_FMLT)
+
+            /* FM-Lite Clock Restore */
+            regValues[0u] = CY_SYS_CLK_IMO_CONFIG_REG;
+            regValues[1u] = CY_SYS_CLK_SELECT_REG;
+            regValues[2u] = cyImoFreqMhz2Reg[freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET];
+            regValues[3u] = CY_FLASH_CTL_REG;
+
+            parameters[0u] =
+                (uint32) ((CY_FLASH_KEY_TWO(CY_FLASH_API_OPCODE_CLK_RESTORE) <<  CY_FLASH_PARAM_KEY_TWO_OFFSET) |
+                            CY_FLASH_KEY_ONE);
+            parameters[1u] = (uint32) &regValues[0u];
+
+            CY_FLASH_CPUSS_SYSARG_REG = (uint32) &parameters[0u];
+            CY_FLASH_CPUSS_SYSREQ_REG = CY_FLASH_CPUSS_REQ_START | CY_FLASH_API_OPCODE_CLK_RESTORE;
+            (void) CY_FLASH_CPUSS_SYSARG_REG;
+
+        #else /* (CY_IP_FM) */
 
         if ((freq >= CY_SYS_CLK_IMO_MIN_FREQ_MHZ) && (freq <= CY_SYS_CLK_IMO_MAX_FREQ_MHZ))
         {
-            interruptState = CyEnterCriticalSection();
-
-            /* Get current IMO frequency */
-            for (i = 0u; i < CY_SYS_CLK_IMO_FREQ_TABLE_SIZE; i++)
-            {
-                if (cyImoFreqMhz2Reg[i] == (CY_SYS_CLK_IMO_TRIM2_REG & CY_SYS_CLK_IMO_FREQ_BITS_MASK))
-                {
-                    currentFreq = i + CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET;
-                    break;
-                }
-            }
-
             if(freq <= CY_SFLASH_IMO_MAXF0_REG)
             {
                 bgTrim4 = CY_SFLASH_IMO_ABS0_REG;
@@ -293,13 +463,20 @@ void CySysClkWriteSysclkDiv(uint32 divider)
                 bgTrim5 = CY_SFLASH_IMO_TMPCO4_REG;
             }
 
+            /* Get IMO_TRIM2 value for the new frequency */
+            newImoTrim2Value = cyImoFreqMhz2Reg[freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET];
 
-            /***************************************************************************
+
+            /**********************************************`*****************************
             * The IMO can have a different trim per frequency. To avoid possible corner
             * cases where a trim change can exceed the maximum frequency, the trim must
             * be applied at a frequency that is low enough.
+            *
+            * Comparing IMO_TRIM2 values for the current and new frequencies, since
+            * IMO_TRIM2 value as a function of IMO frequency is a strictly increasing
+            * function and is time-invariant.
             ***************************************************************************/
-            if ((currentFreq >= CY_SYS_CLK_IMO_BOUNDARY_FREQ_MHZ) && (freq >= CY_SYS_CLK_IMO_BOUNDARY_FREQ_MHZ))
+            if ((newImoTrim2Value >= CY_SYS_CLK_IMO_BOUNDARY_FREQ_TRIM2) && (freq >= CY_SYS_CLK_IMO_BOUNDARY_FREQ_MHZ))
             {
                 /* Set boundary IMO frequency: safe for IMO above 48 MHZ trimming */
                 CY_SYS_CLK_IMO_TRIM2_REG = (uint32) cyImoFreqMhz2Reg[CY_SYS_CLK_IMO_TEMP_FREQ_MHZ -
@@ -307,124 +484,62 @@ void CySysClkWriteSysclkDiv(uint32 divider)
 
                 CyDelayCycles(CY_SYS_CLK_IMO_FREQ_TIMEOUT_CYCLES);
 
-                currentFreq = CY_SYS_CLK_IMO_TEMP_FREQ_MHZ;
+                currentImoTrim2Value = CY_SYS_CLK_IMO_TEMP_FREQ_TRIM2;
+            }
+            else
+            {
+                currentImoTrim2Value = (uint8) (CY_SYS_CLK_IMO_TRIM2_REG & CY_SYS_CLK_IMO_FREQ_BITS_MASK);
             }
 
 
             /***************************************************************************
-            * A trim change needs to be allowed to settle (within 5us) before the Freq can be
-            * changed to a new frequency.
+            * A trim change needs to be allowed to settle (within 5us) before the Freq
+            * can be changed to a new frequency.
+            *
+            * Comparing IMO_TRIM2 values for the current and new frequencies, since
+            * IMO_TRIM2 value as a function of IMO frequency is a strictly increasing
+            * function and is time-invariant.
             ***************************************************************************/
-            if (freq > currentFreq)
-            {
-                /* Set trims for the new IMO frequency */
-                CY_SYS_CLK_IMO_TRIM1_REG = (uint32) CY_SFLASH_IMO_TRIM_REG(freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET);
-                CY_PWR_BG_TRIM4_REG  = bgTrim4;
-                CY_PWR_BG_TRIM5_REG  = bgTrim5;
-                CyDelayUs(CY_SYS_CLK_IMO_TRIM_TIMEOUT_US);
-
-                /* Set new IMO frequency */
-                CY_SYS_CLK_IMO_TRIM2_REG = cyImoFreqMhz2Reg[freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET];
-                CyDelayCycles(CY_SYS_CLK_IMO_FREQ_TIMEOUT_CYCLES);
-            }
-            else
+            if (newImoTrim2Value < currentImoTrim2Value)
             {
                 /* Set new IMO frequency */
                 CY_SYS_CLK_IMO_TRIM2_REG = cyImoFreqMhz2Reg[freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET];
                 CyDelayCycles(CY_SYS_CLK_IMO_FREQ_TIMEOUT_CYCLES);
-
-                /* Set trims for the new IMO frequency */
-                CY_SYS_CLK_IMO_TRIM1_REG = CY_SFLASH_IMO_TRIM_REG(freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET);
-                CY_PWR_BG_TRIM4_REG  = bgTrim4;
-                CY_PWR_BG_TRIM5_REG  = bgTrim5;
-                CyDelayUs(CY_SYS_CLK_IMO_TRIM_TIMEOUT_US);
             }
 
-            CyExitCriticalSection(interruptState);
+            /* Set trims for the new IMO frequency */
+            CY_SYS_CLK_IMO_TRIM1_REG = (uint32) CY_SFLASH_IMO_TRIM_REG(freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET);
+            CY_PWR_BG_TRIM4_REG  = bgTrim4;
+            CY_PWR_BG_TRIM5_REG  = bgTrim5;
+            CyDelayUs(CY_SYS_CLK_IMO_TRIM_TIMEOUT_US);
+
+            if (newImoTrim2Value > currentImoTrim2Value)
+            {
+                /* Set new IMO frequency */
+                CY_SYS_CLK_IMO_TRIM2_REG = cyImoFreqMhz2Reg[freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET];
+                CyDelayCycles(CY_SYS_CLK_IMO_FREQ_TIMEOUT_CYCLES);
+            }
         }
         else
         {
             /* Halt CPU in debug mode if new frequency is invalid */
             CYASSERT(0u != 0u);
         }
-    }
 
+        #endif /* (CY_IP_FMLT) */
 
-#else
-
-
-    /*******************************************************************************
-    * Function Name: CySysClkWriteHfclkDiv
-    ********************************************************************************
-    *
-    * Summary:
-    *  Selects HF clk predivider value.
-    *
-    * Parameters:
-    *  divider: HF clock divider value
-    *   Define                        Description
-    *   CY_SYS_CLK_HFCLK_DIV_NODIV    Transparent mode (w/o dividing)
-    *   CY_SYS_CLK_HFCLK_DIV_2        Divide selected clock source by 2
-    *   CY_SYS_CLK_HFCLK_DIV_4        Divide selected clock source by 4
-    *   CY_SYS_CLK_HFCLK_DIV_8        Divide selected clock source by 8
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  If the SYSCLK clock frequency increases during the device operation, call
-    *  CySysFlashSetWaitCycles() with the appropriate parameter to adjust the number
-    *  of clock cycles the cache will wait before sampling data comes back from Flash.
-    *  If the SYSCLK clock frequency decreases, you can call
-    *  CySysFlashSetWaitCycles() to improve the CPU performance. See
-    *  CySysFlashSetWaitCycles() description for more information.
-    *
-
-    *
-    *******************************************************************************/
-    void CySysClkWriteHfclkDiv(uint32 divider)
-    {
-        uint8  interruptState;
-
-        interruptState = CyEnterCriticalSection();
-
-        CY_SYS_CLK_SELECT_REG = ((CY_SYS_CLK_SELECT_REG & ((uint32) (~(CY_SYS_CLK_SELECT_HFCLK_DIV_MASK <<
-                                        CY_SYS_CLK_SELECT_HFCLK_DIV_SHIFT)))) |
-                    ((uint32)((divider & CY_SYS_CLK_SELECT_HFCLK_DIV_MASK) << CY_SYS_CLK_SELECT_HFCLK_DIV_SHIFT)));
+        #if (CY_PSOC4_4100M || CY_PSOC4_4200M)
+            if (1u == wcoLock)
+            {
+                CySysClkImoEnableWcoLock();
+            }
+        #endif  /* #if (CY_PSOC4_4100M || CY_PSOC4_4200M) */
 
         CyExitCriticalSection(interruptState);
     }
 
+#else
 
-    /*******************************************************************************
-    * Function Name: CySysClkWriteImoFreq
-    ********************************************************************************
-    *
-    * Summary:
-    *  Sets the frequency of the IMO.
-    *
-    * Parameters:
-    *  freq: Valid values are 24, 32 and 48 MHz.
-    *
-    *  Note: The CPU is halted if new frequency is invalid and project is
-    *  compiled in debug mode.
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  If the SYSCLK clock frequency increases during the device operation, call
-    *  CySysFlashSetWaitCycles() with the appropriate parameter to adjust the number
-    *  of clock cycles the cache will wait before sampling data comes back from Flash.
-    *  If the SYSCLK clock frequency decreases, you can call
-    *  CySysFlashSetWaitCycles() to improve the CPU performance. See
-    *  CySysFlashSetWaitCycles() description for more information.
-    *
-    *  The System Clock (SYSCLK) has maximum speed of 16 MHz, so HFCLK and SYSCLK
-    *  dividers should be selected in a way, to not to exceed 16 MHz for the System
-    *  clock.
-    *
-    *******************************************************************************/
     void CySysClkWriteImoFreq(uint32 freq)
     {
         uint8  interruptState;
@@ -447,7 +562,7 @@ void CySysClkWriteSysclkDiv(uint32 divider)
             CY_SYS_CLK_IMO_TRIM3_REG = (CY_SYS_CLK_IMO_TRIM3_REG & ((uint32) ~CY_SYS_CLK_IMO_TRIM3_VALUES_MASK)) |
                 (CY_SFLASH_IMO_TCTRIM_REG(freq - CY_SYS_CLK_IMO_MIN_FREQ_MHZ) & CY_SYS_CLK_IMO_TRIM3_VALUES_MASK);
 
-            CyDelayCycles(50u);
+            CyDelayCycles(CY_SYS_CLK_IMO_TRIM_DELAY_US);
 
             if (freq > CY_SYS_CLK_IMO_MIN_FREQ_MHZ)
             {
@@ -455,7 +570,7 @@ void CySysClkWriteSysclkDiv(uint32 divider)
                 CY_SYS_CLK_IMO_SELECT_REG = (CY_SYS_CLK_IMO_SELECT_REG & ((uint32) ~CY_SYS_CLK_IMO_SELECT_FREQ_MASK)) |
                     (((freq - 4u - CY_SYS_CLK_IMO_MIN_FREQ_MHZ) >> 2u) & CY_SYS_CLK_IMO_SELECT_FREQ_MASK);
 
-                CyDelayCycles(50u);
+                CyDelayCycles(CY_SYS_CLK_IMO_TRIM_DELAY_US);
 
                 /* Make small step to final frequency */
                 /* Select nearby intermediate frequency */
@@ -472,1019 +587,229 @@ void CySysClkWriteSysclkDiv(uint32 divider)
         }
     }
 
-#endif /* (CY_PSOC4A) */
+#endif /* (CY_IP_SRSSV2) */
 
 
-#if(CY_PSOC4A)
-
+#if(CY_IP_SRSSLT)
     /*******************************************************************************
-    * Function Name: CySysWdtLock
+    * Function Name: CySysClkWriteHfclkDiv
     ********************************************************************************
     *
     * Summary:
-    *  Locks out configuration changes to the Watchdog timer registers and ILO
-    *  config register.
+    *  Selects the pre-scaler divider value for HFCLK from IMO.
+    *
+    *  The HFCLK predivider allows the device to divide the HFCLK selection mux
+    *  input before use as HFCLK. The predivider is capable of dividing the HFCLK by
+    *  powers of 2 between 1 and 8.
+    *
+    *  Note HFCLK's frequency cannot exceed 16 MHz. This API is applicable for
+    *  PSoC 4000 family of devices only.
+    *
     *
     * Parameters:
-    *  None
+    *  divider: HF clock divider value
+    *   Define                        Description
+    *   CY_SYS_CLK_HFCLK_DIV_NODIV    Transparent mode (w/o dividing)
+    *   CY_SYS_CLK_HFCLK_DIV_2        Divide selected clock source by 2
+    *   CY_SYS_CLK_HFCLK_DIV_4        Divide selected clock source by 4
+    *   CY_SYS_CLK_HFCLK_DIV_8        Divide selected clock source by 8
     *
     * Return:
     *  None
     *
-    * Side effects:
-    *  This API enables ILO, if it was disabled.
-    *  After this API was called, ILO clock can't be disabled until
-    *  CySysWdtUnlock() is called.
+    * Side Effects:
+    *  If the SYSCLK clock frequency increases during the device operation, call
+    *  CySysFlashSetWaitCycles() with the appropriate parameter to adjust the number
+    *  of clock cycles the cache will wait before sampling data comes back from
+    *  Flash. If the SYSCLK clock frequency decreases, you can call
+    *  CySysFlashSetWaitCycles() to improve the CPU performance. See
+    *  CySysFlashSetWaitCycles() description for more information.
     *
     *******************************************************************************/
-    void CySysWdtLock(void)
+    void CySysClkWriteHfclkDiv(uint32 divider)
     {
-        uint8 interruptState;
+        uint8  interruptState;
+
         interruptState = CyEnterCriticalSection();
 
-        /* Configuring WDT involves passing control signals between clock domains,
-        * which requires ILO to be enabled.
-        */
-        if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
-        {
-            CySysClkIloStart();
-        }
-
-        /* CLK_SELECT register's bits 15:14 are WDT_LOCK */
-        CY_SYS_CLK_SELECT_REG = (CY_SYS_CLK_SELECT_REG & (uint32)(~CY_SYS_WDT_CLK_LOCK_BITS_MASK)) |
-                 CY_SYS_WDT_CLK_LOCK_BITS_MASK;
+        CY_SYS_CLK_SELECT_REG = ((CY_SYS_CLK_SELECT_REG & ((uint32) (~(CY_SYS_CLK_SELECT_HFCLK_DIV_MASK <<
+                                        CY_SYS_CLK_SELECT_HFCLK_DIV_SHIFT)))) |
+                    ((uint32)((divider & CY_SYS_CLK_SELECT_HFCLK_DIV_MASK) << CY_SYS_CLK_SELECT_HFCLK_DIV_SHIFT)));
 
         CyExitCriticalSection(interruptState);
     }
+#endif /* (CY_IP_SRSSLT) */
 
+
+#if (CY_PSOC4_4100BL || CY_PSOC4_4200BL)
 
     /*******************************************************************************
-    * Function Name: CySysWdtUnlock
+    * Function Name: CySysClkEcoStart
     ********************************************************************************
     *
     * Summary:
-    *  Unlocks the Watchdog Timer configuration register.
+    *  Starts the External Crystal Oscillator (ECO). Refer to the device datasheet
+    *  for the ECO startup time.
+    *
+    *  The timeout interval is measured based on the system frequency defined by
+    *  PSoC Creator at build time. If System clock frequency is changed in
+    *  runtime, the CyDelayFreq() with the appropriate parameter should be called.
     *
     * Parameters:
-    *  None
+    *  timeoutUs: Timeout in microseconds. If zero is specified, the function
+    *             starts the crystal and returns CYRET_SUCCESS. If non-zero
+    *             value is passed, the CYRET_SUCCESS is returned once crystal
+    *             is oscillating and amplitude reached 60% and it does not mean
+    *             24 MHz crystal is within 50 ppm. If it is not oscillating or
+    *             amplitude didn't reach 60% after specified amount of time, the
+    *             CYRET_TIMEOUT is returned.
     *
     * Return:
-    *  None
-    *
-    * Side effects:
-    *  This API enables ILO, if it was disabled.
+    *   CYRET_SUCCESS - Completed successfully. The ECO is oscillating and amplitude
+    *                   reached 60% and it does not mean 24 MHz crystal is within
+    *                   50 ppm.
+    *   CYRET_TIMEOUT - Timeout occurred.
     *
     *******************************************************************************/
-    void CySysWdtUnlock(void)
+    cystatus CySysClkEcoStart(uint32 timeoutUs)
     {
-        uint8 interruptState;
-        interruptState = CyEnterCriticalSection();
+        cystatus status = CYRET_SUCCESS;
 
-        /* Configuring WDT involves passing control signals between clock domains,
-        * which requires ILO to be enabled.
-        */
-        if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
+        /* Enable the RF oscillator band gap */
+        CY_SYS_XTAL_BLESS_RF_CONFIG_REG |= CY_SYS_XTAL_BLESS_RF_CONFIG_RF_ENABLE;
+
+        /* Update trimming register */
+        CY_SYS_XTAL_BLERD_BB_XO_REG = CY_SYS_XTAL_BLERD_BB_XO_TRIM;
+
+        /* Enable the Crystal */
+        CY_SYS_XTAL_BLERD_DBUS_REG |= CY_SYS_XTAL_BLERD_DBUS_XTAL_ENABLE;
+
+        if(timeoutUs > 0u)
         {
-            CySysClkIloStart();
-        }
+            status = CYRET_TIMEOUT;
 
-        /* Removing WDT lock requires two writes */
-        CY_SYS_CLK_SELECT_REG = ((CY_SYS_CLK_SELECT_REG & (uint32)(~CY_SYS_WDT_CLK_LOCK_BITS_MASK)) |
-                CY_SYS_WDT_CLK_LOCK_BIT0);
-
-        CY_SYS_CLK_SELECT_REG = ((CY_SYS_CLK_SELECT_REG & (uint32)(~CY_SYS_WDT_CLK_LOCK_BITS_MASK)) |
-                CY_SYS_WDT_CLK_LOCK_BIT1);
-
-        CyExitCriticalSection(interruptState);
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtReadEnabledStatus
-    ********************************************************************************
-    *
-    * Summary:
-    *  Reads the enabled status of one of the three WDT counters.
-    *
-    * Parameters:
-    *  counterNum: Valid range [0-2].  Number of the WDT counter.
-    *
-    * Return:
-    *  Status of WDT counter:
-    *   0 - counter is disabled
-    *   1 - counter is enabled
-    *
-    * Side Effects:
-    *  This API returns the actual WDT counter status from the status register.
-    *  It may take up to 3 LFCLK cycles since the WDT counter was enabled for the WDT status
-    *  register to contain actual data.
-    *
-    *******************************************************************************/
-    uint32 CySysWdtReadEnabledStatus(uint32 counterNum)
-    {
-        CYASSERT(counterNum < CY_SYS_WDT_COUNTERS_MAX);
-        return ((CY_SYS_WDT_CONTROL_REG >> ((CY_SYS_WDT_CNT_SHIFT * counterNum) + CY_SYS_WDT_CNT_STTS_SHIFT)) & 0x01u);
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtWriteMode
-    ********************************************************************************
-    *
-    * Summary:
-    *   Writes the mode of one of the three WDT counters.
-    *
-    * Parameters:
-    *   counterNum: Valid range [0-2].  Number of the WDT counter.
-    *   mode:       Mode of operation for the counter
-    *       Define                   Mode
-    *    CY_SYS_WDT_MODE_NONE       Free running
-    *    CY_SYS_WDT_MODE_INT        Interrupt generated on match for counter 0
-    *                               and 1, and on bit toggle for counter 2.
-    *    CY_SYS_WDT_MODE_RESET      Reset on match (valid for counter 0 and 1
-    *                               only)
-    *    CY_SYS_WDT_MODE_INT_RESET  Generate an interrupt.  Generate a reset on
-    *                                    the 3rd unhandled interrupt.
-    *                                    (valid for counter 0 and 1 only)
-    * Return:
-    *   None
-    *
-    * Side Effects:
-    *   The WDT counter counterNum should be disabled to the set mode. Otherwise
-    *   the function call will have no effect.
-    *   This API enables the ILO, if it was disabled.
-    *
-    *******************************************************************************/
-    void CySysWdtWriteMode(uint32 counterNum, uint32 mode)
-    {
-        uint32 configRegValue;
-
-        CYASSERT(counterNum < CY_SYS_WDT_COUNTERS_MAX);
-
-        /* Configuring WDT involves passing control signals between clock domains,
-        * which requires ILO to be enabled.
-        */
-        if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
-        {
-            CySysClkIloStart();
-        }
-
-        if(0u == CySysWdtReadEnabledStatus(counterNum))
-        {
-            configRegValue = CY_SYS_WDT_CONFIG_REG &
-                                (uint32)~((uint32)(CY_SYS_WDT_MODE_MASK << (counterNum * CY_SYS_WDT_CNT_SHIFT)));
-            configRegValue |= (uint32)((mode & CY_SYS_WDT_MODE_MASK) << (counterNum * CY_SYS_WDT_CNT_SHIFT));
-            CY_SYS_WDT_CONFIG_REG = configRegValue;
-        }
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtReadMode
-    ********************************************************************************
-    *
-    * Summary:
-    *  Reads the mode of one of the three WDT counters.
-    *
-    * Parameters:
-    *  counterNum: Valid range [0-2].  Number of the WDT counter.
-    *
-    * Return:
-    *  Mode of the counter.  Same enumerated values as mode parameter used in
-    *  CySysWdtWriteMode().
-    *
-    *******************************************************************************/
-    uint32 CySysWdtReadMode(uint32 counterNum)
-    {
-        return ((CY_SYS_WDT_CONFIG_REG >> (counterNum * CY_SYS_WDT_CNT_SHIFT)) & CY_SYS_WDT_MODE_MASK);
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtWriteClearOnMatch
-    ********************************************************************************
-    *
-    * Summary:
-    *  Configures the WDT counter clear on a match setting.  If configured to clear
-    *  on match, the counter will count from 0 to the MatchValue giving it a
-    *  period of (MatchValue + 1).
-    *
-    * Parameters:
-    *  counterNum:
-    *   Valid range [0-1].  Number of the WDT counter.  Match values are not
-    *   supported by counter 2.
-    *
-    * enable:
-    *   0 to disable, 1 to enable
-    *
-    * Return:
-    *   None
-    *
-    * Side Effects:
-    *   The WDT counter counterNum should be disabled. Otherwise the function
-    *   call will have no effect.
-    *   This API enables the ILO, if it was disabled.
-    *
-    *
-    *******************************************************************************/
-    void CySysWdtWriteClearOnMatch(uint32 counterNum, uint32 enable)
-    {
-        CYASSERT((counterNum == CY_SYS_WDT_COUNTER0) ||
-                                             (counterNum == CY_SYS_WDT_COUNTER1));
-
-        /* Configuring WDT involves passing control signals between clock domains,
-        * which requires ILO to be enabled.
-        */
-        if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
-        {
-            CySysClkIloStart();
-        }
-
-        if(0u == CySysWdtReadEnabledStatus(counterNum))
-        {
-            CY_SYS_WDT_CONFIG_REG |= (uint32)(enable << ((counterNum * CY_SYS_WDT_CNT_SHIFT) +
-                                                            CY_SYS_WDT_CNT_MATCH_CLR_SHIFT));
-        }
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtReadClearOnMatch
-    ********************************************************************************
-    *
-    * Summary:
-    *  Reads the clear on match setting for the specified counter.
-    *
-    * Parameters:
-    *   counterNum: Valid range [0-1].  Number of the WDT counter.  Match values are
-    *               not supported by counter 2.
-    *
-    * Return:
-    *   Clear on Match status: 1 if enabled, 0 if disabled
-    *
-    *******************************************************************************/
-    uint32 CySysWdtReadClearOnMatch(uint32 counterNum)
-    {
-        CYASSERT((counterNum == CY_SYS_WDT_COUNTER0) ||
-                                             (counterNum == CY_SYS_WDT_COUNTER1));
-
-        return (uint32)((CY_SYS_WDT_CONFIG_REG >>
-                            ((counterNum * CY_SYS_WDT_CNT_SHIFT) + CY_SYS_WDT_CNT_MATCH_CLR_SHIFT)) & 0x01u);
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtEnable
-    ********************************************************************************
-    *
-    * Summary:
-    *  Enables the specified WDT counters.  All the counters specified in the mask are
-    *  enabled.
-    *
-    * Parameters:
-    *  counterMask: Mask of all counters to enable
-    *       Define                       Counter
-    *      CY_SYS_WDT_COUNTER0_MASK      0
-    *      CY_SYS_WDT_COUNTER1_MASK      1
-    *      CY_SYS_WDT_COUNTER2_MASK      2
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  Enabling or disabling the WDT requires 3 LF Clock cycles to come into effect.
-    *  This API enables the ILO, if it was disabled.
-    *
-    *******************************************************************************/
-    void CySysWdtEnable(uint32 counterMask)
-    {
-        /* Configuring WDT involves passing control signals between clock domains,
-        * which requires ILO to be enabled.
-        */
-        if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
-        {
-            CySysClkIloStart();
-        }
-
-        CY_SYS_WDT_CONTROL_REG |= counterMask;
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtDisable
-    ********************************************************************************
-    *
-    * Summary:
-    *  Disables the specified WDT counters.  All the counters specified in the mask are
-    *  disabled.
-    *
-    * Parameters:
-    *  uint32 counterMask: Mask of all counters to disable
-    *    Define                       Counter
-    *   CY_SYS_WDT_COUNTER0_MASK      0
-    *   CY_SYS_WDT_COUNTER1_MASK      1
-    *   CY_SYS_WDT_COUNTER2_MASK      2
-    *
-    * Return:
-    *   None
-    *
-    * Side Effects:
-    *  Enabling or disabling the  WDT requires 3 LF Clock cycles to come into effect.
-    *  This API enables the ILO, if it was disabled.
-    *
-    *******************************************************************************/
-    void CySysWdtDisable(uint32 counterMask)
-    {
-        /* Configuring WDT involves passing control signals between clock domains,
-        * which requires ILO to be enabled.
-        */
-        if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
-        {
-            CySysClkIloStart();
-        }
-
-        CY_SYS_WDT_CONTROL_REG &= ~counterMask;
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtWriteCascade
-    ********************************************************************************
-    *
-    * Summary:
-    *   Writes the two WDT cascade values based on the combination of mask values
-    *   specified.
-    *
-    * Parameters:
-    *   cascadeMask: Mask value used to set or clear the cascade values.
-    *   Define                     Cascade
-    *   CY_SYS_WDT_CASCADE_NONE    Neither
-    *   CY_SYS_WDT_CASCADE_01      Cascade 01
-    *   CY_SYS_WDT_CASCADE_12      Cascade 12
-    *
-    * Return:
-    *   None
-    *
-    * Side effects:
-    *   If only one cascade mask is specified, the second cascade is disabled.
-    *   To set both cascade modes two defines should be ORed:
-    *    (CY_SYS_WDT_CASCADE_01 | CY_SYS_WDT_CASCADE_12)
-    *   This API enables ILO, if it was disabled.
-    *
-    *******************************************************************************/
-    void CySysWdtWriteCascade(uint32 cascadeMask)
-    {
-        uint32 configRegValue;
-        uint32 countersEnableStatus;
-
-        countersEnableStatus = CySysWdtReadEnabledStatus(CY_SYS_WDT_COUNTER0) |
-                            CySysWdtReadEnabledStatus(CY_SYS_WDT_COUNTER1) |
-                            CySysWdtReadEnabledStatus(CY_SYS_WDT_COUNTER2);
-
-        if (0u == countersEnableStatus)
-        {
-            /* Configuring WDT involves passing control signals between clock domains,
-            * which requires ILO to be enabled.
-            */
-            if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
+            for( ; timeoutUs > 0u; timeoutUs--)
             {
-                CySysClkIloStart();
+                CyDelayUs(1u);
+
+                if(0u != CySysClkEcoReadStatus())
+                {
+                    status = CYRET_SUCCESS;
+                    break;
+                }
             }
 
-            configRegValue = CY_SYS_WDT_CONFIG_REG;
-            configRegValue &= ((uint32)(~(CY_SYS_WDT_CASCADE_01|CY_SYS_WDT_CASCADE_12)));
-            configRegValue |= cascadeMask;
-            CY_SYS_WDT_CONFIG_REG = configRegValue;
-        }
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtReadCascade
-    ********************************************************************************
-    *
-    * Summary:
-    *   Reads the two WDT cascade values returning a mask of the bits set.
-    *
-    * Parameters:
-    *   None
-    *
-    * Return:
-    *   Mask of cascade values set.
-    *   Define                     Cascade
-    *   CY_SYS_WDT_CASCADE_NONE    Neither
-    *   CY_SYS_WDT_CASCADE_01      Cascade 01
-    *   CY_SYS_WDT_CASCADE_12      Cascade 12
-    *
-    *******************************************************************************/
-    uint32 CySysWdtReadCascade(void)
-    {
-        return (CY_SYS_WDT_CONFIG_REG & (CY_SYS_WDT_CASCADE_01 | CY_SYS_WDT_CASCADE_12));
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtWriteMatch
-    ********************************************************************************
-    *
-    * Summary:
-    *  Configures the WDT counter match comparison value.
-    *
-    * Parameters:
-    *  counterNum:
-    *   Valid range [0-1]. Number of the WDT counter. Match values are not
-    *   supported by counter 2.
-    *
-    *  match:
-    *   Valid range [0-65535]. Value to be used to match against the counter.
-    *
-    * Return:
-    *   None
-    *
-    * Side effects:
-    *   This API enables ILO, if it was disabled.
-    *
-    *******************************************************************************/
-    void CySysWdtWriteMatch(uint32 counterNum, uint32 match)
-    {
-        uint32 regValue;
-
-        CYASSERT((counterNum == CY_SYS_WDT_COUNTER0) ||
-                                             (counterNum == CY_SYS_WDT_COUNTER1));
-
-        /* Configuring WDT involves passing control signals between clock domains,
-        * which requires ILO to be enabled.
-        */
-        if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
-        {
-            CySysClkIloStart();
         }
 
-        /* Delay ~ 3LFCK in order to make sure previous changes are applied */
-        CyDelayUs(CY_SYS_WDT_3LFCLK_DELAY_US);
-
-        regValue = CY_SYS_WDT_MATCH_REG;
-        regValue &= (uint32)~((uint32)(CY_SYS_WDT_LOWER_16BITS_MASK << (counterNum * CY_SYS_WDT_CNT_MATCH_SHIFT)));
-        CY_SYS_WDT_MATCH_REG = (regValue | (match << (counterNum * CY_SYS_WDT_CNT_MATCH_SHIFT)));
+        return(status);
     }
 
 
     /*******************************************************************************
-    * Function Name: CySysWdtWriteToggleBit
+    * Function Name: CySysClkEcoStop
     ********************************************************************************
     *
     * Summary:
-    *  Configures which bit in the WDT counter 2 to monitor for a toggle.  When that
-    *  bit toggles, an interrupt is generated if the mode for counter 2 has
-    *  interrupts enabled.
-    *
-    * Parameters:
-    *  bit:
-    *   Valid range [0-31].  Counter 2 bit to monitor for a toggle.
-    *
-    * Return:
-    *   None
-    *
-    * Side effects:
-    *   The WDT counter 2 should be disabled. Otherwise the function
-    *   call will have no effect.
-    *   This API enables the ILO, if it was disabled.
-    *
-    *******************************************************************************/
-    void CySysWdtWriteToggleBit(uint32 bits)
-    {
-        uint32 configRegValue;
-
-        if (0u == CySysWdtReadEnabledStatus(CY_SYS_WDT_COUNTER2))
-        {
-            /* Configuring WDT involves passing control signals between clock domains,
-            * which requires ILO to be enabled.
-            */
-            if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
-            {
-                CySysClkIloStart();
-            }
-
-            configRegValue = CY_SYS_WDT_CONFIG_REG;
-            configRegValue &= (uint32)(~((uint32)(CY_SYS_WDT_CONFIG_BITS2_MASK << CY_SYS_WDT_CONFIG_BITS2_POS)));
-            configRegValue |= ((bits & CY_SYS_WDT_CONFIG_BITS2_MASK) << CY_SYS_WDT_CONFIG_BITS2_POS);
-            CY_SYS_WDT_CONFIG_REG = configRegValue;
-        }
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtReadToggleBit
-    ********************************************************************************
-    *
-    * Summary:
-    *  Reads which bit in the WDT counter 2 is monitored for a toggle.
+    *  Stops the megahertz crystal.
     *
     * Parameters:
     *  None
     *
     * Return:
-    *  The bit that is monitored (range of 0 to 31)
+    *  None
     *
     *******************************************************************************/
-    uint32 CySysWdtReadToggleBit(void)
+    void CySysClkEcoStop(void)
     {
-        return ((CY_SYS_WDT_CONFIG_REG >> CY_SYS_WDT_CONFIG_BITS2_POS) & CY_SYS_WDT_CONFIG_BITS2_MASK);
+        /* Disable the RF oscillator band gap */
+        CY_SYS_XTAL_BLESS_RF_CONFIG_REG &= (uint32) ~CY_SYS_XTAL_BLESS_RF_CONFIG_RF_ENABLE;
+
+        /* Disable the Crystal */
+        CY_SYS_XTAL_BLERD_DBUS_REG &= (uint32) ~CY_SYS_XTAL_BLERD_DBUS_XTAL_ENABLE;
     }
 
 
     /*******************************************************************************
-    * Function Name: CySysWdtReadMatch
+    * Function Name: CySysClkEcoReadStatus
     ********************************************************************************
     *
     * Summary:
-    *  Reads the WDT counter match comparison value.
+    *  Read status bit (50 ppm reached) for the megahertz crystal.
     *
     * Parameters:
-    *  counterNum: Valid range [0-1].  Number of the WDT counter.  Match values
-    *               are not supported by counter 2.
+    *  None
     *
     * Return:
-    *  Counter match value
+    *  Non-zero indicates that XTAL output reached 50 ppm.
     *
     *******************************************************************************/
-    uint32 CySysWdtReadMatch(uint32 counterNum)
+    uint32 CySysClkEcoReadStatus(void)
     {
-        CYASSERT((counterNum == CY_SYS_WDT_COUNTER0) ||
-                                             (counterNum == CY_SYS_WDT_COUNTER1));
-        return ((uint32)(CY_SYS_WDT_MATCH_REG >> (counterNum * CY_SYS_WDT_CNT_MATCH_SHIFT)) & CY_SYS_WDT_LOWER_16BITS_MASK);
+        return (CY_SYS_XTAL_BLERD_FSM_REG & CY_SYS_XTAL_BLERD_FSM_XO_AMP_DETECT);
     }
 
 
     /*******************************************************************************
-    * Function Name: CySysWdtReadCount
+    * Function Name: CySysClkWriteEcoDiv
     ********************************************************************************
     *
     * Summary:
-    *  Reads the current WDT counter value.
+    *  Selects value for the ECO divider.
+    *
+    *  The ECO must not be the HFCLK clock source when this function is called.
+    *  The HFCLK source can be changed to the other clock source by call to the
+    *  CySysClkWriteHfclkDirect() function. If the ECO sources the HFCLK this
+    *  function will not have any effect if compiler in release mode, and halt the
+    *  CPU when compiler in debug mode.
     *
     * Parameters:
-    *  counterNum: Valid range [0-2].  Number of the WDT counter.
+    *  divider: Power of 2 divider selection.
+    *
+    *   Define                        Description
+    *   CY_SYS_CLK_ECO_DIV1             HFCLK = ECO / 1
+    *   CY_SYS_CLK_ECO_DIV2             HFCLK = ECO / 2
+    *   CY_SYS_CLK_ECO_DIV4             HFCLK = ECO / 4
+    *   CY_SYS_CLK_ECO_DIV8             HFCLK = ECO / 8
     *
     * Return:
-    *  Live counter value.  Counter 0 and 1 are 16 bit counters and counter
-    *  2 is a 32 bit counter.
+    *  None
+    *
+    * Side Effects:
+    *  If the SYSCLK clock frequency increases during the device operation, call
+    *  CySysFlashSetWaitCycles() with the appropriate parameter to adjust the number
+    *  of clock cycles the cache will wait before sampling data comes back from
+    *  Flash. If the SYSCLK clock frequency decreases, you can call
+    *  CySysFlashSetWaitCycles() to improve the CPU performance. See
+    *  CySysFlashSetWaitCycles() description for more information.
     *
     *******************************************************************************/
-    uint32 CySysWdtReadCount(uint32 counterNum)
+    void CySysClkWriteEcoDiv(uint32 divider)
     {
-        uint32 regValue = 0u;
+        uint8  interruptState;
 
-        switch(counterNum)
+        if (CY_SYS_CLK_HFCLK_ECO != (CY_SYS_CLK_SELECT_REG & CY_SYS_CLK_SELECT_DIRECT_SEL_MASK))
         {
-            /* WDT Counter 0 */
-            case 0u:
-                regValue = CY_SYS_WDT_CTRLOW_REG & CY_SYS_WDT_LOWER_16BITS_MASK;
-            break;
+            interruptState = CyEnterCriticalSection();
 
-            /* WDT Counter 1 */
-            case 1u:
-                regValue = (CY_SYS_WDT_CTRLOW_REG >> CY_SYS_WDT_CNT_MATCH_SHIFT) & CY_SYS_WDT_LOWER_16BITS_MASK;
-            break;
+            CY_SYS_CLK_XTAL_CLK_DIV_CONFIG_REG =  (divider & CY_SYS_CLK_XTAL_CLK_DIV_MASK) |
+                                                  (CY_SYS_CLK_XTAL_CLK_DIV_CONFIG_REG & ((uint32) ~CY_SYS_CLK_XTAL_CLK_DIV_MASK));
 
-            /* WDT Counter 2 */
-            case 2u:
-                regValue = CY_SYS_WDT_CTRHIGH_REG;
-            break;
-
-            default:
-                CYASSERT(0u != 0u);
-            break;
-        }
-
-        return (regValue);
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtGetInterruptSource
-    ********************************************************************************
-    *
-    * Summary:
-    *   Reads a mask containing all the WDT counters interrupts that are currently
-    *   set by the hardware, if a corresponding mode is selected.
-    *
-    * Parameters:
-    *   None
-    *
-    * Return:
-    *   Mask of interrupts set.
-    *   Define                    Counter
-    *   CY_SYS_WDT_COUNTER0_INT    0
-    *   CY_SYS_WDT_COUNTER1_INT    1
-    *   CY_SYS_WDT_COUNTER2_INT    2
-    *
-    *******************************************************************************/
-    uint32 CySysWdtGetInterruptSource(void)
-    {
-        return (CY_SYS_WDT_CONTROL_REG & (CY_SYS_WDT_COUNTER0_INT | CY_SYS_WDT_COUNTER1_INT | CY_SYS_WDT_COUNTER2_INT));
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtClearInterrupt
-    ********************************************************************************
-    *
-    * Summary:
-    *   Clears all the WDT counter interrupts set in the mask. Calling this API also
-    *   prevents Reset from happening when the counter mode is set to generate
-    *   3 interrupts and then reset the device.
-    *   All the WDT interrupts are to be cleared by the firmware, otherwise interrupts
-    *   will be generated continuously.
-    *
-    * Parameters:
-    *   counterMask: Mask of all counters to enable
-    *   Define                    Counter
-    *   CY_SYS_WDT_COUNTER0_INT    0
-    *   CY_SYS_WDT_COUNTER1_INT    1
-    *   CY_SYS_WDT_COUNTER2_INT    2
-    *
-    * Return:
-    *   None
-    *
-    * Side effects:
-    *   This API enables the ILO, if it was disabled and temporary removes Watchdog
-    *   lock, if it was set, and restores the lock state, after cleaning the WDT
-    *   interrupts, that are set in a mask.
-    *
-    *******************************************************************************/
-    void CySysWdtClearInterrupt(uint32 counterMask)
-    {
-        uint8 interruptState;
-        uint32 wdtLockState;
-
-        interruptState = CyEnterCriticalSection();
-
-        /* Configuring WDT involves passing control signals between clock domains,
-        * which requires ILO to be enabled.
-        */
-        if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
-        {
-            CySysClkIloStart();
-        }
-
-        if ((CY_SYS_CLK_SELECT_REG & (uint32)(CY_SYS_WDT_CLK_LOCK_BITS_MASK)) == CY_SYS_WDT_CLK_LOCK_BITS_MASK)
-        {
-            wdtLockState = 1u;
-
-            /* Removing WDT lock requires two writes */
-            CY_SYS_CLK_SELECT_REG = ((CY_SYS_CLK_SELECT_REG & (uint32)(~CY_SYS_WDT_CLK_LOCK_BITS_MASK)) |
-                    CY_SYS_WDT_CLK_LOCK_BIT0);
-
-            CY_SYS_CLK_SELECT_REG = ((CY_SYS_CLK_SELECT_REG & (uint32)(~CY_SYS_WDT_CLK_LOCK_BITS_MASK)) |
-                    CY_SYS_WDT_CLK_LOCK_BIT1);
+            CyExitCriticalSection(interruptState);
         }
         else
         {
-            wdtLockState = 0u;
+            /* Halt CPU in debug mode if ECO sources HFCLK */
+            CYASSERT(0u != 0u);
         }
-
-        /* Set new WDT control register value */
-        counterMask &= (CY_SYS_WDT_COUNTER0_INT |
-                        CY_SYS_WDT_COUNTER1_INT |
-                        CY_SYS_WDT_COUNTER2_INT);
-
-        CY_SYS_WDT_CONTROL_REG = counterMask | (CY_SYS_WDT_CONTROL_REG & ~(CY_SYS_WDT_COUNTER0_INT |
-                                                                           CY_SYS_WDT_COUNTER1_INT |
-                                                                           CY_SYS_WDT_COUNTER2_INT));
-
-        if (1u == wdtLockState)
-        {
-            /* CLK_SELECT register's bits 15:14 are WDT_LOCK */
-            CY_SYS_CLK_SELECT_REG = (CY_SYS_CLK_SELECT_REG & (uint32)(~CY_SYS_WDT_CLK_LOCK_BITS_MASK)) |
-                     CY_SYS_WDT_CLK_LOCK_BITS_MASK;
-        }
-
-        CyExitCriticalSection(interruptState);
     }
+#endif /* (CY_PSOC4_4100BL || CY_PSOC4_4200BL) */
 
 
-    /*******************************************************************************
-    * Function Name: CySysWdtResetCounters
-    ********************************************************************************
-    *
-    * Summary:
-    *  Resets all WDT counters set in the mask.
-    *
-    * Parameters:
-    *  counterMask: Mask of all counters to reset.
-    *   Define                       Counter
-    *   CY_SYS_WDT_COUNTER0_RESET    0
-    *   CY_SYS_WDT_COUNTER1_RESET    1
-    *   CY_SYS_WDT_COUNTER2_RESET    2
-    *
-    * Return:
-    *   None
-    *
-    * Side effects:
-    *   This API enables the ILO, if it was disabled, this API call will not reset
-    *   the counter values, if the Watchdog is locked.
-    *
-    *******************************************************************************/
-    void CySysWdtResetCounters(uint32 countersMask)
-    {
-        /* Configuring WDT involves passing control signals between clock domains,
-        * which requires ILO to be enabled.
-        */
-        if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
-        {
-            CySysClkIloStart();
-        }
-
-        /* Set new WDT reset value */
-        CY_SYS_WDT_CONTROL_REG |= (countersMask & (CY_SYS_WDT_COUNTER0_RESET |
-            CY_SYS_WDT_COUNTER1_RESET | CY_SYS_WDT_COUNTER2_RESET));
-    }
-
-#else
-
-    /*******************************************************************************
-    * Function Name: CySysWdtReadEnabledStatus
-    ********************************************************************************
-    *
-    * Summary:
-    *  Reads the enabled status WDT counter.
-    *
-    * Parameters:
-    *  None
-    *
-    * Return:
-    *  Status of WDT counter:
-    *   0 - counter is disabled
-    *   1 - counter is enabled
-    *
-    * Side Effects:
-    *  None
-    *
-    *******************************************************************************/
-    uint32 CySysWdtReadEnabledStatus(void)
-    {
-        return ((CY_SYS_WDT_DISABLE_KEY_REG == CY_SYS_WDT_KEY) ? 0u : 1u);
-    }
 
 
-    /*******************************************************************************
-    * Function Name: CySysWdtEnable
-    ********************************************************************************
-    *
-    * Summary:
-    *  Enables the WDT counter.
-    *
-    * Parameters:
-    *  None
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  This API enables ILO, if it was disabled.
-    *
-    *******************************************************************************/
-    void CySysWdtEnable(void)
-    {
-        /* Configuring WDT involves passing control signals between clock domains,
-        * which requires ILO to be enabled.
-        */
-        if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
-        {
-            CySysClkIloStart();
-        }
-
-        CY_SYS_WDT_DISABLE_KEY_REG = 0u;
-    }
 
 
-    /*******************************************************************************
-    * Function Name: CySysWdtDisable
-    ********************************************************************************
-    *
-    * Summary:
-    *  Disables the WDT counter.
-    *
-    * Parameters:
-    *  None
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  In order to disable the ILO clock the WDT counter should be disabled.
-    *
-    *******************************************************************************/
-    void CySysWdtDisable(void)
-    {
-        CY_SYS_WDT_DISABLE_KEY_REG = CY_SYS_WDT_KEY;
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtWriteMatch
-    ********************************************************************************
-    *
-    * Summary:
-    *  Configures the WDT counter match comparison value.
-    *
-    * Parameters:
-    *  match:
-    *   Valid range [0-65535]. Value to be used to match against the counter.
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  This API enables ILO, if it was disabled.
-    *
-    *******************************************************************************/
-    void CySysWdtWriteMatch(uint32 match)
-    {
-        /* Configuring WDT involves passing control signals between clock domains,
-        * which requires ILO to be enabled.
-        */
-        if (0u == (CY_SYS_CLK_ILO_CONFIG_REG & CY_SYS_CLK_ILO_CONFIG_ENABLE))
-        {
-            CySysClkIloStart();
-        }
-
-        CY_SYS_WDT_MATCH_REG = (CY_SYS_WDT_MATCH_REG & (uint32)(~ (uint32)CY_SYS_WDT_MATCH_MASK)) | match;
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtReadMatch
-    ********************************************************************************
-    *
-    * Summary:
-    *  Reads the WDT counter match comparison value.
-    *
-    * Parameters:
-    *  None
-    *
-    * Return:
-    *  Counter match value
-    *
-    * Side Effects:
-    *  None
-    *
-    *******************************************************************************/
-    uint32 CySysWdtReadMatch(void)
-    {
-        return (CY_SYS_WDT_MATCH_REG & CY_SYS_WDT_MATCH_MASK);
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtReadCount
-    ********************************************************************************
-    *
-    * Summary:
-    *  Reads the current WDT counter value.
-    *
-    * Parameters:
-    *  None
-    *
-    * Return:
-    *  Live counter value
-    *
-    * Side Effects:
-    *  None
-    *
-    *******************************************************************************/
-    uint32 CySysWdtReadCount(void)
-    {
-        return ((uint32)CY_SYS_WDT_COUNTER_REG);
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtWriteIgnoreBits
-    ********************************************************************************
-    *
-    * Summary:
-    *  Configures the number of the MSB bits of the watchdog timer that are not
-    *  checked against the match.
-    *
-    * Parameters:
-    *  bitsNum:
-    *   Valid range [0-15]. Number of MSB bits.
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  The value of bitsNum provides control over the time-to-reset of the watchdog
-    *  (which happens after 3 successive matches).
-    *
-    *******************************************************************************/
-    void CySysWdtWriteIgnoreBits(uint32 bitsNum)
-    {
-        bitsNum = ((uint32)(bitsNum << 16u) & CY_SYS_WDT_IGNORE_BITS_MASK);
-        CY_SYS_WDT_MATCH_REG = (CY_SYS_WDT_MATCH_REG & (uint32)(~CY_SYS_WDT_IGNORE_BITS_MASK)) | bitsNum;
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtReadIgnoreBits
-    ********************************************************************************
-    *
-    * Summary:
-    *  Reads the number of the  MSB bits of the watchdog timer that are not
-    *  checked against the match.
-    *
-    * Parameters:
-    *  None
-    *
-    * Return:
-    *  Number of MSB bits.
-    *
-    * Side Effects:
-    *  None
-    *
-    *******************************************************************************/
-    uint32 CySysWdtReadIgnoreBits(void)
-    {
-        return((uint32)(CY_SYS_WDT_MATCH_REG  >> 16u) & CY_SYS_WDT_IGNORE_BITS_MASK);
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtClearInterrupt
-    ********************************************************************************
-    *
-    * Summary:
-    *  Cleans the WDT match flag, which is set every time the WDT counter reaches a
-    *  WDT match value.
-    *
-    * Parameters:
-    *  None
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  Clearing this bit also feeds the watch dog.  Missing 2 interrupts in a row
-    *  will generate a brown-out reset.
-    *
-    *******************************************************************************/
-    void CySysWdtClearInterrupt(void)
-    {
-        CY_SYS_SRSS_INTR_REG |= CY_SYS_WDT_LOWER_BIT_MASK;
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtMaskInterrupt
-    ********************************************************************************
-    *
-    * Summary:
-    *  After masking interrupts from the WDT, they are not passed to the CPU.
-    *
-    * Parameters:
-    *  None
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  This API does not disable the WDT reset generation on 2 missed interrupts.
-    *
-    *******************************************************************************/
-    void CySysWdtMaskInterrupt(void)
-    {
-        CY_SYS_SRSS_INTR_MASK_REG &= (uint32)(~ (uint32)CY_SYS_WDT_LOWER_BIT_MASK);
-    }
-
-
-    /*******************************************************************************
-    * Function Name: CySysWdtUnmaskInterrupt
-    ********************************************************************************
-    *
-    * Summary:
-    *  Unmasks WDT interrupts.
-    *
-    * Parameters:
-    *  None
-    *
-    * Return:
-    *  None
-    *
-    * Side Effects:
-    *  None
-    *
-    *******************************************************************************/
-    void CySysWdtUnmaskInterrupt(void)
-    {
-        CY_SYS_SRSS_INTR_MASK_REG |= CY_SYS_WDT_LOWER_BIT_MASK;
-    }
-
-#endif /* (CY_PSOC4A) */
-
-
-#if(CY_PSOC4A)
+#if(CY_IP_SRSSV2)
 
     /*******************************************************************************
     * Function Name: CySysLvdEnable
@@ -1492,8 +817,8 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     *
     * Summary:
     *  Enables the output of the low-voltage monitor when Vddd is at or below the
-    *  trip point, configures the device to generate an interrupt, and sets the voltage
-    *  trip level.
+    *  trip point, configures the device to generate an interrupt, and sets the
+    *  voltage trip level.
     *
     * Parameters:
     *  threshold: Threshold selection for Low Voltage Detect circuit.
@@ -1522,11 +847,23 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     *******************************************************************************/
     void CySysLvdEnable(uint32 threshold)
     {
-        /* Set threshold */
+        /* Prevent propagating a false interrupt */
+        CY_LVD_PWR_INTR_MASK_REG   &= (uint32) ~CY_LVD_PROPAGATE_INT_TO_CPU;
+
+        /* Set specified threshold */
         CY_LVD_PWR_VMON_CONFIG_REG = (CY_LVD_PWR_VMON_CONFIG_REG & ~CY_LVD_PWR_VMON_CONFIG_LVD_SEL_MASK) |
                 ((threshold << CY_LVD_PWR_VMON_CONFIG_LVD_SEL_SHIFT) & CY_LVD_PWR_VMON_CONFIG_LVD_SEL_MASK);
 
+        /* Enable the LVD. This may cause a false LVD event. */
         CY_LVD_PWR_VMON_CONFIG_REG |= CY_LVD_PWR_VMON_CONFIG_LVD_EN;
+
+        /* Wait for the circuit to stabilize */
+        CyDelayUs(CY_LVD_STABILIZE_TIMEOUT_US);
+
+        /* Clear the false event */
+        CySysLvdClearInterrupt();
+
+        /* Unmask the interrupt */
         CY_LVD_PWR_INTR_MASK_REG   |= CY_LVD_PROPAGATE_INT_TO_CPU;
     }
 
@@ -1592,7 +929,7 @@ void CySysClkWriteSysclkDiv(uint32 divider)
         CY_LVD_PWR_INTR_REG = CY_SYS_LVD_INT;
     }
 
-#endif /* (CY_PSOC4A) */
+#endif /* (CY_IP_SRSSV2) */
 
 
 /*******************************************************************************
@@ -1600,15 +937,15 @@ void CySysClkWriteSysclkDiv(uint32 divider)
 ********************************************************************************
 *
 * Summary:
-*  Reports the cause for the latest reset(s) that occurred in the system. All the
-*  bits in the RES_CAUSE register assert when the corresponding reset cause
-*  occurs and must be cleared by the firmware. These bits are cleared by the hardware
-*  only during XRES, POR, or a detected brown-out.
+*  Reports the cause for the latest reset(s) that occurred in the system. All
+*  the bits in the RES_CAUSE register assert when the corresponding reset cause
+*  occurs and must be cleared by the firmware. These bits are cleared by the
+*  hardware only during XRES, POR, or a detected brown-out.
 *
 * Parameters:
 *  reason: bits in the RES_CAUSE register to clear.
 *   CY_SYS_RESET_WDT       - WDT caused a reset
-*   CY_SYS_RESET_PROTFAULT - A protection violation occurred that requires a RESET
+*   CY_SYS_RESET_PROTFAULT - Occured protection violation that requires reset
 *   CY_SYS_RESET_SW        - Cortex-M0 requested a system reset.
 *
 * Return:
@@ -1685,7 +1022,13 @@ void CyEnableInts(uint32 mask)
 *  interrupts are for SysTick, PendSV and others.
 *
 * Parameters:
-*  number: Interrupt number, valid range [0-15].
+*  number: System interrupt number:
+*    CY_INT_NMI_IRQN        - Non Maskable Interrupt
+*    CY_INT_HARD_FAULT_IRQN - Hard Fault Interrupt
+*    CY_INT_SVCALL_IRQN     - SV Call Interrupt
+*    CY_INT_PEND_SV_IRQN    - Pend SV Interrupt
+*    CY_INT_SYSTICK_IRQN    - System Tick Interrupt
+*
 *  address: Pointer to an interrupt service routine.
 *
 * Return:
@@ -1718,7 +1061,12 @@ cyisraddress CyIntSetSysVector(uint8 number, cyisraddress address)
 *   interrupts are for SysTick, PendSV and others.
 *
 * Parameters:
-*   number: The interrupt number, valid range [0-15].
+*  number: System interrupt number:
+*    CY_INT_NMI_IRQN        - Non Maskable Interrupt
+*    CY_INT_HARD_FAULT_IRQN - Hard Fault Interrupt
+*    CY_INT_SVCALL_IRQN     - SV Call Interrupt
+*    CY_INT_PEND_SV_IRQN    - Pend SV Interrupt
+*    CY_INT_SYSTICK_IRQN    - System Tick Interrupt
 *
 * Return:
 *   Address of the ISR in the interrupt vector table.
@@ -2083,6 +1431,459 @@ void CyDelayFreq(uint32 freq)
     cydelayFreqMhz = (uint8)((cydelayFreqHz + CY_DELAY_1M_MINUS_1_THRESHOLD) / CY_DELAY_1M_THRESHOLD);
     cydelayFreqKhz = (cydelayFreqHz + CY_DELAY_1K_MINUS_1_THRESHOLD) / CY_DELAY_1K_THRESHOLD;
     cydelay32kMs   = CY_DELAY_MS_OVERFLOW * cydelayFreqKhz;
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTick_Start
+********************************************************************************
+*
+* Summary:
+*  Starts the system timer (SysTick): configures SysTick to generate interrupt
+*  every 1 ms and enables the interrupt.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  None
+*
+* Side Effects:
+*  Clears SysTick count flag if it was set.
+*
+*******************************************************************************/
+void CySysTickStart(void)
+{
+    if (0u == CySysTickInitVar)
+    {
+        CySysTickInit();
+        CySysTickInitVar = 1u;
+    }
+
+    CySysTickEnable();
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickInit
+********************************************************************************
+*
+* Summary:
+*  Sets CySysTickServiceCallbacks() as an ISR for the SysTick exception.
+*  The clock source for the SysTick counter is set to the System Clock.
+*  The SysTick reload value is configured for the timer to generate interrupt
+*  every 1 ms. The System clock value is on the global variables cydelayFreqHz.
+*  User is responsible for calling CyDelayFreq() function.
+*  Initializes CySysTickCallbacks array.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  None
+*
+* Side Effects:
+*  Clears SysTick count flag if it was set
+*
+*******************************************************************************/
+void CySysTickInit(void)
+{
+    uint32 i;
+
+    for (i = 0u; i<CY_SYS_SYST_NUM_OF_CALLBACKS; i++)
+    {
+        CySysTickCallbacks[i] = (void *) 0;
+    }
+
+    (void) CyIntSetSysVector(CY_INT_SYSTICK_IRQN, &CySysTickServiceCallbacks);
+
+    #if(!CY_PSOC3 && !CY_PSOC4_4000 && !CY_PSOC4_4100 && !CY_PSOC4_4200)
+        CySysTickSetClockSource(CY_SYS_SYST_CSR_CLK_SRC_SYSCLK);
+    #endif /* (!CY_PSOC3 && !CY_PSOC4_4000 && !CY_PSOC4_4100 && !CY_PSOC4_4200) */
+
+    CySysTickSetReload(cydelayFreqHz/1000u);
+    CySysTickClear();
+    CyIntEnable(CY_INT_SYSTICK_IRQN);
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickEnable
+********************************************************************************
+*
+* Summary:
+*  Enables the SysTick timer and its interrupt.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  None
+*
+* Side Effects:
+*  Clears SysTick count flag if it was set
+*
+*******************************************************************************/
+void CySysTickEnable(void)
+{
+    CySysTickEnableInterrupt();
+    CY_SYS_SYST_CSR_REG |= CY_SYS_SYST_CSR_ENABLE;
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickStop
+********************************************************************************
+*
+* Summary:
+*  Stops the system timer (SysTick).
+*
+* Parameters:
+*  None
+*
+* Return:
+*  None
+*
+* Side Effects:
+*  Clears SysTick count flag if it was set
+*
+*******************************************************************************/
+void CySysTickStop(void)
+{
+    CY_SYS_SYST_CSR_REG &= ((uint32) ~(CY_SYS_SYST_CSR_ENABLE));
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickEnableInterrupt
+********************************************************************************
+*
+* Summary:
+*  Enables the SysTick interrupt.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  None
+*
+* Side Effects:
+*  Clears SysTick count flag if it was set
+*
+*******************************************************************************/
+void CySysTickEnableInterrupt(void)
+{
+    CY_SYS_SYST_CSR_REG |= CY_SYS_SYST_CSR_ENABLE_INT;
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickDisableInterrupt
+********************************************************************************
+*
+* Summary:
+*  Disables the SysTick interrupt.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  None
+*
+* Side Effects:
+*  Clears SysTick count flag if it was set
+*
+*******************************************************************************/
+void CySysTickDisableInterrupt(void)
+{
+    CY_SYS_SYST_CSR_REG &= ((uint32) ~(CY_SYS_SYST_CSR_ENABLE_INT));
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickSetReload
+********************************************************************************
+*
+* Summary:
+*  Sets value the counter is set to on startup and after it reaches zero. This
+*  function do not change or reset current sysTick counter value, so it should
+*  be cleared using CySysTickClear() API.
+*
+* Parameters:
+*  value: Valid range [0x0-0x00FFFFFF]. Counter reset value
+*
+* Return:
+*  None
+*
+*******************************************************************************/
+void CySysTickSetReload(uint32 value)
+{
+    CY_SYS_SYST_RVR_REG = (value & CY_SYS_SYST_RVR_CNT_MASK);
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickGetReload
+********************************************************************************
+*
+* Summary:
+*  Sets value the counter is set to on startup and after it reaches zero.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  Counter reset value.
+*
+*******************************************************************************/
+uint32 CySysTickGetReload(void)
+{
+    return(CY_SYS_SYST_RVR_REG & CY_SYS_SYST_RVR_CNT_MASK);
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickGetValue
+********************************************************************************
+*
+* Summary:
+*  Gets current SysTick counter value.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  Current SysTick counter value
+*
+*******************************************************************************/
+uint32 CySysTickGetValue(void)
+{
+    return(CY_SYS_SYST_CVR_REG & CY_SYS_SYST_CVR_CNT_MASK);
+}
+
+
+#if(!CY_PSOC3 && !CY_PSOC4_4000 && !CY_PSOC4_4100 && !CY_PSOC4_4200)
+    /*******************************************************************************
+    * Function Name: CySysTickSetClockSource
+    ********************************************************************************
+    *
+    * Summary:
+    *  Sets the clock source for the SysTick counter.
+    *
+    * Parameters:
+    *  clockSource: Clock source for SysTick counter
+    *         Define                     Clock Source
+    *   CY_SYS_SYST_CSR_CLK_SRC_SYSCLK     SysTick is clocked by CPU clock.
+    *   CY_SYS_SYST_CSR_CLK_SRC_LFCLK      SysTick is clocked by the low frequency
+    *                                      clock. (ILO 100 KHz for PSoC 5LP, and
+    *                                      LFCLK for PSoC 4).
+    *
+    * Return:
+    *  None
+    *
+    * Side Effects:
+    *  Clears SysTick count flag if it was set. If clock source is not ready this
+    *  function call will have no effect. After changing clock source to the low
+    *  frequency clock the counter and reload register values will remain unchanged
+    *  so time to the interrupt will be significantly bigger and vice versa.
+    *
+    *******************************************************************************/
+    void CySysTickSetClockSource(uint32 clockSource)
+    {
+        if (clockSource == CY_SYS_SYST_CSR_CLK_SRC_SYSCLK)
+        {
+            CY_SYS_SYST_CSR_REG |= (uint32)(CY_SYS_SYST_CSR_CLK_SRC_SYSCLK << CY_SYS_SYST_CSR_CLK_SOURCE_SHIFT);
+        }
+        else
+        {
+            CY_SYS_SYST_CSR_REG &= ((uint32) ~((uint32)(CY_SYS_SYST_CSR_CLK_SRC_SYSCLK << CY_SYS_SYST_CSR_CLK_SOURCE_SHIFT)));
+        }
+    }
+#endif /* (!CY_PSOC3 && !CY_PSOC4_4000 && !CY_PSOC4_4100 && !CY_PSOC4_4200) */
+
+
+/*******************************************************************************
+* Function Name: CySysTickGetCountFlag
+********************************************************************************
+*
+* Summary:
+*  The count flag is set once SysTick counter reaches zero.
+*   The flag cleared on read.
+*
+* Parameters:
+*  None
+*
+* Return:
+    *  Returns non-zero value if flag is set, otherwise zero is returned.
+*
+*
+* Side Effects:
+*  Clears SysTick count flag if it was set.
+*
+*******************************************************************************/
+uint32 CySysTickGetCountFlag(void)
+{
+    return ((CY_SYS_SYST_CSR_REG>>CY_SYS_SYST_CSR_COUNTFLAG_SHIFT) & 0x01u);
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickClear
+********************************************************************************
+*
+* Summary:
+*  Clears the SysTick counter for well-defined startup.
+*
+* Parameters:
+*  None
+*
+* Return:
+*  None
+*
+*******************************************************************************/
+void CySysTickClear(void)
+{
+    CY_SYS_SYST_CVR_REG = 0u;
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickSetCallback
+********************************************************************************
+*
+* Summary:
+*  This function allows up to five user-defined interrupt service routine
+*  functions to be associated with the SysTick interrupt. These are specified
+*  through the use of pointers to the function.
+*
+*  To set a custom callback function without the overhead of the system provided
+*  one, use CyIntSetSysVector(CY_INT_SYSTICK_IRQN, cyisraddress <address>),
+*  where <address> is address of the custom defined interrupt service routine.
+*  Note: a custom callback function overrides the system defined callback
+*  functions.
+*
+* Parameters:
+*  number: The number of the callback function addresses to be set. The valid
+*          range is from 0 to 4.
+*
+*  void(*CallbackFunction(void): A pointer to the function that will be
+*                                associated with the SysTick ISR for the
+*                                specified number.
+*
+* Return:
+*  Returns the address of the previous callback function.
+*  The NULL is returned if the specified address in not set.
+*
+* Side Effects:
+*  The registered callback functions will be executed in the interrupt.
+*
+*******************************************************************************/
+cySysTickCallback CySysTickSetCallback(uint32 number, cySysTickCallback function)
+{
+    cySysTickCallback retVal;
+
+    retVal = CySysTickCallbacks[number];
+    CySysTickCallbacks[number] = function;
+    return (retVal);
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickGetCallback
+********************************************************************************
+*
+* Summary:
+*  The function get the specified callback pointer.
+*
+* Parameters:
+*  number: The number of callback function address to get. The valid
+*          range is from 0 to 4.
+*
+* Return:
+*  Returns the address of the specified callback function.
+*  The NULL is returned if the specified address in not initialized.
+*
+*******************************************************************************/
+cySysTickCallback CySysTickGetCallback(uint32 number)
+{
+    return ((cySysTickCallback) CySysTickCallbacks[number]);
+}
+
+
+/*******************************************************************************
+* Function Name: CySysTickServiceCallbacks
+********************************************************************************
+*
+* Summary:
+*  System Tick timer interrupt routine
+*
+* Parameters:
+*  None
+*
+* Return:
+*  None
+*
+*******************************************************************************/
+static void CySysTickServiceCallbacks(void)
+{
+    uint32 i;
+
+    /* Verify that tick timer flag was set */
+    if (1u == CySysTickGetCountFlag())
+    {
+        for (i=0u; i < CY_SYS_SYST_NUM_OF_CALLBACKS; i++)
+        {
+            if (CySysTickCallbacks[i] != (void *) 0)
+            {
+                (void)(CySysTickCallbacks[i])();
+            }
+        }
+    }
+}
+
+
+/*******************************************************************************
+* Function Name: CyGetUniqueId
+********************************************************************************
+*
+* Summary:
+*  Returns the 64-bit unique ID of the device. The uniqueness of the number is
+*  guaranteed for 10 years due to the die lot number having a cycle life of 10
+*  years and even after 10 years, the probability of getting two identical
+*  numbers is very small.
+*
+* Parameters:
+*  uniqueId: The pointer to a two element 32-bit unsigned integer array. Returns
+*  the 64-bit unique ID of the device by loading them into the integer array
+*  pointed to by uniqueId.
+*
+* Return:
+*  None
+*
+*******************************************************************************/
+void CyGetUniqueId(uint32* uniqueId)
+{
+#if(CY_PSOC4)
+    uniqueId[0u]  =  (uint32)(* (reg8 *) CYREG_SFLASH_DIE_LOT0  );
+    uniqueId[0u] |= ((uint32)(* (reg8 *) CYREG_SFLASH_DIE_LOT1  ) <<  8u);
+    uniqueId[0u] |= ((uint32)(* (reg8 *) CYREG_SFLASH_DIE_LOT2  ) << 16u);
+    uniqueId[0u] |= ((uint32)(* (reg8 *) CYREG_SFLASH_DIE_WAFER ) << 24u);
+
+    uniqueId[1u]  =  (uint32)(* (reg8 *) CYREG_SFLASH_DIE_X     );
+    uniqueId[1u] |= ((uint32)(* (reg8 *) CYREG_SFLASH_DIE_Y     ) <<  8u);
+    uniqueId[1u] |= ((uint32)(* (reg8 *) CYREG_SFLASH_DIE_SORT  ) << 16u);
+    uniqueId[1u] |= ((uint32)(* (reg8 *) CYREG_SFLASH_DIE_MINOR ) << 24u);
+#else
+    uniqueId[0u]  =  (uint32) CY_GET_XTND_REG8((void CYFAR *) (CYREG_FLSHID_CUST_TABLES_LOT_LSB   ));
+    uniqueId[0u] |= ((uint32) CY_GET_XTND_REG8((void CYFAR *) (CYREG_FLSHID_CUST_TABLES_LOT_MSB   )) <<  8u);
+    uniqueId[0u] |= ((uint32) CY_GET_XTND_REG8((void CYFAR *) (CYREG_MLOGIC_REV_ID                )) << 16u);
+    uniqueId[0u] |= ((uint32) CY_GET_XTND_REG8((void CYFAR *) (CYREG_FLSHID_CUST_TABLES_WAFER_NUM )) << 24u);
+
+    uniqueId[1u]  =  (uint32) CY_GET_XTND_REG8((void CYFAR *) (CYREG_FLSHID_CUST_TABLES_X_LOC     ));
+    uniqueId[1u] |= ((uint32) CY_GET_XTND_REG8((void CYFAR *) (CYREG_FLSHID_CUST_TABLES_Y_LOC     )) <<  8u);
+    uniqueId[1u] |= ((uint32) CY_GET_XTND_REG8((void CYFAR *) (CYREG_FLSHID_CUST_TABLES_WRK_WK    )) << 16u);
+    uniqueId[1u] |= ((uint32) CY_GET_XTND_REG8((void CYFAR *) (CYREG_FLSHID_CUST_TABLES_FAB_YR    )) << 24u);
+#endif  /* (CY_PSOC4) */
 }
 
 

@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: PWM_1.c
-* Version 1.10
+* Version 2.0
 *
 * Description:
 *  This file provides the source code to the API for the PWM_1
@@ -17,7 +17,6 @@
 *******************************************************************************/
 
 #include "PWM_1.h"
-#include "CyLib.h"
 
 uint8 PWM_1_initVar = 0u;
 
@@ -41,95 +40,31 @@ void PWM_1_Init(void)
 
     /* Set values from customizer to CTRL */
     #if (PWM_1__QUAD == PWM_1_CONFIG)
-        PWM_1_CONTROL_REG =
-        (((uint32)(PWM_1_QUAD_ENCODING_MODES     << PWM_1_QUAD_MODE_SHIFT))       |
-         ((uint32)(PWM_1_CONFIG                  << PWM_1_MODE_SHIFT)));
-    #endif  /* (PWM_1__QUAD == PWM_1_CONFIG) */
+        PWM_1_CONTROL_REG = PWM_1_CTRL_QUAD_BASE_CONFIG;
+        
+        /* Set values from customizer to CTRL1 */
+        PWM_1_TRIG_CONTROL1_REG  = PWM_1_QUAD_SIGNALS_MODES;
 
-    #if (PWM_1__PWM_SEL == PWM_1_CONFIG)
-        PWM_1_CONTROL_REG =
-        (((uint32)(PWM_1_PWM_STOP_EVENT          << PWM_1_PWM_STOP_KILL_SHIFT))    |
-         ((uint32)(PWM_1_PWM_OUT_INVERT          << PWM_1_INV_OUT_SHIFT))         |
-         ((uint32)(PWM_1_PWM_OUT_N_INVERT        << PWM_1_INV_COMPL_OUT_SHIFT))     |
-         ((uint32)(PWM_1_PWM_MODE                << PWM_1_MODE_SHIFT)));
-
-        #if (PWM_1__PWM_PR == PWM_1_PWM_MODE)
-            PWM_1_CONTROL_REG |=
-            ((uint32)(PWM_1_PWM_RUN_MODE         << PWM_1_ONESHOT_SHIFT));
-
-            PWM_1_WriteCounter(PWM_1_PWM_PR_INIT_VALUE);
-        #else
-            PWM_1_CONTROL_REG |=
-            (((uint32)(PWM_1_PWM_ALIGN           << PWM_1_UPDOWN_SHIFT))          |
-             ((uint32)(PWM_1_PWM_KILL_EVENT      << PWM_1_PWM_SYNC_KILL_SHIFT)));
-        #endif  /* (PWM_1__PWM_PR == PWM_1_PWM_MODE) */
-
-        #if (PWM_1__PWM_DT == PWM_1_PWM_MODE)
-            PWM_1_CONTROL_REG |=
-            ((uint32)(PWM_1_PWM_DEAD_TIME_CYCLE  << PWM_1_PRESCALER_SHIFT));
-        #endif  /* (PWM_1__PWM_DT == PWM_1_PWM_MODE) */
-
-        #if (PWM_1__PWM == PWM_1_PWM_MODE)
-            PWM_1_CONTROL_REG |=
-            ((uint32)PWM_1_PWM_PRESCALER         << PWM_1_PRESCALER_SHIFT);
-        #endif  /* (PWM_1__PWM == PWM_1_PWM_MODE) */
-    #endif  /* (PWM_1__PWM_SEL == PWM_1_CONFIG) */
-
-    #if (PWM_1__TIMER == PWM_1_CONFIG)
-        PWM_1_CONTROL_REG =
-        (((uint32)(PWM_1_TC_PRESCALER            << PWM_1_PRESCALER_SHIFT))   |
-         ((uint32)(PWM_1_TC_COUNTER_MODE         << PWM_1_UPDOWN_SHIFT))      |
-         ((uint32)(PWM_1_TC_RUN_MODE             << PWM_1_ONESHOT_SHIFT))     |
-         ((uint32)(PWM_1_TC_COMP_CAP_MODE        << PWM_1_MODE_SHIFT)));
-    #endif  /* (PWM_1__TIMER == PWM_1_CONFIG) */
-
-    /* Set values from customizer to CTRL1 */
-    #if (PWM_1__QUAD == PWM_1_CONFIG)
-        PWM_1_TRIG_CONTROL1_REG  =
-        (((uint32)(PWM_1_QUAD_PHIA_SIGNAL_MODE   << PWM_1_COUNT_SHIFT))       |
-         ((uint32)(PWM_1_QUAD_INDEX_SIGNAL_MODE  << PWM_1_RELOAD_SHIFT))      |
-         ((uint32)(PWM_1_QUAD_STOP_SIGNAL_MODE   << PWM_1_STOP_SHIFT))        |
-         ((uint32)(PWM_1_QUAD_PHIB_SIGNAL_MODE   << PWM_1_START_SHIFT)));
-    #endif  /* (PWM_1__QUAD == PWM_1_CONFIG) */
-
-    #if (PWM_1__PWM_SEL == PWM_1_CONFIG)
-        PWM_1_TRIG_CONTROL1_REG  =
-        (((uint32)(PWM_1_PWM_SWITCH_SIGNAL_MODE  << PWM_1_CAPTURE_SHIFT))     |
-         ((uint32)(PWM_1_PWM_COUNT_SIGNAL_MODE   << PWM_1_COUNT_SHIFT))       |
-         ((uint32)(PWM_1_PWM_RELOAD_SIGNAL_MODE  << PWM_1_RELOAD_SHIFT))      |
-         ((uint32)(PWM_1_PWM_STOP_SIGNAL_MODE    << PWM_1_STOP_SHIFT))        |
-         ((uint32)(PWM_1_PWM_START_SIGNAL_MODE   << PWM_1_START_SHIFT)));
-    #endif  /* (PWM_1__PWM_SEL == PWM_1_CONFIG) */
-
-    #if (PWM_1__TIMER == PWM_1_CONFIG)
-        PWM_1_TRIG_CONTROL1_REG  =
-        (((uint32)(PWM_1_TC_CAPTURE_SIGNAL_MODE  << PWM_1_CAPTURE_SHIFT))     |
-         ((uint32)(PWM_1_TC_COUNT_SIGNAL_MODE    << PWM_1_COUNT_SHIFT))       |
-         ((uint32)(PWM_1_TC_RELOAD_SIGNAL_MODE   << PWM_1_RELOAD_SHIFT))      |
-         ((uint32)(PWM_1_TC_STOP_SIGNAL_MODE     << PWM_1_STOP_SHIFT))        |
-         ((uint32)(PWM_1_TC_START_SIGNAL_MODE    << PWM_1_START_SHIFT)));
-    #endif  /* (PWM_1__TIMER == PWM_1_CONFIG) */
-
-    /* Set values from customizer to INTR */
-    #if (PWM_1__QUAD == PWM_1_CONFIG)
+        /* Set values from customizer to INTR */
         PWM_1_SetInterruptMode(PWM_1_QUAD_INTERRUPT_MASK);
+        
+         /* Set other values */
+        PWM_1_SetCounterMode(PWM_1_COUNT_DOWN);
+        PWM_1_WritePeriod(PWM_1_QUAD_PERIOD_INIT_VALUE);
+        PWM_1_WriteCounter(PWM_1_QUAD_PERIOD_INIT_VALUE);
     #endif  /* (PWM_1__QUAD == PWM_1_CONFIG) */
 
-    #if (PWM_1__PWM_SEL == PWM_1_CONFIG)
-        PWM_1_SetInterruptMode(PWM_1_PWM_INTERRUPT_MASK);
-    #endif  /* (PWM_1__PWM_SEL == PWM_1_CONFIG) */
-
     #if (PWM_1__TIMER == PWM_1_CONFIG)
+        PWM_1_CONTROL_REG = PWM_1_CTRL_TIMER_BASE_CONFIG;
+        
+        /* Set values from customizer to CTRL1 */
+        PWM_1_TRIG_CONTROL1_REG  = PWM_1_TIMER_SIGNALS_MODES;
+    
+        /* Set values from customizer to INTR */
         PWM_1_SetInterruptMode(PWM_1_TC_INTERRUPT_MASK);
-    #endif  /* (PWM_1__TIMER == PWM_1_CONFIG) */
-
-    /* Set other values from customizer */
-    #if (PWM_1__TIMER == PWM_1_CONFIG)
+        
+        /* Set other values from customizer */
         PWM_1_WritePeriod(PWM_1_TC_PERIOD_VALUE );
-
-        #if (PWM_1__COUNT_DOWN == PWM_1_TC_COUNTER_MODE)
-            PWM_1_WriteCounter(PWM_1_TC_PERIOD_VALUE );
-        #endif  /* (PWM_1__COUNT_DOWN == PWM_1_TC_COUNTER_MODE) */
 
         #if (PWM_1__COMPARE == PWM_1_TC_COMP_CAP_MODE)
             PWM_1_WriteCompare(PWM_1_TC_COMPARE_VALUE);
@@ -139,21 +74,49 @@ void PWM_1_Init(void)
                 PWM_1_WriteCompareBuf(PWM_1_TC_COMPARE_BUF_VALUE);
             #endif  /* (1u == PWM_1_TC_COMPARE_SWAP) */
         #endif  /* (PWM_1__COMPARE == PWM_1_TC_COMP_CAP_MODE) */
+
+        /* Initialize counter value */
+        #if (PWM_1_CY_TCPWM_V2 && PWM_1_TIMER_UPDOWN_CNT_USED && !PWM_1_CY_TCPWM_4000)
+            PWM_1_WriteCounter(1u);
+        #elif(PWM_1__COUNT_DOWN == PWM_1_TC_COUNTER_MODE)
+            PWM_1_WriteCounter(PWM_1_TC_PERIOD_VALUE);
+        #else
+            PWM_1_WriteCounter(0u);
+        #endif /* (PWM_1_CY_TCPWM_V2 && PWM_1_TIMER_UPDOWN_CNT_USED && !PWM_1_CY_TCPWM_4000) */
     #endif  /* (PWM_1__TIMER == PWM_1_CONFIG) */
 
     #if (PWM_1__PWM_SEL == PWM_1_CONFIG)
-        PWM_1_WritePeriod(PWM_1_PWM_PERIOD_VALUE );
-        PWM_1_WriteCompare(PWM_1_PWM_COMPARE_VALUE);
+        PWM_1_CONTROL_REG = PWM_1_CTRL_PWM_BASE_CONFIG;
 
-        #if (1u == PWM_1_PWM_COMPARE_SWAP)
-            PWM_1_SetCompareSwap(1u);
-            PWM_1_WriteCompareBuf(PWM_1_PWM_COMPARE_BUF_VALUE);
-        #endif  /* (1u == PWM_1_PWM_COMPARE_SWAP) */
+        #if (PWM_1__PWM_PR == PWM_1_PWM_MODE)
+            PWM_1_CONTROL_REG |= PWM_1_CTRL_PWM_RUN_MODE;
+            PWM_1_WriteCounter(PWM_1_PWM_PR_INIT_VALUE);
+        #else
+            PWM_1_CONTROL_REG |= PWM_1_CTRL_PWM_ALIGN | PWM_1_CTRL_PWM_KILL_EVENT;
+            
+            /* Initialize counter value */
+            #if (PWM_1_CY_TCPWM_V2 && PWM_1_PWM_UPDOWN_CNT_USED && !PWM_1_CY_TCPWM_4000)
+                PWM_1_WriteCounter(1u);
+            #elif (PWM_1__RIGHT == PWM_1_PWM_ALIGN)
+                PWM_1_WriteCounter(PWM_1_PWM_PERIOD_VALUE);
+            #else 
+                PWM_1_WriteCounter(0u);
+            #endif  /* (PWM_1_CY_TCPWM_V2 && PWM_1_PWM_UPDOWN_CNT_USED && !PWM_1_CY_TCPWM_4000) */
+        #endif  /* (PWM_1__PWM_PR == PWM_1_PWM_MODE) */
 
-        #if (1u == PWM_1_PWM_PERIOD_SWAP)
-            PWM_1_SetPeriodSwap(1u);
-            PWM_1_WritePeriodBuf(PWM_1_PWM_PERIOD_BUF_VALUE);
-        #endif  /* (1u == PWM_1_PWM_PERIOD_SWAP) */
+        #if (PWM_1__PWM_DT == PWM_1_PWM_MODE)
+            PWM_1_CONTROL_REG |= PWM_1_CTRL_PWM_DEAD_TIME_CYCLE;
+        #endif  /* (PWM_1__PWM_DT == PWM_1_PWM_MODE) */
+
+        #if (PWM_1__PWM == PWM_1_PWM_MODE)
+            PWM_1_CONTROL_REG |= PWM_1_CTRL_PWM_PRESCALER;
+        #endif  /* (PWM_1__PWM == PWM_1_PWM_MODE) */
+
+        /* Set values from customizer to CTRL1 */
+        PWM_1_TRIG_CONTROL1_REG  = PWM_1_PWM_SIGNALS_MODES;
+    
+        /* Set values from customizer to INTR */
+        PWM_1_SetInterruptMode(PWM_1_PWM_INTERRUPT_MASK);
 
         /* Set values from customizer to CTRL2 */
         #if (PWM_1__PWM_PR == PWM_1_PWM_MODE)
@@ -167,7 +130,6 @@ void PWM_1_Init(void)
             #endif  /* ( PWM_1_PWM_LEFT == PWM_1_PWM_ALIGN) */
 
             #if (PWM_1__RIGHT == PWM_1_PWM_ALIGN)
-                PWM_1_WriteCounter(PWM_1_PWM_PERIOD_VALUE);
                 PWM_1_TRIG_CONTROL2_REG = PWM_1_PWM_MODE_RIGHT;
             #endif  /* ( PWM_1_PWM_RIGHT == PWM_1_PWM_ALIGN) */
 
@@ -179,7 +141,22 @@ void PWM_1_Init(void)
                 PWM_1_TRIG_CONTROL2_REG = PWM_1_PWM_MODE_ASYM;
             #endif  /* (PWM_1__ASYMMETRIC == PWM_1_PWM_ALIGN) */
         #endif  /* (PWM_1__PWM_PR == PWM_1_PWM_MODE) */
+
+        /* Set other values from customizer */
+        PWM_1_WritePeriod(PWM_1_PWM_PERIOD_VALUE );
+        PWM_1_WriteCompare(PWM_1_PWM_COMPARE_VALUE);
+
+        #if (1u == PWM_1_PWM_COMPARE_SWAP)
+            PWM_1_SetCompareSwap(1u);
+            PWM_1_WriteCompareBuf(PWM_1_PWM_COMPARE_BUF_VALUE);
+        #endif  /* (1u == PWM_1_PWM_COMPARE_SWAP) */
+
+        #if (1u == PWM_1_PWM_PERIOD_SWAP)
+            PWM_1_SetPeriodSwap(1u);
+            PWM_1_WritePeriodBuf(PWM_1_PWM_PERIOD_BUF_VALUE);
+        #endif  /* (1u == PWM_1_PWM_PERIOD_SWAP) */
     #endif  /* (PWM_1__PWM_SEL == PWM_1_CONFIG) */
+    
 }
 
 
@@ -857,28 +834,29 @@ void PWM_1_SetPeriodSwap(uint32 swapEnable)
 *******************************************************************************/
 void PWM_1_WriteCompare(uint32 compare)
 {
-    #if (PWM_1_CY_TCPWM_V2)
+    #if (PWM_1_CY_TCPWM_4000)
         uint32 currentMode;
-    #endif /* (PWM_1_CY_TCPWM_V2) */
+    #endif /* (PWM_1_CY_TCPWM_4000) */
 
-    #if (PWM_1_CY_TCPWM_V2)
+    #if (PWM_1_CY_TCPWM_4000)
         currentMode = ((PWM_1_CONTROL_REG & PWM_1_UPDOWN_MASK) >> PWM_1_UPDOWN_SHIFT);
 
-        if (PWM_1__COUNT_DOWN == currentMode)
+        if (((uint32)PWM_1__COUNT_DOWN == currentMode) && (0xFFFFu != compare))
         {
-            PWM_1_COMP_CAP_REG = ((compare + 1u) & PWM_1_16BIT_MASK);
+            compare++;
         }
-        else if (PWM_1__COUNT_UP == currentMode)
+        else if (((uint32)PWM_1__COUNT_UP == currentMode) && (0u != compare))
         {
-            PWM_1_COMP_CAP_REG = ((compare - 1u) & PWM_1_16BIT_MASK);
+            compare--;
         }
         else
         {
-            PWM_1_COMP_CAP_REG = (compare & PWM_1_16BIT_MASK);
         }
-    #else
-        PWM_1_COMP_CAP_REG = (compare & PWM_1_16BIT_MASK);
-    #endif /* (PWM_1_CY_TCPWM_V2) */
+        
+    
+    #endif /* (PWM_1_CY_TCPWM_4000) */
+    
+    PWM_1_COMP_CAP_REG = (compare & PWM_1_16BIT_MASK);
 }
 
 
@@ -899,30 +877,32 @@ void PWM_1_WriteCompare(uint32 compare)
 *******************************************************************************/
 uint32 PWM_1_ReadCompare(void)
 {
-    #if (PWM_1_CY_TCPWM_V2)
+    #if (PWM_1_CY_TCPWM_4000)
         uint32 currentMode;
         uint32 regVal;
-    #endif /* (PWM_1_CY_TCPWM_V2) */
+    #endif /* (PWM_1_CY_TCPWM_4000) */
 
-    #if (PWM_1_CY_TCPWM_V2)
+    #if (PWM_1_CY_TCPWM_4000)
         currentMode = ((PWM_1_CONTROL_REG & PWM_1_UPDOWN_MASK) >> PWM_1_UPDOWN_SHIFT);
-
-        if (PWM_1__COUNT_DOWN == currentMode)
+        
+        regVal = PWM_1_COMP_CAP_REG;
+        
+        if (((uint32)PWM_1__COUNT_DOWN == currentMode) && (0u != regVal))
         {
-            regVal = ((PWM_1_COMP_CAP_REG - 1u) & PWM_1_16BIT_MASK);
+            regVal--;
         }
-        else if (PWM_1__COUNT_UP == currentMode)
+        else if (((uint32)PWM_1__COUNT_UP == currentMode) && (0xFFFFu != regVal))
         {
-            regVal = ((PWM_1_COMP_CAP_REG + 1u) & PWM_1_16BIT_MASK);
+            regVal++;
         }
         else
         {
-            regVal = (PWM_1_COMP_CAP_REG & PWM_1_16BIT_MASK);
         }
-        return (regVal);
+
+        return (regVal & PWM_1_16BIT_MASK);
     #else
         return (PWM_1_COMP_CAP_REG & PWM_1_16BIT_MASK);
-    #endif /* (PWM_1_CY_TCPWM_V2) */
+    #endif /* (PWM_1_CY_TCPWM_4000) */
 }
 
 
@@ -943,28 +923,27 @@ uint32 PWM_1_ReadCompare(void)
 *******************************************************************************/
 void PWM_1_WriteCompareBuf(uint32 compareBuf)
 {
-    #if (PWM_1_CY_TCPWM_V2)
+    #if (PWM_1_CY_TCPWM_4000)
         uint32 currentMode;
-    #endif /* (PWM_1_CY_TCPWM_V2) */
+    #endif /* (PWM_1_CY_TCPWM_4000) */
 
-    #if (PWM_1_CY_TCPWM_V2)
+    #if (PWM_1_CY_TCPWM_4000)
         currentMode = ((PWM_1_CONTROL_REG & PWM_1_UPDOWN_MASK) >> PWM_1_UPDOWN_SHIFT);
 
-        if (PWM_1__COUNT_DOWN == currentMode)
+        if (((uint32)PWM_1__COUNT_DOWN == currentMode) && (0xFFFFu != compareBuf))
         {
-            PWM_1_COMP_CAP_BUF_REG = ((compareBuf + 1u) & PWM_1_16BIT_MASK);
+            compareBuf++;
         }
-        else if (PWM_1__COUNT_UP == currentMode)
+        else if (((uint32)PWM_1__COUNT_UP == currentMode) && (0u != compareBuf))
         {
-            PWM_1_COMP_CAP_BUF_REG = ((compareBuf - 1u) & PWM_1_16BIT_MASK);
+            compareBuf --;
         }
         else
         {
-            PWM_1_COMP_CAP_BUF_REG = (compareBuf & PWM_1_16BIT_MASK);
         }
-    #else
-        PWM_1_COMP_CAP_BUF_REG = (compareBuf & PWM_1_16BIT_MASK);
-    #endif /* (PWM_1_CY_TCPWM_V2) */
+    #endif /* (PWM_1_CY_TCPWM_4000) */
+    
+    PWM_1_COMP_CAP_BUF_REG = (compareBuf & PWM_1_16BIT_MASK);
 }
 
 
@@ -985,30 +964,32 @@ void PWM_1_WriteCompareBuf(uint32 compareBuf)
 *******************************************************************************/
 uint32 PWM_1_ReadCompareBuf(void)
 {
-    #if (PWM_1_CY_TCPWM_V2)
+    #if (PWM_1_CY_TCPWM_4000)
         uint32 currentMode;
         uint32 regVal;
-    #endif /* (PWM_1_CY_TCPWM_V2) */
+    #endif /* (PWM_1_CY_TCPWM_4000) */
 
-    #if (PWM_1_CY_TCPWM_V2)
+    #if (PWM_1_CY_TCPWM_4000)
         currentMode = ((PWM_1_CONTROL_REG & PWM_1_UPDOWN_MASK) >> PWM_1_UPDOWN_SHIFT);
 
-        if (PWM_1__COUNT_DOWN == currentMode)
+        regVal = PWM_1_COMP_CAP_BUF_REG;
+        
+        if (((uint32)PWM_1__COUNT_DOWN == currentMode) && (0u != regVal))
         {
-            regVal = ((PWM_1_COMP_CAP_BUF_REG - 1u) & PWM_1_16BIT_MASK);
+            regVal--;
         }
-        else if (PWM_1__COUNT_UP == currentMode)
+        else if (((uint32)PWM_1__COUNT_UP == currentMode) && (0xFFFFu != regVal))
         {
-            regVal = ((PWM_1_COMP_CAP_BUF_REG + 1u) & PWM_1_16BIT_MASK);
+            regVal++;
         }
         else
         {
-            regVal = (PWM_1_COMP_CAP_BUF_REG & PWM_1_16BIT_MASK);
         }
-        return (regVal);
+
+        return (regVal & PWM_1_16BIT_MASK);
     #else
         return (PWM_1_COMP_CAP_BUF_REG & PWM_1_16BIT_MASK);
-    #endif /* (PWM_1_CY_TCPWM_V2) */
+    #endif /* (PWM_1_CY_TCPWM_4000) */
 }
 
 

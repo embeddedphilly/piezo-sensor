@@ -1,12 +1,12 @@
 ;-------------------------------------------------------------------------------
 ; FILENAME: CyBootAsmIar.s
-; Version 4.11
+; Version 5.0
 ;
 ;  DESCRIPTION:
 ;    Assembly routines for IAR Embedded Workbench IDE.
 ;
 ;-------------------------------------------------------------------------------
-; Copyright 2013-2014, Cypress Semiconductor Corporation.  All rights reserved.
+; Copyright 2013-2015, Cypress Semiconductor Corporation.  All rights reserved.
 ; You may use this file only in accordance with the license, terms, conditions,
 ; disclaimers, and limitations in the end user license agreement accompanying
 ; the software package with which this file was provided.
@@ -17,8 +17,14 @@
     PUBLIC CyEnterCriticalSection
     PUBLIC CyExitCriticalSection
     THUMB
-
-
+    INCLUDE cyfitter.h
+;Create temporary defines as a workaround for compiler behavior
+#ifndef CYIPBLOCK_m0s8cpussv2_VERSION
+  #define CYIPBLOCK_m0s8cpussv2_VERSION 0
+#endif
+#ifndef CYIPBLOCK_m0s8srssv2_VERSION
+  #define CYIPBLOCK_m0s8srssv2_VERSION 0
+#endif
 ;-------------------------------------------------------------------------------
 ; Function Name: CyDelayCycles
 ;-------------------------------------------------------------------------------
@@ -39,7 +45,11 @@ CyDelayCycles:
     ADDS r0, r0, #2
     LSRS r0, r0, #2
     BEQ CyDelayCycles_done
-    NOP
+    #if ((CYIPBLOCK_m0s8cpussv2_VERSION == 1)&&(CYIPBLOCK_m0s8srssv2_VERSION == 1))
+        ; If device is using CPUSSv2 and SRSSv2 leave loop unaligned
+    #else
+        NOP
+    #endif
 CyDelayCycles_loop:
     SUBS r0, r0, #1
     BNE CyDelayCycles_loop
@@ -103,3 +113,6 @@ CyExitCriticalSection:
 
     END
 
+;Undefine temporary defines
+#undef CYIPBLOCK_m0s8cpussv2_VERSION
+#undef CYIPBLOCK_m0s8srssv2_VERSION

@@ -1,10 +1,10 @@
 #! armcc -E
-; The first line specifies a preprocessor command that the linker invokes 
+; The first line specifies a preprocessor command that the linker invokes
 ; to pass a scatter file through a C preprocessor.
 
 ;********************************************************************************
 ;* File Name: Cm0RealView.scat
-;* Version 4.11
+;* Version 5.0
 ;*
 ;*  Description:
 ;*  This Linker Descriptor file describes the memory layout of the PSOC4 device
@@ -14,7 +14,7 @@
 ;*
 ;*  Note:
 ;*
-;*  romvectors: Cypress default Interrupt sevice routine vector table.
+;*  romvectors: Cypress default Interrupt service routine vector table.
 ;*
 ;*      This is the ISR vector table at bootup. Used only for the reset vector.
 ;*
@@ -25,7 +25,7 @@
 ;*
 ;*
 ;********************************************************************************
-;* Copyright 2010-2013, Cypress Semiconductor Corporation.  All rights reserved.
+;* Copyright 2010-2015, Cypress Semiconductor Corporation.  All rights reserved.
 ;* You may use this file only in accordance with the license, terms, conditions,
 ;* disclaimers, and limitations in the end user license agreement accompanying
 ;* the software package with which this file was provided.
@@ -39,7 +39,8 @@
 
 
 ; Define application base address
-#if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE)
+#if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE || \
+     CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)
 
     #if CY_APPL_ORIGIN
         #define APPL1_START     CY_APPL_ORIGIN
@@ -57,7 +58,8 @@
 
 
 ; Place Bootloader at the beginning of Flash
-#if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE)
+#if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE || \
+     CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)
 
     CYBOOTLOADER 0
     {
@@ -68,7 +70,7 @@
     }
 
     #if CY_APPL_ORIGIN
-        ScatterAssert(APPL_START > LoadLimit(CYBOOTLOADER))
+        ScatterAssert(APPL_START >= LoadLimit(CYBOOTLOADER))
     #endif
 
 #endif
@@ -90,7 +92,7 @@ APPLICATION APPL_START (CY_FLASH_SIZE - APPL_START)
     {
         * (+RO)
     }
-    
+
     ISRVECTORS (0x20000000) UNINIT
     {
         * (.ramvectors, +FIRST)
@@ -123,14 +125,19 @@ APPLICATION APPL_START (CY_FLASH_SIZE - APPL_START)
 }
 
 
-#if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_BOOTLOADER || CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_MULTIAPPBOOTLOADER)
+#if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_BOOTLOADER         || \
+     CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_MULTIAPPBOOTLOADER || \
+     CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LAUNCHER)
 
     CYLOADERMETA (CY_FLASH_SIZE - CY_METADATA_SIZE)
     {
         .cyloadermeta +0 { * (.cyloadermeta) }
     }
 
-#elif (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE)
+#endif
+
+#if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE || \
+     CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)
 
     CYLOADABLEMETA (CY_FLASH_SIZE - CY_FLASH_ROW_SIZE * (1 - 1) - CY_METADATA_SIZE)
     {
@@ -155,7 +162,8 @@ CYCHIPPROTECT 0x90600000
     .cychipprotect +0 { * (.cychipprotect) }
 }
 
-#if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE)
+#if (CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLE || \
+     CYDEV_PROJ_TYPE == CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)
 
     CYLOADERMETA +0
     {

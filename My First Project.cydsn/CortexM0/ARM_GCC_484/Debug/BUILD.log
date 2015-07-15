@@ -1,0 +1,16 @@
+--------------- Build Started: 07/15/2015 18:41:48 Project: My First Project, Configuration: ARM GCC 4.8.4 Debug ---------------
+The code generation step is up to date.
+.\main.c: In function 'main':
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\main.c -o .\CortexM0\ARM_GCC_484\Debug\main.o
+.\main.c:26:12: warning: unused variable 'melody' [-Wunused-variable]
+     uint16 melody[] = {
+            ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/piezoelectric.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\piezoelectric.c -o .\CortexM0\ARM_GCC_484\Debug\piezoelectric.o
+arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_484\Debug\My First Project.a
+arm-none-eabi-ar.exe -rs ".\CortexM0\ARM_GCC_484\Debug\My First Project.a" .\CortexM0\ARM_GCC_484\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_484\Debug\PWM_1.o .\CortexM0\ARM_GCC_484\Debug\PWM_1_PM.o .\CortexM0\ARM_GCC_484\Debug\Clock_1.o .\CortexM0\ARM_GCC_484\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_484\Debug\CyFlash.o .\CortexM0\ARM_GCC_484\Debug\CyLib.o .\CortexM0\ARM_GCC_484\Debug\cyPm.o .\CortexM0\ARM_GCC_484\Debug\cyutils.o .\CortexM0\ARM_GCC_484\Debug\PIEZO_PIN.o .\CortexM0\ARM_GCC_484\Debug\CyLFClk.o
+arm-none-eabi-gcc.exe -Wl,--start-group -o ".\CortexM0\ARM_GCC_484\Debug\My First Project.elf" .\CortexM0\ARM_GCC_484\Debug\main.o .\CortexM0\ARM_GCC_484\Debug\piezoelectric.o .\CortexM0\ARM_GCC_484\Debug\cymetadata.o .\CortexM0\ARM_GCC_484\Debug\Cm0Start.o ".\CortexM0\ARM_GCC_484\Debug\My First Project.a" "C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_484\Debug\CyComponentLibrary.a" -mcpu=cortex-m0 -mthumb -g -ffunction-sections -O0 "-Wl,-Map,.\CortexM0\ARM_GCC_484\Debug/My First Project.map" -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
+cyelftool.exe -C "C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\CortexM0\ARM_GCC_484\Debug\My First Project.elf" --flash_row_size 128 --flash_size 32768
+cyelftool.exe -S "C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\CortexM0\ARM_GCC_484\Debug\My First Project.elf"
+Flash used: 3200 of 32768 bytes (9.8 %).
+SRAM used: 1532 of 4096 bytes (37.4 %). Stack: 1024 bytes. Heap: 256 bytes.
+--------------- Build Succeeded: 07/15/2015 18:41:52 ---------------

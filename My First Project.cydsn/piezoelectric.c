@@ -11,30 +11,32 @@
 */
 #include <project.h>
 #include "cytypes.h"
-#include "tones.h"
-#include "notes.h"
 #include "PWM_1.h"
 #include "piezoelectric.h"
 
 uint8 volume = 1;
 uint8 tempo = 120;
+int const f_clock = 2000000;
+int const freq_mod = 10;
 
-void piezo_tone(uint16 frequency) 
+
+void piezo_tone(uint16 frequency_value) 
 {
     // duty cycle ticks is a percentage of frequency based on volume
-    uint16 duty_cycle_ticks = frequency * volume / 100;
+    int period_ticks = f_clock * freq_mod / frequency_value;
+    uint16 compare_ticks = period_ticks * volume / 100;
     
     // maximum duty cycle ticks must be at least 1 lower than frequency
     // to produce a vibration
-    if (duty_cycle_ticks == frequency) {
-        duty_cycle_ticks--;
+    if (compare_ticks == period_ticks) {
+        compare_ticks--;
     }
     
     // Set period to frequency value
-    PWM_1_WritePeriod(frequency);
+    PWM_1_WritePeriod(period_ticks);
     
     // Set compare to toggle on duty cycle ticks
-    PWM_1_WriteCompare(duty_cycle_ticks);
+    PWM_1_WriteCompare(compare_ticks);
 }
 
 void piezo_volume(uint8 value)
@@ -70,18 +72,21 @@ void piezo_rest(uint8 note)
     CyDelay(duration);
 }
 
-void piezo_melody(uint16* frequencies, uint8 num, uint8 note_type)
+void piezo_melody(uint16* frequencies, uint8 num)
 {
-    uint8 i;
-    for (i=0; i<num; i++)
+    uint8 i, note;
+    uint16 tone;
+    for (i=0; i<num; i+=2)
     {
-        if (frequencies[i] == 0)
+        tone = frequencies[i];
+        note = frequencies[i+1];
+        if (tone == 0)
         {
-            piezo_rest(note_type);
+            piezo_rest(note);
         }
         else 
         {
-            piezo_play(frequencies[i], note_type);
+            piezo_play(tone, note);
         }
     }
 }

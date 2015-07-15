@@ -11,7 +11,7 @@
     
     #define QUARTER 4
     #define HALF    2
-    #define FULL    1   
+    #define WHOLE    1   
     
 #endif /* !define NOTES_H */
 

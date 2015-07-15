@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: PIEZO_PIN.h  
-* Version 2.5
+* Version 2.10
 *
 * Description:
 *  This file containts Control Register function prototypes and register defines
@@ -40,17 +40,15 @@ uint8   PIEZO_PIN_ClearInterrupt(void) ;
 /* Drive Modes */
 #define PIEZO_PIN_DRIVE_MODE_BITS        (3)
 #define PIEZO_PIN_DRIVE_MODE_IND_MASK    (0xFFFFFFFFu >> (32 - PIEZO_PIN_DRIVE_MODE_BITS))
-#define PIEZO_PIN_DRIVE_MODE_SHIFT       (0x00u)
-#define PIEZO_PIN_DRIVE_MODE_MASK        (0x07u << PIEZO_PIN_DRIVE_MODE_SHIFT)
 
-#define PIEZO_PIN_DM_ALG_HIZ         (0x00u << PIEZO_PIN_DRIVE_MODE_SHIFT)
-#define PIEZO_PIN_DM_DIG_HIZ         (0x01u << PIEZO_PIN_DRIVE_MODE_SHIFT)
-#define PIEZO_PIN_DM_RES_UP          (0x02u << PIEZO_PIN_DRIVE_MODE_SHIFT)
-#define PIEZO_PIN_DM_RES_DWN         (0x03u << PIEZO_PIN_DRIVE_MODE_SHIFT)
-#define PIEZO_PIN_DM_OD_LO           (0x04u << PIEZO_PIN_DRIVE_MODE_SHIFT)
-#define PIEZO_PIN_DM_OD_HI           (0x05u << PIEZO_PIN_DRIVE_MODE_SHIFT)
-#define PIEZO_PIN_DM_STRONG          (0x06u << PIEZO_PIN_DRIVE_MODE_SHIFT)
-#define PIEZO_PIN_DM_RES_UPDWN       (0x07u << PIEZO_PIN_DRIVE_MODE_SHIFT)
+#define PIEZO_PIN_DM_ALG_HIZ         (0x00u)
+#define PIEZO_PIN_DM_DIG_HIZ         (0x01u)
+#define PIEZO_PIN_DM_RES_UP          (0x02u)
+#define PIEZO_PIN_DM_RES_DWN         (0x03u)
+#define PIEZO_PIN_DM_OD_LO           (0x04u)
+#define PIEZO_PIN_DM_OD_HI           (0x05u)
+#define PIEZO_PIN_DM_STRONG          (0x06u)
+#define PIEZO_PIN_DM_RES_UPDWN       (0x07u)
 
 /* Digital Port Constants */
 #define PIEZO_PIN_MASK               PIEZO_PIN__MASK
@@ -78,6 +76,16 @@ uint8   PIEZO_PIN_ClearInterrupt(void) ;
     #define PIEZO_PIN_INTSTAT                (* (reg32 *) PIEZO_PIN__INTSTAT)
 
 #endif /* Interrupt Registers */
+
+
+/***************************************
+* The following code is DEPRECATED and 
+* must not be used.
+***************************************/
+
+#define PIEZO_PIN_DRIVE_MODE_SHIFT       (0x00u)
+#define PIEZO_PIN_DRIVE_MODE_MASK        (0x07u << PIEZO_PIN_DRIVE_MODE_SHIFT)
+
 
 #endif /* End Pins PIEZO_PIN_H */
 

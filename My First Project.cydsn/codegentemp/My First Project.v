@@ -1,6 +1,6 @@
 // ======================================================================
 // My First Project.v generated from TopDesign.cysch
-// 07/15/2015 at 14:42
+// 07/15/2015 at 18:13
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -71,8 +71,21 @@
 `define CYDEV_CHIP_FAMILY_USED 2
 `define CYDEV_CHIP_MEMBER_USED 5
 `define CYDEV_CHIP_REVISION_USED 17
-// TCPWM_P4_v1_10(PWMCompare=2200, PWMCompareBuf=65535, PWMCompareSwap=0, PWMCountMode=3, PWMCountPresent=false, PWMDeadTimeCycle=0, PWMInterruptMask=1, PWMKillEvent=0, PWMLinenSignal=0, PWMLineSignal=0, PWMMode=4, PWMPeriod=4400, PWMPeriodBuf=65535, PWMPeriodSwap=0, PWMPrescaler=0, PWMReloadMode=0, PWMReloadPresent=false, PWMRunMode=0, PWMSetAlign=0, PWMStartMode=0, PWMStartPresent=false, PWMStopEvent=0, PWMStopMode=0, PWMStopPresent=false, PWMSwitchMode=0, PWMSwitchPresent=false, QuadEncodingModes=0, QuadIndexMode=0, QuadIndexPresent=false, QuadInterruptMask=1, QuadPhiAMode=3, QuadPhiBMode=3, QuadStopMode=0, QuadStopPresent=false, TCCaptureMode=0, TCCapturePresent=false, TCCompare=65535, TCCompareBuf=65535, TCCompareSwap=0, TCCompCapMode=2, TCCountingModes=0, TCCountMode=3, TCCountPresent=false, TCInterruptMask=1, TCPeriod=65535, TCPrescaler=0, TCPWMCapturePresent=false, TCPWMConfig=7, TCPWMCountPresent=false, TCPWMReloadPresent=false, TCPWMStartPresent=false, TCPWMStopPresent=false, TCReloadMode=0, TCReloadPresent=false, TCRunMode=0, TCStartMode=0, TCStartPresent=false, TCStopMode=0, TCStopPresent=false, CY_COMPONENT_NAME=TCPWM_P4_v1_10, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=PWM_1, CY_INSTANCE_SHORT_NAME=PWM_1, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=10, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.2, INSTANCE_NAME=PWM_1, )
-module TCPWM_P4_v1_10_0 (
+// Component: cy_virtualmux_v1_0
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0"
+`include "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v"
+`endif
+
+// TCPWM_P4_v2_0(Clock_CheckTolerance=true, Clock_desired_freq=12, Clock_desired_freq_unit=6, Clock_divisor=1, Clock_FractDividerDenominator=0, Clock_FractDividerNumerator=0, Clock_FractDividerUsed=false, Clock_is_direct=false, Clock_is_divider=false, Clock_is_freq=true, Clock_minus_tolerance=5, Clock_ph_align_clock_id=, Clock_ph_align_clock_name=, Clock_plus_tolerance=5, Clock_source_clock_id=, Clock_source_clock_name=, PinVisibility_index=false, PinVisibility_kill=false, PinVisibility_phiA=false, PinVisibility_phiB=false, PinVisibility_switch=false, PWMCompare=2200, PWMCompareBuf=65535, PWMCompareSwap=0, PWMCountMode=3, PWMCountPresent=false, PWMDeadTimeCycle=0, PWMInterruptMask=1, PWMKillEvent=0, PWMLinenSignal=0, PWMLineSignal=0, PWMMode=4, PWMPeriod=4400, PWMPeriodBuf=65535, PWMPeriodSwap=0, PWMPrescaler=0, PWMReloadMode=0, PWMReloadPresent=false, PWMRunMode=0, PWMSetAlign=0, PWMStartMode=0, PWMStartPresent=false, PWMStopEvent=0, PWMStopMode=0, PWMStopPresent=false, PWMSwitchMode=0, PWMSwitchPresent=false, QuadEncodingModes=0, QuadIndexMode=0, QuadIndexPresent=false, QuadInterruptMask=1, QuadPhiAMode=3, QuadPhiBMode=3, QuadStopMode=0, QuadStopPresent=false, TCCaptureMode=0, TCCapturePresent=false, TCCompare=65535, TCCompareBuf=65535, TCCompareSwap=0, TCCompCapMode=2, TCCountingModes=0, TCCountMode=3, TCCountPresent=false, TCInterruptMask=1, TCPeriod=65535, TCPrescaler=0, TCPWMCapturePresent=false, TCPWMConfig=7, TCPWMCountPresent=false, TCPWMReloadPresent=false, TCPWMStartPresent=false, TCPWMStopPresent=false, TCReloadMode=0, TCReloadPresent=false, TCRunMode=0, TCStartMode=0, TCStartPresent=false, TCStopMode=0, TCStopPresent=false, TermMode_capture=0, TermMode_cc=0, TermMode_clock=0, TermMode_count=0, TermMode_interrupt=0, TermMode_line=0, TermMode_line_n=0, TermMode_ov=0, TermMode_reload=0, TermMode_start=0, TermMode_stop=0, TermMode_un=0, TermModeStates=, TermVisibility_capture=false, TermVisibility_cc=true, TermVisibility_clock=true, TermVisibility_count=false, TermVisibility_interrupt=true, TermVisibility_line=true, TermVisibility_line_n=true, TermVisibility_ov=true, TermVisibility_reload=false, TermVisibility_start=false, TermVisibility_stop=false, TermVisibility_un=true, CY_COMPONENT_NAME=TCPWM_P4_v2_0, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=PWM_1, CY_INSTANCE_SHORT_NAME=PWM_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.2, INSTANCE_NAME=PWM_1, )
+module TCPWM_P4_v2_0_0 (
     stop,
     count,
     reload,
@@ -98,36 +111,57 @@ module TCPWM_P4_v1_10_0 (
     output      line;
     output      line_n;
 
-    parameter PWMCountMode = 3;
-    parameter PWMReloadMode = 0;
-    parameter PWMReloadPresent = 0;
-    parameter PWMStartMode = 0;
-    parameter PWMStopMode = 0;
-    parameter PWMSwitchMode = 0;
-    parameter QuadIndexMode = 0;
-    parameter QuadPhiAMode = 3;
-    parameter QuadPhiBMode = 3;
-    parameter QuadStopMode = 0;
-    parameter TCCaptureMode = 0;
-    parameter TCCountMode = 3;
-    parameter TCReloadMode = 0;
-    parameter TCStartMode = 0;
-    parameter TCStopMode = 0;
 
+          wire  Net_64;
+          wire  Net_63;
+          wire  Net_85;
+          wire  Net_62;
+          wire  Net_110;
+          wire  Net_95;
+          wire  Net_106;
+          wire  Net_104;
+          wire  Net_109;
+          wire  Net_98;
+          wire  Net_108;
+          wire  Net_101;
+          wire  Net_66;
+          wire  Net_81;
+          wire  Net_75;
+          wire  Net_69;
+          wire  Net_82;
+          wire  Net_72;
 
     cy_m0s8_tcpwm_v1_0 cy_m0s8_tcpwm_1 (
-        .capture(capture),
+        .capture(Net_75),
         .underflow(un),
         .overflow(ov),
         .line_out_compl(line_n),
         .line_out(line),
         .compare_match(cc),
         .interrupt(interrupt),
-        .count(count),
-        .reload(reload),
-        .stop(stop),
-        .start(start),
-        .clock(clock));
+        .count(Net_69),
+        .reload(Net_66),
+        .stop(Net_82),
+        .start(Net_72),
+        .clock(Net_81));
+
+	// VMux_reload (cy_virtualmux_v1_0)
+	assign Net_66 = reload;
+
+	// VMux_count (cy_virtualmux_v1_0)
+	assign Net_69 = count;
+
+	// VMux_start (cy_virtualmux_v1_0)
+	assign Net_72 = start;
+
+	// VMux_capture (cy_virtualmux_v1_0)
+	assign Net_75 = capture;
+
+	// VMux_stop (cy_virtualmux_v1_0)
+	assign Net_82 = stop;
+
+	// VMux_clock (cy_virtualmux_v1_0)
+	assign Net_81 = clock;
 
 
 
@@ -150,7 +184,7 @@ module top ;
           wire  Net_17;
           wire  Net_12;
 
-    TCPWM_P4_v1_10_0 PWM_1 (
+    TCPWM_P4_v2_0_0 PWM_1 (
         .stop(1'b0),
         .reload(1'b0),
         .start(1'b0),
@@ -163,28 +197,13 @@ module top ;
         .line(Net_17),
         .line_n(Net_18),
         .clock(Net_12));
-    defparam PWM_1.PWMCountMode = 3;
-    defparam PWM_1.PWMReloadMode = 0;
-    defparam PWM_1.PWMReloadPresent = 0;
-    defparam PWM_1.PWMStartMode = 0;
-    defparam PWM_1.PWMStopMode = 0;
-    defparam PWM_1.PWMSwitchMode = 0;
-    defparam PWM_1.QuadIndexMode = 0;
-    defparam PWM_1.QuadPhiAMode = 3;
-    defparam PWM_1.QuadPhiBMode = 3;
-    defparam PWM_1.QuadStopMode = 0;
-    defparam PWM_1.TCCaptureMode = 0;
-    defparam PWM_1.TCCountMode = 3;
-    defparam PWM_1.TCReloadMode = 0;
-    defparam PWM_1.TCStartMode = 0;
-    defparam PWM_1.TCStopMode = 0;
 
 
 	cy_clock_v1_0
 		#(.id("c76bd55c-022b-4457-bf8f-af8f30084447"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("516528925.619835"),
+		  .period("500000000"),
 		  .is_direct(0),
 		  .is_digital(0))
 		Clock_1
@@ -233,7 +252,7 @@ module top ;
 		  .pin_mode("O"),
 		  .por_state(4),
 		  .sio_group_cnt(0),
-		  .sio_hyst(1'b0),
+		  .sio_hyst(1'b1),
 		  .sio_ibuf(""),
 		  .sio_info(2'b00),
 		  .sio_obuf(""),
@@ -243,7 +262,11 @@ module top ;
 		  .spanning(0),
 		  .use_annotation(1'b0),
 		  .vtrip(2'b10),
-		  .width(1))
+		  .width(1),
+		  .ovt_hyst_trim(1'b0),
+		  .ovt_needed(1'b0),
+		  .ovt_slew_control(2'b00),
+		  .input_buffer_sel(2'b00))
 		PIEZO_PIN
 		 (.oe(tmpOE__PIEZO_PIN_net),
 		  .y({Net_17}),

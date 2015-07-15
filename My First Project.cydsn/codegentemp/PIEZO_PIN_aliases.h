@@ -1,9 +1,10 @@
 /*******************************************************************************
 * File Name: PIEZO_PIN.h  
-* Version 2.5
+* Version 2.10
 *
 * Description:
-*  This file containts Control Register function prototypes and register defines
+*  This file contains the Alias definitions for Per-Pin APIs in cypins.h. 
+*  Information on using these APIs can be found in the System Reference Guide.
 *
 * Note:
 *
@@ -19,12 +20,18 @@
 
 #include "cytypes.h"
 #include "cyfitter.h"
+#include "cypins.h"
 
 
 /***************************************
 *              Constants        
 ***************************************/
-#define PIEZO_PIN_0		PIEZO_PIN__0__PC
+#define PIEZO_PIN_0		(PIEZO_PIN__0__PC)
+#define PIEZO_PIN_0_PS		(PIEZO_PIN__0__PS)
+#define PIEZO_PIN_0_PC		(PIEZO_PIN__0__PC)
+#define PIEZO_PIN_0_DR		(PIEZO_PIN__0__DR)
+#define PIEZO_PIN_0_SHIFT	(PIEZO_PIN__0__SHIFT)
+
 
 #endif /* End Pins PIEZO_PIN_ALIASES_H */
 
