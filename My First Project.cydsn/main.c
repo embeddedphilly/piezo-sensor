@@ -10,11 +10,15 @@
  * ========================================
 */
 #include <project.h>
+#include "piezoelectric.h"
+#include "tones.h"
 
 int main()
 {
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     PWM_1_Start();
+
+    piezo_tone(C4);
     
     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
     for(;;)
