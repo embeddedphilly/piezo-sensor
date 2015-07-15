@@ -1,0 +1,4 @@
+C:/Users/IEUser/Documents/GitHub/piezo-sensor/My\ First\ Project.cydsn/CortexM0/ARM_GCC_484/Debug/CyBootAsmGnu.o : C:/Users/IEUser/Documents/GitHub/piezo-sensor/My\ First\ Project.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s 
+
+C:/Users/IEUser/Documents/GitHub/piezo-sensor/My\ First\ Project.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s : 
+

@@ -2,7 +2,7 @@
 --	Conversion of My First Project.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Jul 14 20:16:36 2015
+--	Wed Jul 15 14:42:39 2015
 --
 
 USE cypress.cypress.all;
@@ -106,7 +106,11 @@ PIEZO_PIN:cy_psoc3_pins_v1_10
 		pa_in_reset=>-1,
 		pa_out_clock=>-1,
 		pa_out_clock_en=>-1,
-		pa_out_reset=>-1)
+		pa_out_reset=>-1,
+		ovt_needed=>"",
+		ovt_slew_control=>"",
+		ovt_hyst_trim=>"",
+		input_buffer_sel=>"")
 	PORT MAP(oe=>(one),
 		y=>Net_17,
 		fb=>(tmpFB_0__PIEZO_PIN_net_0),
