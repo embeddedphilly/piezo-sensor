@@ -23,7 +23,7 @@ void piezo_tone(uint16 frequency);
 void piezo_volume(uint8 value);
 void piezo_tempo(uint8 bpm);
 void piezo_stop();
-void piezo_play(uint16 frequency, uint8 note);
+void piezo_play(uint8 note);
 void piezo_rest(uint8 note);
 void piezo_melody(uint16* frequencies, uint8 num);
     

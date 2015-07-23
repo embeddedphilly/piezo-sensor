@@ -1,16 +1,50 @@
---------------- Build Started: 07/15/2015 18:41:48 Project: My First Project, Configuration: ARM GCC 4.8.4 Debug ---------------
-The code generation step is up to date.
-.\main.c: In function 'main':
+--------------- Build Started: 07/22/2015 20:01:13 Project: My First Project, Configuration: ARM GCC 4.8.4 Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\TinyWindows\AppData\Local\Cypress Semiconductor\PSoC Creator\3.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p "C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\My First Project.cyprj" -d CY8C4245AXI-483 -s "C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\Generated_Source\PSoC4" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+ADD: pft.M0040: information: The following 1 pin(s) will be assigned a location by the fitter: TRIGGER_TIMER(0)
+Analog Placement ...
+Analog Routing ...
+Analog Code Generation ...
+Digital Placement ...
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\main.c -o .\CortexM0\ARM_GCC_484\Debug\main.o
-.\main.c:26:12: warning: unused variable 'melody' [-Wunused-variable]
-     uint16 melody[] = {
-            ^
+.\main.c: In function 'main':
+.\main.c:53:13: warning: implicit declaration of function 'set_note_timer' [-Wimplicit-function-declaration]
+             set_note_timer(note);
+             ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/piezoelectric.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\piezoelectric.c -o .\CortexM0\ARM_GCC_484\Debug\piezoelectric.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/cyfitter_cfg.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\cyfitter_cfg.c -o .\CortexM0\ARM_GCC_484\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/cymetadata.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\cymetadata.c -o .\CortexM0\ARM_GCC_484\Debug\cymetadata.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/PWM_1.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\PWM_1.c -o .\CortexM0\ARM_GCC_484\Debug\PWM_1.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/PWM_1_PM.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\PWM_1_PM.c -o .\CortexM0\ARM_GCC_484\Debug\PWM_1_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/Clock_1.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\Clock_1.c -o .\CortexM0\ARM_GCC_484\Debug\Clock_1.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/Cm0Start.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\Cm0Start.c -o .\CortexM0\ARM_GCC_484\Debug\Cm0Start.o
+arm-none-eabi-as.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -alh=.\CortexM0\ARM_GCC_484\Debug/CyBootAsmGnu.lst -g -o .\CortexM0\ARM_GCC_484\Debug\CyBootAsmGnu.o .\Generated_Source\PSoC4\CyBootAsmGnu.s
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/CyFlash.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\CyFlash.c -o .\CortexM0\ARM_GCC_484\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/CyLib.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\CyLib.c -o .\CortexM0\ARM_GCC_484\Debug\CyLib.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/cyPm.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\cyPm.c -o .\CortexM0\ARM_GCC_484\Debug\cyPm.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/cyutils.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\cyutils.c -o .\CortexM0\ARM_GCC_484\Debug\cyutils.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/Clock_2.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\Clock_2.c -o .\CortexM0\ARM_GCC_484\Debug\Clock_2.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/PIEZO_PIN.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\PIEZO_PIN.c -o .\CortexM0\ARM_GCC_484\Debug\PIEZO_PIN.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/CyLFClk.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\CyLFClk.c -o .\CortexM0\ARM_GCC_484\Debug\CyLFClk.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/Timer_1.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\Timer_1.c -o .\CortexM0\ARM_GCC_484\Debug\Timer_1.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/Timer_1_PM.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\Timer_1_PM.c -o .\CortexM0\ARM_GCC_484\Debug\Timer_1_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/TRIGGER_TIMER.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\TRIGGER_TIMER.c -o .\CortexM0\ARM_GCC_484\Debug\TRIGGER_TIMER.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/ISR_1.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\ISR_1.c -o .\CortexM0\ARM_GCC_484\Debug\ISR_1.o
+arm-none-eabi-ar.exe -rs ".\CortexM0\ARM_GCC_484\Debug\My First Project.a" .\CortexM0\ARM_GCC_484\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_484\Debug\PWM_1.o .\CortexM0\ARM_GCC_484\Debug\PWM_1_PM.o .\CortexM0\ARM_GCC_484\Debug\Clock_1.o .\CortexM0\ARM_GCC_484\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_484\Debug\CyFlash.o .\CortexM0\ARM_GCC_484\Debug\CyLib.o .\CortexM0\ARM_GCC_484\Debug\cyPm.o .\CortexM0\ARM_GCC_484\Debug\cyutils.o .\CortexM0\ARM_GCC_484\Debug\Clock_2.o .\CortexM0\ARM_GCC_484\Debug\PIEZO_PIN.o .\CortexM0\ARM_GCC_484\Debug\CyLFClk.o .\CortexM0\ARM_GCC_484\Debug\Timer_1.o .\CortexM0\ARM_GCC_484\Debug\Timer_1_PM.o .\CortexM0\ARM_GCC_484\Debug\TRIGGER_TIMER.o .\CortexM0\ARM_GCC_484\Debug\ISR_1.o
 arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_484\Debug\My First Project.a
-arm-none-eabi-ar.exe -rs ".\CortexM0\ARM_GCC_484\Debug\My First Project.a" .\CortexM0\ARM_GCC_484\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_484\Debug\PWM_1.o .\CortexM0\ARM_GCC_484\Debug\PWM_1_PM.o .\CortexM0\ARM_GCC_484\Debug\Clock_1.o .\CortexM0\ARM_GCC_484\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_484\Debug\CyFlash.o .\CortexM0\ARM_GCC_484\Debug\CyLib.o .\CortexM0\ARM_GCC_484\Debug\cyPm.o .\CortexM0\ARM_GCC_484\Debug\cyutils.o .\CortexM0\ARM_GCC_484\Debug\PIEZO_PIN.o .\CortexM0\ARM_GCC_484\Debug\CyLFClk.o
 arm-none-eabi-gcc.exe -Wl,--start-group -o ".\CortexM0\ARM_GCC_484\Debug\My First Project.elf" .\CortexM0\ARM_GCC_484\Debug\main.o .\CortexM0\ARM_GCC_484\Debug\piezoelectric.o .\CortexM0\ARM_GCC_484\Debug\cymetadata.o .\CortexM0\ARM_GCC_484\Debug\Cm0Start.o ".\CortexM0\ARM_GCC_484\Debug\My First Project.a" "C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_484\Debug\CyComponentLibrary.a" -mcpu=cortex-m0 -mthumb -g -ffunction-sections -O0 "-Wl,-Map,.\CortexM0\ARM_GCC_484\Debug/My First Project.map" -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
-cyelftool.exe -C "C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\CortexM0\ARM_GCC_484\Debug\My First Project.elf" --flash_row_size 128 --flash_size 32768
-cyelftool.exe -S "C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\CortexM0\ARM_GCC_484\Debug\My First Project.elf"
-Flash used: 3200 of 32768 bytes (9.8 %).
-SRAM used: 1532 of 4096 bytes (37.4 %). Stack: 1024 bytes. Heap: 256 bytes.
---------------- Build Succeeded: 07/15/2015 18:41:52 ---------------
+.\CortexM0\ARM_GCC_484\Debug\main.o: In function `main':
+C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn/.\main.c:53: undefined reference to `set_note_timer'
+collect2.exe: error: ld returned 1 exit status
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Build Failed: 07/22/2015 20:01:35 ---------------

@@ -2,7 +2,7 @@
 --	Conversion of My First Project.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Jul 15 18:13:56 2015
+--	Wed Jul 22 20:01:17 2015
 --
 
 USE cypress.cypress.all;
@@ -32,6 +32,24 @@ TERMINAL tmpSIOVREF__PIEZO_PIN_net_0 : bit;
 SIGNAL zero : bit;
 SIGNAL one : bit;
 SIGNAL tmpINTERRUPT_0__PIEZO_PIN_net_0 : bit;
+SIGNAL \Timer_1:Net_81\ : bit;
+SIGNAL \Timer_1:Net_75\ : bit;
+SIGNAL \Timer_1:Net_69\ : bit;
+SIGNAL \Timer_1:Net_66\ : bit;
+SIGNAL \Timer_1:Net_82\ : bit;
+SIGNAL \Timer_1:Net_72\ : bit;
+SIGNAL Net_97 : bit;
+SIGNAL Net_96 : bit;
+SIGNAL Net_98 : bit;
+SIGNAL Net_99 : bit;
+SIGNAL Net_100 : bit;
+SIGNAL Net_103 : bit;
+SIGNAL Net_94 : bit;
+SIGNAL Net_85 : bit;
+SIGNAL tmpOE__TRIGGER_TIMER_net_0 : bit;
+SIGNAL tmpIO_0__TRIGGER_TIMER_net_0 : bit;
+TERMINAL tmpSIOVREF__TRIGGER_TIMER_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__TRIGGER_TIMER_net_0 : bit;
 BEGIN
 
 zero <=  ('0') ;
@@ -131,5 +149,101 @@ PIEZO_PIN:cy_psoc3_pins_v1_10
 		out_clock_en=>tmpOE__PIEZO_PIN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__PIEZO_PIN_net_0);
+\Timer_1:cy_m0s8_tcpwm_1\:cy_m0s8_tcpwm_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(clock=>Net_85,
+		capture=>Net_94,
+		count=>tmpOE__PIEZO_PIN_net_0,
+		reload=>Net_94,
+		stop=>zero,
+		start=>zero,
+		underflow=>Net_97,
+		overflow=>Net_96,
+		compare_match=>Net_98,
+		line_out=>Net_99,
+		line_out_compl=>Net_100,
+		interrupt=>Net_103);
+Clock_2:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"93696191-7302-4e76-894c-fa8dccec0360",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"83333333.3333333",
+		is_direct=>'0',
+		is_digital=>'0')
+	PORT MAP(clock_out=>Net_85,
+		dig_domain_out=>open);
+TRIGGER_TIMER:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba",
+		drive_mode=>"010",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"I",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(tmpOE__PIEZO_PIN_net_0),
+		y=>(zero),
+		fb=>Net_94,
+		analog=>(open),
+		io=>(tmpIO_0__TRIGGER_TIMER_net_0),
+		siovref=>(tmpSIOVREF__TRIGGER_TIMER_net_0),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>tmpOE__PIEZO_PIN_net_0,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>tmpOE__PIEZO_PIN_net_0,
+		out_reset=>zero,
+		interrupt=>tmpINTERRUPT_0__TRIGGER_TIMER_net_0);
+ISR_1:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>Net_103);
 
 END R_T_L;
