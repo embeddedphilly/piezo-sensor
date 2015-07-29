@@ -1,5 +1,5 @@
 # My First Project
-# 2015-07-23 00:01:19Z
+# 2015-07-29 19:02:26Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2
@@ -10,5 +10,16 @@ set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
 set_location "ISR_1" interrupt -1 -1 16
 set_io "PIEZO_PIN(0)" iocell 0 4
 set_io "TRIGGER_TIMER(0)" iocell 0 0
+set_location "\CapSense:CSD_FFB\" p4csdcell -1 -1 0
+set_io "\CapSense:Cmod(0)\" iocell 4 2
+set_location "\CapSense:IDAC1:cy_psoc4_idac\" p4csidac8cell -1 -1 0
+set_location "\CapSense:IDAC2:cy_psoc4_idac\" p4csidac7cell -1 -1 0
+set_location "\CapSense:ISR\" interrupt -1 -1 15
+set_io "\CapSense:Sns(0)\" iocell 3 7
+set_io "\CapSense:Sns(1)\" iocell 2 4
+set_io "\CapSense:Sns(2)\" iocell 2 7
+set_io "\CapSense:Sns(3)\" iocell 2 2
+set_io "\CapSense:Sns(4)\" iocell 1 4
 set_location "\PWM_1:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 1
 set_location "\Timer_1:cy_m0s8_tcpwm_1\" m0s8tcpwmcell -1 -1 0
+set_location "__ONE__" 1 0 0 0

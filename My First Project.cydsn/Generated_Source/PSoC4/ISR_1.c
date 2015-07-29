@@ -19,7 +19,6 @@
 #include <cydevice_trm.h>
 #include <CyLib.h>
 #include <ISR_1.h>
-#include "state.h"
 
 #if !defined(ISR_1__REMOVED) /* Check for removal by optimization */
 

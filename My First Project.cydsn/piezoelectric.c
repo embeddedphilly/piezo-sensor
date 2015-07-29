@@ -55,7 +55,7 @@ void piezo_stop()
     PWM_1_WriteCompare(0);
 }
 
-void piezo_play(uint8 note)
+void piezo_play(uint16 frequency_value, uint8 note)
 {
     // figure out the duration of this note (in ms), given the current tempo
     uint16 duration = 60000/tempo/note;

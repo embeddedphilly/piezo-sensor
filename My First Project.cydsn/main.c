@@ -15,10 +15,20 @@
 #include "notes.h"
 #include "state.h"
 
+int state = STATE_READY;
+
+void cap_sense_update_volume(void);
+uint16 curPos, oldPos;
+
 int main()
 {
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     PWM_1_Start();
+    
+    CapSense_Start();	
+
+    /* Initialize baselines */ 
+    CapSense_InitializeAllBaselines();
 
     piezo_tempo(100);
        
@@ -29,35 +39,64 @@ int main()
         B4, WHOLE,      C5, WHOLE
     };
     
-    piezo_melody(melody_simple, 16);
+    //piezo_melody(melody_simple, 16);
     
     uint16* tune;
     int tune_counter = 0;
-    
-    int state = STATE_READY;
     
     int note, tone;
 
     // CHANGE THIS FOR NEW TUNE
     tune = melody_simple;
     
-    
-    
-    
-    /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
+    CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
     for(;;)
     {
         /* Place your application code here. */
+        
+        cap_sense_update_volume();
         
         if(state == STATE_READY) {
             tone = tune[tune_counter++];
             note = tune[tune_counter++];
             
-            piezo_tone(tone);
-            piezo_play(note);
+            //piezo_tone(tone);
+            piezo_play(tone, note);
             state = STATE_PLAY;
         }
     }
 }
+
+void cap_sense_update_volume(void)
+{
+    /* Update all baselines */
+    CapSense_UpdateEnabledBaselines();
+        
+   	/* Start scanning all enabled sensors */
+    CapSense_ScanEnabledWidgets();
+    
+    /* Wait for scanning to complete */
+	while(CapSense_IsBusy() != 0)
+	{
+		/* Loop until condition true */
+	}
+    
+    /* Find Slider Position */
+    curPos = CapSense_GetCentroidPos(CapSense_LINEARSLIDER0__LS);    
+    
+    /* Reset position */
+    if(curPos == 0xFFFFu)
+    {
+        curPos = 0u;
+    }
+                
+    /* Move bargraph */
+    if (curPos != oldPos)
+    {
+        oldPos = curPos;
+        volume = curPos*MAX_SLIDER/MAX_VOLUME;       
+    }
+}
+
 
 /* [] END OF FILE */

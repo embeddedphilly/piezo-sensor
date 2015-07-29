@@ -159,7 +159,7 @@ CY_ISR(ISR_1_Interrupt)
 {
     /*  Place your Interrupt code here. */
     /* `#START ISR_1_Interrupt` */
-
+    state = STATE_READY;
     /* `#END` */
 }
 

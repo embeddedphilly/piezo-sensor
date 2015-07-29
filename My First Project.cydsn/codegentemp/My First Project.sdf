@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2015-07-23T00:01:20Z")
+ (DATE "2015-07-29T19:02:27Z")
  (DESIGN "My First Project")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -14,6 +14,7 @@
    (ABSOLUTE
     (INTERCONNECT ClockBlock.hfclk TRIGGER_TIMER\(0\).in_clock (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.hfclk ISR_1.clock (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.hfclk \\CapSense\:ISR\\.clock (0.000:0.000:0.000))
     (INTERCONNECT \\Timer_1\:cy_m0s8_tcpwm_1\\.interrupt ISR_1.interrupt (1.000:1.000:1.000))
     (INTERCONNECT ClockBlock.ff_div_9 \\PWM_1\:cy_m0s8_tcpwm_1\\.clock (0.000:0.000:0.000))
     (INTERCONNECT \\PWM_1\:cy_m0s8_tcpwm_1\\.line_out PIEZO_PIN\(0\).pin_input (5.986:5.986:5.986))
@@ -21,6 +22,12 @@
     (INTERCONNECT TRIGGER_TIMER\(0\).fb \\Timer_1\:cy_m0s8_tcpwm_1\\.capture (2.630:2.630:2.630))
     (INTERCONNECT TRIGGER_TIMER\(0\).fb \\Timer_1\:cy_m0s8_tcpwm_1\\.reload (2.630:2.630:2.630))
     (INTERCONNECT PIEZO_PIN\(0\).pad_out PIEZO_PIN\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\CapSense\:CSD_FFB\\.irq \\CapSense\:ISR\\.interrupt (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.ff_div_6 \\CapSense\:CSD_FFB\\.clk2 (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.ff_div_5 \\CapSense\:CSD_FFB\\.clk1 (0.000:0.000:0.000))
+    (INTERCONNECT __ONE__.q \\CapSense\:Cmod\(0\)\\.pin_input (6.326:6.326:6.326))
+    (INTERCONNECT __ONE__.q \\CapSense\:IDAC1\:cy_psoc4_idac\\.en (7.401:7.401:7.401))
+    (INTERCONNECT __ONE__.q \\CapSense\:IDAC2\:cy_psoc4_idac\\.en (6.462:6.462:6.462))
     (INTERCONNECT PIEZO_PIN\(0\).pad_out PIEZO_PIN\(0\)_PAD (0.000:0.000:0.000))
     (INTERCONNECT PIEZO_PIN\(0\)_PAD PIEZO_PIN\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT TRIGGER_TIMER\(0\)_PAD TRIGGER_TIMER\(0\).pad_in (0.000:0.000:0.000))

@@ -16,17 +16,21 @@
 ##################################################################### 
                     1::Clock Frequency Summary
 ===================================================================== 
-Number of clocks: 10
-Clock: Clock_1       | N/A  | Target: 2.00 MHz   | 
-Clock: Clock_1(FFB)  | N/A  | Target: 2.00 MHz   | 
-Clock: Clock_2       | N/A  | Target: 12.00 MHz  | 
-Clock: Clock_2(FFB)  | N/A  | Target: 12.00 MHz  | 
-Clock: CyHFCLK       | N/A  | Target: 24.00 MHz  | 
-Clock: CyILO         | N/A  | Target: 0.03 MHz   | 
-Clock: CyIMO         | N/A  | Target: 24.00 MHz  | 
-Clock: CyLFCLK       | N/A  | Target: 0.03 MHz   | 
-Clock: CyRouted1     | N/A  | Target: 24.00 MHz  | 
-Clock: CySYSCLK      | N/A  | Target: 24.00 MHz  | 
+Number of clocks: 14
+Clock: CapSense_SampleClk       | N/A  | Target: 0.09 MHz   | 
+Clock: CapSense_SampleClk(FFB)  | N/A  | Target: 0.09 MHz   | 
+Clock: CapSense_SenseClk        | N/A  | Target: 0.09 MHz   | 
+Clock: CapSense_SenseClk(FFB)   | N/A  | Target: 0.09 MHz   | 
+Clock: Clock_1                  | N/A  | Target: 2.00 MHz   | 
+Clock: Clock_1(FFB)             | N/A  | Target: 2.00 MHz   | 
+Clock: Clock_2                  | N/A  | Target: 12.00 MHz  | 
+Clock: Clock_2(FFB)             | N/A  | Target: 12.00 MHz  | 
+Clock: CyHFCLK                  | N/A  | Target: 24.00 MHz  | 
+Clock: CyILO                    | N/A  | Target: 0.03 MHz   | 
+Clock: CyIMO                    | N/A  | Target: 24.00 MHz  | 
+Clock: CyLFCLK                  | N/A  | Target: 0.03 MHz   | 
+Clock: CyRouted1                | N/A  | Target: 24.00 MHz  | 
+Clock: CySYSCLK                 | N/A  | Target: 24.00 MHz  | 
 
  =====================================================================
                     End of Clock Frequency Summary

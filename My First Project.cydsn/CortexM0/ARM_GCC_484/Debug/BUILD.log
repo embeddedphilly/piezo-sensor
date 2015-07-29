@@ -1,27 +1,11 @@
---------------- Build Started: 07/22/2015 20:01:13 Project: My First Project, Configuration: ARM GCC 4.8.4 Debug ---------------
-cydsfit.exe -.appdatapath "C:\Users\TinyWindows\AppData\Local\Cypress Semiconductor\PSoC Creator\3.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p "C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\My First Project.cyprj" -d CY8C4245AXI-483 -s "C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\Generated_Source\PSoC4" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
-Elaborating Design...
-HDL Generation ...
-Synthesis ...
-Place and Route ...
-Tech mapping ...
-ADD: pft.M0040: information: The following 1 pin(s) will be assigned a location by the fitter: TRIGGER_TIMER(0)
-Analog Placement ...
-Analog Routing ...
-Analog Code Generation ...
-Digital Placement ...
-Digital Routing ...
-Bitstream Generation ...
-Static timing analysis ...
-API Generation ...
-Dependency Generation ...
-Clean Temporary Files ...
+--------------- Build Started: 07/29/2015 12:26:06 Project: My First Project, Configuration: ARM GCC 4.8.4 Debug ---------------
+The code generation step is up to date.
+.\piezoelectric.c: In function 'piezo_play':
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\main.c -o .\CortexM0\ARM_GCC_484\Debug\main.o
-.\main.c: In function 'main':
-.\main.c:53:13: warning: implicit declaration of function 'set_note_timer' [-Wimplicit-function-declaration]
-             set_note_timer(note);
-             ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/piezoelectric.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\piezoelectric.c -o .\CortexM0\ARM_GCC_484\Debug\piezoelectric.o
+.\piezoelectric.c:61:12: warning: unused variable 'duration' [-Wunused-variable]
+     uint16 duration = 60000/tempo/note;
+            ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/cyfitter_cfg.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\cyfitter_cfg.c -o .\CortexM0\ARM_GCC_484\Debug\cyfitter_cfg.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/cymetadata.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\cymetadata.c -o .\CortexM0\ARM_GCC_484\Debug\cymetadata.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/PWM_1.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\PWM_1.c -o .\CortexM0\ARM_GCC_484\Debug\PWM_1.o
@@ -40,11 +24,13 @@ arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\P
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/Timer_1_PM.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\Timer_1_PM.c -o .\CortexM0\ARM_GCC_484\Debug\Timer_1_PM.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/TRIGGER_TIMER.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\TRIGGER_TIMER.c -o .\CortexM0\ARM_GCC_484\Debug\TRIGGER_TIMER.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/ISR_1.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\ISR_1.c -o .\CortexM0\ARM_GCC_484\Debug\ISR_1.o
-arm-none-eabi-ar.exe -rs ".\CortexM0\ARM_GCC_484\Debug\My First Project.a" .\CortexM0\ARM_GCC_484\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_484\Debug\PWM_1.o .\CortexM0\ARM_GCC_484\Debug\PWM_1_PM.o .\CortexM0\ARM_GCC_484\Debug\Clock_1.o .\CortexM0\ARM_GCC_484\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_484\Debug\CyFlash.o .\CortexM0\ARM_GCC_484\Debug\CyLib.o .\CortexM0\ARM_GCC_484\Debug\cyPm.o .\CortexM0\ARM_GCC_484\Debug\cyutils.o .\CortexM0\ARM_GCC_484\Debug\Clock_2.o .\CortexM0\ARM_GCC_484\Debug\PIEZO_PIN.o .\CortexM0\ARM_GCC_484\Debug\CyLFClk.o .\CortexM0\ARM_GCC_484\Debug\Timer_1.o .\CortexM0\ARM_GCC_484\Debug\Timer_1_PM.o .\CortexM0\ARM_GCC_484\Debug\TRIGGER_TIMER.o .\CortexM0\ARM_GCC_484\Debug\ISR_1.o
-arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_484\Debug\My First Project.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o ".\CortexM0\ARM_GCC_484\Debug\My First Project.elf" .\CortexM0\ARM_GCC_484\Debug\main.o .\CortexM0\ARM_GCC_484\Debug\piezoelectric.o .\CortexM0\ARM_GCC_484\Debug\cymetadata.o .\CortexM0\ARM_GCC_484\Debug\Cm0Start.o ".\CortexM0\ARM_GCC_484\Debug\My First Project.a" "C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_484\Debug\CyComponentLibrary.a" -mcpu=cortex-m0 -mthumb -g -ffunction-sections -O0 "-Wl,-Map,.\CortexM0\ARM_GCC_484\Debug/My First Project.map" -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
-.\CortexM0\ARM_GCC_484\Debug\main.o: In function `main':
-C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn/.\main.c:53: undefined reference to `set_note_timer'
-collect2.exe: error: ld returned 1 exit status
+.\Generated_Source\PSoC4\ISR_1.c: In function 'ISR_1_Interrupt':
+.\Generated_Source\PSoC4\ISR_1.c:162:5: error: 'state' undeclared (first use in this function)
+     state = STATE_READY;
+     ^
+.\Generated_Source\PSoC4\ISR_1.c:162:5: note: each undeclared identifier is reported only once for each function it appears in
+.\Generated_Source\PSoC4\ISR_1.c:162:13: error: 'STATE_READY' undeclared (first use in this function)
+     state = STATE_READY;
+             ^
 The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
---------------- Build Failed: 07/22/2015 20:01:35 ---------------
+--------------- Build Failed: 07/29/2015 12:26:09 ---------------

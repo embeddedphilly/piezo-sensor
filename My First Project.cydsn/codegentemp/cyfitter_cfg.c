@@ -120,7 +120,7 @@ static void CyClockStartupError(uint8 errorCode)
 }
 #endif
 
-#define CY_CFG_BASE_ADDR_COUNT 5u
+#define CY_CFG_BASE_ADDR_COUNT 7u
 CYPACKED typedef struct
 {
 	uint8 offset;
@@ -196,17 +196,25 @@ static void ClockSetup(void)
 
 
 	/* CYDEV_CLK_SELECT00 Starting address: CYDEV_CLK_SELECT00 */
-	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_SELECT08), 0x00000010u);
-	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_SELECT09), 0x00000020u);
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_SELECT05), 0x00000020u);
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_SELECT06), 0x00000010u);
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_SELECT08), 0x00000030u);
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_SELECT09), 0x00000011u);
 
 	/* CYDEV_CLK_IMO_CONFIG Starting address: CYDEV_CLK_IMO_CONFIG */
 	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_IMO_CONFIG), 0x80000000u);
 
 	/* CYDEV_CLK_DIVIDER_A00 Starting address: CYDEV_CLK_DIVIDER_A00 */
-	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_DIVIDER_A00), 0x80000001u);
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_DIVIDER_A00), 0x800000FEu);
 
 	/* CYDEV_CLK_DIVIDER_B00 Starting address: CYDEV_CLK_DIVIDER_B00 */
-	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_DIVIDER_B00), 0x8000000Bu);
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_DIVIDER_B00), 0xC00000FEu);
+
+	/* CYDEV_CLK_DIVIDER_C00 Starting address: CYDEV_CLK_DIVIDER_C00 */
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_DIVIDER_C00), 0x80000001u);
+
+	/* CYDEV_CLK_DIVIDER_A01 Starting address: CYDEV_CLK_DIVIDER_A01 */
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_DIVIDER_A01), 0x8000000Bu);
 
 	CY_SET_XTND_REG32((void CYFAR *)(CYREG_WDT_CONFIG), 0x00000000u);
 }
@@ -233,6 +241,48 @@ static void ClockSetup(void)
 static void AnalogSetDefault(void);
 static void AnalogSetDefault(void)
 {
+	SetAnalogRoutingPumps(1);
+}
+
+
+/*******************************************************************************
+* Function Name: SetAnalogRoutingPumps
+********************************************************************************
+*
+* Summary:
+* Enables or disables the analog pumps feeding analog routing switches.
+* Intended to be called at startup, based on the Vdda system configuration;
+* may be called during operation when the user informs us that the Vdda voltage crossed the pump threshold.
+*
+* Parameters:
+*  enabled - 1 to enable the pumps, 0 to disable the pumps
+*
+* Return:
+*  void
+*
+*******************************************************************************/
+void SetAnalogRoutingPumps(uint8 enabled)
+{
+	uint32 regValue = CY_GET_XTND_REG32((void *)(CYREG_SAR_PUMP_CTRL));
+	if (enabled != 0u)
+	{
+		regValue |= 0x80000000u;
+	}
+	else
+	{
+		regValue &= ~0x80000000u;
+	}
+	CY_SET_XTND_REG32((void *)(CYREG_SAR_PUMP_CTRL), regValue);
+	regValue = CY_GET_XTND_REG32((void *)(CYREG_CLK_IMO_CONFIG));
+	if (enabled != 0u)
+	{
+		regValue |= 0x02000000u;
+	}
+	else
+	{
+		regValue &= ~0x02000000u;
+	}
+	CY_SET_XTND_REG32((void *)(CYREG_CLK_IMO_CONFIG), regValue);
 }
 
 #define CY_AMUX_UNUSED CYREG_CM0_ROM_DWT
@@ -262,14 +312,23 @@ void cyfitter_cfg(void)
 
 	{
 		static const uint32 CYCODE cy_cfg_addr_table[] = {
-			0x400F3301u, /* Base address: 0x400F3300 Count: 1 */
+			0x400F3204u, /* Base address: 0x400F3200 Count: 4 */
+			0x400F3304u, /* Base address: 0x400F3300 Count: 4 */
 			0x400F4004u, /* Base address: 0x400F4000 Count: 4 */
 			0x400F4105u, /* Base address: 0x400F4100 Count: 5 */
-			0x400F4304u, /* Base address: 0x400F4300 Count: 4 */
+			0x400F4203u, /* Base address: 0x400F4200 Count: 3 */
+			0x400F430Au, /* Base address: 0x400F4300 Count: 10 */
 			0x400F6002u, /* Base address: 0x400F6000 Count: 2 */
 		};
 
 		static const cy_cfg_addrvalue_t CYCODE cy_cfg_data_table[] = {
+			{0x38u, 0x22u},
+			{0x3Eu, 0x11u},
+			{0x58u, 0x04u},
+			{0x5Fu, 0x01u},
+			{0x1Du, 0x31u},
+			{0x89u, 0x20u},
+			{0x8Du, 0x11u},
 			{0xE6u, 0x20u},
 			{0x02u, 0x40u},
 			{0x5Bu, 0x01u},
@@ -280,9 +339,18 @@ void cyfitter_cfg(void)
 			{0x9Au, 0x40u},
 			{0x9Fu, 0x01u},
 			{0xD0u, 0x80u},
+			{0x70u, 0x02u},
+			{0x74u, 0x10u},
+			{0xDCu, 0x03u},
 			{0x1Cu, 0x80u},
-			{0x88u, 0x40u},
+			{0x64u, 0x20u},
+			{0x88u, 0x50u},
+			{0x8Cu, 0x22u},
+			{0xA4u, 0x12u},
 			{0xC6u, 0x04u},
+			{0xD8u, 0x01u},
+			{0xE0u, 0x02u},
+			{0xE4u, 0x03u},
 			{0xE6u, 0x04u},
 			{0x02u, 0x01u},
 			{0x11u, 0x01u},
@@ -320,8 +388,15 @@ void cyfitter_cfg(void)
 		CY_SET_XTND_REG32((void CYFAR *)(CYDEV_UDB_PA0_BASE), 0x00990004u);
 		CY_SET_XTND_REG32((void CYFAR *)(CYREG_UDB_PA0_CFG4), 0x00020000u);
 
+		/* UDB_PA_1 Starting address: CYDEV_UDB_PA1_BASE */
+		CY_SET_XTND_REG32((void CYFAR *)(CYDEV_UDB_PA1_BASE), 0x00990000u);
+
+		/* UDB_PA_2 Starting address: CYDEV_UDB_PA2_BASE */
+		CY_SET_XTND_REG32((void CYFAR *)(CYDEV_UDB_PA2_BASE), 0x00990000u);
+
 		/* UDB_PA_3 Starting address: CYDEV_UDB_PA3_BASE */
 		CY_SET_XTND_REG32((void CYFAR *)(CYDEV_UDB_PA3_BASE), 0x00990000u);
+		CY_SET_XTND_REG32((void CYFAR *)(CYREG_UDB_PA3_CFG8), 0x30000000u);
 
 		/* TCPWM_CNT0 Starting address: CYDEV_TCPWM_CNT0_TR_CTRL0 */
 		CY_SET_XTND_REG32((void CYFAR *)(CYREG_TCPWM_CNT0_TR_CTRL0), 0x00000D1Du);
@@ -339,8 +414,22 @@ void cyfitter_cfg(void)
 	CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT0_DR), 0x00000011u);
 	CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT0_PC), 0x00006002u);
 
+	/* IOPINS0_1 Starting address: CYDEV_PRT1_DR */
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT1_DR), 0x00000010u);
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT1_PC2), 0x00000010u);
+
+	/* IOPINS0_2 Starting address: CYDEV_PRT2_DR */
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT2_DR), 0x00000094u);
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT2_PC2), 0x00000094u);
+
 	/* IOPINS0_3 Starting address: CYDEV_PRT3_DR */
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT3_DR), 0x00000080u);
 	CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT3_PC), 0x00000D80u);
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT3_PC2), 0x00000080u);
+
+	/* IOPINS0_4 Starting address: CYDEV_PRT4_DR */
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT4_DR), 0x00000004u);
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT4_PC2), 0x00000004u);
 
 	/* Setup clocks based on selections from Clock DWR */
 	ClockSetup();

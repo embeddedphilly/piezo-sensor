@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
    5:.\piezoelectric.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
    6:.\piezoelectric.c ****  *
    7:.\piezoelectric.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 2
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 2
 
 
    8:.\piezoelectric.c ****  * WHICH IS THE PROPERTY OF your company.
@@ -67,18 +67,19 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
   11:.\piezoelectric.c **** */
   12:.\piezoelectric.c **** #include <project.h>
   13:.\piezoelectric.c **** #include "cytypes.h"
-  14:.\piezoelectric.c **** #include "PWM_1.h"
-  15:.\piezoelectric.c **** #include "piezoelectric.h"
-  16:.\piezoelectric.c **** 
-  17:.\piezoelectric.c **** uint8 volume = 1;
-  18:.\piezoelectric.c **** uint8 tempo = 120;
-  19:.\piezoelectric.c **** int const f_clock = 2000000;
-  20:.\piezoelectric.c **** int const freq_mod = 10;
-  21:.\piezoelectric.c **** 
+  14:.\piezoelectric.c **** #include "Timer_1.h"
+  15:.\piezoelectric.c **** #include "PWM_1.h"
+  16:.\piezoelectric.c **** #include "piezoelectric.h"
+  17:.\piezoelectric.c **** 
+  18:.\piezoelectric.c **** uint8 volume = 1;
+  19:.\piezoelectric.c **** uint8 tempo = 120;
+  20:.\piezoelectric.c **** int const f_clock = 2000000;
+  21:.\piezoelectric.c **** int const freq_mod = 10;
   22:.\piezoelectric.c **** 
-  23:.\piezoelectric.c **** void piezo_tone(uint16 frequency_value) 
-  24:.\piezoelectric.c **** {
-  51              		.loc 1 24 0
+  23:.\piezoelectric.c **** 
+  24:.\piezoelectric.c **** void piezo_tone(uint16 frequency_value) 
+  25:.\piezoelectric.c **** {
+  51              		.loc 1 25 0
   52              		.cfi_startproc
   53 0000 80B5     		push	{r7, lr}
   54              		.cfi_def_cfa_offset 8
@@ -91,9 +92,9 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
   61 0006 021C     		mov	r2, r0
   62 0008 BB1D     		add	r3, r7, #6
   63 000a 1A80     		strh	r2, [r3]
-  25:.\piezoelectric.c ****     // duty cycle ticks is a percentage of frequency based on volume
-  26:.\piezoelectric.c ****     int period_ticks = f_clock * freq_mod / frequency_value;
-  64              		.loc 1 26 0
+  26:.\piezoelectric.c ****     // duty cycle ticks is a percentage of frequency based on volume
+  27:.\piezoelectric.c ****     int period_ticks = f_clock * freq_mod / frequency_value;
+  64              		.loc 1 27 0
   65 000c 184B     		ldr	r3, .L3
   66 000e 0A22     		mov	r2, #10
   67 0010 5A43     		mul	r2, r3
@@ -104,8 +105,8 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
   72 001a FFF7FEFF 		bl	__aeabi_idiv
   73 001e 031C     		mov	r3, r0
   74 0020 BB60     		str	r3, [r7, #8]
-  27:.\piezoelectric.c ****     uint16 compare_ticks = period_ticks * volume / 100;
-  75              		.loc 1 27 0
+  28:.\piezoelectric.c ****     uint16 compare_ticks = period_ticks * volume / 100;
+  75              		.loc 1 28 0
   76 0022 144B     		ldr	r3, .L3+4
   77 0024 1B78     		ldrb	r3, [r3]
   78 0026 BA68     		ldr	r2, [r7, #8]
@@ -117,23 +118,23 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
   84 0034 1A1C     		mov	r2, r3
   85 0036 3B1C     		mov	r3, r7
   86 0038 0E33     		add	r3, r3, #14
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 3
+
+
   87 003a 1A80     		strh	r2, [r3]
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 3
-
-
-  28:.\piezoelectric.c ****     
-  29:.\piezoelectric.c ****     // maximum duty cycle ticks must be at least 1 lower than frequency
-  30:.\piezoelectric.c ****     // to produce a vibration
-  31:.\piezoelectric.c ****     if (compare_ticks == period_ticks) {
-  88              		.loc 1 31 0
+  29:.\piezoelectric.c ****     
+  30:.\piezoelectric.c ****     // maximum duty cycle ticks must be at least 1 lower than frequency
+  31:.\piezoelectric.c ****     // to produce a vibration
+  32:.\piezoelectric.c ****     if (compare_ticks == period_ticks) {
+  88              		.loc 1 32 0
   89 003c 3B1C     		mov	r3, r7
   90 003e 0E33     		add	r3, r3, #14
   91 0040 1A88     		ldrh	r2, [r3]
   92 0042 BB68     		ldr	r3, [r7, #8]
   93 0044 9A42     		cmp	r2, r3
   94 0046 06D1     		bne	.L2
-  32:.\piezoelectric.c ****         compare_ticks--;
-  95              		.loc 1 32 0
+  33:.\piezoelectric.c ****         compare_ticks--;
+  95              		.loc 1 33 0
   96 0048 3B1C     		mov	r3, r7
   97 004a 0E33     		add	r3, r3, #14
   98 004c 1A88     		ldrh	r2, [r3]
@@ -142,25 +143,25 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
  101 0052 013A     		sub	r2, r2, #1
  102 0054 1A80     		strh	r2, [r3]
  103              	.L2:
-  33:.\piezoelectric.c ****     }
-  34:.\piezoelectric.c ****     
-  35:.\piezoelectric.c ****     // Set period to frequency value
-  36:.\piezoelectric.c ****     PWM_1_WritePeriod(period_ticks);
- 104              		.loc 1 36 0
+  34:.\piezoelectric.c ****     }
+  35:.\piezoelectric.c ****     
+  36:.\piezoelectric.c ****     // Set period to frequency value
+  37:.\piezoelectric.c ****     PWM_1_WritePeriod(period_ticks);
+ 104              		.loc 1 37 0
  105 0056 BB68     		ldr	r3, [r7, #8]
  106 0058 181C     		mov	r0, r3
  107 005a FFF7FEFF 		bl	PWM_1_WritePeriod
-  37:.\piezoelectric.c ****     
-  38:.\piezoelectric.c ****     // Set compare to toggle on duty cycle ticks
-  39:.\piezoelectric.c ****     PWM_1_WriteCompare(compare_ticks);
- 108              		.loc 1 39 0
+  38:.\piezoelectric.c ****     
+  39:.\piezoelectric.c ****     // Set compare to toggle on duty cycle ticks
+  40:.\piezoelectric.c ****     PWM_1_WriteCompare(compare_ticks);
+ 108              		.loc 1 40 0
  109 005e 3B1C     		mov	r3, r7
  110 0060 0E33     		add	r3, r3, #14
  111 0062 1B88     		ldrh	r3, [r3]
  112 0064 181C     		mov	r0, r3
  113 0066 FFF7FEFF 		bl	PWM_1_WriteCompare
-  40:.\piezoelectric.c **** }
- 114              		.loc 1 40 0
+  41:.\piezoelectric.c **** }
+ 114              		.loc 1 41 0
  115 006a BD46     		mov	sp, r7
  116 006c 04B0     		add	sp, sp, #16
  117              		@ sp needed
@@ -177,17 +178,17 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
  128              		.align	2
  129              		.global	piezo_volume
  130              		.code	16
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 4
+
+
  131              		.thumb_func
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 4
-
-
  132              		.type	piezo_volume, %function
  133              	piezo_volume:
  134              	.LFB34:
-  41:.\piezoelectric.c **** 
-  42:.\piezoelectric.c **** void piezo_volume(uint8 value)
-  43:.\piezoelectric.c **** {
- 135              		.loc 1 43 0
+  42:.\piezoelectric.c **** 
+  43:.\piezoelectric.c **** void piezo_volume(uint8 value)
+  44:.\piezoelectric.c **** {
+ 135              		.loc 1 44 0
  136              		.cfi_startproc
  137 0000 80B5     		push	{r7, lr}
  138              		.cfi_def_cfa_offset 8
@@ -200,14 +201,14 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
  145 0006 021C     		mov	r2, r0
  146 0008 FB1D     		add	r3, r7, #7
  147 000a 1A70     		strb	r2, [r3]
-  44:.\piezoelectric.c ****     volume = value;
- 148              		.loc 1 44 0
+  45:.\piezoelectric.c ****     volume = value;
+ 148              		.loc 1 45 0
  149 000c 034B     		ldr	r3, .L6
  150 000e FA1D     		add	r2, r7, #7
  151 0010 1278     		ldrb	r2, [r2]
  152 0012 1A70     		strb	r2, [r3]
-  45:.\piezoelectric.c **** }
- 153              		.loc 1 45 0
+  46:.\piezoelectric.c **** }
+ 153              		.loc 1 46 0
  154 0014 BD46     		mov	sp, r7
  155 0016 02B0     		add	sp, sp, #8
  156              		@ sp needed
@@ -227,33 +228,33 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
  170              		.type	piezo_tempo, %function
  171              	piezo_tempo:
  172              	.LFB35:
-  46:.\piezoelectric.c ****     
-  47:.\piezoelectric.c **** void piezo_tempo(uint8 bpm)
-  48:.\piezoelectric.c **** {
- 173              		.loc 1 48 0
+  47:.\piezoelectric.c ****     
+  48:.\piezoelectric.c **** void piezo_tempo(uint8 bpm)
+  49:.\piezoelectric.c **** {
+ 173              		.loc 1 49 0
  174              		.cfi_startproc
  175 0000 80B5     		push	{r7, lr}
  176              		.cfi_def_cfa_offset 8
  177              		.cfi_offset 7, -8
  178              		.cfi_offset 14, -4
  179 0002 82B0     		sub	sp, sp, #8
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 5
+
+
  180              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 5
-
-
  181 0004 00AF     		add	r7, sp, #0
  182              		.cfi_def_cfa_register 7
  183 0006 021C     		mov	r2, r0
  184 0008 FB1D     		add	r3, r7, #7
  185 000a 1A70     		strb	r2, [r3]
-  49:.\piezoelectric.c ****     tempo = bpm;
- 186              		.loc 1 49 0
+  50:.\piezoelectric.c ****     tempo = bpm;
+ 186              		.loc 1 50 0
  187 000c 034B     		ldr	r3, .L9
  188 000e FA1D     		add	r2, r7, #7
  189 0010 1278     		ldrb	r2, [r2]
  190 0012 1A70     		strb	r2, [r3]
-  50:.\piezoelectric.c **** }
- 191              		.loc 1 50 0
+  51:.\piezoelectric.c **** }
+ 191              		.loc 1 51 0
  192 0014 BD46     		mov	sp, r7
  193 0016 02B0     		add	sp, sp, #8
  194              		@ sp needed
@@ -273,10 +274,10 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
  208              		.type	piezo_stop, %function
  209              	piezo_stop:
  210              	.LFB36:
-  51:.\piezoelectric.c **** 
-  52:.\piezoelectric.c **** void piezo_stop()
-  53:.\piezoelectric.c **** {
- 211              		.loc 1 53 0
+  52:.\piezoelectric.c **** 
+  53:.\piezoelectric.c **** void piezo_stop()
+  54:.\piezoelectric.c **** {
+ 211              		.loc 1 54 0
  212              		.cfi_startproc
  213 0000 80B5     		push	{r7, lr}
  214              		.cfi_def_cfa_offset 8
@@ -284,12 +285,12 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
  216              		.cfi_offset 14, -4
  217 0002 00AF     		add	r7, sp, #0
  218              		.cfi_def_cfa_register 7
-  54:.\piezoelectric.c ****     PWM_1_WriteCompare(0);
- 219              		.loc 1 54 0
+  55:.\piezoelectric.c ****     PWM_1_WriteCompare(0);
+ 219              		.loc 1 55 0
  220 0004 0020     		mov	r0, #0
  221 0006 FFF7FEFF 		bl	PWM_1_WriteCompare
-  55:.\piezoelectric.c **** }
- 222              		.loc 1 55 0
+  56:.\piezoelectric.c **** }
+ 222              		.loc 1 56 0
  223 000a BD46     		mov	sp, r7
  224              		@ sp needed
  225 000c 80BD     		pop	{r7, pc}
@@ -297,27 +298,27 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
  227              	.LFE36:
  228              		.size	piezo_stop, .-piezo_stop
  229 000e C046     		.section	.text.piezo_play,"ax",%progbits
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 6
+
+
  230              		.align	2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 6
-
-
  231              		.global	piezo_play
  232              		.code	16
  233              		.thumb_func
  234              		.type	piezo_play, %function
  235              	piezo_play:
  236              	.LFB37:
-  56:.\piezoelectric.c **** 
-  57:.\piezoelectric.c **** void piezo_play(uint16 frequency, uint8 note)
-  58:.\piezoelectric.c **** {
- 237              		.loc 1 58 0
+  57:.\piezoelectric.c **** 
+  58:.\piezoelectric.c **** void piezo_play(uint16 frequency_value, uint8 note)
+  59:.\piezoelectric.c **** {
+ 237              		.loc 1 59 0
  238              		.cfi_startproc
  239 0000 80B5     		push	{r7, lr}
  240              		.cfi_def_cfa_offset 8
  241              		.cfi_offset 7, -8
  242              		.cfi_offset 14, -4
- 243 0002 84B0     		sub	sp, sp, #16
- 244              		.cfi_def_cfa_offset 24
+ 243 0002 86B0     		sub	sp, sp, #24
+ 244              		.cfi_def_cfa_offset 32
  245 0004 00AF     		add	r7, sp, #0
  246              		.cfi_def_cfa_register 7
  247 0006 0A1C     		mov	r2, r1
@@ -326,12 +327,12 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
  250 000c 1980     		strh	r1, [r3]
  251 000e 7B1D     		add	r3, r7, #5
  252 0010 1A70     		strb	r2, [r3]
-  59:.\piezoelectric.c ****     // figure out the duration of this note (in ms), given the current tempo
-  60:.\piezoelectric.c ****     uint16 duration = 60000/tempo/note;
- 253              		.loc 1 60 0
- 254 0012 114B     		ldr	r3, .L13
+  60:.\piezoelectric.c ****     // figure out the duration of this note (in ms), given the current tempo
+  61:.\piezoelectric.c ****     uint16 duration = 60000/tempo/note;
+ 253              		.loc 1 61 0
+ 254 0012 1C4B     		ldr	r3, .L13
  255 0014 1B78     		ldrb	r3, [r3]
- 256 0016 1148     		ldr	r0, .L13+4
+ 256 0016 1C48     		ldr	r0, .L13+4
  257 0018 191C     		mov	r1, r3
  258 001a FFF7FEFF 		bl	__aeabi_idiv
  259 001e 031C     		mov	r3, r0
@@ -344,1034 +345,1079 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 1
  266 002e 031C     		mov	r3, r0
  267 0030 1A1C     		mov	r2, r3
  268 0032 3B1C     		mov	r3, r7
- 269 0034 0E33     		add	r3, r3, #14
+ 269 0034 1633     		add	r3, r3, #22
  270 0036 1A80     		strh	r2, [r3]
-  61:.\piezoelectric.c **** 
-  62:.\piezoelectric.c ****     piezo_tone(frequency);
- 271              		.loc 1 62 0
- 272 0038 BB1D     		add	r3, r7, #6
- 273 003a 1B88     		ldrh	r3, [r3]
- 274 003c 181C     		mov	r0, r3
- 275 003e FFF7FEFF 		bl	piezo_tone
-  63:.\piezoelectric.c ****     CyDelay(duration);
- 276              		.loc 1 63 0
- 277 0042 3B1C     		mov	r3, r7
- 278 0044 0E33     		add	r3, r3, #14
- 279 0046 1B88     		ldrh	r3, [r3]
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 7
+  62:.\piezoelectric.c ****     
+  63:.\piezoelectric.c ****     // duty cycle ticks is a percentage of frequency based on volume
+  64:.\piezoelectric.c ****     int period_ticks = f_clock * freq_mod / frequency_value;
+ 271              		.loc 1 64 0
+ 272 0038 144B     		ldr	r3, .L13+8
+ 273 003a 0A22     		mov	r2, #10
+ 274 003c 5A43     		mul	r2, r3
+ 275 003e BB1D     		add	r3, r7, #6
+ 276 0040 1B88     		ldrh	r3, [r3]
+ 277 0042 101C     		mov	r0, r2
+ 278 0044 191C     		mov	r1, r3
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 7
 
 
- 280 0048 181C     		mov	r0, r3
- 281 004a FFF7FEFF 		bl	CyDelay
-  64:.\piezoelectric.c ****     piezo_stop();
- 282              		.loc 1 64 0
- 283 004e FFF7FEFF 		bl	piezo_stop
-  65:.\piezoelectric.c **** }
- 284              		.loc 1 65 0
- 285 0052 BD46     		mov	sp, r7
- 286 0054 04B0     		add	sp, sp, #16
- 287              		@ sp needed
- 288 0056 80BD     		pop	{r7, pc}
- 289              	.L14:
- 290              		.align	2
- 291              	.L13:
- 292 0058 00000000 		.word	tempo
- 293 005c 60EA0000 		.word	60000
- 294              		.cfi_endproc
- 295              	.LFE37:
- 296              		.size	piezo_play, .-piezo_play
- 297              		.section	.text.piezo_rest,"ax",%progbits
- 298              		.align	2
- 299              		.global	piezo_rest
- 300              		.code	16
- 301              		.thumb_func
- 302              		.type	piezo_rest, %function
- 303              	piezo_rest:
- 304              	.LFB38:
-  66:.\piezoelectric.c **** 
-  67:.\piezoelectric.c **** void piezo_rest(uint8 note)
-  68:.\piezoelectric.c **** {
- 305              		.loc 1 68 0
- 306              		.cfi_startproc
- 307 0000 80B5     		push	{r7, lr}
- 308              		.cfi_def_cfa_offset 8
- 309              		.cfi_offset 7, -8
- 310              		.cfi_offset 14, -4
- 311 0002 84B0     		sub	sp, sp, #16
- 312              		.cfi_def_cfa_offset 24
- 313 0004 00AF     		add	r7, sp, #0
- 314              		.cfi_def_cfa_register 7
- 315 0006 021C     		mov	r2, r0
- 316 0008 FB1D     		add	r3, r7, #7
- 317 000a 1A70     		strb	r2, [r3]
-  69:.\piezoelectric.c ****     // figure out the duration of this note (in ms), given the current tempo (which is in bps)
-  70:.\piezoelectric.c ****     uint16 duration = 60000/tempo/note;
- 318              		.loc 1 70 0
- 319 000c 0E4B     		ldr	r3, .L16
- 320 000e 1B78     		ldrb	r3, [r3]
- 321 0010 0E48     		ldr	r0, .L16+4
- 322 0012 191C     		mov	r1, r3
- 323 0014 FFF7FEFF 		bl	__aeabi_idiv
- 324 0018 031C     		mov	r3, r0
- 325 001a 1A1C     		mov	r2, r3
- 326 001c FB1D     		add	r3, r7, #7
- 327 001e 1B78     		ldrb	r3, [r3]
- 328 0020 101C     		mov	r0, r2
- 329 0022 191C     		mov	r1, r3
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 8
-
-
- 330 0024 FFF7FEFF 		bl	__aeabi_idiv
- 331 0028 031C     		mov	r3, r0
- 332 002a 1A1C     		mov	r2, r3
- 333 002c 3B1C     		mov	r3, r7
- 334 002e 0E33     		add	r3, r3, #14
- 335 0030 1A80     		strh	r2, [r3]
-  71:.\piezoelectric.c ****     piezo_stop();
- 336              		.loc 1 71 0
- 337 0032 FFF7FEFF 		bl	piezo_stop
-  72:.\piezoelectric.c ****     CyDelay(duration);
- 338              		.loc 1 72 0
- 339 0036 3B1C     		mov	r3, r7
- 340 0038 0E33     		add	r3, r3, #14
- 341 003a 1B88     		ldrh	r3, [r3]
- 342 003c 181C     		mov	r0, r3
- 343 003e FFF7FEFF 		bl	CyDelay
+ 279 0046 FFF7FEFF 		bl	__aeabi_idiv
+ 280 004a 031C     		mov	r3, r0
+ 281 004c 3B61     		str	r3, [r7, #16]
+  65:.\piezoelectric.c ****     uint16 compare_ticks = period_ticks * volume / 100;
+ 282              		.loc 1 65 0
+ 283 004e 104B     		ldr	r3, .L13+12
+ 284 0050 1B78     		ldrb	r3, [r3]
+ 285 0052 3A69     		ldr	r2, [r7, #16]
+ 286 0054 5343     		mul	r3, r2
+ 287 0056 181C     		mov	r0, r3
+ 288 0058 6421     		mov	r1, #100
+ 289 005a FFF7FEFF 		bl	__aeabi_idiv
+ 290 005e 031C     		mov	r3, r0
+ 291 0060 1A1C     		mov	r2, r3
+ 292 0062 3B1C     		mov	r3, r7
+ 293 0064 0E33     		add	r3, r3, #14
+ 294 0066 1A80     		strh	r2, [r3]
+  66:.\piezoelectric.c ****     
+  67:.\piezoelectric.c ****     
+  68:.\piezoelectric.c ****     // Set period to frequency value
+  69:.\piezoelectric.c ****     PWM_1_WritePeriod(period_ticks);
+ 295              		.loc 1 69 0
+ 296 0068 3B69     		ldr	r3, [r7, #16]
+ 297 006a 181C     		mov	r0, r3
+ 298 006c FFF7FEFF 		bl	PWM_1_WritePeriod
+  70:.\piezoelectric.c ****     
+  71:.\piezoelectric.c ****     // Set compare to toggle on duty cycle ticks
+  72:.\piezoelectric.c ****     PWM_1_WriteCompare(compare_ticks);
+ 299              		.loc 1 72 0
+ 300 0070 3B1C     		mov	r3, r7
+ 301 0072 0E33     		add	r3, r3, #14
+ 302 0074 1B88     		ldrh	r3, [r3]
+ 303 0076 181C     		mov	r0, r3
+ 304 0078 FFF7FEFF 		bl	PWM_1_WriteCompare
   73:.\piezoelectric.c **** }
- 344              		.loc 1 73 0
- 345 0042 BD46     		mov	sp, r7
- 346 0044 04B0     		add	sp, sp, #16
- 347              		@ sp needed
- 348 0046 80BD     		pop	{r7, pc}
- 349              	.L17:
- 350              		.align	2
- 351              	.L16:
- 352 0048 00000000 		.word	tempo
- 353 004c 60EA0000 		.word	60000
- 354              		.cfi_endproc
- 355              	.LFE38:
- 356              		.size	piezo_rest, .-piezo_rest
- 357              		.section	.text.piezo_melody,"ax",%progbits
- 358              		.align	2
- 359              		.global	piezo_melody
- 360              		.code	16
- 361              		.thumb_func
- 362              		.type	piezo_melody, %function
- 363              	piezo_melody:
- 364              	.LFB39:
+ 305              		.loc 1 73 0
+ 306 007c BD46     		mov	sp, r7
+ 307 007e 06B0     		add	sp, sp, #24
+ 308              		@ sp needed
+ 309 0080 80BD     		pop	{r7, pc}
+ 310              	.L14:
+ 311 0082 C046     		.align	2
+ 312              	.L13:
+ 313 0084 00000000 		.word	tempo
+ 314 0088 60EA0000 		.word	60000
+ 315 008c 80841E00 		.word	2000000
+ 316 0090 00000000 		.word	volume
+ 317              		.cfi_endproc
+ 318              	.LFE37:
+ 319              		.size	piezo_play, .-piezo_play
+ 320              		.section	.text.piezo_rest,"ax",%progbits
+ 321              		.align	2
+ 322              		.global	piezo_rest
+ 323              		.code	16
+ 324              		.thumb_func
+ 325              		.type	piezo_rest, %function
+ 326              	piezo_rest:
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 8
+
+
+ 327              	.LFB38:
   74:.\piezoelectric.c **** 
-  75:.\piezoelectric.c **** void piezo_melody(uint16* frequencies, uint8 num)
+  75:.\piezoelectric.c **** void piezo_rest(uint8 note)
   76:.\piezoelectric.c **** {
- 365              		.loc 1 76 0
- 366              		.cfi_startproc
- 367 0000 80B5     		push	{r7, lr}
- 368              		.cfi_def_cfa_offset 8
- 369              		.cfi_offset 7, -8
- 370              		.cfi_offset 14, -4
- 371 0002 84B0     		sub	sp, sp, #16
- 372              		.cfi_def_cfa_offset 24
- 373 0004 00AF     		add	r7, sp, #0
- 374              		.cfi_def_cfa_register 7
- 375 0006 7860     		str	r0, [r7, #4]
- 376 0008 0A1C     		mov	r2, r1
- 377 000a FB1C     		add	r3, r7, #3
- 378 000c 1A70     		strb	r2, [r3]
-  77:.\piezoelectric.c ****     uint8 i, note;
-  78:.\piezoelectric.c ****     uint16 tone;
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 9
+ 328              		.loc 1 76 0
+ 329              		.cfi_startproc
+ 330 0000 80B5     		push	{r7, lr}
+ 331              		.cfi_def_cfa_offset 8
+ 332              		.cfi_offset 7, -8
+ 333              		.cfi_offset 14, -4
+ 334 0002 84B0     		sub	sp, sp, #16
+ 335              		.cfi_def_cfa_offset 24
+ 336 0004 00AF     		add	r7, sp, #0
+ 337              		.cfi_def_cfa_register 7
+ 338 0006 021C     		mov	r2, r0
+ 339 0008 FB1D     		add	r3, r7, #7
+ 340 000a 1A70     		strb	r2, [r3]
+  77:.\piezoelectric.c ****     // figure out the duration of this note (in ms), given the current tempo (which is in bps)
+  78:.\piezoelectric.c ****     uint16 duration = 60000/tempo/note;
+ 341              		.loc 1 78 0
+ 342 000c 0E4B     		ldr	r3, .L16
+ 343 000e 1B78     		ldrb	r3, [r3]
+ 344 0010 0E48     		ldr	r0, .L16+4
+ 345 0012 191C     		mov	r1, r3
+ 346 0014 FFF7FEFF 		bl	__aeabi_idiv
+ 347 0018 031C     		mov	r3, r0
+ 348 001a 1A1C     		mov	r2, r3
+ 349 001c FB1D     		add	r3, r7, #7
+ 350 001e 1B78     		ldrb	r3, [r3]
+ 351 0020 101C     		mov	r0, r2
+ 352 0022 191C     		mov	r1, r3
+ 353 0024 FFF7FEFF 		bl	__aeabi_idiv
+ 354 0028 031C     		mov	r3, r0
+ 355 002a 1A1C     		mov	r2, r3
+ 356 002c 3B1C     		mov	r3, r7
+ 357 002e 0E33     		add	r3, r3, #14
+ 358 0030 1A80     		strh	r2, [r3]
+  79:.\piezoelectric.c ****     piezo_stop();
+ 359              		.loc 1 79 0
+ 360 0032 FFF7FEFF 		bl	piezo_stop
+  80:.\piezoelectric.c ****     CyDelay(duration);
+ 361              		.loc 1 80 0
+ 362 0036 3B1C     		mov	r3, r7
+ 363 0038 0E33     		add	r3, r3, #14
+ 364 003a 1B88     		ldrh	r3, [r3]
+ 365 003c 181C     		mov	r0, r3
+ 366 003e FFF7FEFF 		bl	CyDelay
+  81:.\piezoelectric.c **** }
+ 367              		.loc 1 81 0
+ 368 0042 BD46     		mov	sp, r7
+ 369 0044 04B0     		add	sp, sp, #16
+ 370              		@ sp needed
+ 371 0046 80BD     		pop	{r7, pc}
+ 372              	.L17:
+ 373              		.align	2
+ 374              	.L16:
+ 375 0048 00000000 		.word	tempo
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 9
 
 
-  79:.\piezoelectric.c ****     for (i=0; i<num; i+=2)
- 379              		.loc 1 79 0
- 380 000e 3B1C     		mov	r3, r7
- 381 0010 0F33     		add	r3, r3, #15
- 382 0012 0022     		mov	r2, #0
- 383 0014 1A70     		strb	r2, [r3]
- 384 0016 31E0     		b	.L19
- 385              	.L22:
-  80:.\piezoelectric.c ****     {
-  81:.\piezoelectric.c ****         tone = frequencies[i];
- 386              		.loc 1 81 0
- 387 0018 3B1C     		mov	r3, r7
- 388 001a 0F33     		add	r3, r3, #15
- 389 001c 1B78     		ldrb	r3, [r3]
- 390 001e 5B00     		lsl	r3, r3, #1
- 391 0020 7A68     		ldr	r2, [r7, #4]
- 392 0022 D218     		add	r2, r2, r3
- 393 0024 3B1C     		mov	r3, r7
- 394 0026 0C33     		add	r3, r3, #12
- 395 0028 1288     		ldrh	r2, [r2]
- 396 002a 1A80     		strh	r2, [r3]
-  82:.\piezoelectric.c ****         note = frequencies[i+1];
- 397              		.loc 1 82 0
- 398 002c 3B1C     		mov	r3, r7
- 399 002e 0F33     		add	r3, r3, #15
- 400 0030 1B78     		ldrb	r3, [r3]
- 401 0032 0133     		add	r3, r3, #1
- 402 0034 5B00     		lsl	r3, r3, #1
- 403 0036 7A68     		ldr	r2, [r7, #4]
- 404 0038 D318     		add	r3, r2, r3
- 405 003a 1A88     		ldrh	r2, [r3]
- 406 003c 3B1C     		mov	r3, r7
- 407 003e 0B33     		add	r3, r3, #11
- 408 0040 1A70     		strb	r2, [r3]
-  83:.\piezoelectric.c ****         if (tone == 0)
- 409              		.loc 1 83 0
- 410 0042 3B1C     		mov	r3, r7
- 411 0044 0C33     		add	r3, r3, #12
- 412 0046 1B88     		ldrh	r3, [r3]
- 413 0048 002B     		cmp	r3, #0
- 414 004a 06D1     		bne	.L20
-  84:.\piezoelectric.c ****         {
-  85:.\piezoelectric.c ****             piezo_rest(note);
- 415              		.loc 1 85 0
- 416 004c 3B1C     		mov	r3, r7
- 417 004e 0B33     		add	r3, r3, #11
- 418 0050 1B78     		ldrb	r3, [r3]
- 419 0052 181C     		mov	r0, r3
- 420 0054 FFF7FEFF 		bl	piezo_rest
- 421 0058 09E0     		b	.L21
- 422              	.L20:
-  86:.\piezoelectric.c ****         }
-  87:.\piezoelectric.c ****         else 
-  88:.\piezoelectric.c ****         {
-  89:.\piezoelectric.c ****             piezo_play(tone, note);
- 423              		.loc 1 89 0
- 424 005a 3B1C     		mov	r3, r7
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 10
+ 376 004c 60EA0000 		.word	60000
+ 377              		.cfi_endproc
+ 378              	.LFE38:
+ 379              		.size	piezo_rest, .-piezo_rest
+ 380              		.section	.text.piezo_melody,"ax",%progbits
+ 381              		.align	2
+ 382              		.global	piezo_melody
+ 383              		.code	16
+ 384              		.thumb_func
+ 385              		.type	piezo_melody, %function
+ 386              	piezo_melody:
+ 387              	.LFB39:
+  82:.\piezoelectric.c **** 
+  83:.\piezoelectric.c **** void piezo_melody(uint16* frequencies, uint8 num)
+  84:.\piezoelectric.c **** {
+ 388              		.loc 1 84 0
+ 389              		.cfi_startproc
+ 390 0000 80B5     		push	{r7, lr}
+ 391              		.cfi_def_cfa_offset 8
+ 392              		.cfi_offset 7, -8
+ 393              		.cfi_offset 14, -4
+ 394 0002 84B0     		sub	sp, sp, #16
+ 395              		.cfi_def_cfa_offset 24
+ 396 0004 00AF     		add	r7, sp, #0
+ 397              		.cfi_def_cfa_register 7
+ 398 0006 7860     		str	r0, [r7, #4]
+ 399 0008 0A1C     		mov	r2, r1
+ 400 000a FB1C     		add	r3, r7, #3
+ 401 000c 1A70     		strb	r2, [r3]
+  85:.\piezoelectric.c ****     uint8 i, note;
+  86:.\piezoelectric.c ****     uint16 tone;
+  87:.\piezoelectric.c ****     for (i=0; i<num; i+=2)
+ 402              		.loc 1 87 0
+ 403 000e 3B1C     		mov	r3, r7
+ 404 0010 0F33     		add	r3, r3, #15
+ 405 0012 0022     		mov	r2, #0
+ 406 0014 1A70     		strb	r2, [r3]
+ 407 0016 31E0     		b	.L19
+ 408              	.L22:
+  88:.\piezoelectric.c ****     {
+  89:.\piezoelectric.c ****         tone = frequencies[i];
+ 409              		.loc 1 89 0
+ 410 0018 3B1C     		mov	r3, r7
+ 411 001a 0F33     		add	r3, r3, #15
+ 412 001c 1B78     		ldrb	r3, [r3]
+ 413 001e 5B00     		lsl	r3, r3, #1
+ 414 0020 7A68     		ldr	r2, [r7, #4]
+ 415 0022 D218     		add	r2, r2, r3
+ 416 0024 3B1C     		mov	r3, r7
+ 417 0026 0C33     		add	r3, r3, #12
+ 418 0028 1288     		ldrh	r2, [r2]
+ 419 002a 1A80     		strh	r2, [r3]
+  90:.\piezoelectric.c ****         note = frequencies[i+1];
+ 420              		.loc 1 90 0
+ 421 002c 3B1C     		mov	r3, r7
+ 422 002e 0F33     		add	r3, r3, #15
+ 423 0030 1B78     		ldrb	r3, [r3]
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 10
 
 
- 425 005c 0C33     		add	r3, r3, #12
- 426 005e 1A88     		ldrh	r2, [r3]
- 427 0060 3B1C     		mov	r3, r7
- 428 0062 0B33     		add	r3, r3, #11
- 429 0064 1B78     		ldrb	r3, [r3]
- 430 0066 101C     		mov	r0, r2
- 431 0068 191C     		mov	r1, r3
- 432 006a FFF7FEFF 		bl	piezo_play
- 433              	.L21:
-  79:.\piezoelectric.c ****     for (i=0; i<num; i+=2)
- 434              		.loc 1 79 0
- 435 006e 3B1C     		mov	r3, r7
- 436 0070 0F33     		add	r3, r3, #15
- 437 0072 3A1C     		mov	r2, r7
- 438 0074 0F32     		add	r2, r2, #15
- 439 0076 1278     		ldrb	r2, [r2]
- 440 0078 0232     		add	r2, r2, #2
- 441 007a 1A70     		strb	r2, [r3]
- 442              	.L19:
-  79:.\piezoelectric.c ****     for (i=0; i<num; i+=2)
- 443              		.loc 1 79 0 is_stmt 0 discriminator 1
- 444 007c 3A1C     		mov	r2, r7
- 445 007e 0F32     		add	r2, r2, #15
- 446 0080 FB1C     		add	r3, r7, #3
- 447 0082 1278     		ldrb	r2, [r2]
- 448 0084 1B78     		ldrb	r3, [r3]
- 449 0086 9A42     		cmp	r2, r3
- 450 0088 C6D3     		bcc	.L22
-  90:.\piezoelectric.c ****         }
-  91:.\piezoelectric.c ****     }
-  92:.\piezoelectric.c **** }
- 451              		.loc 1 92 0 is_stmt 1
- 452 008a BD46     		mov	sp, r7
- 453 008c 04B0     		add	sp, sp, #16
- 454              		@ sp needed
- 455 008e 80BD     		pop	{r7, pc}
- 456              		.cfi_endproc
- 457              	.LFE39:
- 458              		.size	piezo_melody, .-piezo_melody
- 459              		.text
- 460              	.Letext0:
- 461              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
- 462              		.section	.debug_info,"",%progbits
- 463              	.Ldebug_info0:
- 464 0000 4E020000 		.4byte	0x24e
- 465 0004 0400     		.2byte	0x4
- 466 0006 00000000 		.4byte	.Ldebug_abbrev0
- 467 000a 04       		.byte	0x4
- 468 000b 01       		.uleb128 0x1
- 469 000c D8010000 		.4byte	.LASF34
- 470 0010 01       		.byte	0x1
- 471 0011 9B010000 		.4byte	.LASF35
- 472 0015 10010000 		.4byte	.LASF36
- 473 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 474 001d 00000000 		.4byte	0
- 475 0021 00000000 		.4byte	.Ldebug_line0
- 476 0025 02       		.uleb128 0x2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 11
+ 424 0032 0133     		add	r3, r3, #1
+ 425 0034 5B00     		lsl	r3, r3, #1
+ 426 0036 7A68     		ldr	r2, [r7, #4]
+ 427 0038 D318     		add	r3, r2, r3
+ 428 003a 1A88     		ldrh	r2, [r3]
+ 429 003c 3B1C     		mov	r3, r7
+ 430 003e 0B33     		add	r3, r3, #11
+ 431 0040 1A70     		strb	r2, [r3]
+  91:.\piezoelectric.c ****         if (tone == 0)
+ 432              		.loc 1 91 0
+ 433 0042 3B1C     		mov	r3, r7
+ 434 0044 0C33     		add	r3, r3, #12
+ 435 0046 1B88     		ldrh	r3, [r3]
+ 436 0048 002B     		cmp	r3, #0
+ 437 004a 06D1     		bne	.L20
+  92:.\piezoelectric.c ****         {
+  93:.\piezoelectric.c ****             piezo_rest(note);
+ 438              		.loc 1 93 0
+ 439 004c 3B1C     		mov	r3, r7
+ 440 004e 0B33     		add	r3, r3, #11
+ 441 0050 1B78     		ldrb	r3, [r3]
+ 442 0052 181C     		mov	r0, r3
+ 443 0054 FFF7FEFF 		bl	piezo_rest
+ 444 0058 09E0     		b	.L21
+ 445              	.L20:
+  94:.\piezoelectric.c ****         }
+  95:.\piezoelectric.c ****         else 
+  96:.\piezoelectric.c ****         {
+  97:.\piezoelectric.c ****             piezo_play(tone, note);
+ 446              		.loc 1 97 0
+ 447 005a 3B1C     		mov	r3, r7
+ 448 005c 0C33     		add	r3, r3, #12
+ 449 005e 1A88     		ldrh	r2, [r3]
+ 450 0060 3B1C     		mov	r3, r7
+ 451 0062 0B33     		add	r3, r3, #11
+ 452 0064 1B78     		ldrb	r3, [r3]
+ 453 0066 101C     		mov	r0, r2
+ 454 0068 191C     		mov	r1, r3
+ 455 006a FFF7FEFF 		bl	piezo_play
+ 456              	.L21:
+  87:.\piezoelectric.c ****     for (i=0; i<num; i+=2)
+ 457              		.loc 1 87 0
+ 458 006e 3B1C     		mov	r3, r7
+ 459 0070 0F33     		add	r3, r3, #15
+ 460 0072 3A1C     		mov	r2, r7
+ 461 0074 0F32     		add	r2, r2, #15
+ 462 0076 1278     		ldrb	r2, [r2]
+ 463 0078 0232     		add	r2, r2, #2
+ 464 007a 1A70     		strb	r2, [r3]
+ 465              	.L19:
+  87:.\piezoelectric.c ****     for (i=0; i<num; i+=2)
+ 466              		.loc 1 87 0 is_stmt 0 discriminator 1
+ 467 007c 3A1C     		mov	r2, r7
+ 468 007e 0F32     		add	r2, r2, #15
+ 469 0080 FB1C     		add	r3, r7, #3
+ 470 0082 1278     		ldrb	r2, [r2]
+ 471 0084 1B78     		ldrb	r3, [r3]
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 11
 
 
- 477 0026 01       		.byte	0x1
- 478 0027 06       		.byte	0x6
- 479 0028 BE010000 		.4byte	.LASF0
- 480 002c 02       		.uleb128 0x2
- 481 002d 01       		.byte	0x1
- 482 002e 08       		.byte	0x8
- 483 002f 71000000 		.4byte	.LASF1
- 484 0033 02       		.uleb128 0x2
- 485 0034 02       		.byte	0x2
- 486 0035 05       		.byte	0x5
- 487 0036 86010000 		.4byte	.LASF2
- 488 003a 02       		.uleb128 0x2
- 489 003b 02       		.byte	0x2
- 490 003c 07       		.byte	0x7
- 491 003d 28000000 		.4byte	.LASF3
- 492 0041 02       		.uleb128 0x2
- 493 0042 04       		.byte	0x4
- 494 0043 05       		.byte	0x5
- 495 0044 B5010000 		.4byte	.LASF4
- 496 0048 02       		.uleb128 0x2
- 497 0049 04       		.byte	0x4
- 498 004a 07       		.byte	0x7
- 499 004b 7F000000 		.4byte	.LASF5
- 500 004f 02       		.uleb128 0x2
- 501 0050 08       		.byte	0x8
- 502 0051 05       		.byte	0x5
- 503 0052 73010000 		.4byte	.LASF6
- 504 0056 02       		.uleb128 0x2
- 505 0057 08       		.byte	0x8
- 506 0058 07       		.byte	0x7
- 507 0059 F9000000 		.4byte	.LASF7
- 508 005d 03       		.uleb128 0x3
- 509 005e 04       		.byte	0x4
- 510 005f 05       		.byte	0x5
- 511 0060 696E7400 		.ascii	"int\000"
- 512 0064 02       		.uleb128 0x2
- 513 0065 04       		.byte	0x4
- 514 0066 07       		.byte	0x7
- 515 0067 E0000000 		.4byte	.LASF8
- 516 006b 04       		.uleb128 0x4
- 517 006c 91000000 		.4byte	.LASF9
- 518 0070 02       		.byte	0x2
- 519 0071 B3       		.byte	0xb3
- 520 0072 2C000000 		.4byte	0x2c
- 521 0076 04       		.uleb128 0x4
- 522 0077 CE000000 		.4byte	.LASF10
- 523 007b 02       		.byte	0x2
- 524 007c B4       		.byte	0xb4
- 525 007d 3A000000 		.4byte	0x3a
- 526 0081 02       		.uleb128 0x2
- 527 0082 04       		.byte	0x4
- 528 0083 04       		.byte	0x4
- 529 0084 4E000000 		.4byte	.LASF11
- 530 0088 02       		.uleb128 0x2
- 531 0089 08       		.byte	0x8
- 532 008a 04       		.byte	0x4
- 533 008b B2000000 		.4byte	.LASF12
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 12
+ 472 0086 9A42     		cmp	r2, r3
+ 473 0088 C6D3     		bcc	.L22
+  98:.\piezoelectric.c ****         }
+  99:.\piezoelectric.c ****     }
+ 100:.\piezoelectric.c **** }
+ 474              		.loc 1 100 0 is_stmt 1
+ 475 008a BD46     		mov	sp, r7
+ 476 008c 04B0     		add	sp, sp, #16
+ 477              		@ sp needed
+ 478 008e 80BD     		pop	{r7, pc}
+ 479              		.cfi_endproc
+ 480              	.LFE39:
+ 481              		.size	piezo_melody, .-piezo_melody
+ 482              		.text
+ 483              	.Letext0:
+ 484              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 485              		.section	.debug_info,"",%progbits
+ 486              	.Ldebug_info0:
+ 487 0000 6A020000 		.4byte	0x26a
+ 488 0004 0400     		.2byte	0x4
+ 489 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 490 000a 04       		.byte	0x4
+ 491 000b 01       		.uleb128 0x1
+ 492 000c C3010000 		.4byte	.LASF33
+ 493 0010 01       		.byte	0x1
+ 494 0011 86010000 		.4byte	.LASF34
+ 495 0015 71000000 		.4byte	.LASF35
+ 496 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 497 001d 00000000 		.4byte	0
+ 498 0021 00000000 		.4byte	.Ldebug_line0
+ 499 0025 02       		.uleb128 0x2
+ 500 0026 01       		.byte	0x1
+ 501 0027 06       		.byte	0x6
+ 502 0028 A9010000 		.4byte	.LASF0
+ 503 002c 02       		.uleb128 0x2
+ 504 002d 01       		.byte	0x1
+ 505 002e 08       		.byte	0x8
+ 506 002f B6000000 		.4byte	.LASF1
+ 507 0033 02       		.uleb128 0x2
+ 508 0034 02       		.byte	0x2
+ 509 0035 05       		.byte	0x5
+ 510 0036 71010000 		.4byte	.LASF2
+ 511 003a 02       		.uleb128 0x2
+ 512 003b 02       		.byte	0x2
+ 513 003c 07       		.byte	0x7
+ 514 003d 28000000 		.4byte	.LASF3
+ 515 0041 02       		.uleb128 0x2
+ 516 0042 04       		.byte	0x4
+ 517 0043 05       		.byte	0x5
+ 518 0044 A0010000 		.4byte	.LASF4
+ 519 0048 02       		.uleb128 0x2
+ 520 0049 04       		.byte	0x4
+ 521 004a 07       		.byte	0x7
+ 522 004b C4000000 		.4byte	.LASF5
+ 523 004f 02       		.uleb128 0x2
+ 524 0050 08       		.byte	0x8
+ 525 0051 05       		.byte	0x5
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 12
 
 
- 534 008f 02       		.uleb128 0x2
- 535 0090 01       		.byte	0x1
- 536 0091 08       		.byte	0x8
- 537 0092 81010000 		.4byte	.LASF13
- 538 0096 02       		.uleb128 0x2
- 539 0097 04       		.byte	0x4
- 540 0098 07       		.byte	0x7
- 541 0099 6A010000 		.4byte	.LASF14
- 542 009d 05       		.uleb128 0x5
- 543 009e 97000000 		.4byte	.LASF17
- 544 00a2 01       		.byte	0x1
- 545 00a3 17       		.byte	0x17
- 546 00a4 00000000 		.4byte	.LFB33
- 547 00a8 78000000 		.4byte	.LFE33-.LFB33
- 548 00ac 01       		.uleb128 0x1
- 549 00ad 9C       		.byte	0x9c
- 550 00ae DD000000 		.4byte	0xdd
- 551 00b2 06       		.uleb128 0x6
- 552 00b3 A2000000 		.4byte	.LASF19
- 553 00b7 01       		.byte	0x1
- 554 00b8 17       		.byte	0x17
- 555 00b9 76000000 		.4byte	0x76
- 556 00bd 02       		.uleb128 0x2
- 557 00be 91       		.byte	0x91
- 558 00bf 6E       		.sleb128 -18
- 559 00c0 07       		.uleb128 0x7
- 560 00c1 05000000 		.4byte	.LASF15
- 561 00c5 01       		.byte	0x1
- 562 00c6 1A       		.byte	0x1a
- 563 00c7 5D000000 		.4byte	0x5d
- 564 00cb 02       		.uleb128 0x2
- 565 00cc 91       		.byte	0x91
- 566 00cd 70       		.sleb128 -16
- 567 00ce 07       		.uleb128 0x7
- 568 00cf CA010000 		.4byte	.LASF16
- 569 00d3 01       		.byte	0x1
- 570 00d4 1B       		.byte	0x1b
- 571 00d5 76000000 		.4byte	0x76
- 572 00d9 02       		.uleb128 0x2
- 573 00da 91       		.byte	0x91
- 574 00db 76       		.sleb128 -10
- 575 00dc 00       		.byte	0
- 576 00dd 08       		.uleb128 0x8
- 577 00de 64000000 		.4byte	.LASF18
- 578 00e2 01       		.byte	0x1
- 579 00e3 2A       		.byte	0x2a
- 580 00e4 00000000 		.4byte	.LFB34
- 581 00e8 20000000 		.4byte	.LFE34-.LFB34
- 582 00ec 01       		.uleb128 0x1
- 583 00ed 9C       		.byte	0x9c
- 584 00ee 01010000 		.4byte	0x101
- 585 00f2 06       		.uleb128 0x6
- 586 00f3 12000000 		.4byte	.LASF20
- 587 00f7 01       		.byte	0x1
- 588 00f8 2A       		.byte	0x2a
- 589 00f9 6B000000 		.4byte	0x6b
- 590 00fd 02       		.uleb128 0x2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 13
+ 526 0052 5E010000 		.4byte	.LASF6
+ 527 0056 02       		.uleb128 0x2
+ 528 0057 08       		.byte	0x8
+ 529 0058 07       		.byte	0x7
+ 530 0059 3E010000 		.4byte	.LASF7
+ 531 005d 03       		.uleb128 0x3
+ 532 005e 04       		.byte	0x4
+ 533 005f 05       		.byte	0x5
+ 534 0060 696E7400 		.ascii	"int\000"
+ 535 0064 02       		.uleb128 0x2
+ 536 0065 04       		.byte	0x4
+ 537 0066 07       		.byte	0x7
+ 538 0067 25010000 		.4byte	.LASF8
+ 539 006b 04       		.uleb128 0x4
+ 540 006c D6000000 		.4byte	.LASF9
+ 541 0070 02       		.byte	0x2
+ 542 0071 B3       		.byte	0xb3
+ 543 0072 2C000000 		.4byte	0x2c
+ 544 0076 04       		.uleb128 0x4
+ 545 0077 13010000 		.4byte	.LASF10
+ 546 007b 02       		.byte	0x2
+ 547 007c B4       		.byte	0xb4
+ 548 007d 3A000000 		.4byte	0x3a
+ 549 0081 02       		.uleb128 0x2
+ 550 0082 04       		.byte	0x4
+ 551 0083 04       		.byte	0x4
+ 552 0084 4E000000 		.4byte	.LASF11
+ 553 0088 02       		.uleb128 0x2
+ 554 0089 08       		.byte	0x8
+ 555 008a 04       		.byte	0x4
+ 556 008b F7000000 		.4byte	.LASF12
+ 557 008f 02       		.uleb128 0x2
+ 558 0090 01       		.byte	0x1
+ 559 0091 08       		.byte	0x8
+ 560 0092 6C010000 		.4byte	.LASF13
+ 561 0096 02       		.uleb128 0x2
+ 562 0097 04       		.byte	0x4
+ 563 0098 07       		.byte	0x7
+ 564 0099 55010000 		.4byte	.LASF14
+ 565 009d 05       		.uleb128 0x5
+ 566 009e DC000000 		.4byte	.LASF17
+ 567 00a2 01       		.byte	0x1
+ 568 00a3 18       		.byte	0x18
+ 569 00a4 00000000 		.4byte	.LFB33
+ 570 00a8 78000000 		.4byte	.LFE33-.LFB33
+ 571 00ac 01       		.uleb128 0x1
+ 572 00ad 9C       		.byte	0x9c
+ 573 00ae DD000000 		.4byte	0xdd
+ 574 00b2 06       		.uleb128 0x6
+ 575 00b3 E7000000 		.4byte	.LASF19
+ 576 00b7 01       		.byte	0x1
+ 577 00b8 18       		.byte	0x18
+ 578 00b9 76000000 		.4byte	0x76
+ 579 00bd 02       		.uleb128 0x2
+ 580 00be 91       		.byte	0x91
+ 581 00bf 6E       		.sleb128 -18
+ 582 00c0 07       		.uleb128 0x7
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 13
 
 
- 591 00fe 91       		.byte	0x91
- 592 00ff 77       		.sleb128 -9
- 593 0100 00       		.byte	0
- 594 0101 08       		.uleb128 0x8
- 595 0102 ED000000 		.4byte	.LASF21
- 596 0106 01       		.byte	0x1
- 597 0107 2F       		.byte	0x2f
- 598 0108 00000000 		.4byte	.LFB35
- 599 010c 20000000 		.4byte	.LFE35-.LFB35
- 600 0110 01       		.uleb128 0x1
- 601 0111 9C       		.byte	0x9c
- 602 0112 25010000 		.4byte	0x125
- 603 0116 09       		.uleb128 0x9
- 604 0117 62706D00 		.ascii	"bpm\000"
- 605 011b 01       		.byte	0x1
- 606 011c 2F       		.byte	0x2f
- 607 011d 6B000000 		.4byte	0x6b
- 608 0121 02       		.uleb128 0x2
- 609 0122 91       		.byte	0x91
- 610 0123 77       		.sleb128 -9
- 611 0124 00       		.byte	0
- 612 0125 0A       		.uleb128 0xa
- 613 0126 D5000000 		.4byte	.LASF37
- 614 012a 01       		.byte	0x1
- 615 012b 34       		.byte	0x34
- 616 012c 00000000 		.4byte	.LFB36
- 617 0130 0E000000 		.4byte	.LFE36-.LFB36
- 618 0134 01       		.uleb128 0x1
- 619 0135 9C       		.byte	0x9c
- 620 0136 05       		.uleb128 0x5
- 621 0137 90010000 		.4byte	.LASF22
- 622 013b 01       		.byte	0x1
- 623 013c 39       		.byte	0x39
- 624 013d 00000000 		.4byte	.LFB37
- 625 0141 60000000 		.4byte	.LFE37-.LFB37
- 626 0145 01       		.uleb128 0x1
- 627 0146 9C       		.byte	0x9c
- 628 0147 76010000 		.4byte	0x176
- 629 014b 06       		.uleb128 0x6
- 630 014c 60010000 		.4byte	.LASF23
- 631 0150 01       		.byte	0x1
- 632 0151 39       		.byte	0x39
- 633 0152 76000000 		.4byte	0x76
- 634 0156 02       		.uleb128 0x2
- 635 0157 91       		.byte	0x91
- 636 0158 6E       		.sleb128 -18
- 637 0159 06       		.uleb128 0x6
- 638 015a 5F000000 		.4byte	.LASF24
- 639 015e 01       		.byte	0x1
- 640 015f 39       		.byte	0x39
- 641 0160 6B000000 		.4byte	0x6b
- 642 0164 02       		.uleb128 0x2
- 643 0165 91       		.byte	0x91
- 644 0166 6D       		.sleb128 -19
- 645 0167 07       		.uleb128 0x7
- 646 0168 18000000 		.4byte	.LASF25
- 647 016c 01       		.byte	0x1
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 14
+ 583 00c1 05000000 		.4byte	.LASF15
+ 584 00c5 01       		.byte	0x1
+ 585 00c6 1B       		.byte	0x1b
+ 586 00c7 5D000000 		.4byte	0x5d
+ 587 00cb 02       		.uleb128 0x2
+ 588 00cc 91       		.byte	0x91
+ 589 00cd 70       		.sleb128 -16
+ 590 00ce 07       		.uleb128 0x7
+ 591 00cf B5010000 		.4byte	.LASF16
+ 592 00d3 01       		.byte	0x1
+ 593 00d4 1C       		.byte	0x1c
+ 594 00d5 76000000 		.4byte	0x76
+ 595 00d9 02       		.uleb128 0x2
+ 596 00da 91       		.byte	0x91
+ 597 00db 76       		.sleb128 -10
+ 598 00dc 00       		.byte	0
+ 599 00dd 08       		.uleb128 0x8
+ 600 00de 64000000 		.4byte	.LASF18
+ 601 00e2 01       		.byte	0x1
+ 602 00e3 2B       		.byte	0x2b
+ 603 00e4 00000000 		.4byte	.LFB34
+ 604 00e8 20000000 		.4byte	.LFE34-.LFB34
+ 605 00ec 01       		.uleb128 0x1
+ 606 00ed 9C       		.byte	0x9c
+ 607 00ee 01010000 		.4byte	0x101
+ 608 00f2 06       		.uleb128 0x6
+ 609 00f3 12000000 		.4byte	.LASF20
+ 610 00f7 01       		.byte	0x1
+ 611 00f8 2B       		.byte	0x2b
+ 612 00f9 6B000000 		.4byte	0x6b
+ 613 00fd 02       		.uleb128 0x2
+ 614 00fe 91       		.byte	0x91
+ 615 00ff 77       		.sleb128 -9
+ 616 0100 00       		.byte	0
+ 617 0101 08       		.uleb128 0x8
+ 618 0102 32010000 		.4byte	.LASF21
+ 619 0106 01       		.byte	0x1
+ 620 0107 30       		.byte	0x30
+ 621 0108 00000000 		.4byte	.LFB35
+ 622 010c 20000000 		.4byte	.LFE35-.LFB35
+ 623 0110 01       		.uleb128 0x1
+ 624 0111 9C       		.byte	0x9c
+ 625 0112 25010000 		.4byte	0x125
+ 626 0116 09       		.uleb128 0x9
+ 627 0117 62706D00 		.ascii	"bpm\000"
+ 628 011b 01       		.byte	0x1
+ 629 011c 30       		.byte	0x30
+ 630 011d 6B000000 		.4byte	0x6b
+ 631 0121 02       		.uleb128 0x2
+ 632 0122 91       		.byte	0x91
+ 633 0123 77       		.sleb128 -9
+ 634 0124 00       		.byte	0
+ 635 0125 0A       		.uleb128 0xa
+ 636 0126 1A010000 		.4byte	.LASF36
+ 637 012a 01       		.byte	0x1
+ 638 012b 35       		.byte	0x35
+ 639 012c 00000000 		.4byte	.LFB36
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 14
 
 
- 648 016d 3C       		.byte	0x3c
- 649 016e 76000000 		.4byte	0x76
- 650 0172 02       		.uleb128 0x2
- 651 0173 91       		.byte	0x91
- 652 0174 76       		.sleb128 -10
- 653 0175 00       		.byte	0
- 654 0176 05       		.uleb128 0x5
- 655 0177 54000000 		.4byte	.LASF26
- 656 017b 01       		.byte	0x1
- 657 017c 43       		.byte	0x43
- 658 017d 00000000 		.4byte	.LFB38
- 659 0181 50000000 		.4byte	.LFE38-.LFB38
- 660 0185 01       		.uleb128 0x1
- 661 0186 9C       		.byte	0x9c
- 662 0187 A8010000 		.4byte	0x1a8
- 663 018b 06       		.uleb128 0x6
- 664 018c 5F000000 		.4byte	.LASF24
- 665 0190 01       		.byte	0x1
- 666 0191 43       		.byte	0x43
- 667 0192 6B000000 		.4byte	0x6b
- 668 0196 02       		.uleb128 0x2
- 669 0197 91       		.byte	0x91
- 670 0198 6F       		.sleb128 -17
- 671 0199 07       		.uleb128 0x7
- 672 019a 18000000 		.4byte	.LASF25
- 673 019e 01       		.byte	0x1
- 674 019f 46       		.byte	0x46
- 675 01a0 76000000 		.4byte	0x76
- 676 01a4 02       		.uleb128 0x2
- 677 01a5 91       		.byte	0x91
- 678 01a6 76       		.sleb128 -10
- 679 01a7 00       		.byte	0
- 680 01a8 05       		.uleb128 0x5
- 681 01a9 3B000000 		.4byte	.LASF27
- 682 01ad 01       		.byte	0x1
- 683 01ae 4B       		.byte	0x4b
- 684 01af 00000000 		.4byte	.LFB39
- 685 01b3 90000000 		.4byte	.LFE39-.LFB39
- 686 01b7 01       		.uleb128 0x1
- 687 01b8 9C       		.byte	0x9c
- 688 01b9 02020000 		.4byte	0x202
- 689 01bd 06       		.uleb128 0x6
- 690 01be C2000000 		.4byte	.LASF28
- 691 01c2 01       		.byte	0x1
- 692 01c3 4B       		.byte	0x4b
- 693 01c4 02020000 		.4byte	0x202
- 694 01c8 02       		.uleb128 0x2
- 695 01c9 91       		.byte	0x91
- 696 01ca 6C       		.sleb128 -20
- 697 01cb 09       		.uleb128 0x9
- 698 01cc 6E756D00 		.ascii	"num\000"
- 699 01d0 01       		.byte	0x1
- 700 01d1 4B       		.byte	0x4b
- 701 01d2 6B000000 		.4byte	0x6b
- 702 01d6 02       		.uleb128 0x2
- 703 01d7 91       		.byte	0x91
- 704 01d8 6B       		.sleb128 -21
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 15
+ 640 0130 0E000000 		.4byte	.LFE36-.LFB36
+ 641 0134 01       		.uleb128 0x1
+ 642 0135 9C       		.byte	0x9c
+ 643 0136 05       		.uleb128 0x5
+ 644 0137 7B010000 		.4byte	.LASF22
+ 645 013b 01       		.byte	0x1
+ 646 013c 3A       		.byte	0x3a
+ 647 013d 00000000 		.4byte	.LFB37
+ 648 0141 94000000 		.4byte	.LFE37-.LFB37
+ 649 0145 01       		.uleb128 0x1
+ 650 0146 9C       		.byte	0x9c
+ 651 0147 92010000 		.4byte	0x192
+ 652 014b 06       		.uleb128 0x6
+ 653 014c E7000000 		.4byte	.LASF19
+ 654 0150 01       		.byte	0x1
+ 655 0151 3A       		.byte	0x3a
+ 656 0152 76000000 		.4byte	0x76
+ 657 0156 02       		.uleb128 0x2
+ 658 0157 91       		.byte	0x91
+ 659 0158 66       		.sleb128 -26
+ 660 0159 06       		.uleb128 0x6
+ 661 015a 5F000000 		.4byte	.LASF23
+ 662 015e 01       		.byte	0x1
+ 663 015f 3A       		.byte	0x3a
+ 664 0160 6B000000 		.4byte	0x6b
+ 665 0164 02       		.uleb128 0x2
+ 666 0165 91       		.byte	0x91
+ 667 0166 65       		.sleb128 -27
+ 668 0167 07       		.uleb128 0x7
+ 669 0168 18000000 		.4byte	.LASF24
+ 670 016c 01       		.byte	0x1
+ 671 016d 3D       		.byte	0x3d
+ 672 016e 76000000 		.4byte	0x76
+ 673 0172 02       		.uleb128 0x2
+ 674 0173 91       		.byte	0x91
+ 675 0174 76       		.sleb128 -10
+ 676 0175 07       		.uleb128 0x7
+ 677 0176 05000000 		.4byte	.LASF15
+ 678 017a 01       		.byte	0x1
+ 679 017b 40       		.byte	0x40
+ 680 017c 5D000000 		.4byte	0x5d
+ 681 0180 02       		.uleb128 0x2
+ 682 0181 91       		.byte	0x91
+ 683 0182 70       		.sleb128 -16
+ 684 0183 07       		.uleb128 0x7
+ 685 0184 B5010000 		.4byte	.LASF16
+ 686 0188 01       		.byte	0x1
+ 687 0189 41       		.byte	0x41
+ 688 018a 76000000 		.4byte	0x76
+ 689 018e 02       		.uleb128 0x2
+ 690 018f 91       		.byte	0x91
+ 691 0190 6E       		.sleb128 -18
+ 692 0191 00       		.byte	0
+ 693 0192 05       		.uleb128 0x5
+ 694 0193 54000000 		.4byte	.LASF25
+ 695 0197 01       		.byte	0x1
+ 696 0198 4B       		.byte	0x4b
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 15
 
 
- 705 01d9 0B       		.uleb128 0xb
- 706 01da 6900     		.ascii	"i\000"
- 707 01dc 01       		.byte	0x1
- 708 01dd 4D       		.byte	0x4d
- 709 01de 6B000000 		.4byte	0x6b
- 710 01e2 02       		.uleb128 0x2
- 711 01e3 91       		.byte	0x91
- 712 01e4 77       		.sleb128 -9
- 713 01e5 07       		.uleb128 0x7
- 714 01e6 5F000000 		.4byte	.LASF24
- 715 01ea 01       		.byte	0x1
- 716 01eb 4D       		.byte	0x4d
- 717 01ec 6B000000 		.4byte	0x6b
- 718 01f0 02       		.uleb128 0x2
- 719 01f1 91       		.byte	0x91
- 720 01f2 73       		.sleb128 -13
- 721 01f3 07       		.uleb128 0x7
- 722 01f4 00000000 		.4byte	.LASF29
- 723 01f8 01       		.byte	0x1
- 724 01f9 4E       		.byte	0x4e
- 725 01fa 76000000 		.4byte	0x76
- 726 01fe 02       		.uleb128 0x2
- 727 01ff 91       		.byte	0x91
- 728 0200 74       		.sleb128 -12
- 729 0201 00       		.byte	0
- 730 0202 0C       		.uleb128 0xc
- 731 0203 04       		.byte	0x4
- 732 0204 76000000 		.4byte	0x76
- 733 0208 0D       		.uleb128 0xd
- 734 0209 21000000 		.4byte	.LASF30
- 735 020d 01       		.byte	0x1
- 736 020e 11       		.byte	0x11
- 737 020f 6B000000 		.4byte	0x6b
- 738 0213 05       		.uleb128 0x5
- 739 0214 03       		.byte	0x3
- 740 0215 00000000 		.4byte	volume
- 741 0219 0D       		.uleb128 0xd
- 742 021a 48000000 		.4byte	.LASF31
- 743 021e 01       		.byte	0x1
- 744 021f 12       		.byte	0x12
- 745 0220 6B000000 		.4byte	0x6b
- 746 0224 05       		.uleb128 0x5
- 747 0225 03       		.byte	0x3
- 748 0226 00000000 		.4byte	tempo
- 749 022a 0D       		.uleb128 0xd
- 750 022b AD010000 		.4byte	.LASF32
- 751 022f 01       		.byte	0x1
- 752 0230 13       		.byte	0x13
- 753 0231 3B020000 		.4byte	0x23b
- 754 0235 05       		.uleb128 0x5
- 755 0236 03       		.byte	0x3
- 756 0237 00000000 		.4byte	f_clock
- 757 023b 0E       		.uleb128 0xe
- 758 023c 5D000000 		.4byte	0x5d
- 759 0240 0D       		.uleb128 0xd
- 760 0241 B9000000 		.4byte	.LASF33
- 761 0245 01       		.byte	0x1
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 16
+ 697 0199 00000000 		.4byte	.LFB38
+ 698 019d 50000000 		.4byte	.LFE38-.LFB38
+ 699 01a1 01       		.uleb128 0x1
+ 700 01a2 9C       		.byte	0x9c
+ 701 01a3 C4010000 		.4byte	0x1c4
+ 702 01a7 06       		.uleb128 0x6
+ 703 01a8 5F000000 		.4byte	.LASF23
+ 704 01ac 01       		.byte	0x1
+ 705 01ad 4B       		.byte	0x4b
+ 706 01ae 6B000000 		.4byte	0x6b
+ 707 01b2 02       		.uleb128 0x2
+ 708 01b3 91       		.byte	0x91
+ 709 01b4 6F       		.sleb128 -17
+ 710 01b5 07       		.uleb128 0x7
+ 711 01b6 18000000 		.4byte	.LASF24
+ 712 01ba 01       		.byte	0x1
+ 713 01bb 4E       		.byte	0x4e
+ 714 01bc 76000000 		.4byte	0x76
+ 715 01c0 02       		.uleb128 0x2
+ 716 01c1 91       		.byte	0x91
+ 717 01c2 76       		.sleb128 -10
+ 718 01c3 00       		.byte	0
+ 719 01c4 05       		.uleb128 0x5
+ 720 01c5 3B000000 		.4byte	.LASF26
+ 721 01c9 01       		.byte	0x1
+ 722 01ca 53       		.byte	0x53
+ 723 01cb 00000000 		.4byte	.LFB39
+ 724 01cf 90000000 		.4byte	.LFE39-.LFB39
+ 725 01d3 01       		.uleb128 0x1
+ 726 01d4 9C       		.byte	0x9c
+ 727 01d5 1E020000 		.4byte	0x21e
+ 728 01d9 06       		.uleb128 0x6
+ 729 01da 07010000 		.4byte	.LASF27
+ 730 01de 01       		.byte	0x1
+ 731 01df 53       		.byte	0x53
+ 732 01e0 1E020000 		.4byte	0x21e
+ 733 01e4 02       		.uleb128 0x2
+ 734 01e5 91       		.byte	0x91
+ 735 01e6 6C       		.sleb128 -20
+ 736 01e7 09       		.uleb128 0x9
+ 737 01e8 6E756D00 		.ascii	"num\000"
+ 738 01ec 01       		.byte	0x1
+ 739 01ed 53       		.byte	0x53
+ 740 01ee 6B000000 		.4byte	0x6b
+ 741 01f2 02       		.uleb128 0x2
+ 742 01f3 91       		.byte	0x91
+ 743 01f4 6B       		.sleb128 -21
+ 744 01f5 0B       		.uleb128 0xb
+ 745 01f6 6900     		.ascii	"i\000"
+ 746 01f8 01       		.byte	0x1
+ 747 01f9 55       		.byte	0x55
+ 748 01fa 6B000000 		.4byte	0x6b
+ 749 01fe 02       		.uleb128 0x2
+ 750 01ff 91       		.byte	0x91
+ 751 0200 77       		.sleb128 -9
+ 752 0201 07       		.uleb128 0x7
+ 753 0202 5F000000 		.4byte	.LASF23
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 16
 
 
- 762 0246 14       		.byte	0x14
- 763 0247 3B020000 		.4byte	0x23b
- 764 024b 05       		.uleb128 0x5
- 765 024c 03       		.byte	0x3
- 766 024d 00000000 		.4byte	freq_mod
- 767 0251 00       		.byte	0
- 768              		.section	.debug_abbrev,"",%progbits
- 769              	.Ldebug_abbrev0:
- 770 0000 01       		.uleb128 0x1
- 771 0001 11       		.uleb128 0x11
- 772 0002 01       		.byte	0x1
- 773 0003 25       		.uleb128 0x25
- 774 0004 0E       		.uleb128 0xe
- 775 0005 13       		.uleb128 0x13
- 776 0006 0B       		.uleb128 0xb
- 777 0007 03       		.uleb128 0x3
- 778 0008 0E       		.uleb128 0xe
- 779 0009 1B       		.uleb128 0x1b
- 780 000a 0E       		.uleb128 0xe
- 781 000b 55       		.uleb128 0x55
- 782 000c 17       		.uleb128 0x17
- 783 000d 11       		.uleb128 0x11
- 784 000e 01       		.uleb128 0x1
- 785 000f 10       		.uleb128 0x10
- 786 0010 17       		.uleb128 0x17
- 787 0011 00       		.byte	0
- 788 0012 00       		.byte	0
- 789 0013 02       		.uleb128 0x2
- 790 0014 24       		.uleb128 0x24
- 791 0015 00       		.byte	0
- 792 0016 0B       		.uleb128 0xb
- 793 0017 0B       		.uleb128 0xb
- 794 0018 3E       		.uleb128 0x3e
- 795 0019 0B       		.uleb128 0xb
- 796 001a 03       		.uleb128 0x3
- 797 001b 0E       		.uleb128 0xe
- 798 001c 00       		.byte	0
- 799 001d 00       		.byte	0
- 800 001e 03       		.uleb128 0x3
- 801 001f 24       		.uleb128 0x24
- 802 0020 00       		.byte	0
- 803 0021 0B       		.uleb128 0xb
- 804 0022 0B       		.uleb128 0xb
- 805 0023 3E       		.uleb128 0x3e
- 806 0024 0B       		.uleb128 0xb
- 807 0025 03       		.uleb128 0x3
- 808 0026 08       		.uleb128 0x8
- 809 0027 00       		.byte	0
- 810 0028 00       		.byte	0
- 811 0029 04       		.uleb128 0x4
- 812 002a 16       		.uleb128 0x16
- 813 002b 00       		.byte	0
- 814 002c 03       		.uleb128 0x3
- 815 002d 0E       		.uleb128 0xe
- 816 002e 3A       		.uleb128 0x3a
- 817 002f 0B       		.uleb128 0xb
- 818 0030 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 17
+ 754 0206 01       		.byte	0x1
+ 755 0207 55       		.byte	0x55
+ 756 0208 6B000000 		.4byte	0x6b
+ 757 020c 02       		.uleb128 0x2
+ 758 020d 91       		.byte	0x91
+ 759 020e 73       		.sleb128 -13
+ 760 020f 07       		.uleb128 0x7
+ 761 0210 00000000 		.4byte	.LASF28
+ 762 0214 01       		.byte	0x1
+ 763 0215 56       		.byte	0x56
+ 764 0216 76000000 		.4byte	0x76
+ 765 021a 02       		.uleb128 0x2
+ 766 021b 91       		.byte	0x91
+ 767 021c 74       		.sleb128 -12
+ 768 021d 00       		.byte	0
+ 769 021e 0C       		.uleb128 0xc
+ 770 021f 04       		.byte	0x4
+ 771 0220 76000000 		.4byte	0x76
+ 772 0224 0D       		.uleb128 0xd
+ 773 0225 21000000 		.4byte	.LASF29
+ 774 0229 01       		.byte	0x1
+ 775 022a 12       		.byte	0x12
+ 776 022b 6B000000 		.4byte	0x6b
+ 777 022f 05       		.uleb128 0x5
+ 778 0230 03       		.byte	0x3
+ 779 0231 00000000 		.4byte	volume
+ 780 0235 0D       		.uleb128 0xd
+ 781 0236 48000000 		.4byte	.LASF30
+ 782 023a 01       		.byte	0x1
+ 783 023b 13       		.byte	0x13
+ 784 023c 6B000000 		.4byte	0x6b
+ 785 0240 05       		.uleb128 0x5
+ 786 0241 03       		.byte	0x3
+ 787 0242 00000000 		.4byte	tempo
+ 788 0246 0D       		.uleb128 0xd
+ 789 0247 98010000 		.4byte	.LASF31
+ 790 024b 01       		.byte	0x1
+ 791 024c 14       		.byte	0x14
+ 792 024d 57020000 		.4byte	0x257
+ 793 0251 05       		.uleb128 0x5
+ 794 0252 03       		.byte	0x3
+ 795 0253 00000000 		.4byte	f_clock
+ 796 0257 0E       		.uleb128 0xe
+ 797 0258 5D000000 		.4byte	0x5d
+ 798 025c 0D       		.uleb128 0xd
+ 799 025d FE000000 		.4byte	.LASF32
+ 800 0261 01       		.byte	0x1
+ 801 0262 15       		.byte	0x15
+ 802 0263 57020000 		.4byte	0x257
+ 803 0267 05       		.uleb128 0x5
+ 804 0268 03       		.byte	0x3
+ 805 0269 00000000 		.4byte	freq_mod
+ 806 026d 00       		.byte	0
+ 807              		.section	.debug_abbrev,"",%progbits
+ 808              	.Ldebug_abbrev0:
+ 809 0000 01       		.uleb128 0x1
+ 810 0001 11       		.uleb128 0x11
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 17
 
 
- 819 0031 0B       		.uleb128 0xb
- 820 0032 49       		.uleb128 0x49
- 821 0033 13       		.uleb128 0x13
- 822 0034 00       		.byte	0
- 823 0035 00       		.byte	0
- 824 0036 05       		.uleb128 0x5
- 825 0037 2E       		.uleb128 0x2e
- 826 0038 01       		.byte	0x1
- 827 0039 3F       		.uleb128 0x3f
- 828 003a 19       		.uleb128 0x19
- 829 003b 03       		.uleb128 0x3
- 830 003c 0E       		.uleb128 0xe
- 831 003d 3A       		.uleb128 0x3a
- 832 003e 0B       		.uleb128 0xb
- 833 003f 3B       		.uleb128 0x3b
- 834 0040 0B       		.uleb128 0xb
- 835 0041 27       		.uleb128 0x27
- 836 0042 19       		.uleb128 0x19
- 837 0043 11       		.uleb128 0x11
- 838 0044 01       		.uleb128 0x1
- 839 0045 12       		.uleb128 0x12
- 840 0046 06       		.uleb128 0x6
- 841 0047 40       		.uleb128 0x40
- 842 0048 18       		.uleb128 0x18
- 843 0049 9642     		.uleb128 0x2116
- 844 004b 19       		.uleb128 0x19
- 845 004c 01       		.uleb128 0x1
- 846 004d 13       		.uleb128 0x13
- 847 004e 00       		.byte	0
- 848 004f 00       		.byte	0
- 849 0050 06       		.uleb128 0x6
- 850 0051 05       		.uleb128 0x5
- 851 0052 00       		.byte	0
- 852 0053 03       		.uleb128 0x3
- 853 0054 0E       		.uleb128 0xe
- 854 0055 3A       		.uleb128 0x3a
- 855 0056 0B       		.uleb128 0xb
- 856 0057 3B       		.uleb128 0x3b
- 857 0058 0B       		.uleb128 0xb
- 858 0059 49       		.uleb128 0x49
- 859 005a 13       		.uleb128 0x13
- 860 005b 02       		.uleb128 0x2
- 861 005c 18       		.uleb128 0x18
- 862 005d 00       		.byte	0
- 863 005e 00       		.byte	0
- 864 005f 07       		.uleb128 0x7
- 865 0060 34       		.uleb128 0x34
- 866 0061 00       		.byte	0
- 867 0062 03       		.uleb128 0x3
- 868 0063 0E       		.uleb128 0xe
- 869 0064 3A       		.uleb128 0x3a
- 870 0065 0B       		.uleb128 0xb
- 871 0066 3B       		.uleb128 0x3b
- 872 0067 0B       		.uleb128 0xb
- 873 0068 49       		.uleb128 0x49
- 874 0069 13       		.uleb128 0x13
- 875 006a 02       		.uleb128 0x2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 18
+ 811 0002 01       		.byte	0x1
+ 812 0003 25       		.uleb128 0x25
+ 813 0004 0E       		.uleb128 0xe
+ 814 0005 13       		.uleb128 0x13
+ 815 0006 0B       		.uleb128 0xb
+ 816 0007 03       		.uleb128 0x3
+ 817 0008 0E       		.uleb128 0xe
+ 818 0009 1B       		.uleb128 0x1b
+ 819 000a 0E       		.uleb128 0xe
+ 820 000b 55       		.uleb128 0x55
+ 821 000c 17       		.uleb128 0x17
+ 822 000d 11       		.uleb128 0x11
+ 823 000e 01       		.uleb128 0x1
+ 824 000f 10       		.uleb128 0x10
+ 825 0010 17       		.uleb128 0x17
+ 826 0011 00       		.byte	0
+ 827 0012 00       		.byte	0
+ 828 0013 02       		.uleb128 0x2
+ 829 0014 24       		.uleb128 0x24
+ 830 0015 00       		.byte	0
+ 831 0016 0B       		.uleb128 0xb
+ 832 0017 0B       		.uleb128 0xb
+ 833 0018 3E       		.uleb128 0x3e
+ 834 0019 0B       		.uleb128 0xb
+ 835 001a 03       		.uleb128 0x3
+ 836 001b 0E       		.uleb128 0xe
+ 837 001c 00       		.byte	0
+ 838 001d 00       		.byte	0
+ 839 001e 03       		.uleb128 0x3
+ 840 001f 24       		.uleb128 0x24
+ 841 0020 00       		.byte	0
+ 842 0021 0B       		.uleb128 0xb
+ 843 0022 0B       		.uleb128 0xb
+ 844 0023 3E       		.uleb128 0x3e
+ 845 0024 0B       		.uleb128 0xb
+ 846 0025 03       		.uleb128 0x3
+ 847 0026 08       		.uleb128 0x8
+ 848 0027 00       		.byte	0
+ 849 0028 00       		.byte	0
+ 850 0029 04       		.uleb128 0x4
+ 851 002a 16       		.uleb128 0x16
+ 852 002b 00       		.byte	0
+ 853 002c 03       		.uleb128 0x3
+ 854 002d 0E       		.uleb128 0xe
+ 855 002e 3A       		.uleb128 0x3a
+ 856 002f 0B       		.uleb128 0xb
+ 857 0030 3B       		.uleb128 0x3b
+ 858 0031 0B       		.uleb128 0xb
+ 859 0032 49       		.uleb128 0x49
+ 860 0033 13       		.uleb128 0x13
+ 861 0034 00       		.byte	0
+ 862 0035 00       		.byte	0
+ 863 0036 05       		.uleb128 0x5
+ 864 0037 2E       		.uleb128 0x2e
+ 865 0038 01       		.byte	0x1
+ 866 0039 3F       		.uleb128 0x3f
+ 867 003a 19       		.uleb128 0x19
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 18
 
 
- 876 006b 18       		.uleb128 0x18
- 877 006c 00       		.byte	0
- 878 006d 00       		.byte	0
- 879 006e 08       		.uleb128 0x8
- 880 006f 2E       		.uleb128 0x2e
- 881 0070 01       		.byte	0x1
- 882 0071 3F       		.uleb128 0x3f
- 883 0072 19       		.uleb128 0x19
- 884 0073 03       		.uleb128 0x3
- 885 0074 0E       		.uleb128 0xe
- 886 0075 3A       		.uleb128 0x3a
- 887 0076 0B       		.uleb128 0xb
- 888 0077 3B       		.uleb128 0x3b
- 889 0078 0B       		.uleb128 0xb
- 890 0079 27       		.uleb128 0x27
- 891 007a 19       		.uleb128 0x19
- 892 007b 11       		.uleb128 0x11
- 893 007c 01       		.uleb128 0x1
- 894 007d 12       		.uleb128 0x12
- 895 007e 06       		.uleb128 0x6
- 896 007f 40       		.uleb128 0x40
- 897 0080 18       		.uleb128 0x18
- 898 0081 9742     		.uleb128 0x2117
- 899 0083 19       		.uleb128 0x19
- 900 0084 01       		.uleb128 0x1
- 901 0085 13       		.uleb128 0x13
- 902 0086 00       		.byte	0
- 903 0087 00       		.byte	0
- 904 0088 09       		.uleb128 0x9
- 905 0089 05       		.uleb128 0x5
- 906 008a 00       		.byte	0
- 907 008b 03       		.uleb128 0x3
- 908 008c 08       		.uleb128 0x8
- 909 008d 3A       		.uleb128 0x3a
- 910 008e 0B       		.uleb128 0xb
- 911 008f 3B       		.uleb128 0x3b
- 912 0090 0B       		.uleb128 0xb
- 913 0091 49       		.uleb128 0x49
- 914 0092 13       		.uleb128 0x13
- 915 0093 02       		.uleb128 0x2
- 916 0094 18       		.uleb128 0x18
- 917 0095 00       		.byte	0
- 918 0096 00       		.byte	0
- 919 0097 0A       		.uleb128 0xa
- 920 0098 2E       		.uleb128 0x2e
- 921 0099 00       		.byte	0
- 922 009a 3F       		.uleb128 0x3f
- 923 009b 19       		.uleb128 0x19
- 924 009c 03       		.uleb128 0x3
- 925 009d 0E       		.uleb128 0xe
- 926 009e 3A       		.uleb128 0x3a
- 927 009f 0B       		.uleb128 0xb
- 928 00a0 3B       		.uleb128 0x3b
- 929 00a1 0B       		.uleb128 0xb
- 930 00a2 11       		.uleb128 0x11
- 931 00a3 01       		.uleb128 0x1
- 932 00a4 12       		.uleb128 0x12
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 19
+ 868 003b 03       		.uleb128 0x3
+ 869 003c 0E       		.uleb128 0xe
+ 870 003d 3A       		.uleb128 0x3a
+ 871 003e 0B       		.uleb128 0xb
+ 872 003f 3B       		.uleb128 0x3b
+ 873 0040 0B       		.uleb128 0xb
+ 874 0041 27       		.uleb128 0x27
+ 875 0042 19       		.uleb128 0x19
+ 876 0043 11       		.uleb128 0x11
+ 877 0044 01       		.uleb128 0x1
+ 878 0045 12       		.uleb128 0x12
+ 879 0046 06       		.uleb128 0x6
+ 880 0047 40       		.uleb128 0x40
+ 881 0048 18       		.uleb128 0x18
+ 882 0049 9642     		.uleb128 0x2116
+ 883 004b 19       		.uleb128 0x19
+ 884 004c 01       		.uleb128 0x1
+ 885 004d 13       		.uleb128 0x13
+ 886 004e 00       		.byte	0
+ 887 004f 00       		.byte	0
+ 888 0050 06       		.uleb128 0x6
+ 889 0051 05       		.uleb128 0x5
+ 890 0052 00       		.byte	0
+ 891 0053 03       		.uleb128 0x3
+ 892 0054 0E       		.uleb128 0xe
+ 893 0055 3A       		.uleb128 0x3a
+ 894 0056 0B       		.uleb128 0xb
+ 895 0057 3B       		.uleb128 0x3b
+ 896 0058 0B       		.uleb128 0xb
+ 897 0059 49       		.uleb128 0x49
+ 898 005a 13       		.uleb128 0x13
+ 899 005b 02       		.uleb128 0x2
+ 900 005c 18       		.uleb128 0x18
+ 901 005d 00       		.byte	0
+ 902 005e 00       		.byte	0
+ 903 005f 07       		.uleb128 0x7
+ 904 0060 34       		.uleb128 0x34
+ 905 0061 00       		.byte	0
+ 906 0062 03       		.uleb128 0x3
+ 907 0063 0E       		.uleb128 0xe
+ 908 0064 3A       		.uleb128 0x3a
+ 909 0065 0B       		.uleb128 0xb
+ 910 0066 3B       		.uleb128 0x3b
+ 911 0067 0B       		.uleb128 0xb
+ 912 0068 49       		.uleb128 0x49
+ 913 0069 13       		.uleb128 0x13
+ 914 006a 02       		.uleb128 0x2
+ 915 006b 18       		.uleb128 0x18
+ 916 006c 00       		.byte	0
+ 917 006d 00       		.byte	0
+ 918 006e 08       		.uleb128 0x8
+ 919 006f 2E       		.uleb128 0x2e
+ 920 0070 01       		.byte	0x1
+ 921 0071 3F       		.uleb128 0x3f
+ 922 0072 19       		.uleb128 0x19
+ 923 0073 03       		.uleb128 0x3
+ 924 0074 0E       		.uleb128 0xe
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 19
 
 
- 933 00a5 06       		.uleb128 0x6
- 934 00a6 40       		.uleb128 0x40
- 935 00a7 18       		.uleb128 0x18
- 936 00a8 9642     		.uleb128 0x2116
- 937 00aa 19       		.uleb128 0x19
- 938 00ab 00       		.byte	0
- 939 00ac 00       		.byte	0
- 940 00ad 0B       		.uleb128 0xb
- 941 00ae 34       		.uleb128 0x34
- 942 00af 00       		.byte	0
- 943 00b0 03       		.uleb128 0x3
- 944 00b1 08       		.uleb128 0x8
- 945 00b2 3A       		.uleb128 0x3a
- 946 00b3 0B       		.uleb128 0xb
- 947 00b4 3B       		.uleb128 0x3b
- 948 00b5 0B       		.uleb128 0xb
- 949 00b6 49       		.uleb128 0x49
- 950 00b7 13       		.uleb128 0x13
- 951 00b8 02       		.uleb128 0x2
- 952 00b9 18       		.uleb128 0x18
- 953 00ba 00       		.byte	0
- 954 00bb 00       		.byte	0
- 955 00bc 0C       		.uleb128 0xc
- 956 00bd 0F       		.uleb128 0xf
- 957 00be 00       		.byte	0
- 958 00bf 0B       		.uleb128 0xb
- 959 00c0 0B       		.uleb128 0xb
- 960 00c1 49       		.uleb128 0x49
- 961 00c2 13       		.uleb128 0x13
- 962 00c3 00       		.byte	0
- 963 00c4 00       		.byte	0
- 964 00c5 0D       		.uleb128 0xd
- 965 00c6 34       		.uleb128 0x34
- 966 00c7 00       		.byte	0
- 967 00c8 03       		.uleb128 0x3
- 968 00c9 0E       		.uleb128 0xe
- 969 00ca 3A       		.uleb128 0x3a
- 970 00cb 0B       		.uleb128 0xb
- 971 00cc 3B       		.uleb128 0x3b
- 972 00cd 0B       		.uleb128 0xb
- 973 00ce 49       		.uleb128 0x49
- 974 00cf 13       		.uleb128 0x13
- 975 00d0 3F       		.uleb128 0x3f
- 976 00d1 19       		.uleb128 0x19
- 977 00d2 02       		.uleb128 0x2
- 978 00d3 18       		.uleb128 0x18
- 979 00d4 00       		.byte	0
- 980 00d5 00       		.byte	0
- 981 00d6 0E       		.uleb128 0xe
- 982 00d7 26       		.uleb128 0x26
- 983 00d8 00       		.byte	0
- 984 00d9 49       		.uleb128 0x49
- 985 00da 13       		.uleb128 0x13
- 986 00db 00       		.byte	0
- 987 00dc 00       		.byte	0
- 988 00dd 00       		.byte	0
- 989              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 20
+ 925 0075 3A       		.uleb128 0x3a
+ 926 0076 0B       		.uleb128 0xb
+ 927 0077 3B       		.uleb128 0x3b
+ 928 0078 0B       		.uleb128 0xb
+ 929 0079 27       		.uleb128 0x27
+ 930 007a 19       		.uleb128 0x19
+ 931 007b 11       		.uleb128 0x11
+ 932 007c 01       		.uleb128 0x1
+ 933 007d 12       		.uleb128 0x12
+ 934 007e 06       		.uleb128 0x6
+ 935 007f 40       		.uleb128 0x40
+ 936 0080 18       		.uleb128 0x18
+ 937 0081 9742     		.uleb128 0x2117
+ 938 0083 19       		.uleb128 0x19
+ 939 0084 01       		.uleb128 0x1
+ 940 0085 13       		.uleb128 0x13
+ 941 0086 00       		.byte	0
+ 942 0087 00       		.byte	0
+ 943 0088 09       		.uleb128 0x9
+ 944 0089 05       		.uleb128 0x5
+ 945 008a 00       		.byte	0
+ 946 008b 03       		.uleb128 0x3
+ 947 008c 08       		.uleb128 0x8
+ 948 008d 3A       		.uleb128 0x3a
+ 949 008e 0B       		.uleb128 0xb
+ 950 008f 3B       		.uleb128 0x3b
+ 951 0090 0B       		.uleb128 0xb
+ 952 0091 49       		.uleb128 0x49
+ 953 0092 13       		.uleb128 0x13
+ 954 0093 02       		.uleb128 0x2
+ 955 0094 18       		.uleb128 0x18
+ 956 0095 00       		.byte	0
+ 957 0096 00       		.byte	0
+ 958 0097 0A       		.uleb128 0xa
+ 959 0098 2E       		.uleb128 0x2e
+ 960 0099 00       		.byte	0
+ 961 009a 3F       		.uleb128 0x3f
+ 962 009b 19       		.uleb128 0x19
+ 963 009c 03       		.uleb128 0x3
+ 964 009d 0E       		.uleb128 0xe
+ 965 009e 3A       		.uleb128 0x3a
+ 966 009f 0B       		.uleb128 0xb
+ 967 00a0 3B       		.uleb128 0x3b
+ 968 00a1 0B       		.uleb128 0xb
+ 969 00a2 11       		.uleb128 0x11
+ 970 00a3 01       		.uleb128 0x1
+ 971 00a4 12       		.uleb128 0x12
+ 972 00a5 06       		.uleb128 0x6
+ 973 00a6 40       		.uleb128 0x40
+ 974 00a7 18       		.uleb128 0x18
+ 975 00a8 9642     		.uleb128 0x2116
+ 976 00aa 19       		.uleb128 0x19
+ 977 00ab 00       		.byte	0
+ 978 00ac 00       		.byte	0
+ 979 00ad 0B       		.uleb128 0xb
+ 980 00ae 34       		.uleb128 0x34
+ 981 00af 00       		.byte	0
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 20
 
 
- 990 0000 4C000000 		.4byte	0x4c
- 991 0004 0200     		.2byte	0x2
- 992 0006 00000000 		.4byte	.Ldebug_info0
- 993 000a 04       		.byte	0x4
- 994 000b 00       		.byte	0
- 995 000c 0000     		.2byte	0
- 996 000e 0000     		.2byte	0
- 997 0010 00000000 		.4byte	.LFB33
- 998 0014 78000000 		.4byte	.LFE33-.LFB33
- 999 0018 00000000 		.4byte	.LFB34
- 1000 001c 20000000 		.4byte	.LFE34-.LFB34
- 1001 0020 00000000 		.4byte	.LFB35
- 1002 0024 20000000 		.4byte	.LFE35-.LFB35
- 1003 0028 00000000 		.4byte	.LFB36
- 1004 002c 0E000000 		.4byte	.LFE36-.LFB36
- 1005 0030 00000000 		.4byte	.LFB37
- 1006 0034 60000000 		.4byte	.LFE37-.LFB37
- 1007 0038 00000000 		.4byte	.LFB38
- 1008 003c 50000000 		.4byte	.LFE38-.LFB38
- 1009 0040 00000000 		.4byte	.LFB39
- 1010 0044 90000000 		.4byte	.LFE39-.LFB39
- 1011 0048 00000000 		.4byte	0
- 1012 004c 00000000 		.4byte	0
- 1013              		.section	.debug_ranges,"",%progbits
- 1014              	.Ldebug_ranges0:
- 1015 0000 00000000 		.4byte	.LFB33
- 1016 0004 78000000 		.4byte	.LFE33
- 1017 0008 00000000 		.4byte	.LFB34
- 1018 000c 20000000 		.4byte	.LFE34
- 1019 0010 00000000 		.4byte	.LFB35
- 1020 0014 20000000 		.4byte	.LFE35
- 1021 0018 00000000 		.4byte	.LFB36
- 1022 001c 0E000000 		.4byte	.LFE36
- 1023 0020 00000000 		.4byte	.LFB37
- 1024 0024 60000000 		.4byte	.LFE37
- 1025 0028 00000000 		.4byte	.LFB38
- 1026 002c 50000000 		.4byte	.LFE38
- 1027 0030 00000000 		.4byte	.LFB39
- 1028 0034 90000000 		.4byte	.LFE39
- 1029 0038 00000000 		.4byte	0
- 1030 003c 00000000 		.4byte	0
- 1031              		.section	.debug_line,"",%progbits
- 1032              	.Ldebug_line0:
- 1033 0000 E8000000 		.section	.debug_str,"MS",%progbits,1
- 1033      02004C00 
- 1033      00000201 
- 1033      FB0E0D00 
- 1033      01010101 
- 1034              	.LASF29:
- 1035 0000 746F6E65 		.ascii	"tone\000"
- 1035      00
- 1036              	.LASF15:
- 1037 0005 70657269 		.ascii	"period_ticks\000"
- 1037      6F645F74 
- 1037      69636B73 
- 1037      00
- 1038              	.LASF20:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 21
+ 982 00b0 03       		.uleb128 0x3
+ 983 00b1 08       		.uleb128 0x8
+ 984 00b2 3A       		.uleb128 0x3a
+ 985 00b3 0B       		.uleb128 0xb
+ 986 00b4 3B       		.uleb128 0x3b
+ 987 00b5 0B       		.uleb128 0xb
+ 988 00b6 49       		.uleb128 0x49
+ 989 00b7 13       		.uleb128 0x13
+ 990 00b8 02       		.uleb128 0x2
+ 991 00b9 18       		.uleb128 0x18
+ 992 00ba 00       		.byte	0
+ 993 00bb 00       		.byte	0
+ 994 00bc 0C       		.uleb128 0xc
+ 995 00bd 0F       		.uleb128 0xf
+ 996 00be 00       		.byte	0
+ 997 00bf 0B       		.uleb128 0xb
+ 998 00c0 0B       		.uleb128 0xb
+ 999 00c1 49       		.uleb128 0x49
+ 1000 00c2 13       		.uleb128 0x13
+ 1001 00c3 00       		.byte	0
+ 1002 00c4 00       		.byte	0
+ 1003 00c5 0D       		.uleb128 0xd
+ 1004 00c6 34       		.uleb128 0x34
+ 1005 00c7 00       		.byte	0
+ 1006 00c8 03       		.uleb128 0x3
+ 1007 00c9 0E       		.uleb128 0xe
+ 1008 00ca 3A       		.uleb128 0x3a
+ 1009 00cb 0B       		.uleb128 0xb
+ 1010 00cc 3B       		.uleb128 0x3b
+ 1011 00cd 0B       		.uleb128 0xb
+ 1012 00ce 49       		.uleb128 0x49
+ 1013 00cf 13       		.uleb128 0x13
+ 1014 00d0 3F       		.uleb128 0x3f
+ 1015 00d1 19       		.uleb128 0x19
+ 1016 00d2 02       		.uleb128 0x2
+ 1017 00d3 18       		.uleb128 0x18
+ 1018 00d4 00       		.byte	0
+ 1019 00d5 00       		.byte	0
+ 1020 00d6 0E       		.uleb128 0xe
+ 1021 00d7 26       		.uleb128 0x26
+ 1022 00d8 00       		.byte	0
+ 1023 00d9 49       		.uleb128 0x49
+ 1024 00da 13       		.uleb128 0x13
+ 1025 00db 00       		.byte	0
+ 1026 00dc 00       		.byte	0
+ 1027 00dd 00       		.byte	0
+ 1028              		.section	.debug_aranges,"",%progbits
+ 1029 0000 4C000000 		.4byte	0x4c
+ 1030 0004 0200     		.2byte	0x2
+ 1031 0006 00000000 		.4byte	.Ldebug_info0
+ 1032 000a 04       		.byte	0x4
+ 1033 000b 00       		.byte	0
+ 1034 000c 0000     		.2byte	0
+ 1035 000e 0000     		.2byte	0
+ 1036 0010 00000000 		.4byte	.LFB33
+ 1037 0014 78000000 		.4byte	.LFE33-.LFB33
+ 1038 0018 00000000 		.4byte	.LFB34
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 21
 
 
- 1039 0012 76616C75 		.ascii	"value\000"
- 1039      6500
- 1040              	.LASF25:
- 1041 0018 64757261 		.ascii	"duration\000"
- 1041      74696F6E 
- 1041      00
- 1042              	.LASF30:
- 1043 0021 766F6C75 		.ascii	"volume\000"
- 1043      6D6500
- 1044              	.LASF3:
- 1045 0028 73686F72 		.ascii	"short unsigned int\000"
- 1045      7420756E 
- 1045      7369676E 
- 1045      65642069 
- 1045      6E7400
- 1046              	.LASF27:
- 1047 003b 7069657A 		.ascii	"piezo_melody\000"
- 1047      6F5F6D65 
- 1047      6C6F6479 
- 1047      00
- 1048              	.LASF31:
- 1049 0048 74656D70 		.ascii	"tempo\000"
- 1049      6F00
- 1050              	.LASF11:
- 1051 004e 666C6F61 		.ascii	"float\000"
- 1051      7400
- 1052              	.LASF26:
- 1053 0054 7069657A 		.ascii	"piezo_rest\000"
- 1053      6F5F7265 
- 1053      737400
- 1054              	.LASF24:
- 1055 005f 6E6F7465 		.ascii	"note\000"
- 1055      00
- 1056              	.LASF18:
- 1057 0064 7069657A 		.ascii	"piezo_volume\000"
- 1057      6F5F766F 
- 1057      6C756D65 
- 1057      00
- 1058              	.LASF1:
- 1059 0071 756E7369 		.ascii	"unsigned char\000"
- 1059      676E6564 
- 1059      20636861 
- 1059      7200
- 1060              	.LASF5:
- 1061 007f 6C6F6E67 		.ascii	"long unsigned int\000"
- 1061      20756E73 
- 1061      69676E65 
- 1061      6420696E 
- 1061      7400
- 1062              	.LASF9:
- 1063 0091 75696E74 		.ascii	"uint8\000"
- 1063      3800
- 1064              	.LASF17:
- 1065 0097 7069657A 		.ascii	"piezo_tone\000"
- 1065      6F5F746F 
- 1065      6E6500
- 1066              	.LASF19:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 22
+ 1039 001c 20000000 		.4byte	.LFE34-.LFB34
+ 1040 0020 00000000 		.4byte	.LFB35
+ 1041 0024 20000000 		.4byte	.LFE35-.LFB35
+ 1042 0028 00000000 		.4byte	.LFB36
+ 1043 002c 0E000000 		.4byte	.LFE36-.LFB36
+ 1044 0030 00000000 		.4byte	.LFB37
+ 1045 0034 94000000 		.4byte	.LFE37-.LFB37
+ 1046 0038 00000000 		.4byte	.LFB38
+ 1047 003c 50000000 		.4byte	.LFE38-.LFB38
+ 1048 0040 00000000 		.4byte	.LFB39
+ 1049 0044 90000000 		.4byte	.LFE39-.LFB39
+ 1050 0048 00000000 		.4byte	0
+ 1051 004c 00000000 		.4byte	0
+ 1052              		.section	.debug_ranges,"",%progbits
+ 1053              	.Ldebug_ranges0:
+ 1054 0000 00000000 		.4byte	.LFB33
+ 1055 0004 78000000 		.4byte	.LFE33
+ 1056 0008 00000000 		.4byte	.LFB34
+ 1057 000c 20000000 		.4byte	.LFE34
+ 1058 0010 00000000 		.4byte	.LFB35
+ 1059 0014 20000000 		.4byte	.LFE35
+ 1060 0018 00000000 		.4byte	.LFB36
+ 1061 001c 0E000000 		.4byte	.LFE36
+ 1062 0020 00000000 		.4byte	.LFB37
+ 1063 0024 94000000 		.4byte	.LFE37
+ 1064 0028 00000000 		.4byte	.LFB38
+ 1065 002c 50000000 		.4byte	.LFE38
+ 1066 0030 00000000 		.4byte	.LFB39
+ 1067 0034 90000000 		.4byte	.LFE39
+ 1068 0038 00000000 		.4byte	0
+ 1069 003c 00000000 		.4byte	0
+ 1070              		.section	.debug_line,"",%progbits
+ 1071              	.Ldebug_line0:
+ 1072 0000 E9000000 		.section	.debug_str,"MS",%progbits,1
+ 1072      02004C00 
+ 1072      00000201 
+ 1072      FB0E0D00 
+ 1072      01010101 
+ 1073              	.LASF28:
+ 1074 0000 746F6E65 		.ascii	"tone\000"
+ 1074      00
+ 1075              	.LASF15:
+ 1076 0005 70657269 		.ascii	"period_ticks\000"
+ 1076      6F645F74 
+ 1076      69636B73 
+ 1076      00
+ 1077              	.LASF20:
+ 1078 0012 76616C75 		.ascii	"value\000"
+ 1078      6500
+ 1079              	.LASF24:
+ 1080 0018 64757261 		.ascii	"duration\000"
+ 1080      74696F6E 
+ 1080      00
+ 1081              	.LASF29:
+ 1082 0021 766F6C75 		.ascii	"volume\000"
+ 1082      6D6500
+ 1083              	.LASF3:
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 22
 
 
- 1067 00a2 66726571 		.ascii	"frequency_value\000"
- 1067      75656E63 
- 1067      795F7661 
- 1067      6C756500 
- 1068              	.LASF12:
- 1069 00b2 646F7562 		.ascii	"double\000"
- 1069      6C6500
- 1070              	.LASF33:
- 1071 00b9 66726571 		.ascii	"freq_mod\000"
- 1071      5F6D6F64 
- 1071      00
- 1072              	.LASF28:
- 1073 00c2 66726571 		.ascii	"frequencies\000"
- 1073      75656E63 
- 1073      69657300 
- 1074              	.LASF10:
- 1075 00ce 75696E74 		.ascii	"uint16\000"
- 1075      313600
- 1076              	.LASF37:
- 1077 00d5 7069657A 		.ascii	"piezo_stop\000"
- 1077      6F5F7374 
- 1077      6F7000
- 1078              	.LASF8:
- 1079 00e0 756E7369 		.ascii	"unsigned int\000"
- 1079      676E6564 
- 1079      20696E74 
- 1079      00
- 1080              	.LASF21:
- 1081 00ed 7069657A 		.ascii	"piezo_tempo\000"
- 1081      6F5F7465 
- 1081      6D706F00 
- 1082              	.LASF7:
- 1083 00f9 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1083      206C6F6E 
- 1083      6720756E 
- 1083      7369676E 
- 1083      65642069 
- 1084              	.LASF36:
- 1085 0110 433A5C55 		.ascii	"C:\\Users\\TinyWindows\\Documents\\PSoC Creator\\pi"
- 1085      73657273 
- 1085      5C54696E 
- 1085      7957696E 
- 1085      646F7773 
- 1086 013e 657A6F2D 		.ascii	"ezo-sensor\\My First Project.cydsn\000"
- 1086      73656E73 
- 1086      6F725C4D 
- 1086      79204669 
- 1086      72737420 
- 1087              	.LASF23:
- 1088 0160 66726571 		.ascii	"frequency\000"
- 1088      75656E63 
- 1088      7900
- 1089              	.LASF14:
- 1090 016a 73697A65 		.ascii	"sizetype\000"
- 1090      74797065 
- 1090      00
- 1091              	.LASF6:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccQciszG.s 			page 23
-
-
- 1092 0173 6C6F6E67 		.ascii	"long long int\000"
- 1092      206C6F6E 
- 1092      6720696E 
- 1092      7400
- 1093              	.LASF13:
- 1094 0181 63686172 		.ascii	"char\000"
+ 1084 0028 73686F72 		.ascii	"short unsigned int\000"
+ 1084      7420756E 
+ 1084      7369676E 
+ 1084      65642069 
+ 1084      6E7400
+ 1085              	.LASF26:
+ 1086 003b 7069657A 		.ascii	"piezo_melody\000"
+ 1086      6F5F6D65 
+ 1086      6C6F6479 
+ 1086      00
+ 1087              	.LASF30:
+ 1088 0048 74656D70 		.ascii	"tempo\000"
+ 1088      6F00
+ 1089              	.LASF11:
+ 1090 004e 666C6F61 		.ascii	"float\000"
+ 1090      7400
+ 1091              	.LASF25:
+ 1092 0054 7069657A 		.ascii	"piezo_rest\000"
+ 1092      6F5F7265 
+ 1092      737400
+ 1093              	.LASF23:
+ 1094 005f 6E6F7465 		.ascii	"note\000"
  1094      00
- 1095              	.LASF2:
- 1096 0186 73686F72 		.ascii	"short int\000"
- 1096      7420696E 
- 1096      7400
- 1097              	.LASF22:
- 1098 0190 7069657A 		.ascii	"piezo_play\000"
- 1098      6F5F706C 
- 1098      617900
- 1099              	.LASF35:
- 1100 019b 2E5C7069 		.ascii	".\\piezoelectric.c\000"
- 1100      657A6F65 
- 1100      6C656374 
- 1100      7269632E 
- 1100      6300
- 1101              	.LASF32:
- 1102 01ad 665F636C 		.ascii	"f_clock\000"
- 1102      6F636B00 
- 1103              	.LASF4:
- 1104 01b5 6C6F6E67 		.ascii	"long int\000"
- 1104      20696E74 
- 1104      00
- 1105              	.LASF0:
- 1106 01be 7369676E 		.ascii	"signed char\000"
- 1106      65642063 
- 1106      68617200 
- 1107              	.LASF16:
- 1108 01ca 636F6D70 		.ascii	"compare_ticks\000"
- 1108      6172655F 
- 1108      7469636B 
- 1108      7300
- 1109              	.LASF34:
- 1110 01d8 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 1110      4320342E 
- 1110      382E3420 
- 1110      32303134 
- 1110      30353236 
- 1111 020b 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 1111      20726576 
- 1111      6973696F 
- 1111      6E203231 
- 1111      31333538 
- 1112 023e 30202D66 		.ascii	"0 -ffunction-sections\000"
- 1112      66756E63 
- 1112      74696F6E 
- 1112      2D736563 
- 1112      74696F6E 
- 1113              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 1095              	.LASF18:
+ 1096 0064 7069657A 		.ascii	"piezo_volume\000"
+ 1096      6F5F766F 
+ 1096      6C756D65 
+ 1096      00
+ 1097              	.LASF35:
+ 1098 0071 433A5C55 		.ascii	"C:\\Users\\IEUser\\Documents\\GitHub\\piezo-sensor\\"
+ 1098      73657273 
+ 1098      5C494555 
+ 1098      7365725C 
+ 1098      446F6375 
+ 1099 009f 4D792046 		.ascii	"My First Project.cydsn\000"
+ 1099      69727374 
+ 1099      2050726F 
+ 1099      6A656374 
+ 1099      2E637964 
+ 1100              	.LASF1:
+ 1101 00b6 756E7369 		.ascii	"unsigned char\000"
+ 1101      676E6564 
+ 1101      20636861 
+ 1101      7200
+ 1102              	.LASF5:
+ 1103 00c4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1103      20756E73 
+ 1103      69676E65 
+ 1103      6420696E 
+ 1103      7400
+ 1104              	.LASF9:
+ 1105 00d6 75696E74 		.ascii	"uint8\000"
+ 1105      3800
+ 1106              	.LASF17:
+ 1107 00dc 7069657A 		.ascii	"piezo_tone\000"
+ 1107      6F5F746F 
+ 1107      6E6500
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 23
+
+
+ 1108              	.LASF19:
+ 1109 00e7 66726571 		.ascii	"frequency_value\000"
+ 1109      75656E63 
+ 1109      795F7661 
+ 1109      6C756500 
+ 1110              	.LASF12:
+ 1111 00f7 646F7562 		.ascii	"double\000"
+ 1111      6C6500
+ 1112              	.LASF32:
+ 1113 00fe 66726571 		.ascii	"freq_mod\000"
+ 1113      5F6D6F64 
+ 1113      00
+ 1114              	.LASF27:
+ 1115 0107 66726571 		.ascii	"frequencies\000"
+ 1115      75656E63 
+ 1115      69657300 
+ 1116              	.LASF10:
+ 1117 0113 75696E74 		.ascii	"uint16\000"
+ 1117      313600
+ 1118              	.LASF36:
+ 1119 011a 7069657A 		.ascii	"piezo_stop\000"
+ 1119      6F5F7374 
+ 1119      6F7000
+ 1120              	.LASF8:
+ 1121 0125 756E7369 		.ascii	"unsigned int\000"
+ 1121      676E6564 
+ 1121      20696E74 
+ 1121      00
+ 1122              	.LASF21:
+ 1123 0132 7069657A 		.ascii	"piezo_tempo\000"
+ 1123      6F5F7465 
+ 1123      6D706F00 
+ 1124              	.LASF7:
+ 1125 013e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1125      206C6F6E 
+ 1125      6720756E 
+ 1125      7369676E 
+ 1125      65642069 
+ 1126              	.LASF14:
+ 1127 0155 73697A65 		.ascii	"sizetype\000"
+ 1127      74797065 
+ 1127      00
+ 1128              	.LASF6:
+ 1129 015e 6C6F6E67 		.ascii	"long long int\000"
+ 1129      206C6F6E 
+ 1129      6720696E 
+ 1129      7400
+ 1130              	.LASF13:
+ 1131 016c 63686172 		.ascii	"char\000"
+ 1131      00
+ 1132              	.LASF2:
+ 1133 0171 73686F72 		.ascii	"short int\000"
+ 1133      7420696E 
+ 1133      7400
+ 1134              	.LASF22:
+ 1135 017b 7069657A 		.ascii	"piezo_play\000"
+ 1135      6F5F706C 
+ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccRUQSma.s 			page 24
+
+
+ 1135      617900
+ 1136              	.LASF34:
+ 1137 0186 2E5C7069 		.ascii	".\\piezoelectric.c\000"
+ 1137      657A6F65 
+ 1137      6C656374 
+ 1137      7269632E 
+ 1137      6300
+ 1138              	.LASF31:
+ 1139 0198 665F636C 		.ascii	"f_clock\000"
+ 1139      6F636B00 
+ 1140              	.LASF4:
+ 1141 01a0 6C6F6E67 		.ascii	"long int\000"
+ 1141      20696E74 
+ 1141      00
+ 1142              	.LASF0:
+ 1143 01a9 7369676E 		.ascii	"signed char\000"
+ 1143      65642063 
+ 1143      68617200 
+ 1144              	.LASF16:
+ 1145 01b5 636F6D70 		.ascii	"compare_ticks\000"
+ 1145      6172655F 
+ 1145      7469636B 
+ 1145      7300
+ 1146              	.LASF33:
+ 1147 01c3 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1147      4320342E 
+ 1147      382E3420 
+ 1147      32303134 
+ 1147      30353236 
+ 1148 01f6 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 1148      20726576 
+ 1148      6973696F 
+ 1148      6E203231 
+ 1148      31333538 
+ 1149 0229 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 1149      66756E63 
+ 1149      74696F6E 
+ 1149      2D736563 
+ 1149      74696F6E 
+ 1150              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
