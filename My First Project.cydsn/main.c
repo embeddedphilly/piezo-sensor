@@ -25,6 +25,9 @@ int main()
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     PWM_1_Start();
     
+    piezo_stop();
+    piezo_tone(4400);
+    
     CapSense_Start();	
 
     /* Initialize baselines */ 
@@ -55,7 +58,7 @@ int main()
         /* Place your application code here. */
         
         cap_sense_update_volume();
-        
+        /*
         if(state == STATE_READY) {
             tone = tune[tune_counter++];
             note = tune[tune_counter++];
@@ -64,7 +67,9 @@ int main()
             piezo_play(tone, note);
             state = STATE_PLAY;
         }
+        */
     }
+
 }
 
 void cap_sense_update_volume(void)
@@ -94,7 +99,8 @@ void cap_sense_update_volume(void)
     if (curPos != oldPos)
     {
         oldPos = curPos;
-        volume = curPos*MAX_SLIDER/MAX_VOLUME;       
+        volume = curPos*MAX_SLIDER/MAX_VOLUME;  
+        piezo_volume(10*volume);
     }
 }
 

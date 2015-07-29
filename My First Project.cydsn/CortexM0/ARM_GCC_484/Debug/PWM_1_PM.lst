@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
   26:.\Generated_Source\PSoC4/PWM_1_PM.c **** ********************************************************************************
   27:.\Generated_Source\PSoC4/PWM_1_PM.c **** *
   28:.\Generated_Source\PSoC4/PWM_1_PM.c **** * Summary:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 2
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 2
 
 
   29:.\Generated_Source\PSoC4/PWM_1_PM.c **** *  All configuration registers are retention. Nothing to save here.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
   53              		.loc 1 59 0
   54              		.cfi_startproc
   55 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 3
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 3
 
 
   56              		.cfi_def_cfa_offset 8
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
   98              		.thumb_func
   99              		.type	PWM_1_RestoreConfig, %function
  100              	PWM_1_RestoreConfig:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 4
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 4
 
 
  101              	.LFB2:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  102:.\Generated_Source\PSoC4/PWM_1_PM.c **** *  None
  103:.\Generated_Source\PSoC4/PWM_1_PM.c **** *
  104:.\Generated_Source\PSoC4/PWM_1_PM.c **** * Return:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 5
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 5
 
 
  105:.\Generated_Source\PSoC4/PWM_1_PM.c **** *  None
@@ -296,9 +296,9 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  165 000c 9F000000 		.4byte	.LASF21
  166 0010 01       		.byte	0x1
  167 0011 7B000000 		.4byte	.LASF22
- 168 0015 3D010000 		.4byte	.LASF23
+ 168 0015 42010000 		.4byte	.LASF23
  169 0019 00000000 		.4byte	.Ldebug_ranges0+0
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 6
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 6
 
 
  170 001d 00000000 		.4byte	0
@@ -306,7 +306,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  172 0025 02       		.uleb128 0x2
  173 0026 01       		.byte	0x1
  174 0027 06       		.byte	0x6
- 175 0028 C4010000 		.4byte	.LASF0
+ 175 0028 CF010000 		.4byte	.LASF0
  176 002c 02       		.uleb128 0x2
  177 002d 01       		.byte	0x1
  178 002e 08       		.byte	0x8
@@ -314,15 +314,15 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  180 0033 02       		.uleb128 0x2
  181 0034 02       		.byte	0x2
  182 0035 05       		.byte	0x5
- 183 0036 EF010000 		.4byte	.LASF2
+ 183 0036 FA010000 		.4byte	.LASF2
  184 003a 02       		.uleb128 0x2
  185 003b 02       		.byte	0x2
  186 003c 07       		.byte	0x7
- 187 003d B1010000 		.4byte	.LASF3
+ 187 003d BC010000 		.4byte	.LASF3
  188 0041 02       		.uleb128 0x2
  189 0042 04       		.byte	0x4
  190 0043 05       		.byte	0x5
- 191 0044 87010000 		.4byte	.LASF4
+ 191 0044 92010000 		.4byte	.LASF4
  192 0048 02       		.uleb128 0x2
  193 0049 04       		.byte	0x4
  194 004a 07       		.byte	0x7
@@ -356,20 +356,20 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  222 0081 02       		.uleb128 0x2
  223 0082 04       		.byte	0x4
  224 0083 04       		.byte	0x4
- 225 0084 DD010000 		.4byte	.LASF11
+ 225 0084 E8010000 		.4byte	.LASF11
  226 0088 02       		.uleb128 0x2
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 7
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 7
 
 
  227 0089 08       		.byte	0x8
  228 008a 04       		.byte	0x4
- 229 008b A4010000 		.4byte	.LASF12
+ 229 008b AF010000 		.4byte	.LASF12
  230 008f 02       		.uleb128 0x2
  231 0090 01       		.byte	0x1
  232 0091 08       		.byte	0x8
- 233 0092 82010000 		.4byte	.LASF13
+ 233 0092 3D010000 		.4byte	.LASF13
  234 0096 05       		.uleb128 0x5
- 235 0097 AB010000 		.4byte	.LASF14
+ 235 0097 B6010000 		.4byte	.LASF14
  236 009b 02       		.byte	0x2
  237 009c 5F01     		.2byte	0x15f
  238 009e A2000000 		.4byte	0xa2
@@ -378,7 +378,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  241 00a7 02       		.uleb128 0x2
  242 00a8 04       		.byte	0x4
  243 00a9 07       		.byte	0x7
- 244 00aa F9010000 		.4byte	.LASF15
+ 244 00aa 04020000 		.4byte	.LASF15
  245 00ae 07       		.uleb128 0x7
  246 00af 01       		.byte	0x1
  247 00b0 03       		.byte	0x3
@@ -392,7 +392,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  255 00c1 00       		.byte	0
  256 00c2 00       		.byte	0
  257 00c3 04       		.uleb128 0x4
- 258 00c4 90010000 		.4byte	.LASF16
+ 258 00c4 9B010000 		.4byte	.LASF16
  259 00c8 03       		.byte	0x3
  260 00c9 24       		.byte	0x24
  261 00ca AE000000 		.4byte	0xae
@@ -405,7 +405,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  268 00dd 01       		.uleb128 0x1
  269 00de 9C       		.byte	0x9c
  270 00df 0A       		.uleb128 0xa
- 271 00e0 E3010000 		.4byte	.LASF18
+ 271 00e0 EE010000 		.4byte	.LASF18
  272 00e4 01       		.byte	0x1
  273 00e5 3A       		.byte	0x3a
  274 00e6 00000000 		.4byte	.LFB1
@@ -418,13 +418,13 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  281 00f6 58       		.byte	0x58
  282 00f7 00000000 		.4byte	.LFB2
  283 00fb 08000000 		.4byte	.LFE2-.LFB2
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 8
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 8
 
 
  284 00ff 01       		.uleb128 0x1
  285 0100 9C       		.byte	0x9c
  286 0101 0A       		.uleb128 0xa
- 287 0102 D0010000 		.4byte	.LASF20
+ 287 0102 DB010000 		.4byte	.LASF20
  288 0106 01       		.byte	0x1
  289 0107 6C       		.byte	0x6c
  290 0108 00000000 		.4byte	.LFB3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  338 0021 0B       		.uleb128 0xb
  339 0022 0B       		.uleb128 0xb
  340 0023 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 9
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 9
 
 
  341 0024 0B       		.uleb128 0xb
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  395 005a 03       		.uleb128 0x3
  396 005b 0E       		.uleb128 0xe
  397 005c 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 10
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 10
 
 
  398 005d 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  452 0095 00       		.byte	0
  453 0096 0B       		.uleb128 0xb
  454 0097 34       		.uleb128 0x34
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 11
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 11
 
 
  455 0098 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  503      6720696E 
  503      7400
  504              	.LASF10:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 12
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 12
 
 
  505 000e 75696E74 		.ascii	"uint32\000"
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  525 0105 30202D66 		.ascii	"0 -ffunction-sections\000"
  525      66756E63 
  525      74696F6E 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 13
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 13
 
 
  525      2D736563 
@@ -734,67 +734,67 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 1
  529      676E6564 
  529      20636861 
  529      7200
- 530              	.LASF23:
- 531 013d 433A5C55 		.ascii	"C:\\Users\\IEUser\\Documents\\GitHub\\piezo-sensor\\"
- 531      73657273 
- 531      5C494555 
- 531      7365725C 
- 531      446F6375 
- 532 016b 4D792046 		.ascii	"My First Project.cydsn\000"
- 532      69727374 
- 532      2050726F 
- 532      6A656374 
- 532      2E637964 
- 533              	.LASF13:
- 534 0182 63686172 		.ascii	"char\000"
- 534      00
+ 530              	.LASF13:
+ 531 013d 63686172 		.ascii	"char\000"
+ 531      00
+ 532              	.LASF23:
+ 533 0142 433A5C55 		.ascii	"C:\\Users\\TinyWindows\\Documents\\PSoC Creator\\pi"
+ 533      73657273 
+ 533      5C54696E 
+ 533      7957696E 
+ 533      646F7773 
+ 534 0170 657A6F2D 		.ascii	"ezo-sensor\\My First Project.cydsn\000"
+ 534      73656E73 
+ 534      6F725C4D 
+ 534      79204669 
+ 534      72737420 
  535              	.LASF4:
- 536 0187 6C6F6E67 		.ascii	"long int\000"
+ 536 0192 6C6F6E67 		.ascii	"long int\000"
  536      20696E74 
  536      00
  537              	.LASF16:
- 538 0190 50574D5F 		.ascii	"PWM_1_BACKUP_STRUCT\000"
+ 538 019b 50574D5F 		.ascii	"PWM_1_BACKUP_STRUCT\000"
  538      315F4241 
  538      434B5550 
  538      5F535452 
  538      55435400 
  539              	.LASF12:
- 540 01a4 646F7562 		.ascii	"double\000"
+ 540 01af 646F7562 		.ascii	"double\000"
  540      6C6500
  541              	.LASF14:
- 542 01ab 72656733 		.ascii	"reg32\000"
+ 542 01b6 72656733 		.ascii	"reg32\000"
  542      3200
  543              	.LASF3:
- 544 01b1 73686F72 		.ascii	"short unsigned int\000"
+ 544 01bc 73686F72 		.ascii	"short unsigned int\000"
  544      7420756E 
  544      7369676E 
  544      65642069 
  544      6E7400
  545              	.LASF0:
- 546 01c4 7369676E 		.ascii	"signed char\000"
+ 546 01cf 7369676E 		.ascii	"signed char\000"
  546      65642063 
  546      68617200 
  547              	.LASF20:
- 548 01d0 50574D5F 		.ascii	"PWM_1_Wakeup\000"
+ 548 01db 50574D5F 		.ascii	"PWM_1_Wakeup\000"
  548      315F5761 
  548      6B657570 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\ccdSVjLD.s 			page 14
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccp60bWa.s 			page 14
 
 
  548      00
  549              	.LASF11:
- 550 01dd 666C6F61 		.ascii	"float\000"
+ 550 01e8 666C6F61 		.ascii	"float\000"
  550      7400
  551              	.LASF18:
- 552 01e3 50574D5F 		.ascii	"PWM_1_Sleep\000"
+ 552 01ee 50574D5F 		.ascii	"PWM_1_Sleep\000"
  552      315F536C 
  552      65657000 
  553              	.LASF2:
- 554 01ef 73686F72 		.ascii	"short int\000"
+ 554 01fa 73686F72 		.ascii	"short int\000"
  554      7420696E 
  554      7400
  555              	.LASF15:
- 556 01f9 73697A65 		.ascii	"sizetype\000"
+ 556 0204 73697A65 		.ascii	"sizetype\000"
  556      74797065 
  556      00
  557              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

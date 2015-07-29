@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
   51 0001 1E       		.byte	30
   52 0002 1E       		.byte	30
   53 0003 1E       		.byte	30
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 2
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 2
 
 
   54 0004 1E       		.byte	30
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  108              	.LFB33:
  109              		.file 1 ".\\Generated_Source\\PSoC4\\CapSense_CSHL.c"
    1:.\Generated_Source\PSoC4/CapSense_CSHL.c **** /*******************************************************************************
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 3
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 3
 
 
    2:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * File Name: CapSense_CSHL.c
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
   56:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
   57:.\Generated_Source\PSoC4/CapSense_CSHL.c **** uint8 CapSense_lowBaselineResetCnt[CapSense_TOTAL_SENSOR_COUNT];
   58:.\Generated_Source\PSoC4/CapSense_CSHL.c **** uint8 CapSense_lowBaselineReset[CapSense_TOTAL_SENSOR_COUNT] = {
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 4
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 4
 
 
   59:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     30u, 30u, 30u, 30u, 30u, 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  113:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  Loads the CapSense_sensorBaseline[sensor] array element with an 
  114:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  initial value which is equal to the raw count value. 
  115:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  Resets to zero CapSense_sensorBaselineLow[sensor] and 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 5
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 5
 
 
  116:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  CapSense_sensorSignal[sensor] array element.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  159:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     /* Initialize Baseline */
  160:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     CapSense_sensorBaseline[sensor] = CapSense_sensorRaw[sensor];
  121              		.loc 1 160 0
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 6
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 6
 
 
  122 0008 0E4B     		ldr	r3, .L2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  186:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     #if (CapSense_TOTAL_GENERICS_COUNT)
  187:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         /* Exclude generic widget */
  188:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         }
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 7
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 7
 
 
  189:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     #endif  /* CapSense_TOTAL_GENERICS_COUNT */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  175              		.loc 1 218 0
  176              		.cfi_startproc
  177 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 8
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 8
 
 
  178              		.cfi_def_cfa_offset 8
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  233:.\Generated_Source\PSoC4/CapSense_CSHL.c **** ********************************************************************************
  234:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
  235:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Summary:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 9
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 9
 
 
  236:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  Uses the CapSense_InitializeSensorBaseline function to load the 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  245 001e F5D9     		bls	.L8
  261:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	}
  262:.\Generated_Source\PSoC4/CapSense_CSHL.c **** }
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 10
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 10
 
 
  246              		.loc 1 262 0 is_stmt 1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  291:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     uint32 i;
  292:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     uint32 isSensorEnabled;
  293:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 11
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 11
 
 
  294:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     CapSense_ScanEnabledWidgets();
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  309              		.loc 1 300 0 is_stmt 0 discriminator 1
  310 0040 7B68     		ldr	r3, [r7, #4]
  311 0042 042B     		cmp	r3, #4
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 12
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 12
 
 
  312 0044 EAD9     		bls	.L13
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  342:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  baseline value.
  343:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  CapSense_sensorSignal[]      - used to store difference between 
  344:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  current value of raw data and previous value of baseline.
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 13
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 13
 
 
  345:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  CapSense_rawFilterData1[]    - used to store previous sample of 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  362              		.loc 1 369 0
  363 0026 3B1C     		mov	r3, r7
  364 0028 1033     		add	r3, r3, #16
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 14
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 14
 
 
  365 002a 754A     		ldr	r2, .L29+8
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  394 0060 391C     		mov	r1, r7
  395 0062 1031     		add	r1, r1, #16
  396 0064 0988     		ldrh	r1, [r1]
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 15
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 15
 
 
  397 0066 D152     		strh	r1, [r2, r3]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  423 0094 1A70     		strb	r2, [r3]
  423:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         tempRaw = filteredRawData - CapSense_sensorBaseline[sensor];
  424              		.loc 1 423 0
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 16
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 16
 
 
  425 0096 5E4B     		ldr	r3, .L29+24
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  469 00e0 1288     		ldrh	r2, [r2]
  470 00e2 9A42     		cmp	r2, r3
  471 00e4 1ED9     		bls	.L20
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 17
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 17
 
 
  434:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	#else
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  448:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     else
  449:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     {
  450:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         #if (CapSense_AUTO_RESET == CapSense_AUTO_RESET_DISABLE)
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 18
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 18
 
 
  451:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 		#if (CapSense_TUNING_METHOD != CapSense__TUNING_NONE)			
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  546 015e 7B68     		ldr	r3, [r7, #4]
  547 0160 D318     		add	r3, r2, r3
  548 0162 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 19
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 19
 
 
  549 0164 BA68     		ldr	r2, [r7, #8]
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  482:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         #endif /* (CapSense_AUTO_RESET == CapSense_AUTO_RESET_DISABLE) */
  483:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     }
  484:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 20
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 20
 
 
  485:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     /* Calculate Signal if positive difference > noiseThreshold */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  629              	.L25:
  497:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             }
  498:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         #else
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 21
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 21
 
 
  499:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             CapSense_sensorSignal[sensor] = ((uint16) tempRaw);
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  515:.\Generated_Source\PSoC4/CapSense_CSHL.c **** /*******************************************************************************
  516:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Function Name: CapSense_UpdateSensorBaseline
  517:.\Generated_Source\PSoC4/CapSense_CSHL.c **** ********************************************************************************
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 22
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 22
 
 
  518:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  681 000a 181C     		mov	r0, r3
  682 000c FFF7FEFF 		bl	CapSense_UpdateThresholds
  559:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     #endif /* (CapSense_TUNING_METHOD == CapSense__TUNING_AUTO) */
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 23
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 23
 
 
  560:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  594:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * 
  595:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Side Effects:
  596:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  None
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 24
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 24
 
 
  597:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  741 0030 7B68     		ldr	r3, [r7, #4]
  742 0032 042B     		cmp	r3, #4
  743 0034 EAD9     		bls	.L35
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 25
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 25
 
 
  611:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         }
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  645:.\Generated_Source\PSoC4/CapSense_CSHL.c **** {
  764              		.loc 1 645 0
  765              		.cfi_startproc
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 26
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 26
 
 
  766 0000 80B5     		push	{r7, lr}
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  800              		.loc 1 665 0
  801 0030 FB68     		ldr	r3, [r7, #12]
  802 0032 002B     		cmp	r3, #0
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 27
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 27
 
 
  803 0034 03D0     		beq	.L40
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  682:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
  683:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Return:
  684:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  This API returns the baseline value of the sensor indicated by an argument.
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 28
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 28
 
 
  685:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  702:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
  703:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Summary:
  704:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  This API writes the data value passed as an argument to the sensor baseline array.
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 29
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 29
 
 
  705:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  911              		.global	CapSense_GetDiffCountData
  912              		.code	16
  913              		.thumb_func
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 30
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 30
 
 
  914              		.type	CapSense_GetDiffCountData, %function
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  941              	.L53:
  942 0018 00000000 		.word	CapSense_sensorSignal
  943              		.cfi_endproc
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 31
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 31
 
 
  944              	.LFE43:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  972 0014 FA1C     		add	r2, r7, #3
  973 0016 1278     		ldrb	r2, [r2]
  974 0018 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 32
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 32
 
 
  777:.\Generated_Source\PSoC4/CapSense_CSHL.c **** }
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1003 0004 00AF     		add	r7, sp, #0
  1004              		.cfi_def_cfa_register 7
  1005 0006 7860     		str	r0, [r7, #4]
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 33
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 33
 
 
  803:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	return(CapSense_fingerThreshold[widget]);
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1033              		.cfi_startproc
  1034 0000 80B5     		push	{r7, lr}
  1035              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 34
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 34
 
 
  1036              		.cfi_offset 7, -8
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  851:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
  852:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Side Effects:
  853:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  None
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 35
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 35
 
 
  854:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  871:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
  872:.\Generated_Source\PSoC4/CapSense_CSHL.c **** * Return Value: 
  873:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  This API returns the negative noise threshold
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 36
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 36
 
 
  874:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1142              	.LFB49:
  892:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
  893:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 37
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 37
 
 
  894:.\Generated_Source\PSoC4/CapSense_CSHL.c **** #if(CapSense_TUNING_METHOD != CapSense__TUNING_NONE)
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1170              		.align	2
  1171              	.L75:
  1172 0020 00000000 		.word	CapSense_fingerThreshold
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 38
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 38
 
 
  1173              		.cfi_endproc
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1200 0010 7B68     		ldr	r3, [r7, #4]
  1201 0012 D318     		add	r3, r2, r3
  1202 0014 FA1C     		add	r2, r7, #3
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 39
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 39
 
 
  1203 0016 1278     		ldrb	r2, [r2]
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1230              		.cfi_offset 14, -4
  1231 0002 82B0     		sub	sp, sp, #8
  1232              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 40
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 40
 
 
  1233 0004 00AF     		add	r7, sp, #0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  996:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	*   the raw count level.
  997:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	* 
  998:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	* Side Effects:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 41
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 41
 
 
  999:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	*  None
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1012:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	* Summary:
 1013:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	*  This API sets the debounce value for a widget.
 1014:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	*
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 42
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 42
 
 
 1015:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	* Parameters: 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1342              		.global	CapSense_SetLowBaselineReset
  1343              		.code	16
  1344              		.thumb_func
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 43
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 43
 
 
  1345              		.type	CapSense_SetLowBaselineReset, %function
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1371 001c 02B0     		add	sp, sp, #8
  1372              		@ sp needed
  1373 001e 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 44
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 44
 
 
  1374              	.L91:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1101:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *  None
 1102:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *
 1103:.\Generated_Source\PSoC4/CapSense_CSHL.c **** *******************************************************************************/
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 45
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 45
 
 
 1104:.\Generated_Source\PSoC4/CapSense_CSHL.c **** uint32 CapSense_CheckIsSensorActive(uint32 sensor)
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1424 0032 8A5C     		ldrb	r2, [r1, r2]
  1425 0034 1A70     		strb	r2, [r3]
 1123:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	debounce = CapSense_debounce[widget];	
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 46
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 46
 
 
  1426              		.loc 1 1123 0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1470 0086 3DDA     		bge	.L95
 1134:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         {
 1135:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	   		CapSense_SetBitValue(CapSense_sensorOnMask, sensor, 0u);
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 47
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 47
 
 
  1471              		.loc 1 1135 0
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1147:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             if(CapSense_debounceCounter[debounceIndex] == 0u)
  1514              		.loc 1 1147 0
  1515 00d6 3B1C     		mov	r3, r7
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 48
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 48
 
 
  1516 00d8 0B33     		add	r3, r3, #11
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1557              		.loc 1 1160 0 is_stmt 1 discriminator 3
  1558 011c 181C     		mov	r0, r3
  1559 011e BD46     		mov	sp, r7
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 49
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 49
 
 
  1560 0120 04B0     		add	sp, sp, #16
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1191:.\Generated_Source\PSoC4/CapSense_CSHL.c **** uint32 CapSense_CheckIsWidgetActive(uint32 widget)
 1192:.\Generated_Source\PSoC4/CapSense_CSHL.c **** {
  1584              		.loc 1 1192 0
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 50
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 50
 
 
  1585              		.cfi_startproc
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1625 0034 FB68     		ldr	r3, [r7, #12]
  1626 0036 9A42     		cmp	r2, r3
  1627 0038 EFD3     		bcc	.L105
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 51
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 51
 
 
 1207:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1650              		.cfi_def_cfa_offset 8
  1651              		.cfi_offset 7, -8
  1652              		.cfi_offset 14, -4
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 52
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 52
 
 
  1653 0002 82B0     		sub	sp, sp, #8
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1689 0032 BD46     		mov	sp, r7
  1690 0034 02B0     		add	sp, sp, #8
  1691              		@ sp needed
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 53
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 53
 
 
  1692 0036 80BD     		pop	{r7, pc}
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1286:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
 1287:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     uint8 rawIndex = CapSense_rawDataIndex[widget];
  1715              		.loc 1 1287 0
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 54
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 54
 
 
  1716 0008 3B1C     		mov	r3, r7
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1760 0054 80BD     		pop	{r7, pc}
  1761              	.L115:
  1762 0056 C046     		.align	2
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 55
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 55
 
 
  1763              	.L114:
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1786 0006 7860     		str	r0, [r7, #4]
 1329:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     uint8 rawIndex = CapSense_rawDataIndex[widget];
  1787              		.loc 1 1329 0
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 56
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 56
 
 
  1788 0008 3B1C     		mov	r3, r7
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1831              		@ sp needed
  1832 0054 80BD     		pop	{r7, pc}
  1833              	.L119:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 57
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 57
 
 
  1834 0056 C046     		.align	2
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1849              		.cfi_startproc
  1850 0000 80B5     		push	{r7, lr}
  1851              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 58
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 58
 
 
  1852              		.cfi_offset 7, -8
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1406:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     {
 1407:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         if (curCtrdStartPos == CapSense_MAXIMUM_CENTROID)
 1408:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         {
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 59
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 59
 
 
 1409:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             /* Start of centroid */
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1463:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 {
 1464:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     for (i = biggestCtrdStartPos; i < (biggestCtrdStartPos + biggestCtrdSize); i++)
 1465:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     {
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 60
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 60
 
 
 1466:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         #if (CapSense_IS_DIPLEX_SLIDER && CapSense_IS_NON_DIPLEX_SLIDER)
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1904 0054 1B78     		ldrb	r3, [r3]
  1905 0056 3A1C     		mov	r2, r7
  1906 0058 0D32     		add	r2, r2, #13
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 61
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 61
 
 
  1907 005a 1278     		ldrb	r2, [r2]
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1950 00a0 181C     		mov	r0, r3
  1951 00a2 BD46     		mov	sp, r7
  1952 00a4 04B0     		add	sp, sp, #16
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 62
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 62
 
 
  1953              		@ sp needed
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  1972              		.cfi_startproc
  1973 0000 90B5     		push	{r4, r7, lr}
  1974              		.cfi_def_cfa_offset 12
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 63
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 63
 
 
  1975              		.cfi_offset 4, -12
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1564:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         #if (CapSense_ADD_SLIDER_TYPE)
 1565:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             if(type == CapSense_TYPE_RADIAL_SLIDER)
 1566:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             {
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 64
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 64
 
 
 1567:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         #endif /* (CapSense_ADD_SLIDER_TYPE) */
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1621:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     if (maximum >= 1u)
  2005              		.loc 1 1621 0
  2006 0030 FB1D     		add	r3, r7, #7
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 65
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 65
 
 
  2007 0032 1B78     		ldrb	r3, [r3]
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2043 006c 3B1C     		mov	r3, r7
  2044 006e 1733     		add	r3, r3, #23
  2045 0070 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 66
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 66
 
 
  2046 0072 BA69     		ldr	r2, [r7, #24]
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2090 00bc D318     		add	r3, r2, r3
  2091 00be 1A78     		ldrb	r2, [r3]
  2092 00c0 334B     		ldr	r3, .L137+4
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 67
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 67
 
 
  2093 00c2 9A70     		strb	r2, [r3, #2]
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2128 00fa 254B     		ldr	r3, .L137+4
  2129 00fc 5A70     		strb	r2, [r3, #1]
 1669:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 68
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 68
 
 
 1670:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         /* Subtract noiseThreshold */
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2166 0134 164B     		ldr	r3, .L137+4
  2167 0136 1B78     		ldrb	r3, [r3]
  2168 0138 1A1C     		mov	r2, r3
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 69
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 69
 
 
 1687:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                       (int32) CapSense_centroid[CapSense_POS] + 
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2203 0172 D201     		lsl	r2, r2, #7
  2204 0174 9B18     		add	r3, r3, r2
  2205 0176 1A0C     		lsr	r2, r3, #16
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 70
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 70
 
 
  2206 0178 3B1C     		mov	r3, r7
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1730:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	* Global Variables:
 1731:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	*  None
 1732:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	*
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 71
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 71
 
 
 1733:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Side Effects:
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1759:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         #if ((0u != (CapSense_MEDIAN_FILTER & CapSense_LINEAR_SLIDERS_POS_FILTERS_MASK)) || \
 1760:.\Generated_Source\PSoC4/CapSense_CSHL.c ****              (0u != (CapSense_AVERAGING_FILTER & CapSense_LINEAR_SLIDERS_POS_FILTERS_MASK)))
 1761:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             uint8 tempPos;
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 72
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 72
 
 
 1762:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         #endif /* ((0u != (CapSense_MEDIAN_FILTER & CapSense_LINEAR_SLIDERS_POS_FILTERS_MASK)) || \
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2291 0058 2370     		strb	r3, [r4]
 1788:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 		#endif /* (CapSense_IS_DIPLEX_SLIDER) */
 1789:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 73
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 73
 
 
 1790:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         if (maximum != 0xFFu)
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2334 00a8 0132     		add	r2, r2, #1
  2335 00aa 1A70     		strb	r2, [r3]
 1802:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 74
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 74
 
 
 1803:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     if (0u == CapSense_posFiltersData[firstTimeIndex])
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1830:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             {
 1831:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                 tempPos = (uint8) position;
 1832:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                 position = CapSense_MedianFilter(position,
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 75
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 75
 
 
 1833:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                                                 (uint16)CapSense_posFiltersData[pos
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2369 00e4 2AD0     		beq	.L143
 1881:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             {
 1882:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                 position = CapSense_JitterFilter(position,
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 76
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 76
 
 
 1883:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                                                     (uint16)CapSense_posFiltersData
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1901:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 if(0u != (posFiltersMask & CapSense_ANY_POS_FILTER))
  2405              		.loc 1 1901 0
  2406 0124 3B1C     		mov	r3, r7
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 77
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 77
 
 
  2407 0126 0C33     		add	r3, r3, #12
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1915:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     /*******************************************************************************
 1916:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Function Name: CapSense_GetRadialCentroidPos
 1917:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     ********************************************************************************
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 78
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 78
 
 
 1918:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 1960:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             uint8 tempPos;
 1961:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         #endif /* ((0u != (CapSense_MEDIAN_FILTER & CapSense_RADIAL_SLIDERS_POS_FILTERS_MASK)) || \
 1962:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                *   (0u != (CapSense_AVERAGING_FILTER & CapSense_RADIAL_SLIDERS_POS_FILTERS_MASK)))
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 79
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 79
 
 
 1963:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                */
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2496 0048 FE23     		mov	r3, #254
  2497 004a 5B01     		lsl	r3, r3, #5
  2498 004c 1149     		ldr	r1, .L151+4
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 80
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 80
 
 
  2499 004e 7A68     		ldr	r2, [r7, #4]
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2014:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         /* Do filtering */
 2015:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         #if (0u != (CapSense_MEDIAN_FILTER & CapSense_RADIAL_SLIDERS_POS_FILTERS_MA
 2016:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             if (0u != (posFiltersMask & CapSense_MEDIAN_FILTER))
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 81
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 81
 
 
 2017:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             {
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2071:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                                                          CapSense_posFiltersData[po
 2072:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                 CapSense_posFiltersData[posIndex] = (uint8) position;
 2073:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             }
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 82
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 82
 
 
 2074:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         #endif /* (0u != (CapSense_JITTER_FILTER &
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2550              		.type	CapSense_MedianFilter, %function
  2551              	CapSense_MedianFilter:
  2552              	.LFB64:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 83
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 83
 
 
 2098:.\Generated_Source\PSoC4/CapSense_CSHL.c **** #endif /* ((CapSense_TOTAL_RADIAL_SLIDERS_COUNT > 0u) || (CapSense_TOTAL_LINEAR_SLIDERS_COUNT > 0u)
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2152:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
 2153:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         uint8 MaxX;
 2154:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         uint8 MaxY;
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 84
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 84
 
 
 2155:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         uint8 posX;
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2209:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
 2210:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             #if((0u != (CapSense_MEDIAN_FILTER & \
 2211:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                         CapSense_TOUCH_PADS_POS_FILTERS_MASK))|| \
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 85
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 85
 
 
 2212:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                 (0u != (CapSense_AVERAGING_FILTER & \
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2266:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                     
 2267:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                     tempPos = posY;
 2268:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                     posY = (uint8) CapSense_AveragingFilter(posY, 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 86
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 86
 
 
 2269:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                                                       CapSense_posFiltersData[posYI
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2323:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                             #endif /* (0u != (CapSense_JITTER_FILTER & \
 2324:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                    *           CapSense_TOUCH_PADS_POS_FILTERS_MASK))
 2325:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                                    */
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 87
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 87
 
 
 2326:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                         }
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2380:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     {
  2553              		.loc 1 2380 0
  2554              		.cfi_startproc
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 88
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 88
 
 
  2555 0000 80B5     		push	{r7, lr}
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2599 0042 9A42     		cmp	r2, r3
  2600 0044 03D9     		bls	.L155
 2391:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         {
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 89
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 89
 
 
 2392:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             x2 = x3;
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2411:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  reports the averaging value.
 2412:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
 2413:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Parameters:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 90
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 90
 
 
 2414:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  x1:  Current value.
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2468:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     
 2469:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         return ((uint16) tmp);
 2470:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     }
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 91
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 91
 
 
 2471:.\Generated_Source\PSoC4/CapSense_CSHL.c **** #endif /* ( (0u != (CapSense_RAW_FILTER_MASK & CapSense_IIR2_FILTER)) || \
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2656 0018 1B88     		ldrh	r3, [r3]
  2657 001a D318     		add	r3, r2, r3
  2658 001c FB60     		str	r3, [r7, #12]
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 92
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 92
 
 
 2505:.\Generated_Source\PSoC4/CapSense_CSHL.c ****         tmp += ((uint32)x2 << 1u);
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2528:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *
 2529:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     * Return:
 2530:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     *  Returns filtered value.
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 93
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 93
 
 
 2531:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	*
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2727 0034 04D2     		bcs	.L162
 2548:.\Generated_Source\PSoC4/CapSense_CSHL.c ****             {
 2549:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 x1++;
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 94
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 94
 
 
  2728              		.loc 1 2549 0
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2577:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	* Global Variables:
 2578:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	*  None.
 2579:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	*
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 95
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 95
 
 
 2580:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	* Side Effects:
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2634:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
 2635:.\Generated_Source\PSoC4/CapSense_CSHL.c **** #if (0u != (CapSense_TOTAL_MATRIX_BUTTONS_COUNT))
 2636:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 96
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 96
 
 
 2637:.\Generated_Source\PSoC4/CapSense_CSHL.c ****     /*******************************************************************************
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2691:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 if (CapSense_sensorSignal[i] > row_sig_max)
 2692:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                 {
 2693:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     row_ind = i;
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 97
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 97
 
 
 2694:.\Generated_Source\PSoC4/CapSense_CSHL.c ****                     row_sig_max = CapSense_sensorSignal[i];
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2768 000a 7B68     		ldr	r3, [r7, #4]
  2769 000c D318     		add	r3, r2, r3
  2770 000e 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 98
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 98
 
 
 2735:.\Generated_Source\PSoC4/CapSense_CSHL.c **** }
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2800 0004 00AF     		add	r7, sp, #0
  2801              		.cfi_def_cfa_register 7
  2802 0006 7860     		str	r0, [r7, #4]
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 99
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 99
 
 
 2760:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	return(CapSense_lowBaselineReset[sensor]);
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2831 0000 80B5     		push	{r7, lr}
  2832              		.cfi_def_cfa_offset 8
  2833              		.cfi_offset 7, -8
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 100
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 100
 
 
  2834              		.cfi_offset 14, -4
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2808:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	* 
 2809:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	*******************************************************************************/
 2810:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	void CapSense_EnableRawDataFilters(void)
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 101
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 101
 
 
 2811:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	{
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
 2834:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	*******************************************************************************/
 2835:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	void CapSense_DisableRawDataFilters(void)
 2836:.\Generated_Source\PSoC4/CapSense_CSHL.c **** 	{
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 102
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 102
 
 
  2897              		.loc 1 2836 0
@@ -6104,48 +6104,48 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2935 0006 00000000 		.4byte	.Ldebug_abbrev0
  2936 000a 04       		.byte	0x4
  2937 000b 01       		.uleb128 0x1
- 2938 000c F5060000 		.4byte	.LASF137
+ 2938 000c 00070000 		.4byte	.LASF137
  2939 0010 01       		.byte	0x1
- 2940 0011 74050000 		.4byte	.LASF138
- 2941 0015 B8010000 		.4byte	.LASF139
+ 2940 0011 7F050000 		.4byte	.LASF138
+ 2941 0015 52030000 		.4byte	.LASF139
  2942 0019 00000000 		.4byte	.Ldebug_ranges0+0
  2943 001d 00000000 		.4byte	0
  2944 0021 00000000 		.4byte	.Ldebug_line0
  2945 0025 02       		.uleb128 0x2
  2946 0026 01       		.byte	0x1
  2947 0027 06       		.byte	0x6
- 2948 0028 E4090000 		.4byte	.LASF0
+ 2948 0028 EF090000 		.4byte	.LASF0
  2949 002c 02       		.uleb128 0x2
  2950 002d 01       		.byte	0x1
  2951 002e 08       		.byte	0x8
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 103
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 103
 
 
- 2952 002f 0B090000 		.4byte	.LASF1
+ 2952 002f 16090000 		.4byte	.LASF1
  2953 0033 02       		.uleb128 0x2
  2954 0034 02       		.byte	0x2
  2955 0035 05       		.byte	0x5
- 2956 0036 BB070000 		.4byte	.LASF2
+ 2956 0036 C6070000 		.4byte	.LASF2
  2957 003a 02       		.uleb128 0x2
  2958 003b 02       		.byte	0x2
  2959 003c 07       		.byte	0x7
- 2960 003d F0090000 		.4byte	.LASF3
+ 2960 003d FB090000 		.4byte	.LASF3
  2961 0041 02       		.uleb128 0x2
  2962 0042 04       		.byte	0x4
  2963 0043 05       		.byte	0x5
- 2964 0044 C5070000 		.4byte	.LASF4
+ 2964 0044 D0070000 		.4byte	.LASF4
  2965 0048 02       		.uleb128 0x2
  2966 0049 04       		.byte	0x4
  2967 004a 07       		.byte	0x7
- 2968 004b 72080000 		.4byte	.LASF5
+ 2968 004b 7D080000 		.4byte	.LASF5
  2969 004f 02       		.uleb128 0x2
  2970 0050 08       		.byte	0x8
  2971 0051 05       		.byte	0x5
- 2972 0052 9D050000 		.4byte	.LASF6
+ 2972 0052 A8050000 		.4byte	.LASF6
  2973 0056 02       		.uleb128 0x2
  2974 0057 08       		.byte	0x8
  2975 0058 07       		.byte	0x7
- 2976 0059 2E030000 		.4byte	.LASF7
+ 2976 0059 E9020000 		.4byte	.LASF7
  2977 005d 03       		.uleb128 0x3
  2978 005e 04       		.byte	0x4
  2979 005f 05       		.byte	0x5
@@ -6155,17 +6155,17 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  2983 0066 07       		.byte	0x7
  2984 0067 15010000 		.4byte	.LASF8
  2985 006b 04       		.uleb128 0x4
- 2986 006c 800A0000 		.4byte	.LASF9
+ 2986 006c 8B0A0000 		.4byte	.LASF9
  2987 0070 02       		.byte	0x2
  2988 0071 B3       		.byte	0xb3
  2989 0072 2C000000 		.4byte	0x2c
  2990 0076 04       		.uleb128 0x4
- 2991 0077 33050000 		.4byte	.LASF10
+ 2991 0077 3E050000 		.4byte	.LASF10
  2992 007b 02       		.byte	0x2
  2993 007c B4       		.byte	0xb4
  2994 007d 3A000000 		.4byte	0x3a
  2995 0081 04       		.uleb128 0x4
- 2996 0082 98060000 		.4byte	.LASF11
+ 2996 0082 A3060000 		.4byte	.LASF11
  2997 0086 02       		.byte	0x2
  2998 0087 B5       		.byte	0xb5
  2999 0088 48000000 		.4byte	0x48
@@ -6175,81 +6175,81 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3003 0092 B7       		.byte	0xb7
  3004 0093 33000000 		.4byte	0x33
  3005 0097 04       		.uleb128 0x4
- 3006 0098 E9020000 		.4byte	.LASF13
+ 3006 0098 A4020000 		.4byte	.LASF13
  3007 009c 02       		.byte	0x2
  3008 009d B8       		.byte	0xb8
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 104
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 104
 
 
  3009 009e 41000000 		.4byte	0x41
  3010 00a2 02       		.uleb128 0x2
  3011 00a3 04       		.byte	0x4
  3012 00a4 04       		.byte	0x4
- 3013 00a5 E3020000 		.4byte	.LASF14
+ 3013 00a5 9E020000 		.4byte	.LASF14
  3014 00a9 02       		.uleb128 0x2
  3015 00aa 08       		.byte	0x8
  3016 00ab 04       		.byte	0x4
- 3017 00ac 860A0000 		.4byte	.LASF15
+ 3017 00ac 910A0000 		.4byte	.LASF15
  3018 00b0 02       		.uleb128 0x2
  3019 00b1 01       		.byte	0x1
  3020 00b2 08       		.byte	0x8
- 3021 00b3 0B050000 		.4byte	.LASF16
+ 3021 00b3 16050000 		.4byte	.LASF16
  3022 00b7 02       		.uleb128 0x2
  3023 00b8 04       		.byte	0x4
  3024 00b9 07       		.byte	0x7
- 3025 00ba 69080000 		.4byte	.LASF17
+ 3025 00ba 74080000 		.4byte	.LASF17
  3026 00be 05       		.uleb128 0x5
  3027 00bf 38       		.byte	0x38
  3028 00c0 03       		.byte	0x3
  3029 00c1 2F       		.byte	0x2f
  3030 00c2 6F010000 		.4byte	0x16f
  3031 00c6 06       		.uleb128 0x6
- 3032 00c7 3F050000 		.4byte	.LASF18
+ 3032 00c7 4A050000 		.4byte	.LASF18
  3033 00cb 03       		.byte	0x3
  3034 00cc 31       		.byte	0x31
  3035 00cd 6F010000 		.4byte	0x16f
  3036 00d1 00       		.byte	0
  3037 00d2 06       		.uleb128 0x6
- 3038 00d3 AC070000 		.4byte	.LASF19
+ 3038 00d3 B7070000 		.4byte	.LASF19
  3039 00d7 03       		.byte	0x3
  3040 00d8 32       		.byte	0x32
  3041 00d9 6F010000 		.4byte	0x16f
  3042 00dd 04       		.byte	0x4
  3043 00de 06       		.uleb128 0x6
- 3044 00df 95090000 		.4byte	.LASF20
+ 3044 00df A0090000 		.4byte	.LASF20
  3045 00e3 03       		.byte	0x3
  3046 00e4 33       		.byte	0x33
  3047 00e5 6F010000 		.4byte	0x16f
  3048 00e9 08       		.byte	0x8
  3049 00ea 06       		.uleb128 0x6
- 3050 00eb FE080000 		.4byte	.LASF21
+ 3050 00eb 09090000 		.4byte	.LASF21
  3051 00ef 03       		.byte	0x3
  3052 00f0 34       		.byte	0x34
  3053 00f1 6F010000 		.4byte	0x16f
  3054 00f5 0C       		.byte	0xc
  3055 00f6 06       		.uleb128 0x6
- 3056 00f7 DA090000 		.4byte	.LASF22
+ 3056 00f7 E5090000 		.4byte	.LASF22
  3057 00fb 03       		.byte	0x3
  3058 00fc 35       		.byte	0x35
  3059 00fd 6F010000 		.4byte	0x16f
  3060 0101 10       		.byte	0x10
  3061 0102 06       		.uleb128 0x6
- 3062 0103 F4070000 		.4byte	.LASF23
+ 3062 0103 FF070000 		.4byte	.LASF23
  3063 0107 03       		.byte	0x3
  3064 0108 36       		.byte	0x36
  3065 0109 75010000 		.4byte	0x175
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 105
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 105
 
 
  3066 010d 14       		.byte	0x14
  3067 010e 06       		.uleb128 0x6
- 3068 010f F5020000 		.4byte	.LASF24
+ 3068 010f B0020000 		.4byte	.LASF24
  3069 0113 03       		.byte	0x3
  3070 0114 37       		.byte	0x37
  3071 0115 80010000 		.4byte	0x180
  3072 0119 18       		.byte	0x18
  3073 011a 06       		.uleb128 0x6
- 3074 011b 16020000 		.4byte	.LASF25
+ 3074 011b D1010000 		.4byte	.LASF25
  3075 011f 03       		.byte	0x3
  3076 0120 38       		.byte	0x38
  3077 0121 75010000 		.4byte	0x175
@@ -6261,19 +6261,19 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3083 012d 75010000 		.4byte	0x175
  3084 0131 20       		.byte	0x20
  3085 0132 06       		.uleb128 0x6
- 3086 0133 F5050000 		.4byte	.LASF27
+ 3086 0133 00060000 		.4byte	.LASF27
  3087 0137 03       		.byte	0x3
  3088 0138 3A       		.byte	0x3a
  3089 0139 95010000 		.4byte	0x195
  3090 013d 24       		.byte	0x24
  3091 013e 06       		.uleb128 0x6
- 3092 013f CD050000 		.4byte	.LASF28
+ 3092 013f D8050000 		.4byte	.LASF28
  3093 0143 03       		.byte	0x3
  3094 0144 3B       		.byte	0x3b
  3095 0145 A6010000 		.4byte	0x1a6
  3096 0149 28       		.byte	0x28
  3097 014a 06       		.uleb128 0x6
- 3098 014b 36040000 		.4byte	.LASF29
+ 3098 014b 41040000 		.4byte	.LASF29
  3099 014f 03       		.byte	0x3
  3100 0150 3C       		.byte	0x3c
  3101 0151 95010000 		.4byte	0x195
@@ -6285,7 +6285,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3107 015d C0010000 		.4byte	0x1c0
  3108 0161 30       		.byte	0x30
  3109 0162 06       		.uleb128 0x6
- 3110 0163 210A0000 		.4byte	.LASF31
+ 3110 0163 2C0A0000 		.4byte	.LASF31
  3111 0167 03       		.byte	0x3
  3112 0168 3E       		.byte	0x3e
  3113 0169 DB010000 		.4byte	0x1db
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3120 0176 04       		.byte	0x4
  3121 0177 7B010000 		.4byte	0x17b
  3122 017b 08       		.uleb128 0x8
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 106
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 106
 
 
  3123 017c 6B000000 		.4byte	0x6b
@@ -6346,7 +6346,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3165 01dc 04       		.byte	0x4
  3166 01dd C6010000 		.4byte	0x1c6
  3167 01e1 04       		.uleb128 0x4
- 3168 01e2 9C080000 		.4byte	.LASF32
+ 3168 01e2 A7080000 		.4byte	.LASF32
  3169 01e6 03       		.byte	0x3
  3170 01e7 3F       		.byte	0x3f
  3171 01e8 BE000000 		.4byte	0xbe
@@ -6356,16 +6356,16 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3175 01ef 41       		.byte	0x41
  3176 01f0 3D020000 		.4byte	0x23d
  3177 01f4 06       		.uleb128 0x6
- 3178 01f5 CC040000 		.4byte	.LASF33
+ 3178 01f5 D7040000 		.4byte	.LASF33
  3179 01f9 03       		.byte	0x3
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 107
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 107
 
 
  3180 01fa 43       		.byte	0x43
  3181 01fb 6B000000 		.4byte	0x6b
  3182 01ff 00       		.byte	0
  3183 0200 06       		.uleb128 0x6
- 3184 0201 23020000 		.4byte	.LASF34
+ 3184 0201 DE010000 		.4byte	.LASF34
  3185 0205 03       		.byte	0x3
  3186 0206 44       		.byte	0x44
  3187 0207 6B000000 		.4byte	0x6b
@@ -6377,19 +6377,19 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3193 0213 6B000000 		.4byte	0x6b
  3194 0217 02       		.byte	0x2
  3195 0218 06       		.uleb128 0x6
- 3196 0219 E5040000 		.4byte	.LASF36
+ 3196 0219 F0040000 		.4byte	.LASF36
  3197 021d 03       		.byte	0x3
  3198 021e 46       		.byte	0x46
  3199 021f 76000000 		.4byte	0x76
  3200 0223 04       		.byte	0x4
  3201 0224 06       		.uleb128 0x6
- 3202 0225 86070000 		.4byte	.LASF37
+ 3202 0225 91070000 		.4byte	.LASF37
  3203 0229 03       		.byte	0x3
  3204 022a 47       		.byte	0x47
  3205 022b 76000000 		.4byte	0x76
  3206 022f 06       		.byte	0x6
  3207 0230 06       		.uleb128 0x6
- 3208 0231 84080000 		.4byte	.LASF38
+ 3208 0231 8F080000 		.4byte	.LASF38
  3209 0235 03       		.byte	0x3
  3210 0236 48       		.byte	0x48
  3211 0237 3D020000 		.4byte	0x23d
@@ -6406,7 +6406,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3222 024e 49       		.byte	0x49
  3223 024f EC010000 		.4byte	0x1ec
  3224 0253 0C       		.uleb128 0xc
- 3225 0254 1D060000 		.4byte	.LASF40
+ 3225 0254 28060000 		.4byte	.LASF40
  3226 0258 01       		.byte	0x1
  3227 0259 8E       		.byte	0x8e
  3228 025a 00000000 		.4byte	.LFB33
@@ -6415,10 +6415,10 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3231 0263 9C       		.byte	0x9c
  3232 0264 77020000 		.4byte	0x277
  3233 0268 0D       		.uleb128 0xd
- 3234 0269 DE040000 		.4byte	.LASF42
+ 3234 0269 E9040000 		.4byte	.LASF42
  3235 026d 01       		.byte	0x1
  3236 026e 8E       		.byte	0x8e
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 108
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 108
 
 
  3237 026f 81000000 		.4byte	0x81
@@ -6436,7 +6436,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3249 0287 9C       		.byte	0x9c
  3250 0288 9B020000 		.4byte	0x29b
  3251 028c 0D       		.uleb128 0xd
- 3252 028d DE040000 		.4byte	.LASF42
+ 3252 028d E9040000 		.4byte	.LASF42
  3253 0291 01       		.byte	0x1
  3254 0292 D9       		.byte	0xd9
  3255 0293 81000000 		.4byte	0x81
@@ -6445,7 +6445,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3258 0299 74       		.sleb128 -12
  3259 029a 00       		.byte	0
  3260 029b 0E       		.uleb128 0xe
- 3261 029c 3F090000 		.4byte	.LASF43
+ 3261 029c 4A090000 		.4byte	.LASF43
  3262 02a0 01       		.byte	0x1
  3263 02a1 FE       		.byte	0xfe
  3264 02a2 00000000 		.4byte	.LFB35
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3291 02da 81000000 		.4byte	0x81
  3292 02de 02       		.uleb128 0x2
  3293 02df 91       		.byte	0x91
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 109
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 109
 
 
  3294 02e0 74       		.sleb128 -12
@@ -6501,7 +6501,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3311 0302 9C       		.byte	0x9c
  3312 0303 71030000 		.4byte	0x371
  3313 0307 12       		.uleb128 0x12
- 3314 0308 DE040000 		.4byte	.LASF42
+ 3314 0308 E9040000 		.4byte	.LASF42
  3315 030c 01       		.byte	0x1
  3316 030d 6201     		.2byte	0x162
  3317 030f 81000000 		.4byte	0x81
@@ -6509,7 +6509,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3319 0314 91       		.byte	0x91
  3320 0315 5C       		.sleb128 -36
  3321 0316 11       		.uleb128 0x11
- 3322 0317 31040000 		.4byte	.LASF47
+ 3322 0317 3C040000 		.4byte	.LASF47
  3323 031b 01       		.byte	0x1
  3324 031c 6401     		.2byte	0x164
  3325 031e 81000000 		.4byte	0x81
@@ -6517,7 +6517,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3327 0323 91       		.byte	0x91
  3328 0324 60       		.sleb128 -32
  3329 0325 11       		.uleb128 0x11
- 3330 0326 25040000 		.4byte	.LASF48
+ 3330 0326 30040000 		.4byte	.LASF48
  3331 032a 01       		.byte	0x1
  3332 032b 6501     		.2byte	0x165
  3333 032d 81000000 		.4byte	0x81
@@ -6525,7 +6525,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3335 0332 91       		.byte	0x91
  3336 0333 6C       		.sleb128 -20
  3337 0334 11       		.uleb128 0x11
- 3338 0335 460A0000 		.4byte	.LASF49
+ 3338 0335 510A0000 		.4byte	.LASF49
  3339 0339 01       		.byte	0x1
  3340 033a 6601     		.2byte	0x166
  3341 033c 76000000 		.4byte	0x76
@@ -6533,18 +6533,18 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3343 0341 91       		.byte	0x91
  3344 0342 6A       		.sleb128 -22
  3345 0343 11       		.uleb128 0x11
- 3346 0344 52040000 		.4byte	.LASF50
+ 3346 0344 5D040000 		.4byte	.LASF50
  3347 0348 01       		.byte	0x1
  3348 0349 6701     		.2byte	0x167
  3349 034b 76000000 		.4byte	0x76
  3350 034f 02       		.uleb128 0x2
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 110
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 110
 
 
  3351 0350 91       		.byte	0x91
  3352 0351 68       		.sleb128 -24
  3353 0352 11       		.uleb128 0x11
- 3354 0353 5F030000 		.4byte	.LASF51
+ 3354 0353 1A030000 		.4byte	.LASF51
  3355 0357 01       		.byte	0x1
  3356 0358 6801     		.2byte	0x168
  3357 035a 6B000000 		.4byte	0x6b
@@ -6552,7 +6552,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3359 035f 91       		.byte	0x91
  3360 0360 67       		.sleb128 -25
  3361 0361 11       		.uleb128 0x11
- 3362 0362 8D080000 		.4byte	.LASF52
+ 3362 0362 98080000 		.4byte	.LASF52
  3363 0366 01       		.byte	0x1
  3364 0367 6901     		.2byte	0x169
  3365 0369 6B000000 		.4byte	0x6b
@@ -6561,7 +6561,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3368 036f 66       		.sleb128 -26
  3369 0370 00       		.byte	0
  3370 0371 10       		.uleb128 0x10
- 3371 0372 FF050000 		.4byte	.LASF53
+ 3371 0372 0A060000 		.4byte	.LASF53
  3372 0376 01       		.byte	0x1
  3373 0377 2102     		.2byte	0x221
  3374 0379 00000000 		.4byte	.LFB38
@@ -6570,7 +6570,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3377 0382 9C       		.byte	0x9c
  3378 0383 97030000 		.4byte	0x397
  3379 0387 12       		.uleb128 0x12
- 3380 0388 DE040000 		.4byte	.LASF42
+ 3380 0388 E9040000 		.4byte	.LASF42
  3381 038c 01       		.byte	0x1
  3382 038d 2102     		.2byte	0x221
  3383 038f 81000000 		.4byte	0x81
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3405 03ba 11       		.uleb128 0x11
  3406 03bb F8000000 		.4byte	.LASF45
  3407 03bf 01       		.byte	0x1
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 111
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 111
 
 
  3408 03c0 5A02     		.2byte	0x25a
@@ -6608,7 +6608,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3412 03c8 70       		.sleb128 -16
  3413 03c9 00       		.byte	0
  3414 03ca 10       		.uleb128 0x10
- 3415 03cb B1020000 		.4byte	.LASF55
+ 3415 03cb 6C020000 		.4byte	.LASF55
  3416 03cf 01       		.byte	0x1
  3417 03d0 8402     		.2byte	0x284
  3418 03d2 00000000 		.4byte	.LFB40
@@ -6617,7 +6617,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3421 03db 9C       		.byte	0x9c
  3422 03dc 39040000 		.4byte	0x439
  3423 03e0 12       		.uleb128 0x12
- 3424 03e1 5F030000 		.4byte	.LASF51
+ 3424 03e1 1A030000 		.4byte	.LASF51
  3425 03e5 01       		.byte	0x1
  3426 03e6 8402     		.2byte	0x284
  3427 03e8 81000000 		.4byte	0x81
@@ -6625,7 +6625,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3429 03ed 91       		.byte	0x91
  3430 03ee 5C       		.sleb128 -36
  3431 03ef 11       		.uleb128 0x11
- 3432 03f0 62040000 		.4byte	.LASF56
+ 3432 03f0 6D040000 		.4byte	.LASF56
  3433 03f4 01       		.byte	0x1
  3434 03f5 8602     		.2byte	0x286
  3435 03f7 81000000 		.4byte	0x81
@@ -6633,7 +6633,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3437 03fc 91       		.byte	0x91
  3438 03fd 70       		.sleb128 -16
  3439 03fe 11       		.uleb128 0x11
- 3440 03ff CE070000 		.4byte	.LASF57
+ 3440 03ff D9070000 		.4byte	.LASF57
  3441 0403 01       		.byte	0x1
  3442 0404 8702     		.2byte	0x287
  3443 0406 81000000 		.4byte	0x81
@@ -6641,7 +6641,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3445 040b 91       		.byte	0x91
  3446 040c 6C       		.sleb128 -20
  3447 040d 11       		.uleb128 0x11
- 3448 040e 7B070000 		.4byte	.LASF58
+ 3448 040e 86070000 		.4byte	.LASF58
  3449 0412 01       		.byte	0x1
  3450 0413 8802     		.2byte	0x288
  3451 0415 81000000 		.4byte	0x81
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3462 0428 74       		.sleb128 -12
  3463 0429 11       		.uleb128 0x11
  3464 042a F8000000 		.4byte	.LASF45
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 112
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 112
 
 
  3465 042e 01       		.byte	0x1
@@ -6669,7 +6669,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3470 0437 64       		.sleb128 -28
  3471 0438 00       		.byte	0
  3472 0439 13       		.uleb128 0x13
- 3473 043a 5F090000 		.4byte	.LASF61
+ 3473 043a 6A090000 		.4byte	.LASF61
  3474 043e 01       		.byte	0x1
  3475 043f B502     		.2byte	0x2b5
  3476 0441 76000000 		.4byte	0x76
@@ -6679,7 +6679,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3480 044e 9C       		.byte	0x9c
  3481 044f 63040000 		.4byte	0x463
  3482 0453 12       		.uleb128 0x12
- 3483 0454 DE040000 		.4byte	.LASF42
+ 3483 0454 E9040000 		.4byte	.LASF42
  3484 0458 01       		.byte	0x1
  3485 0459 B502     		.2byte	0x2b5
  3486 045b 81000000 		.4byte	0x81
@@ -6688,7 +6688,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3489 0461 74       		.sleb128 -12
  3490 0462 00       		.byte	0
  3491 0463 14       		.uleb128 0x14
- 3492 0464 FD010000 		.4byte	.LASF59
+ 3492 0464 B8010000 		.4byte	.LASF59
  3493 0468 01       		.byte	0x1
  3494 0469 D002     		.2byte	0x2d0
  3495 046b 00000000 		.4byte	.LFB42
@@ -6697,7 +6697,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3498 0474 9C       		.byte	0x9c
  3499 0475 98040000 		.4byte	0x498
  3500 0479 12       		.uleb128 0x12
- 3501 047a DE040000 		.4byte	.LASF42
+ 3501 047a E9040000 		.4byte	.LASF42
  3502 047e 01       		.byte	0x1
  3503 047f D002     		.2byte	0x2d0
  3504 0481 81000000 		.4byte	0x81
@@ -6705,7 +6705,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3506 0486 91       		.byte	0x91
  3507 0487 74       		.sleb128 -12
  3508 0488 12       		.uleb128 0x12
- 3509 0489 3A050000 		.4byte	.LASF60
+ 3509 0489 45050000 		.4byte	.LASF60
  3510 048d 01       		.byte	0x1
  3511 048e D002     		.2byte	0x2d0
  3512 0490 76000000 		.4byte	0x76
@@ -6714,11 +6714,11 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3515 0496 72       		.sleb128 -14
  3516 0497 00       		.byte	0
  3517 0498 13       		.uleb128 0x13
- 3518 0499 0B040000 		.4byte	.LASF62
+ 3518 0499 16040000 		.4byte	.LASF62
  3519 049d 01       		.byte	0x1
  3520 049e EB02     		.2byte	0x2eb
  3521 04a0 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 113
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 113
 
 
  3522 04a4 00000000 		.4byte	.LFB43
@@ -6727,7 +6727,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3525 04ad 9C       		.byte	0x9c
  3526 04ae C2040000 		.4byte	0x4c2
  3527 04b2 12       		.uleb128 0x12
- 3528 04b3 DE040000 		.4byte	.LASF42
+ 3528 04b3 E9040000 		.4byte	.LASF42
  3529 04b7 01       		.byte	0x1
  3530 04b8 EB02     		.2byte	0x2eb
  3531 04ba 81000000 		.4byte	0x81
@@ -6736,7 +6736,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3534 04c0 74       		.sleb128 -12
  3535 04c1 00       		.byte	0
  3536 04c2 14       		.uleb128 0x14
- 3537 04c3 33020000 		.4byte	.LASF63
+ 3537 04c3 EE010000 		.4byte	.LASF63
  3538 04c7 01       		.byte	0x1
  3539 04c8 0603     		.2byte	0x306
  3540 04ca 00000000 		.4byte	.LFB44
@@ -6745,7 +6745,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3543 04d3 9C       		.byte	0x9c
  3544 04d4 F7040000 		.4byte	0x4f7
  3545 04d8 12       		.uleb128 0x12
- 3546 04d9 DE040000 		.4byte	.LASF42
+ 3546 04d9 E9040000 		.4byte	.LASF42
  3547 04dd 01       		.byte	0x1
  3548 04de 0603     		.2byte	0x306
  3549 04e0 81000000 		.4byte	0x81
@@ -6753,7 +6753,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3551 04e5 91       		.byte	0x91
  3552 04e6 74       		.sleb128 -12
  3553 04e7 12       		.uleb128 0x12
- 3554 04e8 E8030000 		.4byte	.LASF64
+ 3554 04e8 F3030000 		.4byte	.LASF64
  3555 04ec 01       		.byte	0x1
  3556 04ed 0603     		.2byte	0x306
  3557 04ef 6B000000 		.4byte	0x6b
@@ -6762,7 +6762,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3560 04f5 73       		.sleb128 -13
  3561 04f6 00       		.byte	0
  3562 04f7 13       		.uleb128 0x13
- 3563 04f8 D9060000 		.4byte	.LASF65
+ 3563 04f8 E4060000 		.4byte	.LASF65
  3564 04fc 01       		.byte	0x1
  3565 04fd 2103     		.2byte	0x321
  3566 04ff 6B000000 		.4byte	0x6b
@@ -6772,19 +6772,19 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3570 050c 9C       		.byte	0x9c
  3571 050d 21050000 		.4byte	0x521
  3572 0511 12       		.uleb128 0x12
- 3573 0512 5F030000 		.4byte	.LASF51
+ 3573 0512 1A030000 		.4byte	.LASF51
  3574 0516 01       		.byte	0x1
  3575 0517 2103     		.2byte	0x321
  3576 0519 81000000 		.4byte	0x81
  3577 051d 02       		.uleb128 0x2
  3578 051e 91       		.byte	0x91
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 114
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 114
 
 
  3579 051f 74       		.sleb128 -12
  3580 0520 00       		.byte	0
  3581 0521 13       		.uleb128 0x13
- 3582 0522 13030000 		.4byte	.LASF66
+ 3582 0522 CE020000 		.4byte	.LASF66
  3583 0526 01       		.byte	0x1
  3584 0527 3C03     		.2byte	0x33c
  3585 0529 6B000000 		.4byte	0x6b
@@ -6794,7 +6794,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3589 0536 9C       		.byte	0x9c
  3590 0537 4B050000 		.4byte	0x54b
  3591 053b 12       		.uleb128 0x12
- 3592 053c 5F030000 		.4byte	.LASF51
+ 3592 053c 1A030000 		.4byte	.LASF51
  3593 0540 01       		.byte	0x1
  3594 0541 3C03     		.2byte	0x33c
  3595 0543 81000000 		.4byte	0x81
@@ -6803,7 +6803,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3598 0549 74       		.sleb128 -12
  3599 054a 00       		.byte	0
  3600 054b 13       		.uleb128 0x13
- 3601 054c EE030000 		.4byte	.LASF67
+ 3601 054c F9030000 		.4byte	.LASF67
  3602 0550 01       		.byte	0x1
  3603 0551 5803     		.2byte	0x358
  3604 0553 6B000000 		.4byte	0x6b
@@ -6813,7 +6813,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3608 0560 9C       		.byte	0x9c
  3609 0561 75050000 		.4byte	0x575
  3610 0565 12       		.uleb128 0x12
- 3611 0566 5F030000 		.4byte	.LASF51
+ 3611 0566 1A030000 		.4byte	.LASF51
  3612 056a 01       		.byte	0x1
  3613 056b 5803     		.2byte	0x358
  3614 056d 81000000 		.4byte	0x81
@@ -6822,7 +6822,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3617 0573 74       		.sleb128 -12
  3618 0574 00       		.byte	0
  3619 0575 13       		.uleb128 0x13
- 3620 0576 10050000 		.4byte	.LASF68
+ 3620 0576 1B050000 		.4byte	.LASF68
  3621 057a 01       		.byte	0x1
  3622 057b 7403     		.2byte	0x374
  3623 057d 6B000000 		.4byte	0x6b
@@ -6832,19 +6832,19 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3627 058a 9C       		.byte	0x9c
  3628 058b 9F050000 		.4byte	0x59f
  3629 058f 12       		.uleb128 0x12
- 3630 0590 5F030000 		.4byte	.LASF51
+ 3630 0590 1A030000 		.4byte	.LASF51
  3631 0594 01       		.byte	0x1
  3632 0595 7403     		.2byte	0x374
  3633 0597 81000000 		.4byte	0x81
  3634 059b 02       		.uleb128 0x2
  3635 059c 91       		.byte	0x91
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 115
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 115
 
 
  3636 059d 74       		.sleb128 -12
  3637 059e 00       		.byte	0
  3638 059f 14       		.uleb128 0x14
- 3639 05a0 AD030000 		.4byte	.LASF69
+ 3639 05a0 B8030000 		.4byte	.LASF69
  3640 05a4 01       		.byte	0x1
  3641 05a5 9503     		.2byte	0x395
  3642 05a7 00000000 		.4byte	.LFB49
@@ -6853,7 +6853,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3645 05b0 9C       		.byte	0x9c
  3646 05b1 D4050000 		.4byte	0x5d4
  3647 05b5 12       		.uleb128 0x12
- 3648 05b6 5F030000 		.4byte	.LASF51
+ 3648 05b6 1A030000 		.4byte	.LASF51
  3649 05ba 01       		.byte	0x1
  3650 05bb 9503     		.2byte	0x395
  3651 05bd 81000000 		.4byte	0x81
@@ -6861,7 +6861,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3653 05c2 91       		.byte	0x91
  3654 05c3 74       		.sleb128 -12
  3655 05c4 12       		.uleb128 0x12
- 3656 05c5 E8030000 		.4byte	.LASF64
+ 3656 05c5 F3030000 		.4byte	.LASF64
  3657 05c9 01       		.byte	0x1
  3658 05ca 9503     		.2byte	0x395
  3659 05cc 6B000000 		.4byte	0x6b
@@ -6870,7 +6870,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3662 05d2 73       		.sleb128 -13
  3663 05d3 00       		.byte	0
  3664 05d4 14       		.uleb128 0x14
- 3665 05d5 96020000 		.4byte	.LASF70
+ 3665 05d5 51020000 		.4byte	.LASF70
  3666 05d9 01       		.byte	0x1
  3667 05da B103     		.2byte	0x3b1
  3668 05dc 00000000 		.4byte	.LFB50
@@ -6879,7 +6879,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3671 05e5 9C       		.byte	0x9c
  3672 05e6 09060000 		.4byte	0x609
  3673 05ea 12       		.uleb128 0x12
- 3674 05eb 5F030000 		.4byte	.LASF51
+ 3674 05eb 1A030000 		.4byte	.LASF51
  3675 05ef 01       		.byte	0x1
  3676 05f0 B103     		.2byte	0x3b1
  3677 05f2 81000000 		.4byte	0x81
@@ -6887,7 +6887,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3679 05f7 91       		.byte	0x91
  3680 05f8 74       		.sleb128 -12
  3681 05f9 12       		.uleb128 0x12
- 3682 05fa E8030000 		.4byte	.LASF64
+ 3682 05fa F3030000 		.4byte	.LASF64
  3683 05fe 01       		.byte	0x1
  3684 05ff B103     		.2byte	0x3b1
  3685 0601 6B000000 		.4byte	0x6b
@@ -6896,9 +6896,9 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3688 0607 73       		.sleb128 -13
  3689 0608 00       		.byte	0
  3690 0609 14       		.uleb128 0x14
- 3691 060a BC060000 		.4byte	.LASF71
+ 3691 060a C7060000 		.4byte	.LASF71
  3692 060e 01       		.byte	0x1
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 116
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 116
 
 
  3693 060f CD03     		.2byte	0x3cd
@@ -6908,7 +6908,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3697 061a 9C       		.byte	0x9c
  3698 061b 3E060000 		.4byte	0x63e
  3699 061f 12       		.uleb128 0x12
- 3700 0620 5F030000 		.4byte	.LASF51
+ 3700 0620 1A030000 		.4byte	.LASF51
  3701 0624 01       		.byte	0x1
  3702 0625 CD03     		.2byte	0x3cd
  3703 0627 81000000 		.4byte	0x81
@@ -6916,7 +6916,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3705 062c 91       		.byte	0x91
  3706 062d 74       		.sleb128 -12
  3707 062e 12       		.uleb128 0x12
- 3708 062f E8030000 		.4byte	.LASF64
+ 3708 062f F3030000 		.4byte	.LASF64
  3709 0633 01       		.byte	0x1
  3710 0634 CD03     		.2byte	0x3cd
  3711 0636 6B000000 		.4byte	0x6b
@@ -6925,7 +6925,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3714 063c 73       		.sleb128 -13
  3715 063d 00       		.byte	0
  3716 063e 14       		.uleb128 0x14
- 3717 063f 75060000 		.4byte	.LASF72
+ 3717 063f 80060000 		.4byte	.LASF72
  3718 0643 01       		.byte	0x1
  3719 0644 EA03     		.2byte	0x3ea
  3720 0646 00000000 		.4byte	.LFB52
@@ -6934,7 +6934,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3723 064f 9C       		.byte	0x9c
  3724 0650 73060000 		.4byte	0x673
  3725 0654 12       		.uleb128 0x12
- 3726 0655 5F030000 		.4byte	.LASF51
+ 3726 0655 1A030000 		.4byte	.LASF51
  3727 0659 01       		.byte	0x1
  3728 065a EA03     		.2byte	0x3ea
  3729 065c 81000000 		.4byte	0x81
@@ -6942,7 +6942,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3731 0661 91       		.byte	0x91
  3732 0662 74       		.sleb128 -12
  3733 0663 12       		.uleb128 0x12
- 3734 0664 E8030000 		.4byte	.LASF64
+ 3734 0664 F3030000 		.4byte	.LASF64
  3735 0668 01       		.byte	0x1
  3736 0669 EA03     		.2byte	0x3ea
  3737 066b 6B000000 		.4byte	0x6b
@@ -6951,19 +6951,19 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3740 0671 73       		.sleb128 -13
  3741 0672 00       		.byte	0
  3742 0673 14       		.uleb128 0x14
- 3743 0674 D9080000 		.4byte	.LASF73
+ 3743 0674 E4080000 		.4byte	.LASF73
  3744 0678 01       		.byte	0x1
  3745 0679 0604     		.2byte	0x406
  3746 067b 00000000 		.4byte	.LFB53
  3747 067f 24000000 		.4byte	.LFE53-.LFB53
  3748 0683 01       		.uleb128 0x1
  3749 0684 9C       		.byte	0x9c
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 117
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 117
 
 
  3750 0685 A8060000 		.4byte	0x6a8
  3751 0689 12       		.uleb128 0x12
- 3752 068a 5F030000 		.4byte	.LASF51
+ 3752 068a 1A030000 		.4byte	.LASF51
  3753 068e 01       		.byte	0x1
  3754 068f 0604     		.2byte	0x406
  3755 0691 81000000 		.4byte	0x81
@@ -6971,7 +6971,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3757 0696 91       		.byte	0x91
  3758 0697 74       		.sleb128 -12
  3759 0698 12       		.uleb128 0x12
- 3760 0699 E8030000 		.4byte	.LASF64
+ 3760 0699 F3030000 		.4byte	.LASF64
  3761 069d 01       		.byte	0x1
  3762 069e 0604     		.2byte	0x406
  3763 06a0 6B000000 		.4byte	0x6b
@@ -6980,7 +6980,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3766 06a6 73       		.sleb128 -13
  3767 06a7 00       		.byte	0
  3768 06a8 14       		.uleb128 0x14
- 3769 06a9 78090000 		.4byte	.LASF74
+ 3769 06a9 83090000 		.4byte	.LASF74
  3770 06ad 01       		.byte	0x1
  3771 06ae 2204     		.2byte	0x422
  3772 06b0 00000000 		.4byte	.LFB54
@@ -6989,7 +6989,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3775 06b9 9C       		.byte	0x9c
  3776 06ba DD060000 		.4byte	0x6dd
  3777 06be 12       		.uleb128 0x12
- 3778 06bf DE040000 		.4byte	.LASF42
+ 3778 06bf E9040000 		.4byte	.LASF42
  3779 06c3 01       		.byte	0x1
  3780 06c4 2204     		.2byte	0x422
  3781 06c6 81000000 		.4byte	0x81
@@ -6997,7 +6997,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3783 06cb 91       		.byte	0x91
  3784 06cc 74       		.sleb128 -12
  3785 06cd 12       		.uleb128 0x12
- 3786 06ce E8030000 		.4byte	.LASF64
+ 3786 06ce F3030000 		.4byte	.LASF64
  3787 06d2 01       		.byte	0x1
  3788 06d3 2204     		.2byte	0x422
  3789 06d5 6B000000 		.4byte	0x6b
@@ -7006,7 +7006,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3792 06db 73       		.sleb128 -13
  3793 06dc 00       		.byte	0
  3794 06dd 15       		.uleb128 0x15
- 3795 06de D8050000 		.4byte	.LASF75
+ 3795 06de E3050000 		.4byte	.LASF75
  3796 06e2 01       		.byte	0x1
  3797 06e3 5004     		.2byte	0x450
  3798 06e5 81000000 		.4byte	0x81
@@ -7016,9 +7016,9 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3802 06f2 9C       		.byte	0x9c
  3803 06f3 64070000 		.4byte	0x764
  3804 06f7 12       		.uleb128 0x12
- 3805 06f8 DE040000 		.4byte	.LASF42
+ 3805 06f8 E9040000 		.4byte	.LASF42
  3806 06fc 01       		.byte	0x1
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 118
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 118
 
 
  3807 06fd 5004     		.2byte	0x450
@@ -7027,7 +7027,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3810 0704 91       		.byte	0x91
  3811 0705 6C       		.sleb128 -20
  3812 0706 11       		.uleb128 0x11
- 3813 0707 5F030000 		.4byte	.LASF51
+ 3813 0707 1A030000 		.4byte	.LASF51
  3814 070b 01       		.byte	0x1
  3815 070c 5204     		.2byte	0x452
  3816 070e 6B000000 		.4byte	0x6b
@@ -7035,7 +7035,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3818 0713 91       		.byte	0x91
  3819 0714 77       		.sleb128 -9
  3820 0715 11       		.uleb128 0x11
- 3821 0716 C4050000 		.4byte	.LASF76
+ 3821 0716 CF050000 		.4byte	.LASF76
  3822 071a 01       		.byte	0x1
  3823 071b 5304     		.2byte	0x453
  3824 071d 6B000000 		.4byte	0x6b
@@ -7043,7 +7043,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3826 0722 91       		.byte	0x91
  3827 0723 74       		.sleb128 -12
  3828 0724 11       		.uleb128 0x11
- 3829 0725 31090000 		.4byte	.LASF77
+ 3829 0725 3C090000 		.4byte	.LASF77
  3830 0729 01       		.byte	0x1
  3831 072a 5404     		.2byte	0x454
  3832 072c 6B000000 		.4byte	0x6b
@@ -7051,7 +7051,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3834 0731 91       		.byte	0x91
  3835 0732 73       		.sleb128 -13
  3836 0733 11       		.uleb128 0x11
- 3837 0734 EE080000 		.4byte	.LASF78
+ 3837 0734 F9080000 		.4byte	.LASF78
  3838 0738 01       		.byte	0x1
  3839 0739 5604     		.2byte	0x456
  3840 073b 6B000000 		.4byte	0x6b
@@ -7059,7 +7059,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3842 0740 91       		.byte	0x91
  3843 0741 76       		.sleb128 -10
  3844 0742 11       		.uleb128 0x11
- 3845 0743 47040000 		.4byte	.LASF79
+ 3845 0743 52040000 		.4byte	.LASF79
  3846 0747 01       		.byte	0x1
  3847 0748 5704     		.2byte	0x457
  3848 074a 6B000000 		.4byte	0x6b
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3861 0764 16       		.uleb128 0x16
  3862 0765 6B000000 		.4byte	0x6b
  3863 0769 74070000 		.4byte	0x774
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 119
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 119
 
 
  3864 076d 17       		.uleb128 0x17
@@ -7086,7 +7086,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3866 0772 00       		.byte	0
  3867 0773 00       		.byte	0
  3868 0774 15       		.uleb128 0x15
- 3869 0775 630A0000 		.4byte	.LASF81
+ 3869 0775 6E0A0000 		.4byte	.LASF81
  3870 0779 01       		.byte	0x1
  3871 077a A704     		.2byte	0x4a7
  3872 077c 81000000 		.4byte	0x81
@@ -7096,7 +7096,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3876 0789 9C       		.byte	0x9c
  3877 078a CB070000 		.4byte	0x7cb
  3878 078e 12       		.uleb128 0x12
- 3879 078f 5F030000 		.4byte	.LASF51
+ 3879 078f 1A030000 		.4byte	.LASF51
  3880 0793 01       		.byte	0x1
  3881 0794 A704     		.2byte	0x4a7
  3882 0796 81000000 		.4byte	0x81
@@ -7104,7 +7104,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3884 079b 91       		.byte	0x91
  3885 079c 64       		.sleb128 -28
  3886 079d 11       		.uleb128 0x11
- 3887 079e 59050000 		.4byte	.LASF82
+ 3887 079e 64050000 		.4byte	.LASF82
  3888 07a2 01       		.byte	0x1
  3889 07a3 A904     		.2byte	0x4a9
  3890 07a5 81000000 		.4byte	0x81
@@ -7120,7 +7120,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3900 07b9 91       		.byte	0x91
  3901 07ba 6C       		.sleb128 -20
  3902 07bb 11       		.uleb128 0x11
- 3903 07bc BA090000 		.4byte	.LASF84
+ 3903 07bc C5090000 		.4byte	.LASF84
  3904 07c0 01       		.byte	0x1
  3905 07c1 AB04     		.2byte	0x4ab
  3906 07c3 81000000 		.4byte	0x81
@@ -7129,7 +7129,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3909 07c9 70       		.sleb128 -16
  3910 07ca 00       		.byte	0
  3911 07cb 15       		.uleb128 0x15
- 3912 07cc 73040000 		.4byte	.LASF85
+ 3912 07cc 7E040000 		.4byte	.LASF85
  3913 07d0 01       		.byte	0x1
  3914 07d1 D504     		.2byte	0x4d5
  3915 07d3 81000000 		.4byte	0x81
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3918 07df 01       		.uleb128 0x1
  3919 07e0 9C       		.byte	0x9c
  3920 07e1 02080000 		.4byte	0x802
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 120
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 120
 
 
  3921 07e5 0F       		.uleb128 0xf
@@ -7150,7 +7150,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3927 07f0 91       		.byte	0x91
  3928 07f1 74       		.sleb128 -12
  3929 07f2 11       		.uleb128 0x11
- 3930 07f3 BA090000 		.4byte	.LASF84
+ 3930 07f3 C5090000 		.4byte	.LASF84
  3931 07f7 01       		.byte	0x1
  3932 07f8 D904     		.2byte	0x4d9
  3933 07fa 81000000 		.4byte	0x81
@@ -7159,7 +7159,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3936 0800 70       		.sleb128 -16
  3937 0801 00       		.byte	0
  3938 0802 10       		.uleb128 0x10
- 3939 0803 F5040000 		.4byte	.LASF86
+ 3939 0803 00050000 		.4byte	.LASF86
  3940 0807 01       		.byte	0x1
  3941 0808 0405     		.2byte	0x504
  3942 080a 00000000 		.4byte	.LFB58
@@ -7168,7 +7168,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3945 0813 9C       		.byte	0x9c
  3946 0814 46080000 		.4byte	0x846
  3947 0818 12       		.uleb128 0x12
- 3948 0819 5F030000 		.4byte	.LASF51
+ 3948 0819 1A030000 		.4byte	.LASF51
  3949 081d 01       		.byte	0x1
  3950 081e 0405     		.2byte	0x504
  3951 0820 81000000 		.4byte	0x81
@@ -7176,7 +7176,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3953 0825 91       		.byte	0x91
  3954 0826 6C       		.sleb128 -20
  3955 0827 11       		.uleb128 0x11
- 3956 0828 59050000 		.4byte	.LASF82
+ 3956 0828 64050000 		.4byte	.LASF82
  3957 082c 01       		.byte	0x1
  3958 082d 0705     		.2byte	0x507
  3959 082f 6B000000 		.4byte	0x6b
@@ -7198,14 +7198,14 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3975 084c 2F05     		.2byte	0x52f
  3976 084e 00000000 		.4byte	.LFB59
  3977 0852 5C000000 		.4byte	.LFE59-.LFB59
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 121
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 121
 
 
  3978 0856 01       		.uleb128 0x1
  3979 0857 9C       		.byte	0x9c
  3980 0858 8A080000 		.4byte	0x88a
  3981 085c 12       		.uleb128 0x12
- 3982 085d 5F030000 		.4byte	.LASF51
+ 3982 085d 1A030000 		.4byte	.LASF51
  3983 0861 01       		.byte	0x1
  3984 0862 2F05     		.2byte	0x52f
  3985 0864 81000000 		.4byte	0x81
@@ -7213,7 +7213,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  3987 0869 91       		.byte	0x91
  3988 086a 6C       		.sleb128 -20
  3989 086b 11       		.uleb128 0x11
- 3990 086c 59050000 		.4byte	.LASF82
+ 3990 086c 64050000 		.4byte	.LASF82
  3991 0870 01       		.byte	0x1
  3992 0871 3105     		.2byte	0x531
  3993 0873 6B000000 		.4byte	0x6b
@@ -7230,7 +7230,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4004 0888 76       		.sleb128 -10
  4005 0889 00       		.byte	0
  4006 088a 13       		.uleb128 0x13
- 4007 088b DF070000 		.4byte	.LASF88
+ 4007 088b EA070000 		.4byte	.LASF88
  4008 088f 01       		.byte	0x1
  4009 0890 6105     		.2byte	0x561
  4010 0892 6B000000 		.4byte	0x6b
@@ -7240,7 +7240,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4014 089f 9C       		.byte	0x9c
  4015 08a0 0C090000 		.4byte	0x90c
  4016 08a4 12       		.uleb128 0x12
- 4017 08a5 2A040000 		.4byte	.LASF89
+ 4017 08a5 35040000 		.4byte	.LASF89
  4018 08a9 01       		.byte	0x1
  4019 08aa 6105     		.2byte	0x561
  4020 08ac 6B000000 		.4byte	0x6b
@@ -7248,7 +7248,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4022 08b1 91       		.byte	0x91
  4023 08b2 6F       		.sleb128 -17
  4024 08b3 12       		.uleb128 0x12
- 4025 08b4 EF020000 		.4byte	.LASF90
+ 4025 08b4 AA020000 		.4byte	.LASF90
  4026 08b8 01       		.byte	0x1
  4027 08b9 6105     		.2byte	0x561
  4028 08bb 6B000000 		.4byte	0x6b
@@ -7256,9 +7256,9 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4030 08c0 91       		.byte	0x91
  4031 08c1 6E       		.sleb128 -18
  4032 08c2 12       		.uleb128 0x12
- 4033 08c3 EE080000 		.4byte	.LASF78
+ 4033 08c3 F9080000 		.4byte	.LASF78
  4034 08c7 01       		.byte	0x1
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 122
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 122
 
 
  4035 08c8 6105     		.2byte	0x561
@@ -7275,7 +7275,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4046 08dc 91       		.byte	0x91
  4047 08dd 77       		.sleb128 -9
  4048 08de 11       		.uleb128 0x11
- 4049 08df 61080000 		.4byte	.LASF91
+ 4049 08df 6C080000 		.4byte	.LASF91
  4050 08e3 01       		.byte	0x1
  4051 08e4 6E05     		.2byte	0x56e
  4052 08e6 6B000000 		.4byte	0x6b
@@ -7283,7 +7283,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4054 08eb 91       		.byte	0x91
  4055 08ec 76       		.sleb128 -10
  4056 08ed 11       		.uleb128 0x11
- 4057 08ee DA070000 		.4byte	.LASF92
+ 4057 08ee E5070000 		.4byte	.LASF92
  4058 08f2 01       		.byte	0x1
  4059 08f3 7005     		.2byte	0x570
  4060 08f5 6B000000 		.4byte	0x6b
@@ -7291,7 +7291,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4062 08fa 91       		.byte	0x91
  4063 08fb 75       		.sleb128 -11
  4064 08fc 11       		.uleb128 0x11
- 4065 08fd AE060000 		.4byte	.LASF93
+ 4065 08fd B9060000 		.4byte	.LASF93
  4066 0901 01       		.byte	0x1
  4067 0902 7105     		.2byte	0x571
  4068 0904 6F010000 		.4byte	0x16f
@@ -7300,7 +7300,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4071 090a 70       		.sleb128 -16
  4072 090b 00       		.byte	0
  4073 090c 15       		.uleb128 0x15
- 4074 090d 2F060000 		.4byte	.LASF94
+ 4074 090d 3A060000 		.4byte	.LASF94
  4075 0911 01       		.byte	0x1
  4076 0912 0006     		.2byte	0x600
  4077 0914 6B000000 		.4byte	0x6b
@@ -7310,7 +7310,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4081 0921 9C       		.byte	0x9c
  4082 0922 DE090000 		.4byte	0x9de
  4083 0926 12       		.uleb128 0x12
- 4084 0927 61080000 		.4byte	.LASF91
+ 4084 0927 6C080000 		.4byte	.LASF91
  4085 092b 01       		.byte	0x1
  4086 092c 0006     		.2byte	0x600
  4087 092e 6B000000 		.4byte	0x6b
@@ -7318,10 +7318,10 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4089 0933 91       		.byte	0x91
  4090 0934 57       		.sleb128 -41
  4091 0935 12       		.uleb128 0x12
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 123
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 123
 
 
- 4092 0936 2A040000 		.4byte	.LASF89
+ 4092 0936 35040000 		.4byte	.LASF89
  4093 093a 01       		.byte	0x1
  4094 093b 0006     		.2byte	0x600
  4095 093d 6B000000 		.4byte	0x6b
@@ -7329,7 +7329,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4097 0942 91       		.byte	0x91
  4098 0943 56       		.sleb128 -42
  4099 0944 12       		.uleb128 0x12
- 4100 0945 EF020000 		.4byte	.LASF90
+ 4100 0945 AA020000 		.4byte	.LASF90
  4101 0949 01       		.byte	0x1
  4102 094a 0106     		.2byte	0x601
  4103 094c 6B000000 		.4byte	0x6b
@@ -7337,7 +7337,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4105 0951 91       		.byte	0x91
  4106 0952 55       		.sleb128 -43
  4107 0953 12       		.uleb128 0x12
- 4108 0954 4E050000 		.4byte	.LASF95
+ 4108 0954 59050000 		.4byte	.LASF95
  4109 0958 01       		.byte	0x1
  4110 0959 0106     		.2byte	0x601
  4111 095b 76000000 		.4byte	0x76
@@ -7345,7 +7345,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4113 0960 91       		.byte	0x91
  4114 0961 52       		.sleb128 -46
  4115 0962 12       		.uleb128 0x12
- 4116 0963 8D080000 		.4byte	.LASF52
+ 4116 0963 98080000 		.4byte	.LASF52
  4117 0967 01       		.byte	0x1
  4118 0968 0106     		.2byte	0x601
  4119 096a 6B000000 		.4byte	0x6b
@@ -7369,7 +7369,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4137 098d 91       		.byte	0x91
  4138 098e 67       		.sleb128 -25
  4139 098f 11       		.uleb128 0x11
- 4140 0990 62050000 		.4byte	.LASF98
+ 4140 0990 6D050000 		.4byte	.LASF98
  4141 0994 01       		.byte	0x1
  4142 0995 0B06     		.2byte	0x60b
  4143 0997 DE090000 		.4byte	0x9de
@@ -7377,8 +7377,8 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4145 099c 03       		.byte	0x3
  4146 099d 24000000 		.4byte	CapSense_centroid.5406
  4147 09a1 11       		.uleb128 0x11
- 4148 09a2 A50A0000 		.4byte	.LASF99
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 124
+ 4148 09a2 B00A0000 		.4byte	.LASF99
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 124
 
 
  4149 09a6 01       		.byte	0x1
@@ -7388,7 +7388,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4153 09ae 91       		.byte	0x91
  4154 09af 5B       		.sleb128 -37
  4155 09b0 11       		.uleb128 0x11
- 4156 09b1 71070000 		.4byte	.LASF100
+ 4156 09b1 7C070000 		.4byte	.LASF100
  4157 09b5 01       		.byte	0x1
  4158 09b6 1306     		.2byte	0x613
  4159 09b8 81000000 		.4byte	0x81
@@ -7396,7 +7396,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4161 09bd 91       		.byte	0x91
  4162 09be 60       		.sleb128 -32
  4163 09bf 11       		.uleb128 0x11
- 4164 09c0 3D080000 		.4byte	.LASF101
+ 4164 09c0 48080000 		.4byte	.LASF101
  4165 09c4 01       		.byte	0x1
  4166 09c5 1406     		.2byte	0x614
  4167 09c7 97000000 		.4byte	0x97
@@ -7404,7 +7404,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4169 09cc 91       		.byte	0x91
  4170 09cd 5C       		.sleb128 -36
  4171 09ce 11       		.uleb128 0x11
- 4172 09cf AE060000 		.4byte	.LASF93
+ 4172 09cf B9060000 		.4byte	.LASF93
  4173 09d3 01       		.byte	0x1
  4174 09d4 1606     		.2byte	0x616
  4175 09d6 6F010000 		.4byte	0x16f
@@ -7420,7 +7420,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4185 09ec 02       		.byte	0x2
  4186 09ed 00       		.byte	0
  4187 09ee 15       		.uleb128 0x15
- 4188 09ef 94070000 		.4byte	.LASF102
+ 4188 09ef 9F070000 		.4byte	.LASF102
  4189 09f3 01       		.byte	0x1
  4190 09f4 D306     		.2byte	0x6d3
  4191 09f6 76000000 		.4byte	0x76
@@ -7430,7 +7430,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4195 0a03 9C       		.byte	0x9c
  4196 0a04 810A0000 		.4byte	0xa81
  4197 0a08 12       		.uleb128 0x12
- 4198 0a09 5F030000 		.4byte	.LASF51
+ 4198 0a09 1A030000 		.4byte	.LASF51
  4199 0a0d 01       		.byte	0x1
  4200 0a0e D306     		.2byte	0x6d3
  4201 0a10 81000000 		.4byte	0x81
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4203 0a15 91       		.byte	0x91
  4204 0a16 64       		.sleb128 -28
  4205 0a17 11       		.uleb128 0x11
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 125
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 125
 
 
  4206 0a18 DF000000 		.4byte	.LASF103
@@ -7449,7 +7449,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4211 0a24 91       		.byte	0x91
  4212 0a25 68       		.sleb128 -24
  4213 0a26 11       		.uleb128 0x11
- 4214 0a27 9F060000 		.4byte	.LASF104
+ 4214 0a27 AA060000 		.4byte	.LASF104
  4215 0a2b 01       		.byte	0x1
  4216 0a2c DB06     		.2byte	0x6db
  4217 0a2e 6B000000 		.4byte	0x6b
@@ -7457,7 +7457,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4219 0a33 91       		.byte	0x91
  4220 0a34 6D       		.sleb128 -19
  4221 0a35 11       		.uleb128 0x11
- 4222 0a36 04030000 		.4byte	.LASF105
+ 4222 0a36 BF020000 		.4byte	.LASF105
  4223 0a3a 01       		.byte	0x1
  4224 0a3b DC06     		.2byte	0x6dc
  4225 0a3d 6B000000 		.4byte	0x6b
@@ -7465,7 +7465,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4227 0a42 91       		.byte	0x91
  4228 0a43 6C       		.sleb128 -20
  4229 0a44 11       		.uleb128 0x11
- 4230 0a45 61080000 		.4byte	.LASF91
+ 4230 0a45 6C080000 		.4byte	.LASF91
  4231 0a49 01       		.byte	0x1
  4232 0a4a E606     		.2byte	0x6e6
  4233 0a4c 6B000000 		.4byte	0x6b
@@ -7473,7 +7473,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4235 0a51 91       		.byte	0x91
  4236 0a52 69       		.sleb128 -23
  4237 0a53 11       		.uleb128 0x11
- 4238 0a54 A50A0000 		.4byte	.LASF99
+ 4238 0a54 B00A0000 		.4byte	.LASF99
  4239 0a58 01       		.byte	0x1
  4240 0a59 E706     		.2byte	0x6e7
  4241 0a5b 76000000 		.4byte	0x76
@@ -7481,7 +7481,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4243 0a60 91       		.byte	0x91
  4244 0a61 6E       		.sleb128 -18
  4245 0a62 11       		.uleb128 0x11
- 4246 0a63 2A040000 		.4byte	.LASF89
+ 4246 0a63 35040000 		.4byte	.LASF89
  4247 0a67 01       		.byte	0x1
  4248 0a68 E806     		.2byte	0x6e8
  4249 0a6a 6B000000 		.4byte	0x6b
@@ -7489,7 +7489,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4251 0a6f 91       		.byte	0x91
  4252 0a70 6B       		.sleb128 -21
  4253 0a71 11       		.uleb128 0x11
- 4254 0a72 EF020000 		.4byte	.LASF90
+ 4254 0a72 AA020000 		.4byte	.LASF90
  4255 0a76 01       		.byte	0x1
  4256 0a77 E906     		.2byte	0x6e9
  4257 0a79 6B000000 		.4byte	0x6b
@@ -7498,10 +7498,10 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4260 0a7f 6A       		.sleb128 -22
  4261 0a80 00       		.byte	0
  4262 0a81 15       		.uleb128 0x15
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 126
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 126
 
 
- 4263 0a82 030A0000 		.4byte	.LASF106
+ 4263 0a82 0E0A0000 		.4byte	.LASF106
  4264 0a86 01       		.byte	0x1
  4265 0a87 9E07     		.2byte	0x79e
  4266 0a89 76000000 		.4byte	0x76
@@ -7511,7 +7511,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4270 0a96 9C       		.byte	0x9c
  4271 0a97 E70A0000 		.4byte	0xae7
  4272 0a9b 12       		.uleb128 0x12
- 4273 0a9c 5F030000 		.4byte	.LASF51
+ 4273 0a9c 1A030000 		.4byte	.LASF51
  4274 0aa0 01       		.byte	0x1
  4275 0aa1 9E07     		.2byte	0x79e
  4276 0aa3 81000000 		.4byte	0x81
@@ -7519,7 +7519,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4278 0aa8 91       		.byte	0x91
  4279 0aa9 64       		.sleb128 -28
  4280 0aaa 11       		.uleb128 0x11
- 4281 0aab 61080000 		.4byte	.LASF91
+ 4281 0aab 6C080000 		.4byte	.LASF91
  4282 0aaf 01       		.byte	0x1
  4283 0ab0 AD07     		.2byte	0x7ad
  4284 0ab2 6B000000 		.4byte	0x6b
@@ -7527,7 +7527,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4286 0ab7 91       		.byte	0x91
  4287 0ab8 6B       		.sleb128 -21
  4288 0ab9 11       		.uleb128 0x11
- 4289 0aba A50A0000 		.4byte	.LASF99
+ 4289 0aba B00A0000 		.4byte	.LASF99
  4290 0abe 01       		.byte	0x1
  4291 0abf AE07     		.2byte	0x7ae
  4292 0ac1 76000000 		.4byte	0x76
@@ -7535,7 +7535,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4294 0ac6 91       		.byte	0x91
  4295 0ac7 6E       		.sleb128 -18
  4296 0ac8 11       		.uleb128 0x11
- 4297 0ac9 2A040000 		.4byte	.LASF89
+ 4297 0ac9 35040000 		.4byte	.LASF89
  4298 0acd 01       		.byte	0x1
  4299 0ace AF07     		.2byte	0x7af
  4300 0ad0 6B000000 		.4byte	0x6b
@@ -7543,7 +7543,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4302 0ad5 91       		.byte	0x91
  4303 0ad6 6D       		.sleb128 -19
  4304 0ad7 11       		.uleb128 0x11
- 4305 0ad8 EF020000 		.4byte	.LASF90
+ 4305 0ad8 AA020000 		.4byte	.LASF90
  4306 0adc 01       		.byte	0x1
  4307 0add B007     		.2byte	0x7b0
  4308 0adf 6B000000 		.4byte	0x6b
@@ -7552,13 +7552,13 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4311 0ae5 6C       		.sleb128 -20
  4312 0ae6 00       		.byte	0
  4313 0ae7 13       		.uleb128 0x13
- 4314 0ae8 300A0000 		.4byte	.LASF107
+ 4314 0ae8 3B0A0000 		.4byte	.LASF107
  4315 0aec 01       		.byte	0x1
  4316 0aed 4B09     		.2byte	0x94b
  4317 0aef 76000000 		.4byte	0x76
  4318 0af3 00000000 		.4byte	.LFB64
  4319 0af7 6A000000 		.4byte	.LFE64-.LFB64
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 127
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 127
 
 
  4320 0afb 01       		.uleb128 0x1
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4374 0b63 18       		.uleb128 0x18
  4375 0b64 783200   		.ascii	"x2\000"
  4376 0b67 01       		.byte	0x1
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 128
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 128
 
 
  4377 0b68 C309     		.2byte	0x9c3
@@ -7636,7 +7636,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4389 0b7f 74       		.sleb128 -12
  4390 0b80 00       		.byte	0
  4391 0b81 13       		.uleb128 0x13
- 4392 0b82 C3080000 		.4byte	.LASF109
+ 4392 0b82 CE080000 		.4byte	.LASF109
  4393 0b86 01       		.byte	0x1
  4394 0b87 EB09     		.2byte	0x9eb
  4395 0b89 76000000 		.4byte	0x76
@@ -7663,7 +7663,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4416 0bb6 74       		.sleb128 -12
  4417 0bb7 00       		.byte	0
  4418 0bb8 13       		.uleb128 0x13
- 4419 0bb9 AB050000 		.4byte	.LASF110
+ 4419 0bb9 B6050000 		.4byte	.LASF110
  4420 0bbd 01       		.byte	0x1
  4421 0bbe AC0A     		.2byte	0xaac
  4422 0bc0 81000000 		.4byte	0x81
@@ -7673,19 +7673,19 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4426 0bcd 9C       		.byte	0x9c
  4427 0bce E20B0000 		.4byte	0xbe2
  4428 0bd2 12       		.uleb128 0x12
- 4429 0bd3 DE040000 		.4byte	.LASF42
+ 4429 0bd3 E9040000 		.4byte	.LASF42
  4430 0bd7 01       		.byte	0x1
  4431 0bd8 AC0A     		.2byte	0xaac
  4432 0bda 81000000 		.4byte	0x81
  4433 0bde 02       		.uleb128 0x2
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 129
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 129
 
 
  4434 0bdf 91       		.byte	0x91
  4435 0be0 74       		.sleb128 -12
  4436 0be1 00       		.byte	0
  4437 0be2 13       		.uleb128 0x13
- 4438 0be3 58060000 		.4byte	.LASF111
+ 4438 0be3 63060000 		.4byte	.LASF111
  4439 0be7 01       		.byte	0x1
  4440 0be8 C60A     		.2byte	0xac6
  4441 0bea 6B000000 		.4byte	0x6b
@@ -7695,7 +7695,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4445 0bf7 9C       		.byte	0x9c
  4446 0bf8 0C0C0000 		.4byte	0xc0c
  4447 0bfc 12       		.uleb128 0x12
- 4448 0bfd DE040000 		.4byte	.LASF42
+ 4448 0bfd E9040000 		.4byte	.LASF42
  4449 0c01 01       		.byte	0x1
  4450 0c02 C60A     		.2byte	0xac6
  4451 0c04 81000000 		.4byte	0x81
@@ -7704,7 +7704,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4454 0c0a 74       		.sleb128 -12
  4455 0c0b 00       		.byte	0
  4456 0c0c 13       		.uleb128 0x13
- 4457 0c0d 4E0A0000 		.4byte	.LASF112
+ 4457 0c0d 590A0000 		.4byte	.LASF112
  4458 0c11 01       		.byte	0x1
  4459 0c12 E00A     		.2byte	0xae0
  4460 0c14 6B000000 		.4byte	0x6b
@@ -7714,7 +7714,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4464 0c21 9C       		.byte	0x9c
  4465 0c22 360C0000 		.4byte	0xc36
  4466 0c26 12       		.uleb128 0x12
- 4467 0c27 5F030000 		.4byte	.LASF51
+ 4467 0c27 1A030000 		.4byte	.LASF51
  4468 0c2b 01       		.byte	0x1
  4469 0c2c E00A     		.2byte	0xae0
  4470 0c2e 81000000 		.4byte	0x81
@@ -7723,7 +7723,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4473 0c34 74       		.sleb128 -12
  4474 0c35 00       		.byte	0
  4475 0c36 19       		.uleb128 0x19
- 4476 0c37 05080000 		.4byte	.LASF113
+ 4476 0c37 10080000 		.4byte	.LASF113
  4477 0c3b 01       		.byte	0x1
  4478 0c3c FA0A     		.2byte	0xafa
  4479 0c3e 00000000 		.4byte	.LFB70
@@ -7731,14 +7731,14 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4481 0c46 01       		.uleb128 0x1
  4482 0c47 9C       		.byte	0x9c
  4483 0c48 19       		.uleb128 0x19
- 4484 0c49 C9030000 		.4byte	.LASF114
+ 4484 0c49 D4030000 		.4byte	.LASF114
  4485 0c4d 01       		.byte	0x1
  4486 0c4e 130B     		.2byte	0xb13
  4487 0c50 00000000 		.4byte	.LFB71
  4488 0c54 14000000 		.4byte	.LFE71-.LFB71
  4489 0c58 01       		.uleb128 0x1
  4490 0c59 9C       		.byte	0x9c
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 130
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 130
 
 
  4491 0c5a 16       		.uleb128 0x16
@@ -7749,7 +7749,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4496 0c68 00       		.byte	0
  4497 0c69 00       		.byte	0
  4498 0c6a 1A       		.uleb128 0x1a
- 4499 0c6b A4090000 		.4byte	.LASF115
+ 4499 0c6b AF090000 		.4byte	.LASF115
  4500 0c6f 01       		.byte	0x1
  4501 0c70 5D       		.byte	0x5d
  4502 0c71 7B0C0000 		.4byte	0xc7b
@@ -7759,7 +7759,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4506 0c7b 08       		.uleb128 0x8
  4507 0c7c 5A0C0000 		.4byte	0xc5a
  4508 0c80 1A       		.uleb128 0x1a
- 4509 0c81 66030000 		.4byte	.LASF116
+ 4509 0c81 21030000 		.4byte	.LASF116
  4510 0c85 01       		.byte	0x1
  4511 0c86 61       		.byte	0x61
  4512 0c87 64070000 		.4byte	0x764
@@ -7782,12 +7782,12 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4529 0cb0 04       		.byte	0x4
  4530 0cb1 00       		.byte	0
  4531 0cb2 1B       		.uleb128 0x1b
- 4532 0cb3 45060000 		.4byte	.LASF118
+ 4532 0cb3 50060000 		.4byte	.LASF118
  4533 0cb7 01       		.byte	0x1
  4534 0cb8 2C       		.byte	0x2c
  4535 0cb9 A20C0000 		.4byte	0xca2
  4536 0cbd 1B       		.uleb128 0x1b
- 4537 0cbe 45030000 		.4byte	.LASF119
+ 4537 0cbe 00030000 		.4byte	.LASF119
  4538 0cc2 01       		.byte	0x1
  4539 0cc3 2D       		.byte	0x2d
  4540 0cc4 64070000 		.4byte	0x764
@@ -7798,18 +7798,18 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4545 0cd2 B7000000 		.4byte	0xb7
  4546 0cd6 04       		.byte	0x4
  4547 0cd7 00       		.byte	0
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 131
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 131
 
 
  4548 0cd8 1B       		.uleb128 0x1b
- 4549 0cd9 97030000 		.4byte	.LASF120
+ 4549 0cd9 A2030000 		.4byte	.LASF120
  4550 0cdd 01       		.byte	0x1
  4551 0cde 2E       		.byte	0x2e
  4552 0cdf E30C0000 		.4byte	0xce3
  4553 0ce3 08       		.uleb128 0x8
  4554 0ce4 C80C0000 		.4byte	0xcc8
  4555 0ce8 1C       		.uleb128 0x1c
- 4556 0ce9 49080000 		.4byte	.LASF121
+ 4556 0ce9 54080000 		.4byte	.LASF121
  4557 0ced 01       		.byte	0x1
  4558 0cee 34       		.byte	0x34
  4559 0cef A20C0000 		.4byte	0xca2
@@ -7825,7 +7825,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4569 0d05 03       		.byte	0x3
  4570 0d06 00000000 		.4byte	CapSense_sensorBaselineLow
  4571 0d0a 1C       		.uleb128 0x1c
- 4572 0d0b 4D020000 		.4byte	.LASF123
+ 4572 0d0b 08020000 		.4byte	.LASF123
  4573 0d0f 01       		.byte	0x1
  4574 0d10 36       		.byte	0x36
  4575 0d11 C80C0000 		.4byte	0xcc8
@@ -7833,7 +7833,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4577 0d16 03       		.byte	0x3
  4578 0d17 00000000 		.4byte	CapSense_sensorSignal
  4579 0d1b 1C       		.uleb128 0x1c
- 4580 0d1c AE0A0000 		.4byte	.LASF124
+ 4580 0d1c B90A0000 		.4byte	.LASF124
  4581 0d20 01       		.byte	0x1
  4582 0d21 37       		.byte	0x37
  4583 0d22 64070000 		.4byte	0x764
@@ -7841,7 +7841,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4585 0d27 03       		.byte	0x3
  4586 0d28 00000000 		.4byte	CapSense_sensorOnMask
  4587 0d2c 1C       		.uleb128 0x1c
- 4588 0d2d 63020000 		.4byte	.LASF125
+ 4588 0d2d 1E020000 		.4byte	.LASF125
  4589 0d31 01       		.byte	0x1
  4590 0d32 39       		.byte	0x39
  4591 0d33 C80C0000 		.4byte	0xcc8
@@ -7849,7 +7849,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4593 0d38 03       		.byte	0x3
  4594 0d39 00000000 		.4byte	CapSense_lowBaselineResetCnt
  4595 0d3d 1C       		.uleb128 0x1c
- 4596 0d3e 23080000 		.4byte	.LASF126
+ 4596 0d3e 2E080000 		.4byte	.LASF126
  4597 0d42 01       		.byte	0x1
  4598 0d43 3A       		.byte	0x3a
  4599 0d44 C80C0000 		.4byte	0xcc8
@@ -7857,8 +7857,8 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4601 0d49 03       		.byte	0x3
  4602 0d4a 00000000 		.4byte	CapSense_lowBaselineReset
  4603 0d4e 1C       		.uleb128 0x1c
- 4604 0d4f 7E030000 		.4byte	.LASF127
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 132
+ 4604 0d4f 39030000 		.4byte	.LASF127
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 132
 
 
  4605 0d53 01       		.byte	0x1
@@ -7868,7 +7868,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4609 0d5a 03       		.byte	0x3
  4610 0d5b 00000000 		.4byte	CapSense_fingerThreshold
  4611 0d5f 1C       		.uleb128 0x1c
- 4612 0d60 19090000 		.4byte	.LASF128
+ 4612 0d60 24090000 		.4byte	.LASF128
  4613 0d64 01       		.byte	0x1
  4614 0d65 4B       		.byte	0x4b
  4615 0d66 64070000 		.4byte	0x764
@@ -7876,7 +7876,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4617 0d6b 03       		.byte	0x3
  4618 0d6c 00000000 		.4byte	CapSense_noiseThreshold
  4619 0d70 1C       		.uleb128 0x1c
- 4620 0d71 AC040000 		.4byte	.LASF129
+ 4620 0d71 B7040000 		.4byte	.LASF129
  4621 0d75 01       		.byte	0x1
  4622 0d76 4D       		.byte	0x4d
  4623 0d77 64070000 		.4byte	0x764
@@ -7884,7 +7884,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4625 0d7c 03       		.byte	0x3
  4626 0d7d 00000000 		.4byte	CapSense_negativeNoiseThreshold
  4627 0d81 1C       		.uleb128 0x1c
- 4628 0d82 CF020000 		.4byte	.LASF130
+ 4628 0d82 8A020000 		.4byte	.LASF130
  4629 0d86 01       		.byte	0x1
  4630 0d87 4F       		.byte	0x4f
  4631 0d88 64070000 		.4byte	0x764
@@ -7900,7 +7900,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4641 0d9e 03       		.byte	0x3
  4642 0d9f 00000000 		.4byte	CapSense_debounce
  4643 0da3 1C       		.uleb128 0x1c
- 4644 0da4 80020000 		.4byte	.LASF132
+ 4644 0da4 3B020000 		.4byte	.LASF132
  4645 0da8 01       		.byte	0x1
  4646 0da9 55       		.byte	0x55
  4647 0daa B40D0000 		.4byte	0xdb4
@@ -7910,7 +7910,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4651 0db4 08       		.uleb128 0x8
  4652 0db5 64070000 		.4byte	0x764
  4653 0db9 1C       		.uleb128 0x1c
- 4654 0dba 93040000 		.4byte	.LASF133
+ 4654 0dba 9E040000 		.4byte	.LASF133
  4655 0dbe 01       		.byte	0x1
  4656 0dbf 59       		.byte	0x59
  4657 0dc0 CA0D0000 		.4byte	0xdca
@@ -7918,12 +7918,12 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4659 0dc5 03       		.byte	0x3
  4660 0dc6 00000000 		.4byte	CapSense_numberOfSensors
  4661 0dca 08       		.uleb128 0x8
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 133
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 133
 
 
  4662 0dcb 64070000 		.4byte	0x764
  4663 0dcf 1C       		.uleb128 0x1c
- 4664 0dd0 8D0A0000 		.4byte	.LASF134
+ 4664 0dd0 980A0000 		.4byte	.LASF134
  4665 0dd4 01       		.byte	0x1
  4666 0dd5 27       		.byte	0x27
  4667 0dd6 A20C0000 		.4byte	0xca2
@@ -7936,7 +7936,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4674 0de6 41       		.byte	0x41
  4675 0de7 48020000 		.4byte	0x248
  4676 0deb 1C       		.uleb128 0x1c
- 4677 0dec C0090000 		.4byte	.LASF136
+ 4677 0dec CB090000 		.4byte	.LASF136
  4678 0df0 01       		.byte	0x1
  4679 0df1 45       		.byte	0x45
  4680 0df2 6B000000 		.4byte	0x6b
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4716 001d 00       		.byte	0
  4717 001e 03       		.uleb128 0x3
  4718 001f 24       		.uleb128 0x24
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 134
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 134
 
 
  4719 0020 00       		.byte	0
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4773 0056 0B       		.uleb128 0xb
  4774 0057 49       		.uleb128 0x49
  4775 0058 13       		.uleb128 0x13
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 135
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 135
 
 
  4776 0059 00       		.byte	0
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4830 008f 18       		.uleb128 0x18
  4831 0090 9742     		.uleb128 0x2117
  4832 0092 19       		.uleb128 0x19
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 136
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 136
 
 
  4833 0093 01       		.uleb128 0x1
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4887 00ca 13       		.uleb128 0x13
  4888 00cb 02       		.uleb128 0x2
  4889 00cc 18       		.uleb128 0x18
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 137
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 137
 
 
  4890 00cd 00       		.byte	0
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  4944 0104 18       		.uleb128 0x18
  4945 0105 00       		.byte	0
  4946 0106 00       		.byte	0
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 138
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 138
 
 
  4947 0107 13       		.uleb128 0x13
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  5001 013f 01       		.byte	0x1
  5002 0140 3F       		.uleb128 0x3f
  5003 0141 19       		.uleb128 0x19
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 139
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 139
 
 
  5004 0142 03       		.uleb128 0x3
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  5058 0179 00       		.byte	0
  5059 017a 19       		.uleb128 0x19
  5060 017b 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 140
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 140
 
 
  5061 017c 00       		.byte	0
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  5115 01b3 34       		.uleb128 0x34
  5116 01b4 00       		.byte	0
  5117 01b5 03       		.uleb128 0x3
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 141
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 141
 
 
  5118 01b6 0E       		.uleb128 0xe
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  5172 0090 00000000 		.4byte	.LFB49
  5173 0094 24000000 		.4byte	.LFE49-.LFB49
  5174 0098 00000000 		.4byte	.LFB50
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 142
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 142
 
 
  5175 009c 24000000 		.4byte	.LFE50-.LFB50
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  5229 001c 50000000 		.4byte	.LFE36
  5230 0020 00000000 		.4byte	.LFB37
  5231 0024 28020000 		.4byte	.LFE37
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 143
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 143
 
 
  5232 0028 00000000 		.4byte	.LFB38
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  5286 0100 00000000 		.4byte	.LFB65
  5287 0104 3C000000 		.4byte	.LFE65
  5288 0108 00000000 		.4byte	.LFB66
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 144
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 144
 
 
  5289 010c 4C000000 		.4byte	.LFE66
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  5316      6F727300 
  5317              	.LASF30:
  5318 0099 70747247 		.ascii	"ptrGetBitValue\000"
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 145
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 145
 
 
  5318      65744269 
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  5340      7469616C 
  5340      697A6545 
  5341              	.LASF117:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 146
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 146
 
 
  5342 0164 43617053 		.ascii	"CapSense_posFiltersData\000"
@@ -8721,648 +8721,648 @@ ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 1
  5347              	.LASF96:
  5348 01b0 706F7350 		.ascii	"posPrev\000"
  5348      72657600 
- 5349              	.LASF139:
- 5350 01b8 433A5C55 		.ascii	"C:\\Users\\IEUser\\Documents\\GitHub\\piezo-sensor\\"
- 5350      73657273 
- 5350      5C494555 
- 5350      7365725C 
- 5350      446F6375 
- 5351 01e6 4D792046 		.ascii	"My First Project.cydsn\000"
- 5351      69727374 
- 5351      2050726F 
- 5351      6A656374 
- 5351      2E637964 
- 5352              	.LASF59:
- 5353 01fd 43617053 		.ascii	"CapSense_SetBaselineData\000"
- 5353      656E7365 
- 5353      5F536574 
- 5353      42617365 
- 5353      6C696E65 
- 5354              	.LASF25:
- 5355 0216 72617744 		.ascii	"rawDataIndex\000"
- 5355      61746149 
- 5355      6E646578 
- 5355      00
- 5356              	.LASF34:
- 5357 0223 746F7461 		.ascii	"totalWidgetsNum\000"
- 5357      6C576964 
- 5357      67657473 
- 5357      4E756D00 
- 5358              	.LASF63:
- 5359 0233 43617053 		.ascii	"CapSense_SetDiffCountData\000"
- 5359      656E7365 
- 5359      5F536574 
- 5359      44696666 
- 5359      436F756E 
- 5360              	.LASF123:
- 5361 024d 43617053 		.ascii	"CapSense_sensorSignal\000"
- 5361      656E7365 
- 5361      5F73656E 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 147
+ 5349              	.LASF59:
+ 5350 01b8 43617053 		.ascii	"CapSense_SetBaselineData\000"
+ 5350      656E7365 
+ 5350      5F536574 
+ 5350      42617365 
+ 5350      6C696E65 
+ 5351              	.LASF25:
+ 5352 01d1 72617744 		.ascii	"rawDataIndex\000"
+ 5352      61746149 
+ 5352      6E646578 
+ 5352      00
+ 5353              	.LASF34:
+ 5354 01de 746F7461 		.ascii	"totalWidgetsNum\000"
+ 5354      6C576964 
+ 5354      67657473 
+ 5354      4E756D00 
+ 5355              	.LASF63:
+ 5356 01ee 43617053 		.ascii	"CapSense_SetDiffCountData\000"
+ 5356      656E7365 
+ 5356      5F536574 
+ 5356      44696666 
+ 5356      436F756E 
+ 5357              	.LASF123:
+ 5358 0208 43617053 		.ascii	"CapSense_sensorSignal\000"
+ 5358      656E7365 
+ 5358      5F73656E 
+ 5358      736F7253 
+ 5358      69676E61 
+ 5359              	.LASF125:
+ 5360 021e 43617053 		.ascii	"CapSense_lowBaselineResetCnt\000"
+ 5360      656E7365 
+ 5360      5F6C6F77 
+ 5360      42617365 
+ 5360      6C696E65 
+ 5361              	.LASF132:
+ 5362 023b 43617053 		.ascii	"CapSense_rawDataIndex\000"
+ 5362      656E7365 
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 147
 
 
- 5361      736F7253 
- 5361      69676E61 
- 5362              	.LASF125:
- 5363 0263 43617053 		.ascii	"CapSense_lowBaselineResetCnt\000"
- 5363      656E7365 
- 5363      5F6C6F77 
- 5363      42617365 
- 5363      6C696E65 
- 5364              	.LASF132:
- 5365 0280 43617053 		.ascii	"CapSense_rawDataIndex\000"
- 5365      656E7365 
- 5365      5F726177 
- 5365      44617461 
- 5365      496E6465 
- 5366              	.LASF70:
- 5367 0296 43617053 		.ascii	"CapSense_SetNoiseThreshold\000"
- 5367      656E7365 
- 5367      5F536574 
- 5367      4E6F6973 
- 5367      65546872 
- 5368              	.LASF55:
- 5369 02b1 43617053 		.ascii	"CapSense_UpdateWidgetBaseline\000"
- 5369      656E7365 
- 5369      5F557064 
- 5369      61746557 
- 5369      69646765 
- 5370              	.LASF130:
- 5371 02cf 43617053 		.ascii	"CapSense_hysteresis\000"
- 5371      656E7365 
- 5371      5F687973 
- 5371      74657265 
- 5371      73697300 
- 5372              	.LASF14:
- 5373 02e3 666C6F61 		.ascii	"float\000"
- 5373      7400
- 5374              	.LASF13:
- 5375 02e9 696E7433 		.ascii	"int32\000"
- 5375      3200
- 5376              	.LASF90:
- 5377 02ef 636F756E 		.ascii	"count\000"
- 5377      7400
- 5378              	.LASF24:
- 5379 02f5 7265736F 		.ascii	"resolutionsTbl\000"
- 5379      6C757469 
- 5379      6F6E7354 
- 5379      626C00
- 5380              	.LASF105:
- 5381 0304 706F7346 		.ascii	"posFiltersMask\000"
- 5381      696C7465 
- 5381      72734D61 
- 5381      736B00
- 5382              	.LASF66:
- 5383 0313 43617053 		.ascii	"CapSense_GetNoiseThreshold\000"
- 5383      656E7365 
- 5383      5F476574 
- 5383      4E6F6973 
- 5383      65546872 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 148
+ 5362      5F726177 
+ 5362      44617461 
+ 5362      496E6465 
+ 5363              	.LASF70:
+ 5364 0251 43617053 		.ascii	"CapSense_SetNoiseThreshold\000"
+ 5364      656E7365 
+ 5364      5F536574 
+ 5364      4E6F6973 
+ 5364      65546872 
+ 5365              	.LASF55:
+ 5366 026c 43617053 		.ascii	"CapSense_UpdateWidgetBaseline\000"
+ 5366      656E7365 
+ 5366      5F557064 
+ 5366      61746557 
+ 5366      69646765 
+ 5367              	.LASF130:
+ 5368 028a 43617053 		.ascii	"CapSense_hysteresis\000"
+ 5368      656E7365 
+ 5368      5F687973 
+ 5368      74657265 
+ 5368      73697300 
+ 5369              	.LASF14:
+ 5370 029e 666C6F61 		.ascii	"float\000"
+ 5370      7400
+ 5371              	.LASF13:
+ 5372 02a4 696E7433 		.ascii	"int32\000"
+ 5372      3200
+ 5373              	.LASF90:
+ 5374 02aa 636F756E 		.ascii	"count\000"
+ 5374      7400
+ 5375              	.LASF24:
+ 5376 02b0 7265736F 		.ascii	"resolutionsTbl\000"
+ 5376      6C757469 
+ 5376      6F6E7354 
+ 5376      626C00
+ 5377              	.LASF105:
+ 5378 02bf 706F7346 		.ascii	"posFiltersMask\000"
+ 5378      696C7465 
+ 5378      72734D61 
+ 5378      736B00
+ 5379              	.LASF66:
+ 5380 02ce 43617053 		.ascii	"CapSense_GetNoiseThreshold\000"
+ 5380      656E7365 
+ 5380      5F476574 
+ 5380      4E6F6973 
+ 5380      65546872 
+ 5381              	.LASF7:
+ 5382 02e9 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 5382      206C6F6E 
+ 5382      6720756E 
+ 5382      7369676E 
+ 5382      65642069 
+ 5383              	.LASF119:
+ 5384 0300 43617053 		.ascii	"CapSense_sensorEnableMask\000"
+ 5384      656E7365 
+ 5384      5F73656E 
+ 5384      736F7245 
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 148
 
 
- 5384              	.LASF7:
- 5385 032e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 5385      206C6F6E 
- 5385      6720756E 
- 5385      7369676E 
- 5385      65642069 
- 5386              	.LASF119:
- 5387 0345 43617053 		.ascii	"CapSense_sensorEnableMask\000"
- 5387      656E7365 
- 5387      5F73656E 
- 5387      736F7245 
- 5387      6E61626C 
- 5388              	.LASF51:
- 5389 035f 77696467 		.ascii	"widget\000"
- 5389      657400
- 5390              	.LASF116:
- 5391 0366 43617053 		.ascii	"CapSense_posFiltersMask\000"
- 5391      656E7365 
- 5391      5F706F73 
- 5391      46696C74 
- 5391      6572734D 
- 5392              	.LASF127:
- 5393 037e 43617053 		.ascii	"CapSense_fingerThreshold\000"
- 5393      656E7365 
- 5393      5F66696E 
- 5393      67657254 
- 5393      68726573 
+ 5384      6E61626C 
+ 5385              	.LASF51:
+ 5386 031a 77696467 		.ascii	"widget\000"
+ 5386      657400
+ 5387              	.LASF116:
+ 5388 0321 43617053 		.ascii	"CapSense_posFiltersMask\000"
+ 5388      656E7365 
+ 5388      5F706F73 
+ 5388      46696C74 
+ 5388      6572734D 
+ 5389              	.LASF127:
+ 5390 0339 43617053 		.ascii	"CapSense_fingerThreshold\000"
+ 5390      656E7365 
+ 5390      5F66696E 
+ 5390      67657254 
+ 5390      68726573 
+ 5391              	.LASF139:
+ 5392 0352 433A5C55 		.ascii	"C:\\Users\\TinyWindows\\Documents\\PSoC Creator\\pi"
+ 5392      73657273 
+ 5392      5C54696E 
+ 5392      7957696E 
+ 5392      646F7773 
+ 5393 0380 657A6F2D 		.ascii	"ezo-sensor\\My First Project.cydsn\000"
+ 5393      73656E73 
+ 5393      6F725C4D 
+ 5393      79204669 
+ 5393      72737420 
  5394              	.LASF120:
- 5395 0397 43617053 		.ascii	"CapSense_widgetNumber\000"
+ 5395 03a2 43617053 		.ascii	"CapSense_widgetNumber\000"
  5395      656E7365 
  5395      5F776964 
  5395      6765744E 
  5395      756D6265 
  5396              	.LASF69:
- 5397 03ad 43617053 		.ascii	"CapSense_SetFingerThreshold\000"
+ 5397 03b8 43617053 		.ascii	"CapSense_SetFingerThreshold\000"
  5397      656E7365 
  5397      5F536574 
  5397      46696E67 
  5397      65725468 
  5398              	.LASF114:
- 5399 03c9 43617053 		.ascii	"CapSense_DisableRawDataFilters\000"
+ 5399 03d4 43617053 		.ascii	"CapSense_DisableRawDataFilters\000"
  5399      656E7365 
  5399      5F446973 
  5399      61626C65 
  5399      52617744 
  5400              	.LASF64:
- 5401 03e8 76616C75 		.ascii	"value\000"
+ 5401 03f3 76616C75 		.ascii	"value\000"
  5401      6500
  5402              	.LASF67:
- 5403 03ee 43617053 		.ascii	"CapSense_GetFingerHysteresis\000"
+ 5403 03f9 43617053 		.ascii	"CapSense_GetFingerHysteresis\000"
  5403      656E7365 
  5403      5F476574 
  5403      46696E67 
  5403      65724879 
  5404              	.LASF62:
- 5405 040b 43617053 		.ascii	"CapSense_GetDiffCountData\000"
+ 5405 0416 43617053 		.ascii	"CapSense_GetDiffCountData\000"
  5405      656E7365 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 149
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 149
 
 
  5405      5F476574 
  5405      44696666 
  5405      436F756E 
  5406              	.LASF48:
- 5407 0425 7369676E 		.ascii	"sign\000"
+ 5407 0430 7369676E 		.ascii	"sign\000"
  5407      00
  5408              	.LASF89:
- 5409 042a 6F666673 		.ascii	"offset\000"
+ 5409 0435 6F666673 		.ascii	"offset\000"
  5409      657400
  5410              	.LASF47:
- 5411 0431 63616C63 		.ascii	"calc\000"
+ 5411 043c 63616C63 		.ascii	"calc\000"
  5411      00
  5412              	.LASF29:
- 5413 0436 70747252 		.ascii	"ptrReadSensorRaw\000"
+ 5413 0441 70747252 		.ascii	"ptrReadSensorRaw\000"
  5413      65616453 
  5413      656E736F 
  5413      72526177 
  5413      00
  5414              	.LASF79:
- 5415 0447 68797374 		.ascii	"hysteresis\000"
+ 5415 0452 68797374 		.ascii	"hysteresis\000"
  5415      65726573 
  5415      697300
  5416              	.LASF50:
- 5417 0452 66696C74 		.ascii	"filteredRawData\000"
+ 5417 045d 66696C74 		.ascii	"filteredRawData\000"
  5417      65726564 
  5417      52617744 
  5417      61746100 
  5418              	.LASF56:
- 5419 0462 73656E73 		.ascii	"sensorsPerWidget\000"
+ 5419 046d 73656E73 		.ascii	"sensorsPerWidget\000"
  5419      6F727350 
  5419      65725769 
  5419      64676574 
  5419      00
  5420              	.LASF85:
- 5421 0473 43617053 		.ascii	"CapSense_CheckIsAnyWidgetActive\000"
+ 5421 047e 43617053 		.ascii	"CapSense_CheckIsAnyWidgetActive\000"
  5421      656E7365 
  5421      5F436865 
  5421      636B4973 
  5421      416E7957 
  5422              	.LASF133:
- 5423 0493 43617053 		.ascii	"CapSense_numberOfSensors\000"
+ 5423 049e 43617053 		.ascii	"CapSense_numberOfSensors\000"
  5423      656E7365 
  5423      5F6E756D 
  5423      6265724F 
  5423      6653656E 
  5424              	.LASF129:
- 5425 04ac 43617053 		.ascii	"CapSense_negativeNoiseThreshold\000"
+ 5425 04b7 43617053 		.ascii	"CapSense_negativeNoiseThreshold\000"
  5425      656E7365 
  5425      5F6E6567 
  5425      61746976 
  5425      654E6F69 
  5426              	.LASF33:
- 5427 04cc 746F7461 		.ascii	"totalScanslotsNum\000"
+ 5427 04d7 746F7461 		.ascii	"totalScanslotsNum\000"
  5427      6C536361 
  5427      6E736C6F 
  5427      74734E75 
  5427      6D00
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 150
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 150
 
 
  5428              	.LASF42:
- 5429 04de 73656E73 		.ascii	"sensor\000"
+ 5429 04e9 73656E73 		.ascii	"sensor\000"
  5429      6F7200
  5430              	.LASF36:
- 5431 04e5 73656E73 		.ascii	"sensetivitySeed\000"
+ 5431 04f0 73656E73 		.ascii	"sensetivitySeed\000"
  5431      65746976 
  5431      69747953 
  5431      65656400 
  5432              	.LASF86:
- 5433 04f5 43617053 		.ascii	"CapSense_EnableWidget\000"
+ 5433 0500 43617053 		.ascii	"CapSense_EnableWidget\000"
  5433      656E7365 
  5433      5F456E61 
  5433      626C6557 
  5433      69646765 
  5434              	.LASF16:
- 5435 050b 63686172 		.ascii	"char\000"
+ 5435 0516 63686172 		.ascii	"char\000"
  5435      00
  5436              	.LASF68:
- 5437 0510 43617053 		.ascii	"CapSense_GetNegativeNoiseThreshold\000"
+ 5437 051b 43617053 		.ascii	"CapSense_GetNegativeNoiseThreshold\000"
  5437      656E7365 
  5437      5F476574 
  5437      4E656761 
  5437      74697665 
  5438              	.LASF10:
- 5439 0533 75696E74 		.ascii	"uint16\000"
+ 5439 053e 75696E74 		.ascii	"uint16\000"
  5439      313600
  5440              	.LASF60:
- 5441 053a 64617461 		.ascii	"data\000"
+ 5441 0545 64617461 		.ascii	"data\000"
  5441      00
  5442              	.LASF18:
- 5443 053f 69646163 		.ascii	"idac1LevelsTbl\000"
+ 5443 054a 69646163 		.ascii	"idac1LevelsTbl\000"
  5443      314C6576 
  5443      656C7354 
  5443      626C00
  5444              	.LASF95:
- 5445 054e 7265736F 		.ascii	"resolution\000"
+ 5445 0559 7265736F 		.ascii	"resolution\000"
  5445      6C757469 
  5445      6F6E00
  5446              	.LASF82:
- 5447 0559 72617749 		.ascii	"rawIndex\000"
+ 5447 0564 72617749 		.ascii	"rawIndex\000"
  5447      6E646578 
  5447      00
  5448              	.LASF98:
- 5449 0562 43617053 		.ascii	"CapSense_centroid\000"
+ 5449 056d 43617053 		.ascii	"CapSense_centroid\000"
  5449      656E7365 
  5449      5F63656E 
  5449      74726F69 
  5449      6400
  5450              	.LASF138:
- 5451 0574 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\CapSense_CSHL.c\000"
+ 5451 057f 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\CapSense_CSHL.c\000"
  5451      6E657261 
  5451      7465645F 
  5451      536F7572 
  5451      63655C50 
  5452              	.LASF6:
- 5453 059d 6C6F6E67 		.ascii	"long long int\000"
+ 5453 05a8 6C6F6E67 		.ascii	"long long int\000"
  5453      206C6F6E 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 151
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 151
 
 
  5453      6720696E 
  5453      7400
  5454              	.LASF110:
- 5455 05ab 43617053 		.ascii	"CapSense_GetWidgetNumber\000"
+ 5455 05b6 43617053 		.ascii	"CapSense_GetWidgetNumber\000"
  5455      656E7365 
  5455      5F476574 
  5455      57696467 
  5455      65744E75 
  5456              	.LASF76:
- 5457 05c4 6465626F 		.ascii	"debounce\000"
+ 5457 05cf 6465626F 		.ascii	"debounce\000"
  5457      756E6365 
  5457      00
  5458              	.LASF28:
- 5459 05cd 70747250 		.ascii	"ptrPreScan\000"
+ 5459 05d8 70747250 		.ascii	"ptrPreScan\000"
  5459      72655363 
  5459      616E00
  5460              	.LASF75:
- 5461 05d8 43617053 		.ascii	"CapSense_CheckIsSensorActive\000"
+ 5461 05e3 43617053 		.ascii	"CapSense_CheckIsSensorActive\000"
  5461      656E7365 
  5461      5F436865 
  5461      636B4973 
  5461      53656E73 
  5462              	.LASF27:
- 5463 05f5 70747247 		.ascii	"ptrGetRaw\000"
+ 5463 0600 70747247 		.ascii	"ptrGetRaw\000"
  5463      65745261 
  5463      7700
  5464              	.LASF53:
- 5465 05ff 43617053 		.ascii	"CapSense_UpdateSensorBaseline\000"
+ 5465 060a 43617053 		.ascii	"CapSense_UpdateSensorBaseline\000"
  5465      656E7365 
  5465      5F557064 
  5465      61746553 
  5465      656E736F 
  5466              	.LASF40:
- 5467 061d 43617053 		.ascii	"CapSense_BaseInit\000"
+ 5467 0628 43617053 		.ascii	"CapSense_BaseInit\000"
  5467      656E7365 
  5467      5F426173 
  5467      65496E69 
  5467      7400
  5468              	.LASF94:
- 5469 062f 43617053 		.ascii	"CapSense_CalcCentroid\000"
+ 5469 063a 43617053 		.ascii	"CapSense_CalcCentroid\000"
  5469      656E7365 
  5469      5F43616C 
  5469      6343656E 
  5469      74726F69 
  5470              	.LASF118:
- 5471 0645 43617053 		.ascii	"CapSense_sensorRaw\000"
+ 5471 0650 43617053 		.ascii	"CapSense_sensorRaw\000"
  5471      656E7365 
  5471      5F73656E 
  5471      736F7252 
  5471      617700
  5472              	.LASF111:
- 5473 0658 43617053 		.ascii	"CapSense_GetLowBaselineReset\000"
+ 5473 0663 43617053 		.ascii	"CapSense_GetLowBaselineReset\000"
  5473      656E7365 
  5473      5F476574 
  5473      4C6F7742 
  5473      6173656C 
  5474              	.LASF72:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 152
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 152
 
 
- 5475 0675 43617053 		.ascii	"CapSense_SetNegativeNoiseThreshold\000"
+ 5475 0680 43617053 		.ascii	"CapSense_SetNegativeNoiseThreshold\000"
  5475      656E7365 
  5475      5F536574 
  5475      4E656761 
  5475      74697665 
  5476              	.LASF11:
- 5477 0698 75696E74 		.ascii	"uint32\000"
+ 5477 06a3 75696E74 		.ascii	"uint32\000"
  5477      333200
  5478              	.LASF104:
- 5479 069f 66697273 		.ascii	"firstTimeIndex\000"
+ 5479 06aa 66697273 		.ascii	"firstTimeIndex\000"
  5479      7454696D 
  5479      65496E64 
  5479      657800
  5480              	.LASF93:
- 5481 06ae 73746172 		.ascii	"startOfSlider\000"
+ 5481 06b9 73746172 		.ascii	"startOfSlider\000"
  5481      744F6653 
  5481      6C696465 
  5481      7200
  5482              	.LASF71:
- 5483 06bc 43617053 		.ascii	"CapSense_SetFingerHysteresis\000"
+ 5483 06c7 43617053 		.ascii	"CapSense_SetFingerHysteresis\000"
  5483      656E7365 
  5483      5F536574 
  5483      46696E67 
  5483      65724879 
  5484              	.LASF65:
- 5485 06d9 43617053 		.ascii	"CapSense_GetFingerThreshold\000"
+ 5485 06e4 43617053 		.ascii	"CapSense_GetFingerThreshold\000"
  5485      656E7365 
  5485      5F476574 
  5485      46696E67 
  5485      65725468 
  5486              	.LASF137:
- 5487 06f5 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 5487 0700 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
  5487      4320342E 
  5487      382E3420 
  5487      32303134 
  5487      30353236 
- 5488 0728 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 5488 0733 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
  5488      20726576 
  5488      6973696F 
  5488      6E203231 
  5488      31333538 
- 5489 075b 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 5489 0766 30202D66 		.ascii	"0 -ffunction-sections\000"
  5489      66756E63 
  5489      74696F6E 
  5489      2D736563 
  5489      74696F6E 
  5490              	.LASF100:
- 5491 0771 6E756D65 		.ascii	"numerator\000"
+ 5491 077c 6E756D65 		.ascii	"numerator\000"
  5491      7261746F 
  5491      7200
  5492              	.LASF58:
- 5493 077b 6C617374 		.ascii	"lastSensor\000"
+ 5493 0786 6C617374 		.ascii	"lastSensor\000"
  5493      53656E73 
  5493      6F7200
  5494              	.LASF37:
- 5495 0786 6866636C 		.ascii	"hfclkFreq_MHz\000"
+ 5495 0791 6866636C 		.ascii	"hfclkFreq_MHz\000"
  5495      6B467265 
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 153
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 153
 
 
  5495      715F4D48 
  5495      7A00
  5496              	.LASF102:
- 5497 0794 43617053 		.ascii	"CapSense_GetCentroidPos\000"
+ 5497 079f 43617053 		.ascii	"CapSense_GetCentroidPos\000"
  5497      656E7365 
  5497      5F476574 
  5497      43656E74 
  5497      726F6964 
  5498              	.LASF19:
- 5499 07ac 69646163 		.ascii	"idac2LevelsTbl\000"
+ 5499 07b7 69646163 		.ascii	"idac2LevelsTbl\000"
  5499      324C6576 
  5499      656C7354 
  5499      626C00
  5500              	.LASF2:
- 5501 07bb 73686F72 		.ascii	"short int\000"
+ 5501 07c6 73686F72 		.ascii	"short int\000"
  5501      7420696E 
  5501      7400
  5502              	.LASF4:
- 5503 07c5 6C6F6E67 		.ascii	"long int\000"
+ 5503 07d0 6C6F6E67 		.ascii	"long int\000"
  5503      20696E74 
  5503      00
  5504              	.LASF57:
- 5505 07ce 66697273 		.ascii	"firstSensor\000"
+ 5505 07d9 66697273 		.ascii	"firstSensor\000"
  5505      7453656E 
  5505      736F7200 
  5506              	.LASF92:
- 5507 07da 74656D70 		.ascii	"temp\000"
+ 5507 07e5 74656D70 		.ascii	"temp\000"
  5507      00
  5508              	.LASF88:
- 5509 07df 43617053 		.ascii	"CapSense_FindMaximum\000"
+ 5509 07ea 43617053 		.ascii	"CapSense_FindMaximum\000"
  5509      656E7365 
  5509      5F46696E 
  5509      644D6178 
  5509      696D756D 
  5510              	.LASF23:
- 5511 07f4 77696467 		.ascii	"widgetNubmersTbl\000"
+ 5511 07ff 77696467 		.ascii	"widgetNubmersTbl\000"
  5511      65744E75 
  5511      626D6572 
  5511      7354626C 
  5511      00
  5512              	.LASF113:
- 5513 0805 43617053 		.ascii	"CapSense_EnableRawDataFilters\000"
+ 5513 0810 43617053 		.ascii	"CapSense_EnableRawDataFilters\000"
  5513      656E7365 
  5513      5F456E61 
  5513      626C6552 
  5513      61774461 
  5514              	.LASF126:
- 5515 0823 43617053 		.ascii	"CapSense_lowBaselineReset\000"
+ 5515 082e 43617053 		.ascii	"CapSense_lowBaselineReset\000"
  5515      656E7365 
  5515      5F6C6F77 
  5515      42617365 
  5515      6C696E65 
  5516              	.LASF101:
- 5517 083d 64656E6F 		.ascii	"denominator\000"
+ 5517 0848 64656E6F 		.ascii	"denominator\000"
  5517      6D696E61 
  5517      746F7200 
  5518              	.LASF121:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 154
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 154
 
 
- 5519 0849 43617053 		.ascii	"CapSense_sensorBaseline\000"
+ 5519 0854 43617053 		.ascii	"CapSense_sensorBaseline\000"
  5519      656E7365 
  5519      5F73656E 
  5519      736F7242 
  5519      6173656C 
  5520              	.LASF91:
- 5521 0861 6D617869 		.ascii	"maximum\000"
+ 5521 086c 6D617869 		.ascii	"maximum\000"
  5521      6D756D00 
  5522              	.LASF17:
- 5523 0869 73697A65 		.ascii	"sizetype\000"
+ 5523 0874 73697A65 		.ascii	"sizetype\000"
  5523      74797065 
  5523      00
  5524              	.LASF5:
- 5525 0872 6C6F6E67 		.ascii	"long unsigned int\000"
+ 5525 087d 6C6F6E67 		.ascii	"long unsigned int\000"
  5525      20756E73 
  5525      69676E65 
  5525      6420696E 
  5525      7400
  5526              	.LASF38:
- 5527 0884 706F696E 		.ascii	"pointers\000"
+ 5527 088f 706F696E 		.ascii	"pointers\000"
  5527      74657273 
  5527      00
  5528              	.LASF52:
- 5529 088d 6E6F6973 		.ascii	"noiseThreshold\000"
+ 5529 0898 6E6F6973 		.ascii	"noiseThreshold\000"
  5529      65546872 
  5529      6573686F 
  5529      6C6400
  5530              	.LASF32:
- 5531 089c 43617053 		.ascii	"CapSense_CONFIG_TYPE_POINTERS_P4_v2_20\000"
+ 5531 08a7 43617053 		.ascii	"CapSense_CONFIG_TYPE_POINTERS_P4_v2_20\000"
  5531      656E7365 
  5531      5F434F4E 
  5531      4649475F 
  5531      54595045 
  5532              	.LASF109:
- 5533 08c3 43617053 		.ascii	"CapSense_JitterFilter\000"
+ 5533 08ce 43617053 		.ascii	"CapSense_JitterFilter\000"
  5533      656E7365 
  5533      5F4A6974 
  5533      74657246 
  5533      696C7465 
  5534              	.LASF73:
- 5535 08d9 43617053 		.ascii	"CapSense_SetDebounce\000"
+ 5535 08e4 43617053 		.ascii	"CapSense_SetDebounce\000"
  5535      656E7365 
  5535      5F536574 
  5535      4465626F 
  5535      756E6365 
  5536              	.LASF78:
- 5537 08ee 66696E67 		.ascii	"fingerThreshold\000"
+ 5537 08f9 66696E67 		.ascii	"fingerThreshold\000"
  5537      65725468 
  5537      72657368 
  5537      6F6C6400 
  5538              	.LASF21:
- 5539 08fe 63686172 		.ascii	"chargeDivTbl\000"
+ 5539 0909 63686172 		.ascii	"chargeDivTbl\000"
  5539      67654469 
  5539      7654626C 
  5539      00
  5540              	.LASF1:
- 5541 090b 756E7369 		.ascii	"unsigned char\000"
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 155
+ 5541 0916 756E7369 		.ascii	"unsigned char\000"
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 155
 
 
  5541      676E6564 
  5541      20636861 
  5541      7200
  5542              	.LASF128:
- 5543 0919 43617053 		.ascii	"CapSense_noiseThreshold\000"
+ 5543 0924 43617053 		.ascii	"CapSense_noiseThreshold\000"
  5543      656E7365 
  5543      5F6E6F69 
  5543      73655468 
  5543      72657368 
  5544              	.LASF77:
- 5545 0931 6465626F 		.ascii	"debounceIndex\000"
+ 5545 093c 6465626F 		.ascii	"debounceIndex\000"
  5545      756E6365 
  5545      496E6465 
  5545      7800
  5546              	.LASF43:
- 5547 093f 43617053 		.ascii	"CapSense_InitializeAllBaselines\000"
+ 5547 094a 43617053 		.ascii	"CapSense_InitializeAllBaselines\000"
  5547      656E7365 
  5547      5F496E69 
  5547      7469616C 
  5547      697A6541 
  5548              	.LASF61:
- 5549 095f 43617053 		.ascii	"CapSense_GetBaselineData\000"
+ 5549 096a 43617053 		.ascii	"CapSense_GetBaselineData\000"
  5549      656E7365 
  5549      5F476574 
  5549      42617365 
  5549      6C696E65 
  5550              	.LASF74:
- 5551 0978 43617053 		.ascii	"CapSense_SetLowBaselineReset\000"
+ 5551 0983 43617053 		.ascii	"CapSense_SetLowBaselineReset\000"
  5551      656E7365 
  5551      5F536574 
  5551      4C6F7742 
  5551      6173656C 
  5552              	.LASF20:
- 5553 0995 73656E73 		.ascii	"sensetivityTbl\000"
+ 5553 09a0 73656E73 		.ascii	"sensetivityTbl\000"
  5553      65746976 
  5553      69747954 
  5553      626C00
  5554              	.LASF115:
- 5555 09a4 43617053 		.ascii	"CapSense_centroidMult\000"
+ 5555 09af 43617053 		.ascii	"CapSense_centroidMult\000"
  5555      656E7365 
  5555      5F63656E 
  5555      74726F69 
  5555      644D756C 
  5556              	.LASF84:
- 5557 09ba 73746174 		.ascii	"state\000"
+ 5557 09c5 73746174 		.ascii	"state\000"
  5557      6500
  5558              	.LASF136:
- 5559 09c0 43617053 		.ascii	"CapSense_enableRawFilters\000"
+ 5559 09cb 43617053 		.ascii	"CapSense_enableRawFilters\000"
  5559      656E7365 
  5559      5F656E61 
  5559      626C6552 
  5559      61774669 
  5560              	.LASF22:
- 5561 09da 6D6F6444 		.ascii	"modDivTbl\000"
+ 5561 09e5 6D6F6444 		.ascii	"modDivTbl\000"
  5561      69765462 
  5561      6C00
  5562              	.LASF0:
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 156
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 156
 
 
- 5563 09e4 7369676E 		.ascii	"signed char\000"
+ 5563 09ef 7369676E 		.ascii	"signed char\000"
  5563      65642063 
  5563      68617200 
  5564              	.LASF3:
- 5565 09f0 73686F72 		.ascii	"short unsigned int\000"
+ 5565 09fb 73686F72 		.ascii	"short unsigned int\000"
  5565      7420756E 
  5565      7369676E 
  5565      65642069 
  5565      6E7400
  5566              	.LASF106:
- 5567 0a03 43617053 		.ascii	"CapSense_GetRadialCentroidPos\000"
+ 5567 0a0e 43617053 		.ascii	"CapSense_GetRadialCentroidPos\000"
  5567      656E7365 
  5567      5F476574 
  5567      52616469 
  5567      616C4365 
  5568              	.LASF31:
- 5569 0a21 70747253 		.ascii	"ptrSetBitValue\000"
+ 5569 0a2c 70747253 		.ascii	"ptrSetBitValue\000"
  5569      65744269 
  5569      7456616C 
  5569      756500
  5570              	.LASF107:
- 5571 0a30 43617053 		.ascii	"CapSense_MedianFilter\000"
+ 5571 0a3b 43617053 		.ascii	"CapSense_MedianFilter\000"
  5571      656E7365 
  5571      5F4D6564 
  5571      69616E46 
  5571      696C7465 
  5572              	.LASF49:
- 5573 0a46 74656D70 		.ascii	"tempRaw\000"
+ 5573 0a51 74656D70 		.ascii	"tempRaw\000"
  5573      52617700 
  5574              	.LASF112:
- 5575 0a4e 43617053 		.ascii	"CapSense_GetDebounce\000"
+ 5575 0a59 43617053 		.ascii	"CapSense_GetDebounce\000"
  5575      656E7365 
  5575      5F476574 
  5575      4465626F 
  5575      756E6365 
  5576              	.LASF81:
- 5577 0a63 43617053 		.ascii	"CapSense_CheckIsWidgetActive\000"
+ 5577 0a6e 43617053 		.ascii	"CapSense_CheckIsWidgetActive\000"
  5577      656E7365 
  5577      5F436865 
  5577      636B4973 
  5577      57696467 
  5578              	.LASF9:
- 5579 0a80 75696E74 		.ascii	"uint8\000"
+ 5579 0a8b 75696E74 		.ascii	"uint8\000"
  5579      3800
  5580              	.LASF15:
- 5581 0a86 646F7562 		.ascii	"double\000"
+ 5581 0a91 646F7562 		.ascii	"double\000"
  5581      6C6500
  5582              	.LASF134:
- 5583 0a8d 43617053 		.ascii	"CapSense_rawFilterData1\000"
+ 5583 0a98 43617053 		.ascii	"CapSense_rawFilterData1\000"
  5583      656E7365 
  5583      5F726177 
  5583      46696C74 
  5583      65724461 
  5584              	.LASF99:
- 5585 0aa5 706F7369 		.ascii	"position\000"
+ 5585 0ab0 706F7369 		.ascii	"position\000"
  5585      74696F6E 
  5585      00
-ARM GAS  C:\Users\IEUser\AppData\Local\Temp\cctak5Pf.s 			page 157
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccngh6Q3.s 			page 157
 
 
  5586              	.LASF124:
- 5587 0aae 43617053 		.ascii	"CapSense_sensorOnMask\000"
+ 5587 0ab9 43617053 		.ascii	"CapSense_sensorOnMask\000"
  5587      656E7365 
  5587      5F73656E 
  5587      736F724F 

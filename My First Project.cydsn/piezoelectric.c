@@ -19,10 +19,12 @@ uint8 volume = 1;
 uint8 tempo = 120;
 int const f_clock = 2000000;
 int const freq_mod = 10;
+uint16 current_frequency = 0;
 
 
 void piezo_tone(uint16 frequency_value) 
 {
+    current_frequency = frequency_value;
     // duty cycle ticks is a percentage of frequency based on volume
     int period_ticks = f_clock * freq_mod / frequency_value;
     uint16 compare_ticks = period_ticks * volume / 100;
@@ -43,6 +45,7 @@ void piezo_tone(uint16 frequency_value)
 void piezo_volume(uint8 value)
 {
     volume = value;
+    piezo_tone(current_frequency);
 }
     
 void piezo_tempo(uint8 bpm)

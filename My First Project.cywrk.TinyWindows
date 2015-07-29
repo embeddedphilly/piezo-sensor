@@ -13,13 +13,14 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="My First Project\My First Project\Generated_Source\PSoC4\Timer_1\Timer_1.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="My First Project\My First Project\Header Files\state.h">
 <ExpandedNodeIds>
 <v>My First Project</v>
 <v>My First Project\My First Project</v>
 <v>My First Project\My First Project\TopDesign</v>
 <v>My First Project\My First Project\My First Project.cydwr</v>
 <v>My First Project\My First Project\Header Files</v>
+<v>My First Project\My First Project\Header Files\notes.h</v>
 <v>My First Project\My First Project\Header Files\piezoelectric.h</v>
 <v>My First Project\My First Project\Header Files\state.h</v>
 <v>My First Project\My First Project\Header Files\tones.h</v>
@@ -28,6 +29,27 @@
 <v>My First Project\My First Project\Source Files\piezoelectric.c</v>
 <v>My First Project\My First Project\Generated_Source</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_CSHL.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_CSHL.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_INT.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_IP.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_PM.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_PVT.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_SMS.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_SMS.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_TunerHelper.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_TunerHelper.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SampleClk</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SampleClk\CapSense_SampleClk.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SampleClk\CapSense_SampleClk.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SenseClk</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SenseClk\CapSense_SenseClk.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SenseClk\CapSense_SenseClk.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_Sns</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_Sns\CapSense_Sns_aliases.h</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1\Clock_1.c</v>
 <v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1\Clock_1.h</v>
@@ -92,37 +114,50 @@
 <v>My First Project\My First Project\Generated_Source\PSoC4\project.h</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cy_boot\cyPm.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cy_boot\cytypes.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cy_boot\cyutils.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cy_lfclk</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cy_lfclk\CyLFClk.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cy_lfclk\CyLFClk.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\ISR_1</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\ISR_1\ISR_1.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\ISR_1\ISR_1.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\PIEZO_PIN</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\PIEZO_PIN\PIEZO_PIN.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\PIEZO_PIN\PIEZO_PIN.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\PIEZO_PIN\PIEZO_PIN_aliases.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\PWM_1</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\PWM_1\PWM_1.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\PWM_1\PWM_1.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\PWM_1\PWM_1_PM.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\Timer_1</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\Timer_1\Timer_1.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\Timer_1\Timer_1.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\Timer_1\Timer_1_PM.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\TRIGGER_TIMER</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\TRIGGER_TIMER\TRIGGER_TIMER.c</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\TRIGGER_TIMER\TRIGGER_TIMER.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\TRIGGER_TIMER\TRIGGER_TIMER_aliases.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cydevice_trm.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cydevicerv_trm.inc</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cydisabledsheets.h</v>
-<v>My First Project\My First Project\Generated_Source\PSoC4\cyfitter.h</v>
+<v>My First Project</v>
+<v>My First Project\My First Project</v>
+<v>My First Project\My First Project\TopDesign</v>
+<v>My First Project\My First Project\My First Project.cydwr</v>
+<v>My First Project\My First Project\Header Files</v>
+<v>My First Project\My First Project\Header Files\notes.h</v>
+<v>My First Project\My First Project\Header Files\piezoelectric.h</v>
+<v>My First Project\My First Project\Header Files\state.h</v>
+<v>My First Project\My First Project\Header Files\tones.h</v>
+<v>My First Project\My First Project\Source Files</v>
+<v>My First Project\My First Project\Source Files\main.c</v>
+<v>My First Project\My First Project\Source Files\piezoelectric.c</v>
+<v>My First Project\My First Project\Generated_Source</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_CSHL.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_CSHL.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_INT.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_IP.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_PM.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_PVT.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_SMS.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_SMS.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_TunerHelper.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense\CapSense_TunerHelper.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SampleClk</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SampleClk\CapSense_SampleClk.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SampleClk\CapSense_SampleClk.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SenseClk</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SenseClk\CapSense_SenseClk.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_SenseClk\CapSense_SenseClk.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_Sns</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\CapSense_Sns\CapSense_Sns_aliases.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1\Clock_1.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\Clock_1\Clock_1.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\Clock_2</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\Clock_2\Clock_2.c</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\Clock_2\Clock_2.h</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\cy_boot</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\cy_boot\cm0gcc.ld</v>
+<v>My First Project\My First Project\Generated_Source\PSoC4\cy_boot\Cm0Iar.icf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -147,6 +182,14 @@
 <v>My First Project\My First Project\CortexM0\ARM_GCC_484</v>
 <v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug</v>
 <v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files</v>
+<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CapSense.lst</v>
+<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CapSense_CSHL.lst</v>
+<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CapSense_INT.lst</v>
+<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CapSense_PM.lst</v>
+<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CapSense_SampleClk.lst</v>
+<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CapSense_SenseClk.lst</v>
+<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CapSense_SMS.lst</v>
+<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CapSense_TunerHelper.lst</v>
 <v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\Clock_1.lst</v>
 <v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\Clock_2.lst</v>
 <v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\Cm0Start.lst</v>
@@ -177,34 +220,8 @@
 <VisibleNodeIds>
 <v>My First Project</v>
 <v>My First Project\My First Project</v>
-<v>My First Project\My First Project\CortexM0</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\Clock_1.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\Clock_2.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\Cm0Start.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CyFlash.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CyLFClk.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\CyLib.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\cymetadata.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\cyPm.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\cyutils.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\ISR_1.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\main.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\PIEZO_PIN.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\piezoelectric.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\PWM_1.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\PWM_1_PM.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\Timer_1.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\Timer_1_PM.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\Listing Files\TRIGGER_TIMER.lst</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\My First Project.elf</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\My First Project.hex</v>
-<v>My First Project\My First Project\CortexM0\ARM_GCC_484\Debug\My First Project.map</v>
-<v>My First Project\My First Project\My First Project.gpdsc</v>
+<v>My First Project\My First Project\My First Project.rpt</v>
+<v>My First Project\My First Project\My First Project_timing.html</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -259,6 +276,9 @@
 <name v=".\My First Project.cydsn\piezoelectric.c" />
 <name v=".\My First Project.cydsn\main.c" />
 <name v=".\My First Project.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\My First Project.cydsn\state.h" />
+<name v=".\My First Project.cydsn\Generated_Source\PSoC4\ISR_1.c" />
+<name v=".\My First Project.cydsn\Generated_Source\PSoC4\Timer_1.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

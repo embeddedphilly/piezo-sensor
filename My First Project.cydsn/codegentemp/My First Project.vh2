@@ -2,7 +2,7 @@
 --	Conversion of My First Project.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Jul 29 12:02:24 2015
+--	Wed Jul 29 17:46:11 2015
 --
 
 USE cypress.cypress.all;
