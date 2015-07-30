@@ -65,7 +65,7 @@ CY_ISR_PROTO(CapSense_ISR);
 
 #define CapSense_MULTIPLE_FREQUENCY_SET     (1u)
 #define CapSense_FILTER_ENABLE			    (0u)
-#define CapSense_PRS_OPTIONS                (3u)
+#define CapSense_PRS_OPTIONS                (0u)
 
 #define CapSense_WATER_PROOF                (0u)
 

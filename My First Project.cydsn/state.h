@@ -15,6 +15,7 @@
 
     #define STATE_READY 1
     #define STATE_PLAY  2
+    #define STATE_END   3
     
     /* CapSense Slider resoluton is set to 127 (7 bits)*/
     #define MAX_SLIDER 127

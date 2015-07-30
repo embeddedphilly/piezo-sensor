@@ -38,6 +38,7 @@
         <Files Root="C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn">
           <File BuildType="BUILD" Toolchain="">.\main.c</File>
           <File BuildType="BUILD" Toolchain="">.\piezoelectric.c</File>
+          <File BuildType="BUILD" Toolchain="">.\test.c</File>
           <File BuildType="BUILD" Toolchain="">.\piezoelectric.h</File>
           <File BuildType="BUILD" Toolchain="">.\tones.h</File>
           <File BuildType="BUILD" Toolchain="">.\notes.h</File>

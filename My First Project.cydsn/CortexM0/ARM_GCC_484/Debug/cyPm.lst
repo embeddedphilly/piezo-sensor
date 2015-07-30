@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
   30:.\Generated_Source\PSoC4/cyPm.c **** *  its main clock can be removed. It is identical to Active from a peripheral
   31:.\Generated_Source\PSoC4/cyPm.c **** *  point of view. Any enabled interrupts can cause wakeup from the  Sleep mode.
   32:.\Generated_Source\PSoC4/cyPm.c **** *
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 2
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/cyPm.c **** * Parameters:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
   53:.\Generated_Source\PSoC4/cyPm.c **** }
   60              		.loc 1 53 0
   61 0028 BD46     		mov	sp, r7
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 3
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 3
 
 
   62 002a 03B0     		add	sp, sp, #12
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
   90              		.cfi_def_cfa_register 7
   80:.\Generated_Source\PSoC4/cyPm.c ****     uint8 interruptState;
   81:.\Generated_Source\PSoC4/cyPm.c ****     #if(CY_IP_SRSSV2)
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 4
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 4
 
 
   82:.\Generated_Source\PSoC4/cyPm.c ****         volatile uint32 clkSelectReg;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  102:.\Generated_Source\PSoC4/cyPm.c ****     #if(CY_IP_SRSSV2)
  103:.\Generated_Source\PSoC4/cyPm.c ****         /* Preserve system clock configuration and
  104:.\Generated_Source\PSoC4/cyPm.c ****         * reduce sysclk to <=12 MHz (Cypress ID #158710, #179888).
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 5
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 5
 
 
  105:.\Generated_Source\PSoC4/cyPm.c ****         */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  160 0074 90BD     		pop	{r4, r7, pc}
  161              	.L6:
  162 0076 C046     		.align	2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 6
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 6
 
 
  163              	.L5:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  161:.\Generated_Source\PSoC4/cyPm.c ****     {
  180              		.loc 1 161 0
  181              		.cfi_startproc
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 7
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 7
 
 
  182 0000 90B5     		push	{r4, r7, lr}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  218 0034 0C4B     		ldr	r3, .L8+16
  219 0036 0C4A     		ldr	r2, .L8+16
  220 0038 1268     		ldr	r2, [r2]
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 8
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 8
 
 
  221 003a FF21     		mov	r1, #255
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  194:.\Generated_Source\PSoC4/cyPm.c ****     ********************************************************************************
  195:.\Generated_Source\PSoC4/cyPm.c ****     *
  196:.\Generated_Source\PSoC4/cyPm.c ****     * Summary:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 9
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 9
 
 
  197:.\Generated_Source\PSoC4/cyPm.c ****     *  Puts the part into the Stop state. All internal supplies are off;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  282 001a FFF7FEFF 		bl	CySysPmFreezeIo
  230:.\Generated_Source\PSoC4/cyPm.c **** 
  231:.\Generated_Source\PSoC4/cyPm.c ****         /* Initiates transition to Stop state */
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 10
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 10
 
 
  232:.\Generated_Source\PSoC4/cyPm.c ****         CY_PM_PWR_STOP_REG = CY_PM_PWR_STOP_REG | CY_PM_PWR_STOP_STOP;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  319              		.align	2
  320              		.global	CySysPmSetWakeupPolarity
  321              		.code	16
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 11
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 11
 
 
  322              		.thumb_func
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  346              		.loc 1 279 0
  347 0016 7A68     		ldr	r2, [r7, #4]
  348 0018 002A     		cmp	r2, #0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 12
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 12
 
 
  349 001a 05D0     		beq	.L14
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  287:.\Generated_Source\PSoC4/cyPm.c ****     * Function Name: CySysPmGetResetReason
  288:.\Generated_Source\PSoC4/cyPm.c ****     ********************************************************************************
  289:.\Generated_Source\PSoC4/cyPm.c ****     *
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 13
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 13
 
 
  290:.\Generated_Source\PSoC4/cyPm.c ****     * Summary:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  320:.\Generated_Source\PSoC4/cyPm.c ****             break;
  321:.\Generated_Source\PSoC4/cyPm.c **** 
  322:.\Generated_Source\PSoC4/cyPm.c ****         /* Wakeup from Stop (through WAKEUP pin assert) */
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 14
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 14
 
 
  323:.\Generated_Source\PSoC4/cyPm.c ****         case CY_PM_PWR_STOP_TOKEN_STOP:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  455              		.align	2
  456              		.global	CySysPmFreezeIo
  457              		.code	16
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 15
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 15
 
 
  458              		.thumb_func
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  480 0012 1A68     		ldr	r2, [r3]
  481 0014 8023     		mov	r3, #128
  482 0016 9B02     		lsl	r3, r3, #10
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 16
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 16
 
 
  483 0018 1340     		and	r3, r2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  519              		.align	2
  520              	.L29:
  521 004c 2C000B40 		.word	1074462764
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 17
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 17
 
 
  522 0050 FF000100 		.word	65791
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  546              		.loc 1 412 0
  547 0006 FC1D     		add	r4, r7, #7
  548 0008 FFF7FEFF 		bl	CyEnterCriticalSection
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 18
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 18
 
 
  549 000c 031C     		mov	r3, r0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  584              		@ sp needed
  585 0044 90BD     		pop	{r4, r7, pc}
  586              	.L33:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 19
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 19
 
 
  587 0046 C046     		.align	2
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  641 0058 07       		.byte	0x7
  642 0059 4D010000 		.4byte	.LASF7
  643 005d 03       		.uleb128 0x3
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 20
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 20
 
 
  644 005e 04       		.byte	0x4
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  698 00cf 01       		.byte	0x1
  699 00d0 28       		.byte	0x28
  700 00d1 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 21
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 21
 
 
  701 00d5 34000000 		.4byte	.LFE0-.LFB0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  755 0141 91       		.byte	0x91
  756 0142 6F       		.sleb128 -17
  757 0143 00       		.byte	0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 22
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 22
 
 
  758 0144 09       		.uleb128 0x9
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  812 01b5 53020000 		.4byte	.LASF25
  813 01b9 01       		.byte	0x1
  814 01ba 6101     		.2byte	0x161
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 23
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 23
 
 
  815 01bc 00000000 		.4byte	.LFB6
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  869 0014 24       		.uleb128 0x24
  870 0015 00       		.byte	0
  871 0016 0B       		.uleb128 0xb
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 24
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 24
 
 
  872 0017 0B       		.uleb128 0xb
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  926 004d 3F       		.uleb128 0x3f
  927 004e 19       		.uleb128 0x19
  928 004f 03       		.uleb128 0x3
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 25
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 25
 
 
  929 0050 0E       		.uleb128 0xe
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  983 0088 19       		.uleb128 0x19
  984 0089 00       		.byte	0
  985 008a 00       		.byte	0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 26
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 26
 
 
  986 008b 0A       		.uleb128 0xa
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  1040 00c2 00       		.byte	0
  1041 00c3 0D       		.uleb128 0xd
  1042 00c4 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 27
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 27
 
 
  1043 00c5 01       		.byte	0x1
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  1097 000b 00       		.byte	0
  1098 000c 0000     		.2byte	0
  1099 000e 0000     		.2byte	0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 28
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 28
 
 
  1100 0010 00000000 		.4byte	.LFB0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  1146      65745761 
  1146      6B657570 
  1146      506F6C61 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 29
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 29
 
 
  1147              	.LASF18:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  1166      3800
  1167              	.LASF29:
  1168 010d 43795379 		.ascii	"CySysPmStop\000"
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 30
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 30
 
 
  1168      73506D53 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 1
  1191      74797065 
  1191      00
  1192              	.LASF6:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccd3TzeK.s 			page 31
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccHf8xTd.s 			page 31
 
 
  1193 01e3 6C6F6E67 		.ascii	"long long int\000"

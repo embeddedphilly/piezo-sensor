@@ -85,7 +85,7 @@ uint16 previousSampleTbl[CapSense_TOTAL_SENSOR_COUNT];
 uint8 kValueTbl[CapSense_TOTAL_SENSOR_COUNT];
 
 uint8 SMS_LIB_SensorSensitivity[] = {
-    4u, 4u, 4u, 4u, 4u, 
+    2u, 2u, 2u, 2u, 2u, 
 };
 
 CapSense_CONFIG_TYPE_P4_v2_20 CapSense_config;

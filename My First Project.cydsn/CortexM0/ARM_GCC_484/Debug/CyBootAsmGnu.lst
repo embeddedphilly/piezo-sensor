@@ -6862,94 +6862,94 @@ ARM GAS  .\Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
    5              	/* ISR_1 */
    6              	.set ISR_1__INTC_CLR_EN_REG, CYREG_CM0_ICER
    7              	.set ISR_1__INTC_CLR_PD_REG, CYREG_CM0_ICPR
-   8              	.set ISR_1__INTC_MASK, 0x10000
-   9              	.set ISR_1__INTC_NUMBER, 16
-  10              	.set ISR_1__INTC_PRIOR_MASK, 0xC0
+   8              	.set ISR_1__INTC_MASK, 0x20000
+   9              	.set ISR_1__INTC_NUMBER, 17
+  10              	.set ISR_1__INTC_PRIOR_MASK, 0xC000
   11              	.set ISR_1__INTC_PRIOR_NUM, 3
   12              	.set ISR_1__INTC_PRIOR_REG, CYREG_CM0_IPR4
   13              	.set ISR_1__INTC_SET_EN_REG, CYREG_CM0_ISER
   14              	.set ISR_1__INTC_SET_PD_REG, CYREG_CM0_ISPR
   15              	
   16              	/* PWM_1_cy_m0s8_tcpwm_1 */
-  17              	.set PWM_1_cy_m0s8_tcpwm_1__CC, CYREG_TCPWM_CNT1_CC
-  18              	.set PWM_1_cy_m0s8_tcpwm_1__CC_BUFF, CYREG_TCPWM_CNT1_CC_BUFF
-  19              	.set PWM_1_cy_m0s8_tcpwm_1__COUNTER, CYREG_TCPWM_CNT1_COUNTER
-  20              	.set PWM_1_cy_m0s8_tcpwm_1__CTRL, CYREG_TCPWM_CNT1_CTRL
-  21              	.set PWM_1_cy_m0s8_tcpwm_1__INTR, CYREG_TCPWM_CNT1_INTR
-  22              	.set PWM_1_cy_m0s8_tcpwm_1__INTR_MASK, CYREG_TCPWM_CNT1_INTR_MASK
-  23              	.set PWM_1_cy_m0s8_tcpwm_1__INTR_MASKED, CYREG_TCPWM_CNT1_INTR_MASKED
-  24              	.set PWM_1_cy_m0s8_tcpwm_1__INTR_SET, CYREG_TCPWM_CNT1_INTR_SET
-  25              	.set PWM_1_cy_m0s8_tcpwm_1__PERIOD, CYREG_TCPWM_CNT1_PERIOD
-  26              	.set PWM_1_cy_m0s8_tcpwm_1__PERIOD_BUFF, CYREG_TCPWM_CNT1_PERIOD_BUFF
-  27              	.set PWM_1_cy_m0s8_tcpwm_1__STATUS, CYREG_TCPWM_CNT1_STATUS
+  17              	.set PWM_1_cy_m0s8_tcpwm_1__CC, CYREG_TCPWM_CNT0_CC
+  18              	.set PWM_1_cy_m0s8_tcpwm_1__CC_BUFF, CYREG_TCPWM_CNT0_CC_BUFF
+  19              	.set PWM_1_cy_m0s8_tcpwm_1__COUNTER, CYREG_TCPWM_CNT0_COUNTER
+  20              	.set PWM_1_cy_m0s8_tcpwm_1__CTRL, CYREG_TCPWM_CNT0_CTRL
+  21              	.set PWM_1_cy_m0s8_tcpwm_1__INTR, CYREG_TCPWM_CNT0_INTR
+  22              	.set PWM_1_cy_m0s8_tcpwm_1__INTR_MASK, CYREG_TCPWM_CNT0_INTR_MASK
+  23              	.set PWM_1_cy_m0s8_tcpwm_1__INTR_MASKED, CYREG_TCPWM_CNT0_INTR_MASKED
+  24              	.set PWM_1_cy_m0s8_tcpwm_1__INTR_SET, CYREG_TCPWM_CNT0_INTR_SET
+  25              	.set PWM_1_cy_m0s8_tcpwm_1__PERIOD, CYREG_TCPWM_CNT0_PERIOD
+  26              	.set PWM_1_cy_m0s8_tcpwm_1__PERIOD_BUFF, CYREG_TCPWM_CNT0_PERIOD_BUFF
+  27              	.set PWM_1_cy_m0s8_tcpwm_1__STATUS, CYREG_TCPWM_CNT0_STATUS
   28              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMD, CYREG_TCPWM_CMD
-  29              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK, 0x02
-  30              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT, 1
-  31              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK, 0x200
-  32              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT, 9
-  33              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK, 0x2000000
-  34              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT, 25
-  35              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK, 0x20000
-  36              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT, 17
+  29              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK, 0x01
+  30              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT, 0
+  31              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK, 0x100
+  32              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT, 8
+  33              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK, 0x1000000
+  34              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT, 24
+  35              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK, 0x10000
+  36              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT, 16
   37              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CTRL, CYREG_TCPWM_CTRL
-  38              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK, 0x02
-  39              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT, 1
+  38              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK, 0x01
+  39              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT, 0
   40              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE, CYREG_TCPWM_INTR_CAUSE
-  41              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK, 0x02
-  42              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT, 1
-  43              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_NUMBER, 1
+  41              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK, 0x01
+  42              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT, 0
+  43              	.set PWM_1_cy_m0s8_tcpwm_1__TCPWM_NUMBER, 0
 ARM GAS  .\Generated_Source\PSoC4\CyBootAsmGnu.s 			page 116
 
 
-  44              	.set PWM_1_cy_m0s8_tcpwm_1__TR_CTRL0, CYREG_TCPWM_CNT1_TR_CTRL0
-  45              	.set PWM_1_cy_m0s8_tcpwm_1__TR_CTRL1, CYREG_TCPWM_CNT1_TR_CTRL1
-  46              	.set PWM_1_cy_m0s8_tcpwm_1__TR_CTRL2, CYREG_TCPWM_CNT1_TR_CTRL2
+  44              	.set PWM_1_cy_m0s8_tcpwm_1__TR_CTRL0, CYREG_TCPWM_CNT0_TR_CTRL0
+  45              	.set PWM_1_cy_m0s8_tcpwm_1__TR_CTRL1, CYREG_TCPWM_CNT0_TR_CTRL1
+  46              	.set PWM_1_cy_m0s8_tcpwm_1__TR_CTRL2, CYREG_TCPWM_CNT0_TR_CTRL2
   47              	
   48              	/* Clock_1 */
   49              	.set Clock_1__DIVIDER_MASK, 0x0000FFFF
-  50              	.set Clock_1__ENABLE, CYREG_CLK_DIVIDER_A01
+  50              	.set Clock_1__ENABLE, CYREG_CLK_DIVIDER_C00
   51              	.set Clock_1__ENABLE_MASK, 0x80000000
   52              	.set Clock_1__MASK, 0x80000000
-  53              	.set Clock_1__REGISTER, CYREG_CLK_DIVIDER_A01
+  53              	.set Clock_1__REGISTER, CYREG_CLK_DIVIDER_C00
   54              	
   55              	/* Clock_2 */
   56              	.set Clock_2__DIVIDER_MASK, 0x0000FFFF
-  57              	.set Clock_2__ENABLE, CYREG_CLK_DIVIDER_C00
+  57              	.set Clock_2__ENABLE, CYREG_CLK_DIVIDER_A01
   58              	.set Clock_2__ENABLE_MASK, 0x80000000
   59              	.set Clock_2__MASK, 0x80000000
-  60              	.set Clock_2__REGISTER, CYREG_CLK_DIVIDER_C00
+  60              	.set Clock_2__REGISTER, CYREG_CLK_DIVIDER_A01
   61              	
   62              	/* Timer_1_cy_m0s8_tcpwm_1 */
-  63              	.set Timer_1_cy_m0s8_tcpwm_1__CC, CYREG_TCPWM_CNT0_CC
-  64              	.set Timer_1_cy_m0s8_tcpwm_1__CC_BUFF, CYREG_TCPWM_CNT0_CC_BUFF
-  65              	.set Timer_1_cy_m0s8_tcpwm_1__COUNTER, CYREG_TCPWM_CNT0_COUNTER
-  66              	.set Timer_1_cy_m0s8_tcpwm_1__CTRL, CYREG_TCPWM_CNT0_CTRL
-  67              	.set Timer_1_cy_m0s8_tcpwm_1__INTR, CYREG_TCPWM_CNT0_INTR
-  68              	.set Timer_1_cy_m0s8_tcpwm_1__INTR_MASK, CYREG_TCPWM_CNT0_INTR_MASK
-  69              	.set Timer_1_cy_m0s8_tcpwm_1__INTR_MASKED, CYREG_TCPWM_CNT0_INTR_MASKED
-  70              	.set Timer_1_cy_m0s8_tcpwm_1__INTR_SET, CYREG_TCPWM_CNT0_INTR_SET
-  71              	.set Timer_1_cy_m0s8_tcpwm_1__PERIOD, CYREG_TCPWM_CNT0_PERIOD
-  72              	.set Timer_1_cy_m0s8_tcpwm_1__PERIOD_BUFF, CYREG_TCPWM_CNT0_PERIOD_BUFF
-  73              	.set Timer_1_cy_m0s8_tcpwm_1__STATUS, CYREG_TCPWM_CNT0_STATUS
+  63              	.set Timer_1_cy_m0s8_tcpwm_1__CC, CYREG_TCPWM_CNT1_CC
+  64              	.set Timer_1_cy_m0s8_tcpwm_1__CC_BUFF, CYREG_TCPWM_CNT1_CC_BUFF
+  65              	.set Timer_1_cy_m0s8_tcpwm_1__COUNTER, CYREG_TCPWM_CNT1_COUNTER
+  66              	.set Timer_1_cy_m0s8_tcpwm_1__CTRL, CYREG_TCPWM_CNT1_CTRL
+  67              	.set Timer_1_cy_m0s8_tcpwm_1__INTR, CYREG_TCPWM_CNT1_INTR
+  68              	.set Timer_1_cy_m0s8_tcpwm_1__INTR_MASK, CYREG_TCPWM_CNT1_INTR_MASK
+  69              	.set Timer_1_cy_m0s8_tcpwm_1__INTR_MASKED, CYREG_TCPWM_CNT1_INTR_MASKED
+  70              	.set Timer_1_cy_m0s8_tcpwm_1__INTR_SET, CYREG_TCPWM_CNT1_INTR_SET
+  71              	.set Timer_1_cy_m0s8_tcpwm_1__PERIOD, CYREG_TCPWM_CNT1_PERIOD
+  72              	.set Timer_1_cy_m0s8_tcpwm_1__PERIOD_BUFF, CYREG_TCPWM_CNT1_PERIOD_BUFF
+  73              	.set Timer_1_cy_m0s8_tcpwm_1__STATUS, CYREG_TCPWM_CNT1_STATUS
   74              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMD, CYREG_TCPWM_CMD
-  75              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK, 0x01
-  76              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT, 0
-  77              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK, 0x100
-  78              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT, 8
-  79              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK, 0x1000000
-  80              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT, 24
-  81              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK, 0x10000
-  82              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT, 16
+  75              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_MASK, 0x02
+  76              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDCAPTURE_SHIFT, 1
+  77              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_MASK, 0x200
+  78              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDRELOAD_SHIFT, 9
+  79              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_MASK, 0x2000000
+  80              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTART_SHIFT, 25
+  81              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_MASK, 0x20000
+  82              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CMDSTOP_SHIFT, 17
   83              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CTRL, CYREG_TCPWM_CTRL
-  84              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK, 0x01
-  85              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT, 0
+  84              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_MASK, 0x02
+  85              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_CTRL_SHIFT, 1
   86              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE, CYREG_TCPWM_INTR_CAUSE
-  87              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK, 0x01
-  88              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT, 0
-  89              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_NUMBER, 0
-  90              	.set Timer_1_cy_m0s8_tcpwm_1__TR_CTRL0, CYREG_TCPWM_CNT0_TR_CTRL0
-  91              	.set Timer_1_cy_m0s8_tcpwm_1__TR_CTRL1, CYREG_TCPWM_CNT0_TR_CTRL1
-  92              	.set Timer_1_cy_m0s8_tcpwm_1__TR_CTRL2, CYREG_TCPWM_CNT0_TR_CTRL2
+  87              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_MASK, 0x02
+  88              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_INTR_CAUSE_SHIFT, 1
+  89              	.set Timer_1_cy_m0s8_tcpwm_1__TCPWM_NUMBER, 1
+  90              	.set Timer_1_cy_m0s8_tcpwm_1__TR_CTRL0, CYREG_TCPWM_CNT1_TR_CTRL0
+  91              	.set Timer_1_cy_m0s8_tcpwm_1__TR_CTRL1, CYREG_TCPWM_CNT1_TR_CTRL1
+  92              	.set Timer_1_cy_m0s8_tcpwm_1__TR_CTRL2, CYREG_TCPWM_CNT1_TR_CTRL2
   93              	
   94              	/* CapSense_Cmod */
   95              	.set CapSense_Cmod__0__DM__MASK, 0x1C0
@@ -7355,7 +7355,7 @@ ARM GAS  .\Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  474              	.set PIEZO_PIN__0__MASK, 0x10
  475              	.set PIEZO_PIN__0__OUT_SEL, CYREG_UDB_PA0_CFG10
  476              	.set PIEZO_PIN__0__OUT_SEL_SHIFT, 8
- 477              	.set PIEZO_PIN__0__OUT_SEL_VAL, 0
+ 477              	.set PIEZO_PIN__0__OUT_SEL_VAL, 1
  478              	.set PIEZO_PIN__0__PA__CFG0, CYREG_UDB_PA0_CFG0
  479              	.set PIEZO_PIN__0__PA__CFG1, CYREG_UDB_PA0_CFG1
  480              	.set PIEZO_PIN__0__PA__CFG10, CYREG_UDB_PA0_CFG10

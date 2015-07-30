@@ -22,11 +22,12 @@ uint16 curPos, oldPos;
 
 int main()
 {
+    CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     PWM_1_Start();
     
     piezo_stop();
-    piezo_tone(4400);
+    //piezo_tone(4400);
     
     CapSense_Start();	
 
@@ -47,19 +48,24 @@ int main()
     uint16* tune;
     int tune_counter = 0;
     
-    int note, tone;
+    int note, tone, length = 16;
 
     // CHANGE THIS FOR NEW TUNE
     tune = melody_simple;
     
-    CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
+   
     for(;;)
     {
         /* Place your application code here. */
         
-        cap_sense_update_volume();
-        /*
+        //cap_sense_update_volume();
+        
         if(state == STATE_READY) {
+            if(tune_counter == length) {
+                state = STATE_END;
+                piezo_stop();
+                for(;;){}
+            }
             tone = tune[tune_counter++];
             note = tune[tune_counter++];
             
@@ -67,7 +73,7 @@ int main()
             piezo_play(tone, note);
             state = STATE_PLAY;
         }
-        */
+        
     }
 
 }

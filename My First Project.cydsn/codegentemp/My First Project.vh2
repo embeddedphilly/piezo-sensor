@@ -2,7 +2,7 @@
 --	Conversion of My First Project.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Jul 29 17:46:11 2015
+--	Wed Jul 29 19:08:42 2015
 --
 
 USE cypress.cypress.all;
@@ -210,7 +210,7 @@ Clock_2:cy_clock_v1_0
 		id=>"93696191-7302-4e76-894c-fa8dccec0360",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"83333333.3333333",
+		period=>"1000000000000",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>Net_85,
@@ -310,7 +310,7 @@ ISR_1:cy_isr_v1_0
 		sample_in=>zero);
 \CapSense:SampleClk\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
-		id=>"ea98003e-a404-4309-9176-1423b4761339/74063576-f256-4f8f-8a82-9abdee876261",
+		id=>"8cd0f9ef-4f13-45a0-bbb6-0e97856b02ad/74063576-f256-4f8f-8a82-9abdee876261",
 		source_clock_id=>"413DE2EF-D9F2-4233-A808-DFAF137FD877",
 		divisor=>255,
 		period=>"0",
@@ -319,7 +319,7 @@ ISR_1:cy_isr_v1_0
 	PORT MAP(clock_out=>\CapSense:Net_420\,
 		dig_domain_out=>open);
 \CapSense:Cmod\:cy_psoc3_pins_v1_10
-	GENERIC MAP(id=>"ea98003e-a404-4309-9176-1423b4761339/899719c0-e797-4403-a44f-07a66de2cbeb",
+	GENERIC MAP(id=>"8cd0f9ef-4f13-45a0-bbb6-0e97856b02ad/899719c0-e797-4403-a44f-07a66de2cbeb",
 		drive_mode=>"000",
 		ibuf_enabled=>"0",
 		init_dr_st=>"1",
@@ -396,7 +396,7 @@ ISR_1:cy_isr_v1_0
 	PORT MAP(iout=>\CapSense:Net_270\,
 		en=>tmpOE__PIEZO_PIN_net_0);
 \CapSense:Sns\:cy_psoc3_pins_v1_10
-	GENERIC MAP(id=>"ea98003e-a404-4309-9176-1423b4761339/73b612cd-240c-4d8e-8340-ea28aabf4b11",
+	GENERIC MAP(id=>"8cd0f9ef-4f13-45a0-bbb6-0e97856b02ad/73b612cd-240c-4d8e-8340-ea28aabf4b11",
 		drive_mode=>"000000000000000",
 		ibuf_enabled=>"00000",
 		init_dr_st=>"11111",
@@ -477,7 +477,7 @@ ISR_1:cy_isr_v1_0
 		en=>tmpOE__PIEZO_PIN_net_0);
 \CapSense:SenseClk\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
-		id=>"ea98003e-a404-4309-9176-1423b4761339/9a635726-510c-483c-9c5c-3e233ee2906a",
+		id=>"8cd0f9ef-4f13-45a0-bbb6-0e97856b02ad/9a635726-510c-483c-9c5c-3e233ee2906a",
 		source_clock_id=>"413DE2EF-D9F2-4233-A808-DFAF137FD877",
 		divisor=>255,
 		period=>"0",

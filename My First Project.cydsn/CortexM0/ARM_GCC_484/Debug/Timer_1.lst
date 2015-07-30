@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
   24:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
   25:.\Generated_Source\PSoC4/Timer_1.c **** * Function Name: Timer_1_Init
   26:.\Generated_Source\PSoC4/Timer_1.c **** ********************************************************************************
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 2
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 2
 
 
   27:.\Generated_Source\PSoC4/Timer_1.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
   64:.\Generated_Source\PSoC4/Timer_1.c ****         Timer_1_SetInterruptMode(Timer_1_TC_INTERRUPT_MASK);
   49              		.loc 1 64 0
   50 0012 0320     		mov	r0, #3
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 3
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 3
 
 
   51 0014 FFF7FEFF 		bl	Timer_1_SetInterruptMode
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  111:.\Generated_Source\PSoC4/Timer_1.c ****         #if (Timer_1__PWM == Timer_1_PWM_MODE)
  112:.\Generated_Source\PSoC4/Timer_1.c ****             Timer_1_CONTROL_REG |= Timer_1_CTRL_PWM_PRESCALER;
  113:.\Generated_Source\PSoC4/Timer_1.c ****         #endif  /* (Timer_1__PWM == Timer_1_PWM_MODE) */
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 4
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 4
 
 
  114:.\Generated_Source\PSoC4/Timer_1.c **** 
@@ -235,10 +235,10 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
   63              	.L3:
   64 002a C046     		.align	2
   65              	.L2:
-  66 002c 00010540 		.word	1074069760
-  67 0030 24010540 		.word	1074069796
+  66 002c 40010540 		.word	1074069824
+  67 0030 64010540 		.word	1074069860
   68 0034 FFFF0000 		.word	65535
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 5
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 5
 
 
   69              		.cfi_endproc
@@ -294,11 +294,11 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
   97 0010 084B     		ldr	r3, .L5
   98 0012 084A     		ldr	r2, .L5
   99 0014 1268     		ldr	r2, [r2]
- 100 0016 0121     		mov	r1, #1
+ 100 0016 0221     		mov	r1, #2
  101 0018 0A43     		orr	r2, r1
  102 001a 1A60     		str	r2, [r3]
  183:.\Generated_Source\PSoC4/Timer_1.c ****     CyExitCriticalSection(enableInterrupts);
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 6
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 6
 
 
  103              		.loc 1 183 0
@@ -318,7 +318,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  193:.\Generated_Source\PSoC4/Timer_1.c ****         #if (0u == Timer_1_TC_START_SIGNAL_PRESENT)
  194:.\Generated_Source\PSoC4/Timer_1.c ****             Timer_1_TriggerCommand(Timer_1_MASK, Timer_1_CMD_START);
  108              		.loc 1 194 0
- 109 0026 0120     		mov	r0, #1
+ 109 0026 0220     		mov	r0, #2
  110 0028 1821     		mov	r1, #24
  111 002a FFF7FEFF 		bl	Timer_1_TriggerCommand
  195:.\Generated_Source\PSoC4/Timer_1.c ****         #endif /* (0u == Timer_1_TC_START_SIGNAL_PRESENT) */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  209:.\Generated_Source\PSoC4/Timer_1.c **** *
  210:.\Generated_Source\PSoC4/Timer_1.c **** * Parameters:
  211:.\Generated_Source\PSoC4/Timer_1.c **** *  None
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 7
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 7
 
 
  212:.\Generated_Source\PSoC4/Timer_1.c **** *
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  164              		.size	Timer_1_Start, .-Timer_1_Start
  165              		.section	.text.Timer_1_Stop,"ax",%progbits
  166              		.align	2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 8
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 8
 
 
  167              		.global	Timer_1_Stop
@@ -470,7 +470,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  190 0010 064B     		ldr	r3, .L12
  191 0012 064A     		ldr	r2, .L12
  192 0014 1268     		ldr	r2, [r2]
- 193 0016 0121     		mov	r1, #1
+ 193 0016 0221     		mov	r1, #2
  194 0018 8A43     		bic	r2, r1
  195 001a 1A60     		str	r2, [r3]
  257:.\Generated_Source\PSoC4/Timer_1.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  196              		.loc 1 258 0
  197 001c FB1D     		add	r3, r7, #7
  198 001e 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 9
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 9
 
 
  199 0020 181C     		mov	r0, r3
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  223 0000 90B5     		push	{r4, r7, lr}
  224              		.cfi_def_cfa_offset 12
  225              		.cfi_offset 4, -12
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 10
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 10
 
 
  226              		.cfi_offset 7, -8
@@ -591,14 +591,14 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  264              	.L16:
  265 003e C046     		.align	2
  266              	.L15:
- 267 0040 00010540 		.word	1074069760
+ 267 0040 40010540 		.word	1074069824
  268 0044 FFFFFFF8 		.word	-117440513
  269              		.cfi_endproc
  270              	.LFE4:
  271              		.size	Timer_1_SetMode, .-Timer_1_SetMode
  272              		.section	.text.Timer_1_SetQDMode,"ax",%progbits
  273              		.align	2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 11
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 11
 
 
  274              		.global	Timer_1_SetQDMode
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  299 0014 0A4B     		ldr	r3, .L18
  300 0016 0A4A     		ldr	r2, .L18
  301 0018 1168     		ldr	r1, [r2]
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 12
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 12
 
 
  302 001a 0A4A     		ldr	r2, .L18+4
@@ -689,7 +689,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  323              	.L19:
  324 003e C046     		.align	2
  325              	.L18:
- 326 0040 00010540 		.word	1074069760
+ 326 0040 40010540 		.word	1074069824
  327 0044 FFFF8FFF 		.word	-7340033
  328              		.cfi_endproc
  329              	.LFE5:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  344:.\Generated_Source\PSoC4/Timer_1.c **** *         - Timer_1_PRESCALE_DIVBY1    - Divide by 1 (no prescaling)
  345:.\Generated_Source\PSoC4/Timer_1.c **** *         - Timer_1_PRESCALE_DIVBY2    - Divide by 2
  346:.\Generated_Source\PSoC4/Timer_1.c **** *         - Timer_1_PRESCALE_DIVBY4    - Divide by 4
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 13
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 13
 
 
  347:.\Generated_Source\PSoC4/Timer_1.c **** *         - Timer_1_PRESCALE_DIVBY8    - Divide by 8
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  373 002e 0F33     		add	r3, r3, #15
  374 0030 1B78     		ldrb	r3, [r3]
  375 0032 181C     		mov	r0, r3
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 14
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 14
 
 
  376 0034 FFF7FEFF 		bl	CyExitCriticalSection
@@ -791,7 +791,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  382              	.L22:
  383 003e C046     		.align	2
  384              	.L21:
- 385 0040 00010540 		.word	1074069760
+ 385 0040 40010540 		.word	1074069824
  386 0044 FF00FFFF 		.word	-65281
  387              		.cfi_endproc
  388              	.LFE6:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  406              		.cfi_def_cfa_offset 32
  407 0004 00AF     		add	r7, sp, #0
  408              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 15
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 15
 
 
  409 0006 7860     		str	r0, [r7, #4]
@@ -889,7 +889,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  444              	.L25:
  445              		.align	2
  446              	.L24:
- 447 0044 00010540 		.word	1074069760
+ 447 0044 40010540 		.word	1074069824
  448 0048 FFFFFBFF 		.word	-262145
  449              		.cfi_endproc
  450              	.LFE7:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  453              		.align	2
  454              		.global	Timer_1_SetPWMMode
  455              		.code	16
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 16
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 16
 
 
  456              		.thumb_func
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  466 0002 82B0     		sub	sp, sp, #8
  467              		.cfi_def_cfa_offset 16
  468 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 17
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 17
 
 
  469              		.cfi_def_cfa_register 7
@@ -979,7 +979,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  482              	.L28:
  483              		.align	2
  484              	.L27:
- 485 0018 28010540 		.word	1074069800
+ 485 0018 68010540 		.word	1074069864
  486              		.cfi_endproc
  487              	.LFE8:
  488              		.size	Timer_1_SetPWMMode, .-Timer_1_SetPWMMode
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  471:.\Generated_Source\PSoC4/Timer_1.c **** *   Values:
  472:.\Generated_Source\PSoC4/Timer_1.c **** *     - 0 - Asynchronous
  473:.\Generated_Source\PSoC4/Timer_1.c **** *     - 1 - Synchronous
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 18
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 18
 
 
  474:.\Generated_Source\PSoC4/Timer_1.c **** *
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  535 0036 1B78     		ldrb	r3, [r3]
  536 0038 181C     		mov	r0, r3
  537 003a FFF7FEFF 		bl	CyExitCriticalSection
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 19
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 19
 
 
  490:.\Generated_Source\PSoC4/Timer_1.c **** }
@@ -1090,7 +1090,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  543              	.L31:
  544              		.align	2
  545              	.L30:
- 546 0044 00010540 		.word	1074069760
+ 546 0044 40010540 		.word	1074069824
  547              		.cfi_endproc
  548              	.LFE9:
  549              		.size	Timer_1_SetPWMSyncKill, .-Timer_1_SetPWMSyncKill
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  567 0004 00AF     		add	r7, sp, #0
  568              		.cfi_def_cfa_register 7
  569 0006 7860     		str	r0, [r7, #4]
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 20
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 20
 
 
  515:.\Generated_Source\PSoC4/Timer_1.c ****     uint8 enableInterrupts;
@@ -1188,7 +1188,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  604              	.L34:
  605              		.align	2
  606              	.L33:
- 607 0044 00010540 		.word	1074069760
+ 607 0044 40010540 		.word	1074069824
  608              		.cfi_endproc
  609              	.LFE10:
  610              		.size	Timer_1_SetPWMStopOnKill, .-Timer_1_SetPWMStopOnKill
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  614              		.code	16
  615              		.thumb_func
  616              		.type	Timer_1_SetPWMDeadTime, %function
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 21
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 21
 
 
  617              	Timer_1_SetPWMDeadTime:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  643 001e 1A60     		str	r2, [r3]
  553:.\Generated_Source\PSoC4/Timer_1.c ****     Timer_1_CONTROL_REG |= ((uint32)((deadTime & Timer_1_8BIT_MASK) <<
  644              		.loc 1 553 0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 22
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 22
 
 
  645 0020 084B     		ldr	r3, .L36
@@ -1288,7 +1288,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  665              	.L37:
  666              		.align	2
  667              	.L36:
- 668 0044 00010540 		.word	1074069760
+ 668 0044 40010540 		.word	1074069824
  669 0048 FF00FFFF 		.word	-65281
  670              		.cfi_endproc
  671              	.LFE11:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  572:.\Generated_Source\PSoC4/Timer_1.c **** *         - Timer_1_INVERT_LINE   - Inverts the line output
  573:.\Generated_Source\PSoC4/Timer_1.c **** *         - Timer_1_INVERT_LINE_N - Inverts the line_n output
  574:.\Generated_Source\PSoC4/Timer_1.c **** *
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 23
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 23
 
 
  575:.\Generated_Source\PSoC4/Timer_1.c **** * Return:
@@ -1378,14 +1378,14 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  720 0038 BD46     		mov	sp, r7
  721 003a 05B0     		add	sp, sp, #20
  722              		@ sp needed
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 24
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 24
 
 
  723 003c 90BD     		pop	{r4, r7, pc}
  724              	.L40:
  725 003e C046     		.align	2
  726              	.L39:
- 727 0040 00010540 		.word	1074069760
+ 727 0040 40010540 		.word	1074069824
  728 0044 FFFFCFFF 		.word	-3145729
  729              		.cfi_endproc
  730              	.LFE12:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  755 000e 120C     		lsr	r2, r2, #16
  756 0010 1A60     		str	r2, [r3]
  612:.\Generated_Source\PSoC4/Timer_1.c **** }
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 25
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 25
 
 
  757              		.loc 1 612 0
@@ -1449,7 +1449,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  762              	.L43:
  763              		.align	2
  764              	.L42:
- 765 0018 08010540 		.word	1074069768
+ 765 0018 48010540 		.word	1074069832
  766              		.cfi_endproc
  767              	.LFE13:
  768              		.size	Timer_1_WriteCounter, .-Timer_1_WriteCounter
@@ -1498,14 +1498,14 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  791 000c 181C     		mov	r0, r3
  792 000e BD46     		mov	sp, r7
  793              		@ sp needed
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 26
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 26
 
 
  794 0010 80BD     		pop	{r7, pc}
  795              	.L47:
  796 0012 C046     		.align	2
  797              	.L46:
- 798 0014 08010540 		.word	1074069768
+ 798 0014 48010540 		.word	1074069832
  799              		.cfi_endproc
  800              	.LFE14:
  801              		.size	Timer_1_ReadCounter, .-Timer_1_ReadCounter
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  821 0006 7860     		str	r0, [r7, #4]
  660:.\Generated_Source\PSoC4/Timer_1.c ****     uint8 enableInterrupts;
  661:.\Generated_Source\PSoC4/Timer_1.c **** 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 27
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 27
 
 
  662:.\Generated_Source\PSoC4/Timer_1.c ****     enableInterrupts = CyEnterCriticalSection();
@@ -1602,7 +1602,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  853              	.L50:
  854 003e C046     		.align	2
  855              	.L49:
- 856 0040 00010540 		.word	1074069760
+ 856 0040 40010540 		.word	1074069824
  857 0044 FFFFFCFF 		.word	-196609
  858              		.cfi_endproc
  859              	.LFE15:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  669:.\Generated_Source\PSoC4/Timer_1.c **** 
  670:.\Generated_Source\PSoC4/Timer_1.c **** 
  671:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 28
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 28
 
 
  672:.\Generated_Source\PSoC4/Timer_1.c **** * Function Name: Timer_1_WritePeriod
@@ -1665,7 +1665,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  891              	.L53:
  892              		.align	2
  893              	.L52:
- 894 0018 14010540 		.word	1074069780
+ 894 0018 54010540 		.word	1074069844
  895              		.cfi_endproc
  896              	.LFE16:
  897              		.size	Timer_1_WritePeriod, .-Timer_1_WritePeriod
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  904              	Timer_1_ReadPeriod:
  905              	.LFB17:
  691:.\Generated_Source\PSoC4/Timer_1.c **** 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 29
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 29
 
 
  692:.\Generated_Source\PSoC4/Timer_1.c **** 
@@ -1721,7 +1721,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  924              	.L57:
  925 0012 C046     		.align	2
  926              	.L56:
- 927 0014 14010540 		.word	1074069780
+ 927 0014 54010540 		.word	1074069844
  928              		.cfi_endproc
  929              	.LFE17:
  930              		.size	Timer_1_ReadPeriod, .-Timer_1_ReadPeriod
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  713:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
  714:.\Generated_Source\PSoC4/Timer_1.c **** * Function Name: Timer_1_SetCompareSwap
  715:.\Generated_Source\PSoC4/Timer_1.c **** ********************************************************************************
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 30
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 30
 
 
  716:.\Generated_Source\PSoC4/Timer_1.c **** *
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  968 0026 7868     		ldr	r0, [r7, #4]
  969 0028 0122     		mov	r2, #1
  970 002a 0240     		and	r2, r0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 31
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 31
 
 
  971 002c 0A43     		orr	r2, r1
@@ -1820,7 +1820,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  984              	.L60:
  985 0042 C046     		.align	2
  986              	.L59:
- 987 0044 00010540 		.word	1074069760
+ 987 0044 40010540 		.word	1074069824
  988              		.cfi_endproc
  989              	.LFE18:
  990              		.size	Timer_1_SetCompareSwap, .-Timer_1_SetCompareSwap
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1004              		.cfi_offset 14, -4
  1005 0002 82B0     		sub	sp, sp, #8
  1006              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 32
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 32
 
 
  1007 0004 00AF     		add	r7, sp, #0
@@ -1880,7 +1880,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1021              	.L63:
  1022              		.align	2
  1023              	.L62:
- 1024 0018 18010540 		.word	1074069784
+ 1024 0018 58010540 		.word	1074069848
  1025              		.cfi_endproc
  1026              	.LFE19:
  1027              		.size	Timer_1_WritePeriodBuf, .-Timer_1_WritePeriodBuf
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1041              		.cfi_offset 14, -4
  1042 0002 00AF     		add	r7, sp, #0
  1043              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 33
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 33
 
 
  782:.\Generated_Source\PSoC4/Timer_1.c ****     return (Timer_1_PERIOD_BUF_REG & Timer_1_16BIT_MASK);
@@ -1936,7 +1936,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1054              	.L67:
  1055 0012 C046     		.align	2
  1056              	.L66:
- 1057 0014 18010540 		.word	1074069784
+ 1057 0014 58010540 		.word	1074069848
  1058              		.cfi_endproc
  1059              	.LFE20:
  1060              		.size	Timer_1_ReadPeriodBuf, .-Timer_1_ReadPeriodBuf
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1072              		.cfi_def_cfa_offset 12
  1073              		.cfi_offset 4, -12
  1074              		.cfi_offset 7, -8
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 34
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 34
 
 
  1075              		.cfi_offset 14, -4
@@ -2034,11 +2034,11 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1115              	.L70:
  1116              		.align	2
  1117              	.L69:
- 1118 0044 00010540 		.word	1074069760
+ 1118 0044 40010540 		.word	1074069824
  1119              		.cfi_endproc
  1120              	.LFE21:
  1121              		.size	Timer_1_SetPeriodSwap, .-Timer_1_SetPeriodSwap
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 35
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 35
 
 
  1122              		.section	.text.Timer_1_WriteCompare,"ax",%progbits
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  853:.\Generated_Source\PSoC4/Timer_1.c ****         {
  854:.\Generated_Source\PSoC4/Timer_1.c ****         }
  855:.\Generated_Source\PSoC4/Timer_1.c ****         
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 36
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 36
 
 
  856:.\Generated_Source\PSoC4/Timer_1.c ****     
@@ -2120,7 +2120,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1152              	.L73:
  1153              		.align	2
  1154              	.L72:
- 1155 0018 0C010540 		.word	1074069772
+ 1155 0018 4C010540 		.word	1074069836
  1156              		.cfi_endproc
  1157              	.LFE22:
  1158              		.size	Timer_1_WriteCompare, .-Timer_1_WriteCompare
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1171              		.cfi_offset 7, -8
  1172              		.cfi_offset 14, -4
  1173 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 37
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 37
 
 
  1174              		.cfi_def_cfa_register 7
@@ -2202,7 +2202,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1185              	.L77:
  1186 0012 C046     		.align	2
  1187              	.L76:
- 1188 0014 0C010540 		.word	1074069772
+ 1188 0014 4C010540 		.word	1074069836
  1189              		.cfi_endproc
  1190              	.LFE23:
  1191              		.size	Timer_1_ReadCompare, .-Timer_1_ReadCompare
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  908:.\Generated_Source\PSoC4/Timer_1.c **** 
  909:.\Generated_Source\PSoC4/Timer_1.c **** /*******************************************************************************
  910:.\Generated_Source\PSoC4/Timer_1.c **** * Function Name: Timer_1_WriteCompareBuf
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 38
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 38
 
 
  911:.\Generated_Source\PSoC4/Timer_1.c **** ********************************************************************************
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1217              		.loc 1 947 0
  1218 0012 BD46     		mov	sp, r7
  1219 0014 02B0     		add	sp, sp, #8
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 39
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 39
 
 
  1220              		@ sp needed
@@ -2286,7 +2286,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1222              	.L80:
  1223              		.align	2
  1224              	.L79:
- 1225 0018 10010540 		.word	1074069776
+ 1225 0018 50010540 		.word	1074069840
  1226              		.cfi_endproc
  1227              	.LFE24:
  1228              		.size	Timer_1_WriteCompareBuf, .-Timer_1_WriteCompareBuf
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  977:.\Generated_Source\PSoC4/Timer_1.c ****         if (((uint32)Timer_1__COUNT_DOWN == currentMode) && (0u != regVal))
  978:.\Generated_Source\PSoC4/Timer_1.c ****         {
  979:.\Generated_Source\PSoC4/Timer_1.c ****             regVal--;
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 40
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 40
 
 
  980:.\Generated_Source\PSoC4/Timer_1.c ****         }
@@ -2368,7 +2368,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1255              	.L84:
  1256 0012 C046     		.align	2
  1257              	.L83:
- 1258 0014 10010540 		.word	1074069776
+ 1258 0014 50010540 		.word	1074069840
  1259              		.cfi_endproc
  1260              	.LFE25:
  1261              		.size	Timer_1_ReadCompareBuf, .-Timer_1_ReadCompareBuf
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
 1009:.\Generated_Source\PSoC4/Timer_1.c **** *
 1010:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
 1011:.\Generated_Source\PSoC4/Timer_1.c **** uint32 Timer_1_ReadCapture(void)
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 41
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 41
 
 
 1012:.\Generated_Source\PSoC4/Timer_1.c **** {
@@ -2425,7 +2425,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1288              	.L88:
  1289 0012 C046     		.align	2
  1290              	.L87:
- 1291 0014 0C010540 		.word	1074069772
+ 1291 0014 4C010540 		.word	1074069836
  1292              		.cfi_endproc
  1293              	.LFE26:
  1294              		.size	Timer_1_ReadCapture, .-Timer_1_ReadCapture
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
 1033:.\Generated_Source\PSoC4/Timer_1.c **** {
  1303              		.loc 1 1033 0
  1304              		.cfi_startproc
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 42
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 42
 
 
  1305 0000 80B5     		push	{r7, lr}
@@ -2482,7 +2482,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1321              	.L92:
  1322 0012 C046     		.align	2
  1323              	.L91:
- 1324 0014 10010540 		.word	1074069776
+ 1324 0014 50010540 		.word	1074069840
  1325              		.cfi_endproc
  1326              	.LFE27:
  1327              		.size	Timer_1_ReadCaptureBuf, .-Timer_1_ReadCaptureBuf
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
 1057:.\Generated_Source\PSoC4/Timer_1.c **** *
 1058:.\Generated_Source\PSoC4/Timer_1.c **** *******************************************************************************/
 1059:.\Generated_Source\PSoC4/Timer_1.c **** void Timer_1_SetCaptureMode(uint32 triggerMode)
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 43
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 43
 
 
 1060:.\Generated_Source\PSoC4/Timer_1.c **** {
@@ -2577,8 +2577,8 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1379              	.L95:
  1380 003e C046     		.align	2
  1381              	.L94:
- 1382 0040 24010540 		.word	1074069796
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 44
+ 1382 0040 64010540 		.word	1074069860
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 44
 
 
  1383              		.cfi_endproc
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1410 0010 031C     		mov	r3, r0
  1411 0012 2370     		strb	r3, [r4]
 1097:.\Generated_Source\PSoC4/Timer_1.c **** 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 45
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 45
 
 
 1098:.\Generated_Source\PSoC4/Timer_1.c ****     Timer_1_TRIG_CONTROL1_REG &= (uint32)~Timer_1_RELOAD_MASK;
@@ -2675,7 +2675,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1438              	.L98:
  1439              		.align	2
  1440              	.L97:
- 1441 0040 24010540 		.word	1074069796
+ 1441 0040 64010540 		.word	1074069860
  1442              		.cfi_endproc
  1443              	.LFE29:
  1444              		.size	Timer_1_SetReloadMode, .-Timer_1_SetReloadMode
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
 1111:.\Generated_Source\PSoC4/Timer_1.c **** *  phiB input.
 1112:.\Generated_Source\PSoC4/Timer_1.c **** *
 1113:.\Generated_Source\PSoC4/Timer_1.c **** * Parameters:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 46
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 46
 
 
 1114:.\Generated_Source\PSoC4/Timer_1.c **** *  triggerMode: Enumerated trigger mode value
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1486              		.loc 1 1134 0
  1487 002e 3B1C     		mov	r3, r7
  1488 0030 0F33     		add	r3, r3, #15
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 47
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 47
 
 
  1489 0032 1B78     		ldrb	r3, [r3]
@@ -2773,7 +2773,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1497              	.L101:
  1498              		.align	2
  1499              	.L100:
- 1500 0040 24010540 		.word	1074069796
+ 1500 0040 64010540 		.word	1074069860
  1501 0044 FFFCFFFF 		.word	-769
  1502              		.cfi_endproc
  1503              	.LFE30:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1519              		.cfi_offset 14, -4
  1520 0002 85B0     		sub	sp, sp, #20
  1521              		.cfi_def_cfa_offset 32
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 48
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 48
 
 
  1522 0004 00AF     		add	r7, sp, #0
@@ -2868,7 +2868,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1557              	.L104:
  1558              		.align	2
  1559              	.L103:
- 1560 0040 24010540 		.word	1074069796
+ 1560 0040 64010540 		.word	1074069860
  1561              		.cfi_endproc
  1562              	.LFE31:
  1563              		.size	Timer_1_SetStopMode, .-Timer_1_SetStopMode
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1567              		.code	16
  1568              		.thumb_func
  1569              		.type	Timer_1_SetCountMode, %function
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 49
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 49
 
 
  1570              	Timer_1_SetCountMode:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1595 001c 8A43     		bic	r2, r1
  1596 001e 1A60     		str	r2, [r3]
 1197:.\Generated_Source\PSoC4/Timer_1.c ****     Timer_1_TRIG_CONTROL1_REG |= ((uint32)(triggerMode << Timer_1_COUNT_SHIFT));
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 50
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 50
 
 
  1597              		.loc 1 1197 0
@@ -2966,7 +2966,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1616              	.L107:
  1617              		.align	2
  1618              	.L106:
- 1619 0040 24010540 		.word	1074069796
+ 1619 0040 64010540 		.word	1074069860
  1620              		.cfi_endproc
  1621              	.LFE32:
  1622              		.size	Timer_1_SetCountMode, .-Timer_1_SetCountMode
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
 1218:.\Generated_Source\PSoC4/Timer_1.c **** *  command: Enumerated command values. Capture command only applicable for
 1219:.\Generated_Source\PSoC4/Timer_1.c **** *           Timer/Counter with Capture and PWM modes.
 1220:.\Generated_Source\PSoC4/Timer_1.c **** *   Values:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 51
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 51
 
 
 1221:.\Generated_Source\PSoC4/Timer_1.c **** *     - Timer_1_CMD_CAPTURE    - Trigger Capture command
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1666 0032 05B0     		add	sp, sp, #20
  1667              		@ sp needed
  1668 0034 90BD     		pop	{r4, r7, pc}
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 52
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 52
 
 
  1669              	.L110:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1700 0010 0B40     		and	r3, r1
 1261:.\Generated_Source\PSoC4/Timer_1.c ****     return ((Timer_1_STATUS_REG >> Timer_1_RUNNING_STATUS_SHIFT) |
  1701              		.loc 1 1261 0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 53
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 53
 
 
  1702 0012 1343     		orr	r3, r2
@@ -3131,7 +3131,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1708              	.L114:
  1709 001a C046     		.align	2
  1710              	.L113:
- 1711 001c 04010540 		.word	1074069764
+ 1711 001c 44010540 		.word	1074069828
  1712              		.cfi_endproc
  1713              	.LFE34:
  1714              		.size	Timer_1_ReadStatus, .-Timer_1_ReadStatus
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1733 0006 7860     		str	r0, [r7, #4]
 1286:.\Generated_Source\PSoC4/Timer_1.c ****     Timer_1_INTERRUPT_MASK_REG =  interruptMask;
  1734              		.loc 1 1286 0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 54
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 54
 
 
  1735 0008 024B     		ldr	r3, .L116
@@ -3193,7 +3193,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1743              	.L117:
  1744              		.align	2
  1745              	.L116:
- 1746 0014 38010540 		.word	1074069816
+ 1746 0014 78010540 		.word	1074069880
  1747              		.cfi_endproc
  1748              	.LFE35:
  1749              		.size	Timer_1_SetInterruptMode, .-Timer_1_SetInterruptMode
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1766              		.loc 1 1309 0
  1767 0004 024B     		ldr	r3, .L120
  1768 0006 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 55
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 55
 
 
 1310:.\Generated_Source\PSoC4/Timer_1.c **** }
@@ -3250,7 +3250,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1774              	.L121:
  1775 000e C046     		.align	2
  1776              	.L120:
- 1777 0010 3C010540 		.word	1074069820
+ 1777 0010 7C010540 		.word	1074069884
  1778              		.cfi_endproc
  1779              	.LFE36:
  1780              		.size	Timer_1_GetInterruptSourceMasked, .-Timer_1_GetInterruptSourceMasked
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
 1333:.\Generated_Source\PSoC4/Timer_1.c **** }
  1800              		.loc 1 1333 0
  1801 0008 181C     		mov	r0, r3
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 56
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 56
 
 
  1802 000a BD46     		mov	sp, r7
@@ -3307,7 +3307,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1805              	.L125:
  1806 000e C046     		.align	2
  1807              	.L124:
- 1808 0010 30010540 		.word	1074069808
+ 1808 0010 70010540 		.word	1074069872
  1809              		.cfi_endproc
  1810              	.LFE37:
  1811              		.size	Timer_1_GetInterruptSource, .-Timer_1_GetInterruptSource
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1834 000c 1A60     		str	r2, [r3]
 1356:.\Generated_Source\PSoC4/Timer_1.c **** }
  1835              		.loc 1 1356 0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 57
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 57
 
 
  1836 000e BD46     		mov	sp, r7
@@ -3368,7 +3368,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1840              	.L128:
  1841              		.align	2
  1842              	.L127:
- 1843 0014 30010540 		.word	1074069808
+ 1843 0014 70010540 		.word	1074069872
  1844              		.cfi_endproc
  1845              	.LFE38:
  1846              		.size	Timer_1_ClearInterrupt, .-Timer_1_ClearInterrupt
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1868 000a 7A68     		ldr	r2, [r7, #4]
  1869 000c 1A60     		str	r2, [r3]
 1379:.\Generated_Source\PSoC4/Timer_1.c **** }
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 58
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 58
 
 
  1870              		.loc 1 1379 0
@@ -3429,7 +3429,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1875              	.L131:
  1876              		.align	2
  1877              	.L130:
- 1878 0014 34010540 		.word	1074069812
+ 1878 0014 74010540 		.word	1074069876
  1879              		.cfi_endproc
  1880              	.LFE39:
  1881              		.size	Timer_1_SetInterrupt, .-Timer_1_SetInterrupt
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1924 0050 08       		.byte	0x8
  1925 0051 05       		.byte	0x5
  1926 0052 82000000 		.4byte	.LASF6
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 59
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 59
 
 
  1927 0056 02       		.uleb128 0x2
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  1981 00c0 E9030000 		.4byte	.LASF18
  1982 00c4 01       		.byte	0x1
  1983 00c5 B1       		.byte	0xb1
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 60
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 60
 
 
  1984 00c6 00000000 		.4byte	.LFB1
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2038 013a 02       		.uleb128 0x2
  2039 013b 91       		.byte	0x91
  2040 013c 64       		.sleb128 -28
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 61
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 61
 
 
  2041 013d 0C       		.uleb128 0xc
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2095 01ac 01       		.byte	0x1
  2096 01ad 6701     		.2byte	0x167
  2097 01af 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 62
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 62
 
 
  2098 01b3 02       		.uleb128 0x2
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2152 0222 01       		.uleb128 0x1
  2153 0223 9C       		.byte	0x9c
  2154 0224 47020000 		.4byte	0x247
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 63
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 63
 
 
  2155 0228 0B       		.uleb128 0xb
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2209 0297 01       		.byte	0x1
  2210 0298 2202     		.2byte	0x222
  2211 029a 76000000 		.4byte	0x76
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 64
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 64
 
 
  2212 029e 02       		.uleb128 0x2
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2266 030a 74       		.sleb128 -12
  2267 030b 00       		.byte	0
  2268 030c 0E       		.uleb128 0xe
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 65
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 65
 
 
  2269 030d 1A030000 		.4byte	.LASF45
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2323 0382 01       		.byte	0x1
  2324 0383 C302     		.2byte	0x2c3
  2325 0385 76000000 		.4byte	0x76
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 66
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 66
 
 
  2326 0389 00000000 		.4byte	.LFB17
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2380 03fe 18000000 		.4byte	.LFE20-.LFB20
  2381 0402 01       		.uleb128 0x1
  2382 0403 9C       		.byte	0x9c
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 67
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 67
 
 
  2383 0404 0A       		.uleb128 0xa
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2437 0476 D1030000 		.4byte	.LASF56
  2438 047a 01       		.byte	0x1
  2439 047b 9C03     		.2byte	0x39c
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 68
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 68
 
 
  2440 047d 00000000 		.4byte	.LFB24
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2494 04fb 76000000 		.4byte	0x76
  2495 04ff 02       		.uleb128 0x2
  2496 0500 91       		.byte	0x91
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 69
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 69
 
 
  2497 0501 64       		.sleb128 -28
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2551 056d 80050000 		.4byte	.LASF20
  2552 0571 01       		.byte	0x1
  2553 0572 6704     		.2byte	0x467
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 70
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 70
 
 
  2554 0574 6B000000 		.4byte	0x6b
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2608 05e3 91       		.byte	0x91
  2609 05e4 6F       		.sleb128 -17
  2610 05e5 00       		.byte	0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 71
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 71
 
 
  2611 05e6 0A       		.uleb128 0xa
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2665 065b 01       		.byte	0x1
  2666 065c 0405     		.2byte	0x504
  2667 065e 76000000 		.4byte	0x76
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 72
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 72
 
 
  2668 0662 02       		.uleb128 0x2
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2722 06da 02       		.uleb128 0x2
  2723 06db 91       		.byte	0x91
  2724 06dc 74       		.sleb128 -12
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 73
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 73
 
 
  2725 06dd 00       		.byte	0
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2779 002a 16       		.uleb128 0x16
  2780 002b 00       		.byte	0
  2781 002c 03       		.uleb128 0x3
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 74
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 74
 
 
  2782 002d 0E       		.uleb128 0xe
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2836 0064 01       		.byte	0x1
  2837 0065 3F       		.uleb128 0x3f
  2838 0066 19       		.uleb128 0x19
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 75
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 75
 
 
  2839 0067 03       		.uleb128 0x3
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2893 009e 9642     		.uleb128 0x2116
  2894 00a0 19       		.uleb128 0x19
  2895 00a1 01       		.uleb128 0x1
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 76
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 76
 
 
  2896 00a2 13       		.uleb128 0x13
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  2950 00d9 01       		.uleb128 0x1
  2951 00da 13       		.uleb128 0x13
  2952 00db 00       		.byte	0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 77
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 77
 
 
  2953 00dc 00       		.byte	0
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  3007 0018 00000000 		.4byte	.LFB1
  3008 001c 38000000 		.4byte	.LFE1-.LFB1
  3009 0020 00000000 		.4byte	.LFB2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 78
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 78
 
 
  3010 0024 24000000 		.4byte	.LFE2-.LFB2
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  3064 00fc 44000000 		.4byte	.LFE29-.LFB29
  3065 0100 00000000 		.4byte	.LFB30
  3066 0104 48000000 		.4byte	.LFE30-.LFB30
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 79
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 79
 
 
  3067 0108 00000000 		.4byte	.LFB31
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  3121 0080 00000000 		.4byte	.LFB16
  3122 0084 1C000000 		.4byte	.LFE16
  3123 0088 00000000 		.4byte	.LFB17
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 80
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 80
 
 
  3124 008c 18000000 		.4byte	.LFE17
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  3174              	.LASF17:
  3175 0000 54696D65 		.ascii	"Timer_1_Start\000"
  3175      725F315F 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 81
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 81
 
 
  3175      53746172 
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  3197 00c7 6C6F6E67 		.ascii	"long int\000"
  3197      20696E74 
  3197      00
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 82
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 82
 
 
  3198              	.LASF57:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  3223      696E6974 
  3223      56617200 
  3224              	.LASF8:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 83
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 83
 
 
  3225 0179 756E7369 		.ascii	"unsigned int\000"
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  3245      725F315F 
  3245      47657449 
  3245      6E746572 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 84
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 84
 
 
  3245      72757074 
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  3266              	.LASF52:
  3267 02e7 54696D65 		.ascii	"Timer_1_SetPeriodSwap\000"
  3267      725F315F 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 85
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 85
 
 
  3267      53657450 
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  3287 03e9 54696D65 		.ascii	"Timer_1_Enable\000"
  3287      725F315F 
  3287      456E6162 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 86
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 86
 
 
  3287      6C6500
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  3308              	.LASF23:
  3309 04a0 6D6F6465 		.ascii	"mode\000"
  3309      00
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 87
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 87
 
 
  3310              	.LASF55:
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 1
  3328      75707473 
  3328      00
  3329              	.LASF75:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc3GgUMX.s 			page 88
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccn0AXFd.s 			page 88
 
 
  3330 0591 54696D65 		.ascii	"Timer_1_SetInterrupt\000"

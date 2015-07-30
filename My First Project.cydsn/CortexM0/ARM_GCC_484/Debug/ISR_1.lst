@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
   30:.\Generated_Source\PSoC4/ISR_1.c **** 
   31:.\Generated_Source\PSoC4/ISR_1.c **** /* `#END` */
   32:.\Generated_Source\PSoC4/ISR_1.c **** 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 2
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/ISR_1.c **** extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
   44 0016 FFF7FEFF 		bl	ISR_1_Enable
   69:.\Generated_Source\PSoC4/ISR_1.c **** }
   45              		.loc 1 69 0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 3
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 3
 
 
   46 001a BD46     		mov	sp, r7
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
   69              		.cfi_offset 14, -4
   70 0002 82B0     		sub	sp, sp, #8
   71              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 4
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 4
 
 
   72 0004 00AF     		add	r7, sp, #0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  125:.\Generated_Source\PSoC4/ISR_1.c **** * Return:
  126:.\Generated_Source\PSoC4/ISR_1.c **** *   None
  127:.\Generated_Source\PSoC4/ISR_1.c **** *
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 5
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 5
 
 
  128:.\Generated_Source\PSoC4/ISR_1.c **** *******************************************************************************/
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  149:.\Generated_Source\PSoC4/ISR_1.c **** *   Note You may use either the default ISR by using this API, or you may define
  150:.\Generated_Source\PSoC4/ISR_1.c **** *   your own separate ISR through ISR_StartEx().
  151:.\Generated_Source\PSoC4/ISR_1.c **** *
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 6
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 6
 
 
  152:.\Generated_Source\PSoC4/ISR_1.c **** * Parameters:  
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  175:.\Generated_Source\PSoC4/ISR_1.c **** *   before the component has been started use ISR_1_StartEx instead.
  176:.\Generated_Source\PSoC4/ISR_1.c **** * 
  177:.\Generated_Source\PSoC4/ISR_1.c **** *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 7
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 7
 
 
  178:.\Generated_Source\PSoC4/ISR_1.c **** *   used to provide consistent definition across compilers:
@@ -394,7 +394,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  197:.\Generated_Source\PSoC4/ISR_1.c ****     CyRamVectors[CYINT_IRQ_BASE + ISR_1__INTC_NUMBER] = address;
  177              		.loc 1 197 0
  178 0008 034A     		ldr	r2, .L12
- 179 000a 8023     		mov	r3, #128
+ 179 000a 8423     		mov	r3, #132
  180 000c 7968     		ldr	r1, [r7, #4]
  181 000e D150     		str	r1, [r2, r3]
  198:.\Generated_Source\PSoC4/ISR_1.c **** }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  199              		.type	ISR_1_GetVector, %function
  200              	ISR_1_GetVector:
  201              	.LFB5:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 8
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 8
 
 
  199:.\Generated_Source\PSoC4/ISR_1.c **** 
@@ -450,7 +450,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  217:.\Generated_Source\PSoC4/ISR_1.c ****     return CyRamVectors[CYINT_IRQ_BASE + ISR_1__INTC_NUMBER];
  210              		.loc 1 217 0
  211 0004 024A     		ldr	r2, .L16
- 212 0006 8023     		mov	r3, #128
+ 212 0006 8423     		mov	r3, #132
  213 0008 D358     		ldr	r3, [r2, r3]
  218:.\Generated_Source\PSoC4/ISR_1.c **** }
  214              		.loc 1 218 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  221:.\Generated_Source\PSoC4/ISR_1.c **** /*******************************************************************************
  222:.\Generated_Source\PSoC4/ISR_1.c **** * Function Name: ISR_1_SetPriority
  223:.\Generated_Source\PSoC4/ISR_1.c **** ********************************************************************************
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 9
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 9
 
 
  224:.\Generated_Source\PSoC4/ISR_1.c **** *
@@ -521,7 +521,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  247:.\Generated_Source\PSoC4/ISR_1.c **** 	uint8 interruptState;
  248:.\Generated_Source\PSoC4/ISR_1.c ****     uint32 priorityOffset = ((ISR_1__INTC_NUMBER % 4u) * 8u) + 6u;
  248              		.loc 1 248 0
- 249 000c 0623     		mov	r3, #6
+ 249 000c 0E23     		mov	r3, #14
  250 000e FB60     		str	r3, [r7, #12]
  249:.\Generated_Source\PSoC4/ISR_1.c ****     
  250:.\Generated_Source\PSoC4/ISR_1.c **** 	interruptState = CyEnterCriticalSection();
@@ -533,56 +533,55 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  256 001a 2370     		strb	r3, [r4]
  251:.\Generated_Source\PSoC4/ISR_1.c ****     *ISR_1_INTC_PRIOR = (*ISR_1_INTC_PRIOR & (uint32)(~ISR_1__INTC_PRIOR_MASK)) |
  257              		.loc 1 251 0
- 258 001c 0B4B     		ldr	r3, .L19
- 259 001e 0B4A     		ldr	r2, .L19
- 260 0020 1268     		ldr	r2, [r2]
- 261 0022 C021     		mov	r1, #192
- 262 0024 101C     		mov	r0, r2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 10
+ 258 001c 0A4B     		ldr	r3, .L19
+ 259 001e 0A4A     		ldr	r2, .L19
+ 260 0020 1168     		ldr	r1, [r2]
+ 261 0022 0A4A     		ldr	r2, .L19+4
+ 262 0024 1140     		and	r1, r2
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 10
 
 
- 263 0026 8843     		bic	r0, r1
- 264 0028 011C     		mov	r1, r0
  252:.\Generated_Source\PSoC4/ISR_1.c ****                                     ((uint32)priority << priorityOffset);
- 265              		.loc 1 252 0
- 266 002a FA1D     		add	r2, r7, #7
- 267 002c 1078     		ldrb	r0, [r2]
- 268 002e FA68     		ldr	r2, [r7, #12]
- 269 0030 041C     		mov	r4, r0
- 270 0032 9440     		lsl	r4, r4, r2
- 271 0034 221C     		mov	r2, r4
+ 263              		.loc 1 252 0
+ 264 0026 FA1D     		add	r2, r7, #7
+ 265 0028 1078     		ldrb	r0, [r2]
+ 266 002a FA68     		ldr	r2, [r7, #12]
+ 267 002c 041C     		mov	r4, r0
+ 268 002e 9440     		lsl	r4, r4, r2
+ 269 0030 221C     		mov	r2, r4
  251:.\Generated_Source\PSoC4/ISR_1.c ****     *ISR_1_INTC_PRIOR = (*ISR_1_INTC_PRIOR & (uint32)(~ISR_1__INTC_PRIOR_MASK)) |
- 272              		.loc 1 251 0
- 273 0036 0A43     		orr	r2, r1
- 274 0038 1A60     		str	r2, [r3]
+ 270              		.loc 1 251 0
+ 271 0032 0A43     		orr	r2, r1
+ 272 0034 1A60     		str	r2, [r3]
  253:.\Generated_Source\PSoC4/ISR_1.c **** 	CyExitCriticalSection(interruptState);
- 275              		.loc 1 253 0
- 276 003a 3B1C     		mov	r3, r7
- 277 003c 0B33     		add	r3, r3, #11
- 278 003e 1B78     		ldrb	r3, [r3]
- 279 0040 181C     		mov	r0, r3
- 280 0042 FFF7FEFF 		bl	CyExitCriticalSection
+ 273              		.loc 1 253 0
+ 274 0036 3B1C     		mov	r3, r7
+ 275 0038 0B33     		add	r3, r3, #11
+ 276 003a 1B78     		ldrb	r3, [r3]
+ 277 003c 181C     		mov	r0, r3
+ 278 003e FFF7FEFF 		bl	CyExitCriticalSection
  254:.\Generated_Source\PSoC4/ISR_1.c **** }
- 281              		.loc 1 254 0
- 282 0046 BD46     		mov	sp, r7
- 283 0048 05B0     		add	sp, sp, #20
- 284              		@ sp needed
- 285 004a 90BD     		pop	{r4, r7, pc}
- 286              	.L20:
- 287              		.align	2
- 288              	.L19:
- 289 004c 10E400E0 		.word	-536812528
- 290              		.cfi_endproc
- 291              	.LFE6:
- 292              		.size	ISR_1_SetPriority, .-ISR_1_SetPriority
- 293              		.section	.text.ISR_1_GetPriority,"ax",%progbits
- 294              		.align	2
- 295              		.global	ISR_1_GetPriority
- 296              		.code	16
- 297              		.thumb_func
- 298              		.type	ISR_1_GetPriority, %function
- 299              	ISR_1_GetPriority:
- 300              	.LFB7:
+ 279              		.loc 1 254 0
+ 280 0042 BD46     		mov	sp, r7
+ 281 0044 05B0     		add	sp, sp, #20
+ 282              		@ sp needed
+ 283 0046 90BD     		pop	{r4, r7, pc}
+ 284              	.L20:
+ 285              		.align	2
+ 286              	.L19:
+ 287 0048 10E400E0 		.word	-536812528
+ 288 004c FF3FFFFF 		.word	-49153
+ 289              		.cfi_endproc
+ 290              	.LFE6:
+ 291              		.size	ISR_1_SetPriority, .-ISR_1_SetPriority
+ 292              		.section	.text.ISR_1_GetPriority,"ax",%progbits
+ 293              		.align	2
+ 294              		.global	ISR_1_GetPriority
+ 295              		.code	16
+ 296              		.thumb_func
+ 297              		.type	ISR_1_GetPriority, %function
+ 298              	ISR_1_GetPriority:
+ 299              	.LFB7:
  255:.\Generated_Source\PSoC4/ISR_1.c **** 
  256:.\Generated_Source\PSoC4/ISR_1.c **** 
  257:.\Generated_Source\PSoC4/ISR_1.c **** /*******************************************************************************
@@ -598,57 +597,58 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  267:.\Generated_Source\PSoC4/ISR_1.c **** * Return:
  268:.\Generated_Source\PSoC4/ISR_1.c **** *   Priority of the interrupt, 0 being the highest priority
  269:.\Generated_Source\PSoC4/ISR_1.c **** *    PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 11
-
-
  270:.\Generated_Source\PSoC4/ISR_1.c **** *    PSoC 4: Priority is from 0 to 3.
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 11
+
+
  271:.\Generated_Source\PSoC4/ISR_1.c **** *
  272:.\Generated_Source\PSoC4/ISR_1.c **** *******************************************************************************/
  273:.\Generated_Source\PSoC4/ISR_1.c **** uint8 ISR_1_GetPriority(void)
  274:.\Generated_Source\PSoC4/ISR_1.c **** {
- 301              		.loc 1 274 0
- 302              		.cfi_startproc
- 303 0000 80B5     		push	{r7, lr}
- 304              		.cfi_def_cfa_offset 8
- 305              		.cfi_offset 7, -8
- 306              		.cfi_offset 14, -4
- 307 0002 82B0     		sub	sp, sp, #8
- 308              		.cfi_def_cfa_offset 16
- 309 0004 00AF     		add	r7, sp, #0
- 310              		.cfi_def_cfa_register 7
+ 300              		.loc 1 274 0
+ 301              		.cfi_startproc
+ 302 0000 80B5     		push	{r7, lr}
+ 303              		.cfi_def_cfa_offset 8
+ 304              		.cfi_offset 7, -8
+ 305              		.cfi_offset 14, -4
+ 306 0002 82B0     		sub	sp, sp, #8
+ 307              		.cfi_def_cfa_offset 16
+ 308 0004 00AF     		add	r7, sp, #0
+ 309              		.cfi_def_cfa_register 7
  275:.\Generated_Source\PSoC4/ISR_1.c ****     uint32 priority;
  276:.\Generated_Source\PSoC4/ISR_1.c **** 	uint32 priorityOffset = ((ISR_1__INTC_NUMBER % 4u) * 8u) + 6u;
- 311              		.loc 1 276 0
- 312 0006 0623     		mov	r3, #6
- 313 0008 7B60     		str	r3, [r7, #4]
+ 310              		.loc 1 276 0
+ 311 0006 0E23     		mov	r3, #14
+ 312 0008 7B60     		str	r3, [r7, #4]
  277:.\Generated_Source\PSoC4/ISR_1.c **** 
  278:.\Generated_Source\PSoC4/ISR_1.c ****     priority = (*ISR_1_INTC_PRIOR & ISR_1__INTC_PRIOR_MASK) >> priorityOffset;
- 314              		.loc 1 278 0
- 315 000a 074B     		ldr	r3, .L23
- 316 000c 1A68     		ldr	r2, [r3]
- 317 000e C023     		mov	r3, #192
- 318 0010 1A40     		and	r2, r3
- 319 0012 7B68     		ldr	r3, [r7, #4]
- 320 0014 111C     		mov	r1, r2
- 321 0016 D940     		lsr	r1, r1, r3
- 322 0018 0B1C     		mov	r3, r1
- 323 001a 3B60     		str	r3, [r7]
+ 313              		.loc 1 278 0
+ 314 000a 084B     		ldr	r3, .L23
+ 315 000c 1A68     		ldr	r2, [r3]
+ 316 000e C023     		mov	r3, #192
+ 317 0010 1B02     		lsl	r3, r3, #8
+ 318 0012 1A40     		and	r2, r3
+ 319 0014 7B68     		ldr	r3, [r7, #4]
+ 320 0016 111C     		mov	r1, r2
+ 321 0018 D940     		lsr	r1, r1, r3
+ 322 001a 0B1C     		mov	r3, r1
+ 323 001c 3B60     		str	r3, [r7]
  279:.\Generated_Source\PSoC4/ISR_1.c **** 
  280:.\Generated_Source\PSoC4/ISR_1.c ****     return (uint8)priority;
  324              		.loc 1 280 0
- 325 001c 3B68     		ldr	r3, [r7]
- 326 001e DBB2     		uxtb	r3, r3
+ 325 001e 3B68     		ldr	r3, [r7]
+ 326 0020 DBB2     		uxtb	r3, r3
  281:.\Generated_Source\PSoC4/ISR_1.c **** }
  327              		.loc 1 281 0
- 328 0020 181C     		mov	r0, r3
- 329 0022 BD46     		mov	sp, r7
- 330 0024 02B0     		add	sp, sp, #8
+ 328 0022 181C     		mov	r0, r3
+ 329 0024 BD46     		mov	sp, r7
+ 330 0026 02B0     		add	sp, sp, #8
  331              		@ sp needed
- 332 0026 80BD     		pop	{r7, pc}
+ 332 0028 80BD     		pop	{r7, pc}
  333              	.L24:
- 334              		.align	2
+ 334 002a C046     		.align	2
  335              	.L23:
- 336 0028 10E400E0 		.word	-536812528
+ 336 002c 10E400E0 		.word	-536812528
  337              		.cfi_endproc
  338              	.LFE7:
  339              		.size	ISR_1_GetPriority, .-ISR_1_GetPriority
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  343              		.code	16
  344              		.thumb_func
  345              		.type	ISR_1_Enable, %function
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 12
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 12
 
 
  346              	ISR_1_Enable:
@@ -696,7 +696,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  356              		.loc 1 303 0
  357 0004 024B     		ldr	r3, .L26
  358 0006 8022     		mov	r2, #128
- 359 0008 5202     		lsl	r2, r2, #9
+ 359 0008 9202     		lsl	r2, r2, #10
  360 000a 1A60     		str	r2, [r3]
  304:.\Generated_Source\PSoC4/ISR_1.c **** }
  361              		.loc 1 304 0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  377              		.type	ISR_1_GetState, %function
  378              	ISR_1_GetState:
  379              	.LFB9:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 13
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 13
 
 
  305:.\Generated_Source\PSoC4/ISR_1.c **** 
@@ -753,7 +753,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  389 0004 054B     		ldr	r3, .L32
  390 0006 1A68     		ldr	r2, [r3]
  391 0008 8023     		mov	r3, #128
- 392 000a 5B02     		lsl	r3, r3, #9
+ 392 000a 9B02     		lsl	r3, r3, #10
  393 000c 1340     		and	r3, r2
  394 000e 01D0     		beq	.L29
  395              		.loc 1 324 0 is_stmt 0 discriminator 1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  413              		.size	ISR_1_GetState, .-ISR_1_GetState
  414              		.section	.text.ISR_1_Disable,"ax",%progbits
  415              		.align	2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 14
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 14
 
 
  416              		.global	ISR_1_Disable
@@ -818,7 +818,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  430              		.loc 1 345 0
  431 0004 024B     		ldr	r3, .L35
  432 0006 8022     		mov	r2, #128
- 433 0008 5202     		lsl	r2, r2, #9
+ 433 0008 9202     		lsl	r2, r2, #10
  434 000a 1A60     		str	r2, [r3]
  346:.\Generated_Source\PSoC4/ISR_1.c **** }
  435              		.loc 1 346 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  449              		.code	16
  450              		.thumb_func
  451              		.type	ISR_1_SetPending, %function
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 15
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 15
 
 
  452              	ISR_1_SetPending:
@@ -879,7 +879,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  462              		.loc 1 371 0
  463 0004 024B     		ldr	r3, .L38
  464 0006 8022     		mov	r2, #128
- 465 0008 5202     		lsl	r2, r2, #9
+ 465 0008 9202     		lsl	r2, r2, #10
  466 000a 1A60     		str	r2, [r3]
  372:.\Generated_Source\PSoC4/ISR_1.c **** }
  467              		.loc 1 372 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  480              		.global	ISR_1_ClearPending
  481              		.code	16
  482              		.thumb_func
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 16
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 16
 
 
  483              		.type	ISR_1_ClearPending, %function
@@ -939,7 +939,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  494              		.loc 1 396 0
  495 0004 024B     		ldr	r3, .L41
  496 0006 8022     		mov	r2, #128
- 497 0008 5202     		lsl	r2, r2, #9
+ 497 0008 9202     		lsl	r2, r2, #10
  498 000a 1A60     		str	r2, [r3]
  397:.\Generated_Source\PSoC4/ISR_1.c **** }
  499              		.loc 1 397 0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  512              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
  513              		.file 3 "./state.h"
  514              		.section	.debug_info,"",%progbits
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 17
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 17
 
 
  515              	.Ldebug_info0:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  569 006c 37010000 		.4byte	.LASF9
  570 0070 02       		.byte	0x2
  571 0071 B3       		.byte	0xb3
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 18
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 18
 
 
  572 0072 2C000000 		.4byte	0x2c
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  626 00e3 F6000000 		.4byte	0xf6
  627 00e7 0B       		.uleb128 0xb
  628 00e8 9B010000 		.4byte	.LASF22
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 19
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 19
 
 
  629 00ec 01       		.byte	0x1
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  683 0158 00000000 		.4byte	.LFB6
  684 015c 50000000 		.4byte	.LFE6-.LFB6
  685 0160 01       		.uleb128 0x1
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 20
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 20
 
 
  686 0161 9C       		.byte	0x9c
@@ -1174,7 +1174,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  716 0197 1101     		.2byte	0x111
  717 0199 6B000000 		.4byte	0x6b
  718 019d 00000000 		.4byte	.LFB7
- 719 01a1 2C000000 		.4byte	.LFE7-.LFB7
+ 719 01a1 30000000 		.4byte	.LFE7-.LFB7
  720 01a5 01       		.uleb128 0x1
  721 01a6 9C       		.byte	0x9c
  722 01a7 CA010000 		.4byte	0x1ca
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  740 01ca 12       		.uleb128 0x12
  741 01cb 7A010000 		.4byte	.LASF27
  742 01cf 01       		.byte	0x1
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 21
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 21
 
 
  743 01d0 2C01     		.2byte	0x12c
@@ -1242,7 +1242,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  781 0228 14       		.uleb128 0x14
  782 0229 41000000 		.4byte	.LASF33
  783 022d 03       		.byte	0x3
- 784 022e 17       		.byte	0x17
+ 784 022e 18       		.byte	0x18
  785 022f 5D000000 		.4byte	0x5d
  786 0233 15       		.uleb128 0x15
  787 0234 A7000000 		.4byte	0xa7
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  797 024a 33020000 		.4byte	0x233
  798 024e 00       		.byte	0
  799              		.section	.debug_abbrev,"",%progbits
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 22
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 22
 
 
  800              	.Ldebug_abbrev0:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  854 0035 00       		.byte	0
  855 0036 05       		.uleb128 0x5
  856 0037 16       		.uleb128 0x16
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 23
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 23
 
 
  857 0038 00       		.byte	0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  911 006f 19       		.uleb128 0x19
  912 0070 00       		.byte	0
  913 0071 00       		.byte	0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 24
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 24
 
 
  914 0072 0A       		.uleb128 0xa
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  968 00a9 01       		.uleb128 0x1
  969 00aa 12       		.uleb128 0x12
  970 00ab 06       		.uleb128 0x6
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 25
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 25
 
 
  971 00ac 40       		.uleb128 0x40
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  1025 00e5 00       		.byte	0
  1026 00e6 00       		.byte	0
  1027 00e7 0F       		.uleb128 0xf
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 26
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 26
 
 
  1028 00e8 34       		.uleb128 0x34
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  1082 011f 00       		.byte	0
  1083 0120 00       		.byte	0
  1084 0121 12       		.uleb128 0x12
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 27
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 27
 
 
  1085 0122 2E       		.uleb128 0x2e
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  1139 015a 3B       		.uleb128 0x3b
  1140 015b 0B       		.uleb128 0xb
  1141 015c 49       		.uleb128 0x49
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 28
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 28
 
 
  1142 015d 13       		.uleb128 0x13
@@ -1670,7 +1670,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  1188 0040 00000000 		.4byte	.LFB6
  1189 0044 50000000 		.4byte	.LFE6-.LFB6
  1190 0048 00000000 		.4byte	.LFB7
- 1191 004c 2C000000 		.4byte	.LFE7-.LFB7
+ 1191 004c 30000000 		.4byte	.LFE7-.LFB7
  1192 0050 00000000 		.4byte	.LFB8
  1193 0054 14000000 		.4byte	.LFE8-.LFB8
  1194 0058 00000000 		.4byte	.LFB9
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  1196 0060 00000000 		.4byte	.LFB10
  1197 0064 14000000 		.4byte	.LFE10-.LFB10
  1198 0068 00000000 		.4byte	.LFB11
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 29
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 29
 
 
  1199 006c 14000000 		.4byte	.LFE11-.LFB11
@@ -1703,7 +1703,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  1218 0030 00000000 		.4byte	.LFB6
  1219 0034 50000000 		.4byte	.LFE6
  1220 0038 00000000 		.4byte	.LFB7
- 1221 003c 2C000000 		.4byte	.LFE7
+ 1221 003c 30000000 		.4byte	.LFE7
  1222 0040 00000000 		.4byte	.LFB8
  1223 0044 14000000 		.4byte	.LFE8
  1224 0048 00000000 		.4byte	.LFB9
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  1242      536F7572 
  1242      63655C50 
  1243              	.LASF17:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 30
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 30
 
 
  1244 0035 4953525F 		.ascii	"ISR_1_Start\000"
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  1264      72727570 
  1264      74537461 
  1264      746500
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 31
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 31
 
 
  1265              	.LASF5:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  1290 01ba 433A5C55 		.ascii	"C:\\Users\\TinyWindows\\Documents\\PSoC Creator\\pi"
  1290      73657273 
  1290      5C54696E 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 32
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 32
 
 
  1290      7957696E 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 1
  1311      6E6700
  1312              	.LASF26:
  1313 0291 7072696F 		.ascii	"priorityOffset\000"
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccUVW6Wn.s 			page 33
+ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cchR1XK1.s 			page 33
 
 
  1313      72697479 

@@ -65,8 +65,8 @@
 #define CapSense_TOTAL_MATRIX_BUTTONS_COUNT          (0u)
 #define CapSense_TOTAL_GENERICS_COUNT                (0u)
 
-#define CapSense_POS_FILTERS_MASK                    (0x10u)
-#define CapSense_LINEAR_SLIDERS_POS_FILTERS_MASK     (0x10u)
+#define CapSense_POS_FILTERS_MASK                    (0x8u)
+#define CapSense_LINEAR_SLIDERS_POS_FILTERS_MASK     (0x8u)
 #define CapSense_RADIAL_SLIDERS_POS_FILTERS_MASK     (0x0u)
 #define CapSense_TOUCH_PADS_POS_FILTERS_MASK         (0x0u)
 #define CapSense_TRACKPAD_GEST_POS_FILTERS_MASK      (0x0u)

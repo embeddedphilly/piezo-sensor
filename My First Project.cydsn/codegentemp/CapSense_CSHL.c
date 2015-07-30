@@ -95,7 +95,7 @@ static const uint16 CapSense_centroidMult[] = {
 };
 
 static uint8 CapSense_posFiltersMask[] = {
-    0x10u, 
+    0x8u, 
 };
 
 static uint8 CapSense_posFiltersData[] = {

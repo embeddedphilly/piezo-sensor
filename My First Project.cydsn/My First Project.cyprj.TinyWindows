@@ -11,78 +11,6 @@
 <CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
-<file name=".\CortexM0\ARM_GCC_484\Debug\piezoelectric.o">
-<dep name=".\Generated_Source\PSoC4\CapSense.h" />
-<dep name=".\Generated_Source\PSoC4\CapSense_CSHL.h" />
-<dep name=".\Generated_Source\PSoC4\CapSense_IP.h" />
-<dep name=".\Generated_Source\PSoC4\CapSense_PVT.h" />
-<dep name=".\Generated_Source\PSoC4\CapSense_SMS.h" />
-<dep name=".\Generated_Source\PSoC4\CapSense_SampleClk.h" />
-<dep name=".\Generated_Source\PSoC4\CapSense_SenseClk.h" />
-<dep name=".\Generated_Source\PSoC4\CapSense_Sns_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\CapSense_TunerHelper.h" />
-<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
-<dep name=".\Generated_Source\PSoC4\Clock_2.h" />
-<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
-<dep name=".\Generated_Source\PSoC4\CyLib.h" />
-<dep name=".\Generated_Source\PSoC4\ISR_1.h" />
-<dep name=".\Generated_Source\PSoC4\PIEZO_PIN.h" />
-<dep name=".\Generated_Source\PSoC4\PIEZO_PIN_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\PWM_1.h" />
-<dep name=".\Generated_Source\PSoC4\TRIGGER_TIMER.h" />
-<dep name=".\Generated_Source\PSoC4\TRIGGER_TIMER_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\Timer_1.h" />
-<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
-<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
-<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
-<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
-<dep name=".\Generated_Source\PSoC4\cyPm.h" />
-<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
-<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
-<dep name=".\Generated_Source\PSoC4\cypins.h" />
-<dep name=".\Generated_Source\PSoC4\cytypes.h" />
-<dep name=".\Generated_Source\PSoC4\project.h" />
-<dep name=".\piezoelectric.c" />
-<dep name=".\piezoelectric.h" />
-</file>
-<file name=".\Generated_Source\PSoC4\CapSense.h" />
-<file name=".\Generated_Source\PSoC4\CapSense_CSHL.h" />
-<file name=".\Generated_Source\PSoC4\CapSense_IP.h" />
-<file name=".\Generated_Source\PSoC4\CapSense_PVT.h" />
-<file name=".\Generated_Source\PSoC4\CapSense_SMS.h" />
-<file name=".\Generated_Source\PSoC4\CapSense_SampleClk.h" />
-<file name=".\Generated_Source\PSoC4\CapSense_SenseClk.h" />
-<file name=".\Generated_Source\PSoC4\CapSense_Sns_aliases.h" />
-<file name=".\Generated_Source\PSoC4\CapSense_TunerHelper.h" />
-<file name=".\Generated_Source\PSoC4\Clock_1.h" />
-<file name=".\Generated_Source\PSoC4\Clock_2.h" />
-<file name=".\Generated_Source\PSoC4\CyFlash.h" />
-<file name=".\Generated_Source\PSoC4\CyLFClk.h" />
-<file name=".\Generated_Source\PSoC4\CyLib.h" />
-<file name=".\Generated_Source\PSoC4\ISR_1.h" />
-<file name=".\Generated_Source\PSoC4\PIEZO_PIN.h" />
-<file name=".\Generated_Source\PSoC4\PIEZO_PIN_aliases.h" />
-<file name=".\Generated_Source\PSoC4\PWM_1.h" />
-<file name=".\Generated_Source\PSoC4\TRIGGER_TIMER.h" />
-<file name=".\Generated_Source\PSoC4\TRIGGER_TIMER_aliases.h" />
-<file name=".\Generated_Source\PSoC4\Timer_1.h" />
-<file name=".\Generated_Source\PSoC4\core_cm0.h" />
-<file name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
-<file name=".\Generated_Source\PSoC4\core_cmFunc.h" />
-<file name=".\Generated_Source\PSoC4\core_cmInstr.h" />
-<file name=".\Generated_Source\PSoC4\cyPm.h" />
-<file name=".\Generated_Source\PSoC4\cydevice_trm.h" />
-<file name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
-<file name=".\Generated_Source\PSoC4\cyfitter.h" />
-<file name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
-<file name=".\Generated_Source\PSoC4\cypins.h" />
-<file name=".\Generated_Source\PSoC4\cytypes.h" />
-<file name=".\Generated_Source\PSoC4\project.h" />
-<file name=".\piezoelectric.c" />
-<file name=".\piezoelectric.h" />
 <file name=".\CortexM0\ARM_GCC_484\Debug\main.o">
 <dep name=".\Generated_Source\PSoC4\CapSense.h" />
 <dep name=".\Generated_Source\PSoC4\CapSense_CSHL.h" />
@@ -123,10 +51,82 @@
 <dep name=".\state.h" />
 <dep name=".\tones.h" />
 </file>
+<file name=".\Generated_Source\PSoC4\CapSense.h" />
+<file name=".\Generated_Source\PSoC4\CapSense_CSHL.h" />
+<file name=".\Generated_Source\PSoC4\CapSense_IP.h" />
+<file name=".\Generated_Source\PSoC4\CapSense_PVT.h" />
+<file name=".\Generated_Source\PSoC4\CapSense_SMS.h" />
+<file name=".\Generated_Source\PSoC4\CapSense_SampleClk.h" />
+<file name=".\Generated_Source\PSoC4\CapSense_SenseClk.h" />
+<file name=".\Generated_Source\PSoC4\CapSense_Sns_aliases.h" />
+<file name=".\Generated_Source\PSoC4\CapSense_TunerHelper.h" />
+<file name=".\Generated_Source\PSoC4\Clock_1.h" />
+<file name=".\Generated_Source\PSoC4\Clock_2.h" />
+<file name=".\Generated_Source\PSoC4\CyFlash.h" />
+<file name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<file name=".\Generated_Source\PSoC4\CyLib.h" />
+<file name=".\Generated_Source\PSoC4\ISR_1.h" />
+<file name=".\Generated_Source\PSoC4\PIEZO_PIN.h" />
+<file name=".\Generated_Source\PSoC4\PIEZO_PIN_aliases.h" />
+<file name=".\Generated_Source\PSoC4\PWM_1.h" />
+<file name=".\Generated_Source\PSoC4\TRIGGER_TIMER.h" />
+<file name=".\Generated_Source\PSoC4\TRIGGER_TIMER_aliases.h" />
+<file name=".\Generated_Source\PSoC4\Timer_1.h" />
+<file name=".\Generated_Source\PSoC4\core_cm0.h" />
+<file name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<file name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<file name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<file name=".\Generated_Source\PSoC4\cyPm.h" />
+<file name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<file name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<file name=".\Generated_Source\PSoC4\cyfitter.h" />
+<file name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<file name=".\Generated_Source\PSoC4\cypins.h" />
+<file name=".\Generated_Source\PSoC4\cytypes.h" />
+<file name=".\Generated_Source\PSoC4\project.h" />
 <file name=".\main.c" />
 <file name=".\notes.h" />
+<file name=".\piezoelectric.h" />
 <file name=".\state.h" />
 <file name=".\tones.h" />
+<file name=".\CortexM0\ARM_GCC_484\Debug\piezoelectric.o">
+<dep name=".\Generated_Source\PSoC4\CapSense.h" />
+<dep name=".\Generated_Source\PSoC4\CapSense_CSHL.h" />
+<dep name=".\Generated_Source\PSoC4\CapSense_IP.h" />
+<dep name=".\Generated_Source\PSoC4\CapSense_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\CapSense_SMS.h" />
+<dep name=".\Generated_Source\PSoC4\CapSense_SampleClk.h" />
+<dep name=".\Generated_Source\PSoC4\CapSense_SenseClk.h" />
+<dep name=".\Generated_Source\PSoC4\CapSense_Sns_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\CapSense_TunerHelper.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_2.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\ISR_1.h" />
+<dep name=".\Generated_Source\PSoC4\PIEZO_PIN.h" />
+<dep name=".\Generated_Source\PSoC4\PIEZO_PIN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_1.h" />
+<dep name=".\Generated_Source\PSoC4\TRIGGER_TIMER.h" />
+<dep name=".\Generated_Source\PSoC4\TRIGGER_TIMER_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Timer_1.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\piezoelectric.c" />
+<dep name=".\piezoelectric.h" />
+</file>
+<file name=".\piezoelectric.c" />
 <file name=".\CortexM0\ARM_GCC_484\Debug\CapSense.o">
 <dep name=".\Generated_Source\PSoC4\CapSense.c" />
 <dep name=".\Generated_Source\PSoC4\CapSense.h" />
@@ -268,6 +268,10 @@
 <dep name=".\state.h" />
 </file>
 <file name=".\Generated_Source\PSoC4\ISR_1.c" />
+<file name=".\CortexM0\ARM_GCC_484\Debug\test.o">
+<dep name=".\test.c" />
+</file>
+<file name=".\test.c" />
 <file name=".\CortexM0\ARM_GCC_484\Debug\Clock_1.o">
 <dep name=".\Generated_Source\PSoC4\Clock_1.c" />
 <dep name=".\Generated_Source\PSoC4\Clock_1.h" />
@@ -595,6 +599,7 @@
 <file name=".\CortexM0\ARM_GCC_484\Debug\My First Project.hex">
 <dep name=".\CortexM0\ARM_GCC_484\Debug\main.o" />
 <dep name=".\CortexM0\ARM_GCC_484\Debug\piezoelectric.o" />
+<dep name=".\CortexM0\ARM_GCC_484\Debug\test.o" />
 <dep name=".\CortexM0\ARM_GCC_484\Debug\cyfitter_cfg.o" />
 <dep name=".\CortexM0\ARM_GCC_484\Debug\cymetadata.o" />
 <dep name=".\CortexM0\ARM_GCC_484\Debug\PWM_1.o" />
@@ -669,6 +674,7 @@
 <name_val_pair name=".\Generated_Source\PSoC4\CapSense_SMS.c" v="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC4\CapSense_SampleClk.c" v="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -O0" />
 <name_val_pair name=".\Generated_Source\PSoC4\CapSense_SenseClk.c" v="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -O0" />
+<name_val_pair name=".\test.c" v="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -O0" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\TinyWindows\AppData\Local\Cypress Semiconductor\PSoC Creator\3.2&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p &quot;C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\My First Project.cyprj&quot; -d CY8C4245AXI-483 -s &quot;C:\Users\TinyWindows\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\Generated_Source\PSoC4&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
@@ -690,10 +696,11 @@
 <v>Off-Chip</v>
 </tree_states_tab_names>
 <tree_states>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Cypress Component Catalog\Communications\UART [v2.50]">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Cypress Component Catalog\CapSense\CapSense CSD [v2.20]">
 <ExpandedNodeIds>
 <v>Cypress Component Catalog</v>
 <v>Cypress Component Catalog\Analog</v>
+<v>Cypress Component Catalog\CapSense</v>
 <v>Cypress Component Catalog\Communications</v>
 <v>Cypress Component Catalog\Digital</v>
 <v>Cypress Component Catalog\Ports and Pins</v>
@@ -709,6 +716,7 @@
 <v>Cypress Component Catalog\Analog\DAC</v>
 <v>Cypress Component Catalog\Analog\Manual Routing</v>
 <v>Cypress Component Catalog\CapSense</v>
+<v>Cypress Component Catalog\CapSense\CapSense CSD [v2.20]</v>
 <v>Cypress Component Catalog\Communications</v>
 <v>Cypress Component Catalog\Communications\I2C</v>
 <v>Cypress Component Catalog\Communications\I2S</v>
@@ -732,7 +740,6 @@
 <v>Cypress Component Catalog\Ports and Pins\Digital Output Pin [v2.10]</v>
 <v>Cypress Component Catalog\System</v>
 <v>Cypress Component Catalog\System\Bootloadable [v1.30]</v>
-<v>Cypress Component Catalog\System\Bootloader [v1.30]</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Off-Chip Component Catalog\Power">
@@ -1293,14 +1300,14 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="130826799813608815" />
+<deps_time v="130826849304157479" />
 <top_block v="TopDesign" />
 <last_generation v="2" />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="130826816245953964" />
+<deps_time v="130826852794174384" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">

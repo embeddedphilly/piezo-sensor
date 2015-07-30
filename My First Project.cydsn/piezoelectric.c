@@ -12,6 +12,7 @@
 #include <project.h>
 #include "cytypes.h"
 #include "Timer_1.h"
+#include "TRIGGER_TIMER.h"
 #include "PWM_1.h"
 #include "piezoelectric.h"
 
@@ -60,8 +61,6 @@ void piezo_stop()
 
 void piezo_play(uint16 frequency_value, uint8 note)
 {
-    // figure out the duration of this note (in ms), given the current tempo
-    uint16 duration = 60000/tempo/note;
     
     // duty cycle ticks is a percentage of frequency based on volume
     int period_ticks = f_clock * freq_mod / frequency_value;
@@ -73,6 +72,12 @@ void piezo_play(uint16 frequency_value, uint8 note)
     
     // Set compare to toggle on duty cycle ticks
     PWM_1_WriteCompare(compare_ticks);
+    
+    // Figure out the duration of the note and set and trigger the interrupt timer
+    uint16 duration = 60000/tempo/note;
+    Timer_1_WriteCompare(duration);
+    TRIGGER_TIMER_Write(1);
+    //TRIGGER_TIMER_Write(0);
 }
 
 void piezo_rest(uint8 note)
