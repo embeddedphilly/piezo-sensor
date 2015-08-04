@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 1
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 1
    2:.\main.c      ****  *
    3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
    4:.\main.c      ****  * All Rights Reserved
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 2
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 2
 
 
    5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 1
   36:.\main.c      **** 
   37:.\main.c      ****     piezo_tempo(100);
   77              		.loc 1 37 0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 3
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 3
 
 
   78 0018 6420     		mov	r0, #100
@@ -127,7 +127,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 1
   39:.\main.c      ****     uint16 melody_simple[] = {
   80              		.loc 1 39 0
   81 001e 3A1D     		add	r2, r7, #4
-  82 0020 1C4B     		ldr	r3, .L6
+  82 0020 1D4B     		ldr	r3, .L6
   83 0022 111C     		mov	r1, r2
   84 0024 1A1C     		mov	r2, r3
   85 0026 2023     		mov	r3, #32
@@ -159,793 +159,797 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 1
   96              		.loc 1 54 0
   97 003a 3B1D     		add	r3, r7, #4
   98 003c FB62     		str	r3, [r7, #44]
-  99              	.L5:
   55:.\main.c      ****     
-  56:.\main.c      ****    
-  57:.\main.c      ****     for(;;)
-  58:.\main.c      ****     {
-  59:.\main.c      ****         /* Place your application code here. */
-  60:.\main.c      ****         
-  61:.\main.c      ****         //cap_sense_update_volume();
+  56:.\main.c      ****     // Start Interrupt
+  57:.\main.c      ****     ISR_1_Start();
+  99              		.loc 1 57 0
+ 100 003e FFF7FEFF 		bl	ISR_1_Start
+ 101              	.L5:
+  58:.\main.c      ****     
+  59:.\main.c      ****     for(;;)
+  60:.\main.c      ****     {
+  61:.\main.c      ****         /* Place your application code here. */
   62:.\main.c      ****         
-  63:.\main.c      ****         if(state == STATE_READY) {
- 100              		.loc 1 63 0
- 101 003e 164B     		ldr	r3, .L6+4
- 102 0040 1B68     		ldr	r3, [r3]
- 103 0042 012B     		cmp	r3, #1
- 104 0044 25D1     		bne	.L2
-  64:.\main.c      ****             if(tune_counter == length) {
- 105              		.loc 1 64 0
- 106 0046 7A6B     		ldr	r2, [r7, #52]
- 107 0048 3B6B     		ldr	r3, [r7, #48]
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 4
+  63:.\main.c      ****         //cap_sense_update_volume();
+  64:.\main.c      ****         
+  65:.\main.c      ****         if(state == STATE_READY) {
+ 102              		.loc 1 65 0
+ 103 0042 164B     		ldr	r3, .L6+4
+ 104 0044 1B68     		ldr	r3, [r3]
+ 105 0046 012B     		cmp	r3, #1
+ 106 0048 25D1     		bne	.L2
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 4
 
 
- 108 004a 9A42     		cmp	r2, r3
- 109 004c 05D1     		bne	.L3
-  65:.\main.c      ****                 state = STATE_END;
- 110              		.loc 1 65 0
- 111 004e 124B     		ldr	r3, .L6+4
- 112 0050 0322     		mov	r2, #3
- 113 0052 1A60     		str	r2, [r3]
-  66:.\main.c      ****                 piezo_stop();
- 114              		.loc 1 66 0
- 115 0054 FFF7FEFF 		bl	piezo_stop
- 116              	.L4:
-  67:.\main.c      ****                 for(;;){}
- 117              		.loc 1 67 0 discriminator 1
- 118 0058 FEE7     		b	.L4
- 119              	.L3:
-  68:.\main.c      ****             }
-  69:.\main.c      ****             tone = tune[tune_counter++];
- 120              		.loc 1 69 0
- 121 005a 7B6B     		ldr	r3, [r7, #52]
- 122 005c 5A1C     		add	r2, r3, #1
- 123 005e 7A63     		str	r2, [r7, #52]
- 124 0060 5B00     		lsl	r3, r3, #1
- 125 0062 FA6A     		ldr	r2, [r7, #44]
- 126 0064 D318     		add	r3, r2, r3
- 127 0066 1B88     		ldrh	r3, [r3]
- 128 0068 BB62     		str	r3, [r7, #40]
-  70:.\main.c      ****             note = tune[tune_counter++];
- 129              		.loc 1 70 0
- 130 006a 7B6B     		ldr	r3, [r7, #52]
- 131 006c 5A1C     		add	r2, r3, #1
- 132 006e 7A63     		str	r2, [r7, #52]
- 133 0070 5B00     		lsl	r3, r3, #1
- 134 0072 FA6A     		ldr	r2, [r7, #44]
- 135 0074 D318     		add	r3, r2, r3
- 136 0076 1B88     		ldrh	r3, [r3]
- 137 0078 7B62     		str	r3, [r7, #36]
-  71:.\main.c      ****             
-  72:.\main.c      ****             //piezo_tone(tone);
-  73:.\main.c      ****             piezo_play(tone, note);
- 138              		.loc 1 73 0
- 139 007a BB6A     		ldr	r3, [r7, #40]
- 140 007c 9AB2     		uxth	r2, r3
- 141 007e 7B6A     		ldr	r3, [r7, #36]
- 142 0080 DBB2     		uxtb	r3, r3
- 143 0082 101C     		mov	r0, r2
- 144 0084 191C     		mov	r1, r3
- 145 0086 FFF7FEFF 		bl	piezo_play
-  74:.\main.c      ****             state = STATE_PLAY;
- 146              		.loc 1 74 0
- 147 008a 034B     		ldr	r3, .L6+4
- 148 008c 0222     		mov	r2, #2
- 149 008e 1A60     		str	r2, [r3]
-  75:.\main.c      ****         }
-  76:.\main.c      ****         
-  77:.\main.c      ****     }
- 150              		.loc 1 77 0
- 151 0090 D5E7     		b	.L5
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 5
+  66:.\main.c      ****             if(tune_counter == length) {
+ 107              		.loc 1 66 0
+ 108 004a 7A6B     		ldr	r2, [r7, #52]
+ 109 004c 3B6B     		ldr	r3, [r7, #48]
+ 110 004e 9A42     		cmp	r2, r3
+ 111 0050 05D1     		bne	.L3
+  67:.\main.c      ****                 state = STATE_END;
+ 112              		.loc 1 67 0
+ 113 0052 124B     		ldr	r3, .L6+4
+ 114 0054 0322     		mov	r2, #3
+ 115 0056 1A60     		str	r2, [r3]
+  68:.\main.c      ****                 piezo_stop();
+ 116              		.loc 1 68 0
+ 117 0058 FFF7FEFF 		bl	piezo_stop
+ 118              	.L4:
+  69:.\main.c      ****                 for(;;){}
+ 119              		.loc 1 69 0 discriminator 1
+ 120 005c FEE7     		b	.L4
+ 121              	.L3:
+  70:.\main.c      ****             }
+  71:.\main.c      ****             tone = tune[tune_counter++];
+ 122              		.loc 1 71 0
+ 123 005e 7B6B     		ldr	r3, [r7, #52]
+ 124 0060 5A1C     		add	r2, r3, #1
+ 125 0062 7A63     		str	r2, [r7, #52]
+ 126 0064 5B00     		lsl	r3, r3, #1
+ 127 0066 FA6A     		ldr	r2, [r7, #44]
+ 128 0068 D318     		add	r3, r2, r3
+ 129 006a 1B88     		ldrh	r3, [r3]
+ 130 006c BB62     		str	r3, [r7, #40]
+  72:.\main.c      ****             note = tune[tune_counter++];
+ 131              		.loc 1 72 0
+ 132 006e 7B6B     		ldr	r3, [r7, #52]
+ 133 0070 5A1C     		add	r2, r3, #1
+ 134 0072 7A63     		str	r2, [r7, #52]
+ 135 0074 5B00     		lsl	r3, r3, #1
+ 136 0076 FA6A     		ldr	r2, [r7, #44]
+ 137 0078 D318     		add	r3, r2, r3
+ 138 007a 1B88     		ldrh	r3, [r3]
+ 139 007c 7B62     		str	r3, [r7, #36]
+  73:.\main.c      ****             
+  74:.\main.c      ****             //piezo_tone(tone);
+  75:.\main.c      ****             piezo_play(tone, note);
+ 140              		.loc 1 75 0
+ 141 007e BB6A     		ldr	r3, [r7, #40]
+ 142 0080 9AB2     		uxth	r2, r3
+ 143 0082 7B6A     		ldr	r3, [r7, #36]
+ 144 0084 DBB2     		uxtb	r3, r3
+ 145 0086 101C     		mov	r0, r2
+ 146 0088 191C     		mov	r1, r3
+ 147 008a FFF7FEFF 		bl	piezo_play
+  76:.\main.c      ****             state = STATE_PLAY;
+ 148              		.loc 1 76 0
+ 149 008e 034B     		ldr	r3, .L6+4
+ 150 0090 0222     		mov	r2, #2
+ 151 0092 1A60     		str	r2, [r3]
+  77:.\main.c      ****         }
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 5
 
 
- 152              	.L2:
- 153 0092 D4E7     		b	.L5
- 154              	.L7:
- 155              		.align	2
- 156              	.L6:
- 157 0094 00000000 		.word	.LC0
- 158 0098 00000000 		.word	state
- 159              		.cfi_endproc
- 160              	.LFE33:
- 161              		.size	main, .-main
- 162              		.global	__aeabi_idiv
- 163              		.section	.text.cap_sense_update_volume,"ax",%progbits
- 164              		.align	2
- 165              		.global	cap_sense_update_volume
- 166              		.code	16
- 167              		.thumb_func
- 168              		.type	cap_sense_update_volume, %function
- 169              	cap_sense_update_volume:
- 170              	.LFB34:
-  78:.\main.c      **** 
-  79:.\main.c      **** }
+  78:.\main.c      ****         
+  79:.\main.c      ****     }
+ 152              		.loc 1 79 0
+ 153 0094 D5E7     		b	.L5
+ 154              	.L2:
+ 155 0096 D4E7     		b	.L5
+ 156              	.L7:
+ 157              		.align	2
+ 158              	.L6:
+ 159 0098 00000000 		.word	.LC0
+ 160 009c 00000000 		.word	state
+ 161              		.cfi_endproc
+ 162              	.LFE33:
+ 163              		.size	main, .-main
+ 164              		.global	__aeabi_idiv
+ 165              		.section	.text.cap_sense_update_volume,"ax",%progbits
+ 166              		.align	2
+ 167              		.global	cap_sense_update_volume
+ 168              		.code	16
+ 169              		.thumb_func
+ 170              		.type	cap_sense_update_volume, %function
+ 171              	cap_sense_update_volume:
+ 172              	.LFB34:
   80:.\main.c      **** 
-  81:.\main.c      **** void cap_sense_update_volume(void)
-  82:.\main.c      **** {
- 171              		.loc 1 82 0
- 172              		.cfi_startproc
- 173 0000 80B5     		push	{r7, lr}
- 174              		.cfi_def_cfa_offset 8
- 175              		.cfi_offset 7, -8
- 176              		.cfi_offset 14, -4
- 177 0002 00AF     		add	r7, sp, #0
- 178              		.cfi_def_cfa_register 7
-  83:.\main.c      ****     /* Update all baselines */
-  84:.\main.c      ****     CapSense_UpdateEnabledBaselines();
- 179              		.loc 1 84 0
- 180 0004 FFF7FEFF 		bl	CapSense_UpdateEnabledBaselines
-  85:.\main.c      ****         
-  86:.\main.c      ****    	/* Start scanning all enabled sensors */
-  87:.\main.c      ****     CapSense_ScanEnabledWidgets();
- 181              		.loc 1 87 0
- 182 0008 FFF7FEFF 		bl	CapSense_ScanEnabledWidgets
-  88:.\main.c      ****     
-  89:.\main.c      ****     /* Wait for scanning to complete */
-  90:.\main.c      **** 	while(CapSense_IsBusy() != 0)
- 183              		.loc 1 90 0
- 184 000c C046     		mov	r8, r8
- 185              	.L9:
- 186              		.loc 1 90 0 is_stmt 0 discriminator 1
- 187 000e FFF7FEFF 		bl	CapSense_IsBusy
- 188 0012 031C     		mov	r3, r0
- 189 0014 002B     		cmp	r3, #0
- 190 0016 FAD1     		bne	.L9
-  91:.\main.c      **** 	{
-  92:.\main.c      **** 		/* Loop until condition true */
-  93:.\main.c      **** 	}
-  94:.\main.c      ****     
-  95:.\main.c      ****     /* Find Slider Position */
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 6
+  81:.\main.c      **** }
+  82:.\main.c      **** 
+  83:.\main.c      **** void cap_sense_update_volume(void)
+  84:.\main.c      **** {
+ 173              		.loc 1 84 0
+ 174              		.cfi_startproc
+ 175 0000 80B5     		push	{r7, lr}
+ 176              		.cfi_def_cfa_offset 8
+ 177              		.cfi_offset 7, -8
+ 178              		.cfi_offset 14, -4
+ 179 0002 00AF     		add	r7, sp, #0
+ 180              		.cfi_def_cfa_register 7
+  85:.\main.c      ****     /* Update all baselines */
+  86:.\main.c      ****     CapSense_UpdateEnabledBaselines();
+ 181              		.loc 1 86 0
+ 182 0004 FFF7FEFF 		bl	CapSense_UpdateEnabledBaselines
+  87:.\main.c      ****         
+  88:.\main.c      ****    	/* Start scanning all enabled sensors */
+  89:.\main.c      ****     CapSense_ScanEnabledWidgets();
+ 183              		.loc 1 89 0
+ 184 0008 FFF7FEFF 		bl	CapSense_ScanEnabledWidgets
+  90:.\main.c      ****     
+  91:.\main.c      ****     /* Wait for scanning to complete */
+  92:.\main.c      **** 	while(CapSense_IsBusy() != 0)
+ 185              		.loc 1 92 0
+ 186 000c C046     		mov	r8, r8
+ 187              	.L9:
+ 188              		.loc 1 92 0 is_stmt 0 discriminator 1
+ 189 000e FFF7FEFF 		bl	CapSense_IsBusy
+ 190 0012 031C     		mov	r3, r0
+ 191 0014 002B     		cmp	r3, #0
+ 192 0016 FAD1     		bne	.L9
+  93:.\main.c      **** 	{
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 6
 
 
-  96:.\main.c      ****     curPos = CapSense_GetCentroidPos(CapSense_LINEARSLIDER0__LS);    
- 191              		.loc 1 96 0 is_stmt 1
- 192 0018 0020     		mov	r0, #0
- 193 001a FFF7FEFF 		bl	CapSense_GetCentroidPos
- 194 001e 031C     		mov	r3, r0
- 195 0020 1A1C     		mov	r2, r3
- 196 0022 174B     		ldr	r3, .L12
- 197 0024 1A80     		strh	r2, [r3]
-  97:.\main.c      ****     
-  98:.\main.c      ****     /* Reset position */
-  99:.\main.c      ****     if(curPos == 0xFFFFu)
- 198              		.loc 1 99 0
- 199 0026 164B     		ldr	r3, .L12
- 200 0028 1A88     		ldrh	r2, [r3]
- 201 002a 164B     		ldr	r3, .L12+4
- 202 002c 9A42     		cmp	r2, r3
- 203 002e 02D1     		bne	.L10
- 100:.\main.c      ****     {
- 101:.\main.c      ****         curPos = 0u;
- 204              		.loc 1 101 0
- 205 0030 134B     		ldr	r3, .L12
- 206 0032 0022     		mov	r2, #0
- 207 0034 1A80     		strh	r2, [r3]
- 208              	.L10:
- 102:.\main.c      ****     }
- 103:.\main.c      ****                 
- 104:.\main.c      ****     /* Move bargraph */
- 105:.\main.c      ****     if (curPos != oldPos)
- 209              		.loc 1 105 0
- 210 0036 124B     		ldr	r3, .L12
- 211 0038 1A88     		ldrh	r2, [r3]
- 212 003a 134B     		ldr	r3, .L12+8
- 213 003c 1B88     		ldrh	r3, [r3]
- 214 003e 9A42     		cmp	r2, r3
- 215 0040 1CD0     		beq	.L8
- 106:.\main.c      ****     {
- 107:.\main.c      ****         oldPos = curPos;
- 216              		.loc 1 107 0
- 217 0042 0F4B     		ldr	r3, .L12
- 218 0044 1A88     		ldrh	r2, [r3]
- 219 0046 104B     		ldr	r3, .L12+8
- 220 0048 1A80     		strh	r2, [r3]
- 108:.\main.c      ****         volume = curPos*MAX_SLIDER/MAX_VOLUME;  
- 221              		.loc 1 108 0
- 222 004a 0D4B     		ldr	r3, .L12
- 223 004c 1B88     		ldrh	r3, [r3]
- 224 004e 1A1C     		mov	r2, r3
- 225 0050 131C     		mov	r3, r2
- 226 0052 DB01     		lsl	r3, r3, #7
- 227 0054 9B1A     		sub	r3, r3, r2
- 228 0056 181C     		mov	r0, r3
- 229 0058 0521     		mov	r1, #5
- 230 005a FFF7FEFF 		bl	__aeabi_idiv
- 231 005e 031C     		mov	r3, r0
- 232 0060 1A1C     		mov	r2, r3
- 233 0062 0A4B     		ldr	r3, .L12+12
- 234 0064 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 7
+  94:.\main.c      **** 		/* Loop until condition true */
+  95:.\main.c      **** 	}
+  96:.\main.c      ****     
+  97:.\main.c      ****     /* Find Slider Position */
+  98:.\main.c      ****     curPos = CapSense_GetCentroidPos(CapSense_LINEARSLIDER0__LS);    
+ 193              		.loc 1 98 0 is_stmt 1
+ 194 0018 0020     		mov	r0, #0
+ 195 001a FFF7FEFF 		bl	CapSense_GetCentroidPos
+ 196 001e 031C     		mov	r3, r0
+ 197 0020 1A1C     		mov	r2, r3
+ 198 0022 174B     		ldr	r3, .L12
+ 199 0024 1A80     		strh	r2, [r3]
+  99:.\main.c      ****     
+ 100:.\main.c      ****     /* Reset position */
+ 101:.\main.c      ****     if(curPos == 0xFFFFu)
+ 200              		.loc 1 101 0
+ 201 0026 164B     		ldr	r3, .L12
+ 202 0028 1A88     		ldrh	r2, [r3]
+ 203 002a 164B     		ldr	r3, .L12+4
+ 204 002c 9A42     		cmp	r2, r3
+ 205 002e 02D1     		bne	.L10
+ 102:.\main.c      ****     {
+ 103:.\main.c      ****         curPos = 0u;
+ 206              		.loc 1 103 0
+ 207 0030 134B     		ldr	r3, .L12
+ 208 0032 0022     		mov	r2, #0
+ 209 0034 1A80     		strh	r2, [r3]
+ 210              	.L10:
+ 104:.\main.c      ****     }
+ 105:.\main.c      ****                 
+ 106:.\main.c      ****     /* Move bargraph */
+ 107:.\main.c      ****     if (curPos != oldPos)
+ 211              		.loc 1 107 0
+ 212 0036 124B     		ldr	r3, .L12
+ 213 0038 1A88     		ldrh	r2, [r3]
+ 214 003a 134B     		ldr	r3, .L12+8
+ 215 003c 1B88     		ldrh	r3, [r3]
+ 216 003e 9A42     		cmp	r2, r3
+ 217 0040 1CD0     		beq	.L8
+ 108:.\main.c      ****     {
+ 109:.\main.c      ****         oldPos = curPos;
+ 218              		.loc 1 109 0
+ 219 0042 0F4B     		ldr	r3, .L12
+ 220 0044 1A88     		ldrh	r2, [r3]
+ 221 0046 104B     		ldr	r3, .L12+8
+ 222 0048 1A80     		strh	r2, [r3]
+ 110:.\main.c      ****         volume = curPos*MAX_SLIDER/MAX_VOLUME;  
+ 223              		.loc 1 110 0
+ 224 004a 0D4B     		ldr	r3, .L12
+ 225 004c 1B88     		ldrh	r3, [r3]
+ 226 004e 1A1C     		mov	r2, r3
+ 227 0050 131C     		mov	r3, r2
+ 228 0052 DB01     		lsl	r3, r3, #7
+ 229 0054 9B1A     		sub	r3, r3, r2
+ 230 0056 181C     		mov	r0, r3
+ 231 0058 0521     		mov	r1, #5
+ 232 005a FFF7FEFF 		bl	__aeabi_idiv
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 7
 
 
- 109:.\main.c      ****         piezo_volume(10*volume);
- 235              		.loc 1 109 0
- 236 0066 094B     		ldr	r3, .L12+12
- 237 0068 1B68     		ldr	r3, [r3]
- 238 006a DBB2     		uxtb	r3, r3
- 239 006c 1A1C     		add	r2, r3, #0
- 240 006e 9200     		lsl	r2, r2, #2
- 241 0070 D318     		add	r3, r2, r3
- 242 0072 DB18     		add	r3, r3, r3
- 243 0074 DBB2     		uxtb	r3, r3
- 244 0076 181C     		mov	r0, r3
- 245 0078 FFF7FEFF 		bl	piezo_volume
- 246              	.L8:
- 110:.\main.c      ****     }
- 111:.\main.c      **** }
- 247              		.loc 1 111 0
- 248 007c BD46     		mov	sp, r7
- 249              		@ sp needed
- 250 007e 80BD     		pop	{r7, pc}
- 251              	.L13:
- 252              		.align	2
- 253              	.L12:
- 254 0080 00000000 		.word	curPos
- 255 0084 FFFF0000 		.word	65535
- 256 0088 00000000 		.word	oldPos
- 257 008c 00000000 		.word	volume
- 258              		.cfi_endproc
- 259              	.LFE34:
- 260              		.size	cap_sense_update_volume, .-cap_sense_update_volume
- 261              		.text
- 262              	.Letext0:
- 263              		.file 2 ".\\state.h"
- 264              		.file 3 "Generated_Source\\PSoC4/cytypes.h"
- 265              		.section	.debug_info,"",%progbits
- 266              	.Ldebug_info0:
- 267 0000 62010000 		.4byte	0x162
- 268 0004 0400     		.2byte	0x4
- 269 0006 00000000 		.4byte	.Ldebug_abbrev0
- 270 000a 04       		.byte	0x4
- 271 000b 01       		.uleb128 0x1
- 272 000c D8000000 		.4byte	.LASF23
- 273 0010 01       		.byte	0x1
- 274 0011 C4010000 		.4byte	.LASF24
- 275 0015 15000000 		.4byte	.LASF25
- 276 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 277 001d 00000000 		.4byte	0
- 278 0021 00000000 		.4byte	.Ldebug_line0
- 279 0025 02       		.uleb128 0x2
- 280 0026 01       		.byte	0x1
- 281 0027 06       		.byte	0x6
- 282 0028 AC010000 		.4byte	.LASF0
- 283 002c 02       		.uleb128 0x2
- 284 002d 01       		.byte	0x1
- 285 002e 08       		.byte	0x8
- 286 002f 54010000 		.4byte	.LASF1
- 287 0033 02       		.uleb128 0x2
- 288 0034 02       		.byte	0x2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 8
+ 233 005e 031C     		mov	r3, r0
+ 234 0060 1A1C     		mov	r2, r3
+ 235 0062 0A4B     		ldr	r3, .L12+12
+ 236 0064 1A60     		str	r2, [r3]
+ 111:.\main.c      ****         piezo_volume(10*volume);
+ 237              		.loc 1 111 0
+ 238 0066 094B     		ldr	r3, .L12+12
+ 239 0068 1B68     		ldr	r3, [r3]
+ 240 006a DBB2     		uxtb	r3, r3
+ 241 006c 1A1C     		add	r2, r3, #0
+ 242 006e 9200     		lsl	r2, r2, #2
+ 243 0070 D318     		add	r3, r2, r3
+ 244 0072 DB18     		add	r3, r3, r3
+ 245 0074 DBB2     		uxtb	r3, r3
+ 246 0076 181C     		mov	r0, r3
+ 247 0078 FFF7FEFF 		bl	piezo_volume
+ 248              	.L8:
+ 112:.\main.c      ****     }
+ 113:.\main.c      **** }
+ 249              		.loc 1 113 0
+ 250 007c BD46     		mov	sp, r7
+ 251              		@ sp needed
+ 252 007e 80BD     		pop	{r7, pc}
+ 253              	.L13:
+ 254              		.align	2
+ 255              	.L12:
+ 256 0080 00000000 		.word	curPos
+ 257 0084 FFFF0000 		.word	65535
+ 258 0088 00000000 		.word	oldPos
+ 259 008c 00000000 		.word	volume
+ 260              		.cfi_endproc
+ 261              	.LFE34:
+ 262              		.size	cap_sense_update_volume, .-cap_sense_update_volume
+ 263              		.text
+ 264              	.Letext0:
+ 265              		.file 2 ".\\state.h"
+ 266              		.file 3 "Generated_Source\\PSoC4/cytypes.h"
+ 267              		.section	.debug_info,"",%progbits
+ 268              	.Ldebug_info0:
+ 269 0000 62010000 		.4byte	0x162
+ 270 0004 0400     		.2byte	0x4
+ 271 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 272 000a 04       		.byte	0x4
+ 273 000b 01       		.uleb128 0x1
+ 274 000c 88000000 		.4byte	.LASF23
+ 275 0010 01       		.byte	0x1
+ 276 0011 BD010000 		.4byte	.LASF24
+ 277 0015 6E010000 		.4byte	.LASF25
+ 278 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 279 001d 00000000 		.4byte	0
+ 280 0021 00000000 		.4byte	.Ldebug_line0
+ 281 0025 02       		.uleb128 0x2
+ 282 0026 01       		.byte	0x1
+ 283 0027 06       		.byte	0x6
+ 284 0028 5C010000 		.4byte	.LASF0
+ 285 002c 02       		.uleb128 0x2
+ 286 002d 01       		.byte	0x1
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 8
 
 
- 289 0035 05       		.byte	0x5
- 290 0036 70010000 		.4byte	.LASF2
- 291 003a 02       		.uleb128 0x2
- 292 003b 02       		.byte	0x2
- 293 003c 07       		.byte	0x7
- 294 003d 99010000 		.4byte	.LASF3
- 295 0041 02       		.uleb128 0x2
- 296 0042 04       		.byte	0x4
- 297 0043 05       		.byte	0x5
- 298 0044 67010000 		.4byte	.LASF4
- 299 0048 02       		.uleb128 0x2
- 300 0049 04       		.byte	0x4
- 301 004a 07       		.byte	0x7
- 302 004b 9D000000 		.4byte	.LASF5
- 303 004f 02       		.uleb128 0x2
- 304 0050 08       		.byte	0x8
- 305 0051 05       		.byte	0x5
- 306 0052 00000000 		.4byte	.LASF6
- 307 0056 02       		.uleb128 0x2
- 308 0057 08       		.byte	0x8
- 309 0058 07       		.byte	0x7
- 310 0059 AF000000 		.4byte	.LASF7
- 311 005d 03       		.uleb128 0x3
- 312 005e 04       		.byte	0x4
- 313 005f 05       		.byte	0x5
- 314 0060 696E7400 		.ascii	"int\000"
- 315 0064 02       		.uleb128 0x2
- 316 0065 04       		.byte	0x4
- 317 0066 07       		.byte	0x7
- 318 0067 65000000 		.4byte	.LASF8
- 319 006b 04       		.uleb128 0x4
- 320 006c CD010000 		.4byte	.LASF26
- 321 0070 03       		.byte	0x3
- 322 0071 B4       		.byte	0xb4
- 323 0072 3A000000 		.4byte	0x3a
- 324 0076 02       		.uleb128 0x2
- 325 0077 04       		.byte	0x4
- 326 0078 04       		.byte	0x4
- 327 0079 BE010000 		.4byte	.LASF9
- 328 007d 02       		.uleb128 0x2
- 329 007e 08       		.byte	0x8
- 330 007f 04       		.byte	0x4
- 331 0080 92010000 		.4byte	.LASF10
- 332 0084 02       		.uleb128 0x2
- 333 0085 01       		.byte	0x1
- 334 0086 08       		.byte	0x8
- 335 0087 C6000000 		.4byte	.LASF11
- 336 008b 02       		.uleb128 0x2
- 337 008c 04       		.byte	0x4
- 338 008d 07       		.byte	0x7
- 339 008e DB010000 		.4byte	.LASF12
- 340 0092 05       		.uleb128 0x5
- 341 0093 79000000 		.4byte	.LASF27
- 342 0097 01       		.byte	0x1
- 343 0098 17       		.byte	0x17
- 344 0099 5D000000 		.4byte	0x5d
- 345 009d 00000000 		.4byte	.LFB33
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 9
+ 287 002e 08       		.byte	0x8
+ 288 002f 04010000 		.4byte	.LASF1
+ 289 0033 02       		.uleb128 0x2
+ 290 0034 02       		.byte	0x2
+ 291 0035 05       		.byte	0x5
+ 292 0036 20010000 		.4byte	.LASF2
+ 293 003a 02       		.uleb128 0x2
+ 294 003b 02       		.byte	0x2
+ 295 003c 07       		.byte	0x7
+ 296 003d 49010000 		.4byte	.LASF3
+ 297 0041 02       		.uleb128 0x2
+ 298 0042 04       		.byte	0x4
+ 299 0043 05       		.byte	0x5
+ 300 0044 17010000 		.4byte	.LASF4
+ 301 0048 02       		.uleb128 0x2
+ 302 0049 04       		.byte	0x4
+ 303 004a 07       		.byte	0x7
+ 304 004b 4D000000 		.4byte	.LASF5
+ 305 004f 02       		.uleb128 0x2
+ 306 0050 08       		.byte	0x8
+ 307 0051 05       		.byte	0x5
+ 308 0052 00000000 		.4byte	.LASF6
+ 309 0056 02       		.uleb128 0x2
+ 310 0057 08       		.byte	0x8
+ 311 0058 07       		.byte	0x7
+ 312 0059 5F000000 		.4byte	.LASF7
+ 313 005d 03       		.uleb128 0x3
+ 314 005e 04       		.byte	0x4
+ 315 005f 05       		.byte	0x5
+ 316 0060 696E7400 		.ascii	"int\000"
+ 317 0064 02       		.uleb128 0x2
+ 318 0065 04       		.byte	0x4
+ 319 0066 07       		.byte	0x7
+ 320 0067 15000000 		.4byte	.LASF8
+ 321 006b 04       		.uleb128 0x4
+ 322 006c C6010000 		.4byte	.LASF26
+ 323 0070 03       		.byte	0x3
+ 324 0071 B4       		.byte	0xb4
+ 325 0072 3A000000 		.4byte	0x3a
+ 326 0076 02       		.uleb128 0x2
+ 327 0077 04       		.byte	0x4
+ 328 0078 04       		.byte	0x4
+ 329 0079 B7010000 		.4byte	.LASF9
+ 330 007d 02       		.uleb128 0x2
+ 331 007e 08       		.byte	0x8
+ 332 007f 04       		.byte	0x4
+ 333 0080 42010000 		.4byte	.LASF10
+ 334 0084 02       		.uleb128 0x2
+ 335 0085 01       		.byte	0x1
+ 336 0086 08       		.byte	0x8
+ 337 0087 76000000 		.4byte	.LASF11
+ 338 008b 02       		.uleb128 0x2
+ 339 008c 04       		.byte	0x4
+ 340 008d 07       		.byte	0x7
+ 341 008e D4010000 		.4byte	.LASF12
+ 342 0092 05       		.uleb128 0x5
+ 343 0093 29000000 		.4byte	.LASF27
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 9
 
 
- 346 00a1 9C000000 		.4byte	.LFE33-.LFB33
- 347 00a5 01       		.uleb128 0x1
- 348 00a6 9C       		.byte	0x9c
- 349 00a7 00010000 		.4byte	0x100
- 350 00ab 06       		.uleb128 0x6
- 351 00ac 85000000 		.4byte	.LASF13
- 352 00b0 01       		.byte	0x1
- 353 00b1 27       		.byte	0x27
- 354 00b2 00010000 		.4byte	0x100
- 355 00b6 02       		.uleb128 0x2
- 356 00b7 91       		.byte	0x91
- 357 00b8 44       		.sleb128 -60
- 358 00b9 06       		.uleb128 0x6
- 359 00ba 62010000 		.4byte	.LASF14
- 360 00be 01       		.byte	0x1
- 361 00bf 30       		.byte	0x30
- 362 00c0 10010000 		.4byte	0x110
- 363 00c4 02       		.uleb128 0x2
- 364 00c5 91       		.byte	0x91
- 365 00c6 6C       		.sleb128 -20
- 366 00c7 06       		.uleb128 0x6
- 367 00c8 CB000000 		.4byte	.LASF15
- 368 00cc 01       		.byte	0x1
- 369 00cd 31       		.byte	0x31
- 370 00ce 5D000000 		.4byte	0x5d
- 371 00d2 02       		.uleb128 0x2
- 372 00d3 91       		.byte	0x91
- 373 00d4 74       		.sleb128 -12
- 374 00d5 06       		.uleb128 0x6
- 375 00d6 98000000 		.4byte	.LASF16
- 376 00da 01       		.byte	0x1
- 377 00db 33       		.byte	0x33
- 378 00dc 5D000000 		.4byte	0x5d
- 379 00e0 02       		.uleb128 0x2
- 380 00e1 91       		.byte	0x91
- 381 00e2 64       		.sleb128 -28
- 382 00e3 06       		.uleb128 0x6
- 383 00e4 93000000 		.4byte	.LASF17
- 384 00e8 01       		.byte	0x1
- 385 00e9 33       		.byte	0x33
- 386 00ea 5D000000 		.4byte	0x5d
- 387 00ee 02       		.uleb128 0x2
- 388 00ef 91       		.byte	0x91
- 389 00f0 68       		.sleb128 -24
- 390 00f1 06       		.uleb128 0x6
- 391 00f2 7E000000 		.4byte	.LASF18
- 392 00f6 01       		.byte	0x1
- 393 00f7 33       		.byte	0x33
- 394 00f8 5D000000 		.4byte	0x5d
- 395 00fc 02       		.uleb128 0x2
- 396 00fd 91       		.byte	0x91
- 397 00fe 70       		.sleb128 -16
- 398 00ff 00       		.byte	0
- 399 0100 07       		.uleb128 0x7
- 400 0101 6B000000 		.4byte	0x6b
- 401 0105 10010000 		.4byte	0x110
- 402 0109 08       		.uleb128 0x8
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 10
+ 344 0097 01       		.byte	0x1
+ 345 0098 17       		.byte	0x17
+ 346 0099 5D000000 		.4byte	0x5d
+ 347 009d 00000000 		.4byte	.LFB33
+ 348 00a1 A0000000 		.4byte	.LFE33-.LFB33
+ 349 00a5 01       		.uleb128 0x1
+ 350 00a6 9C       		.byte	0x9c
+ 351 00a7 00010000 		.4byte	0x100
+ 352 00ab 06       		.uleb128 0x6
+ 353 00ac 35000000 		.4byte	.LASF13
+ 354 00b0 01       		.byte	0x1
+ 355 00b1 27       		.byte	0x27
+ 356 00b2 00010000 		.4byte	0x100
+ 357 00b6 02       		.uleb128 0x2
+ 358 00b7 91       		.byte	0x91
+ 359 00b8 44       		.sleb128 -60
+ 360 00b9 06       		.uleb128 0x6
+ 361 00ba 12010000 		.4byte	.LASF14
+ 362 00be 01       		.byte	0x1
+ 363 00bf 30       		.byte	0x30
+ 364 00c0 10010000 		.4byte	0x110
+ 365 00c4 02       		.uleb128 0x2
+ 366 00c5 91       		.byte	0x91
+ 367 00c6 6C       		.sleb128 -20
+ 368 00c7 06       		.uleb128 0x6
+ 369 00c8 7B000000 		.4byte	.LASF15
+ 370 00cc 01       		.byte	0x1
+ 371 00cd 31       		.byte	0x31
+ 372 00ce 5D000000 		.4byte	0x5d
+ 373 00d2 02       		.uleb128 0x2
+ 374 00d3 91       		.byte	0x91
+ 375 00d4 74       		.sleb128 -12
+ 376 00d5 06       		.uleb128 0x6
+ 377 00d6 48000000 		.4byte	.LASF16
+ 378 00da 01       		.byte	0x1
+ 379 00db 33       		.byte	0x33
+ 380 00dc 5D000000 		.4byte	0x5d
+ 381 00e0 02       		.uleb128 0x2
+ 382 00e1 91       		.byte	0x91
+ 383 00e2 64       		.sleb128 -28
+ 384 00e3 06       		.uleb128 0x6
+ 385 00e4 43000000 		.4byte	.LASF17
+ 386 00e8 01       		.byte	0x1
+ 387 00e9 33       		.byte	0x33
+ 388 00ea 5D000000 		.4byte	0x5d
+ 389 00ee 02       		.uleb128 0x2
+ 390 00ef 91       		.byte	0x91
+ 391 00f0 68       		.sleb128 -24
+ 392 00f1 06       		.uleb128 0x6
+ 393 00f2 2E000000 		.4byte	.LASF18
+ 394 00f6 01       		.byte	0x1
+ 395 00f7 33       		.byte	0x33
+ 396 00f8 5D000000 		.4byte	0x5d
+ 397 00fc 02       		.uleb128 0x2
+ 398 00fd 91       		.byte	0x91
+ 399 00fe 70       		.sleb128 -16
+ 400 00ff 00       		.byte	0
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 10
 
 
- 403 010a 8B000000 		.4byte	0x8b
- 404 010e 0F       		.byte	0xf
- 405 010f 00       		.byte	0
- 406 0110 09       		.uleb128 0x9
- 407 0111 04       		.byte	0x4
- 408 0112 6B000000 		.4byte	0x6b
- 409 0116 0A       		.uleb128 0xa
- 410 0117 7A010000 		.4byte	.LASF28
- 411 011b 01       		.byte	0x1
- 412 011c 51       		.byte	0x51
- 413 011d 00000000 		.4byte	.LFB34
- 414 0121 90000000 		.4byte	.LFE34-.LFB34
- 415 0125 01       		.uleb128 0x1
- 416 0126 9C       		.byte	0x9c
- 417 0127 0B       		.uleb128 0xb
- 418 0128 B8010000 		.4byte	.LASF19
- 419 012c 01       		.byte	0x1
- 420 012d 12       		.byte	0x12
- 421 012e 5D000000 		.4byte	0x5d
- 422 0132 05       		.uleb128 0x5
- 423 0133 03       		.byte	0x3
- 424 0134 00000000 		.4byte	state
- 425 0138 0C       		.uleb128 0xc
- 426 0139 0E000000 		.4byte	.LASF20
- 427 013d 02       		.byte	0x2
- 428 013e 19       		.byte	0x19
- 429 013f 5D000000 		.4byte	0x5d
- 430 0143 0B       		.uleb128 0xb
- 431 0144 D4010000 		.4byte	.LASF21
- 432 0148 01       		.byte	0x1
- 433 0149 15       		.byte	0x15
- 434 014a 6B000000 		.4byte	0x6b
- 435 014e 05       		.uleb128 0x5
- 436 014f 03       		.byte	0x3
- 437 0150 00000000 		.4byte	curPos
- 438 0154 0B       		.uleb128 0xb
- 439 0155 72000000 		.4byte	.LASF22
- 440 0159 01       		.byte	0x1
- 441 015a 15       		.byte	0x15
- 442 015b 6B000000 		.4byte	0x6b
- 443 015f 05       		.uleb128 0x5
- 444 0160 03       		.byte	0x3
- 445 0161 00000000 		.4byte	oldPos
- 446 0165 00       		.byte	0
- 447              		.section	.debug_abbrev,"",%progbits
- 448              	.Ldebug_abbrev0:
- 449 0000 01       		.uleb128 0x1
- 450 0001 11       		.uleb128 0x11
- 451 0002 01       		.byte	0x1
- 452 0003 25       		.uleb128 0x25
- 453 0004 0E       		.uleb128 0xe
- 454 0005 13       		.uleb128 0x13
- 455 0006 0B       		.uleb128 0xb
- 456 0007 03       		.uleb128 0x3
- 457 0008 0E       		.uleb128 0xe
- 458 0009 1B       		.uleb128 0x1b
- 459 000a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 11
+ 401 0100 07       		.uleb128 0x7
+ 402 0101 6B000000 		.4byte	0x6b
+ 403 0105 10010000 		.4byte	0x110
+ 404 0109 08       		.uleb128 0x8
+ 405 010a 8B000000 		.4byte	0x8b
+ 406 010e 0F       		.byte	0xf
+ 407 010f 00       		.byte	0
+ 408 0110 09       		.uleb128 0x9
+ 409 0111 04       		.byte	0x4
+ 410 0112 6B000000 		.4byte	0x6b
+ 411 0116 0A       		.uleb128 0xa
+ 412 0117 2A010000 		.4byte	.LASF28
+ 413 011b 01       		.byte	0x1
+ 414 011c 53       		.byte	0x53
+ 415 011d 00000000 		.4byte	.LFB34
+ 416 0121 90000000 		.4byte	.LFE34-.LFB34
+ 417 0125 01       		.uleb128 0x1
+ 418 0126 9C       		.byte	0x9c
+ 419 0127 0B       		.uleb128 0xb
+ 420 0128 68010000 		.4byte	.LASF19
+ 421 012c 01       		.byte	0x1
+ 422 012d 12       		.byte	0x12
+ 423 012e 5D000000 		.4byte	0x5d
+ 424 0132 05       		.uleb128 0x5
+ 425 0133 03       		.byte	0x3
+ 426 0134 00000000 		.4byte	state
+ 427 0138 0C       		.uleb128 0xc
+ 428 0139 0E000000 		.4byte	.LASF20
+ 429 013d 02       		.byte	0x2
+ 430 013e 19       		.byte	0x19
+ 431 013f 5D000000 		.4byte	0x5d
+ 432 0143 0B       		.uleb128 0xb
+ 433 0144 CD010000 		.4byte	.LASF21
+ 434 0148 01       		.byte	0x1
+ 435 0149 15       		.byte	0x15
+ 436 014a 6B000000 		.4byte	0x6b
+ 437 014e 05       		.uleb128 0x5
+ 438 014f 03       		.byte	0x3
+ 439 0150 00000000 		.4byte	curPos
+ 440 0154 0B       		.uleb128 0xb
+ 441 0155 22000000 		.4byte	.LASF22
+ 442 0159 01       		.byte	0x1
+ 443 015a 15       		.byte	0x15
+ 444 015b 6B000000 		.4byte	0x6b
+ 445 015f 05       		.uleb128 0x5
+ 446 0160 03       		.byte	0x3
+ 447 0161 00000000 		.4byte	oldPos
+ 448 0165 00       		.byte	0
+ 449              		.section	.debug_abbrev,"",%progbits
+ 450              	.Ldebug_abbrev0:
+ 451 0000 01       		.uleb128 0x1
+ 452 0001 11       		.uleb128 0x11
+ 453 0002 01       		.byte	0x1
+ 454 0003 25       		.uleb128 0x25
+ 455 0004 0E       		.uleb128 0xe
+ 456 0005 13       		.uleb128 0x13
+ 457 0006 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 11
 
 
- 460 000b 55       		.uleb128 0x55
- 461 000c 17       		.uleb128 0x17
- 462 000d 11       		.uleb128 0x11
- 463 000e 01       		.uleb128 0x1
- 464 000f 10       		.uleb128 0x10
- 465 0010 17       		.uleb128 0x17
- 466 0011 00       		.byte	0
- 467 0012 00       		.byte	0
- 468 0013 02       		.uleb128 0x2
- 469 0014 24       		.uleb128 0x24
- 470 0015 00       		.byte	0
- 471 0016 0B       		.uleb128 0xb
- 472 0017 0B       		.uleb128 0xb
- 473 0018 3E       		.uleb128 0x3e
- 474 0019 0B       		.uleb128 0xb
- 475 001a 03       		.uleb128 0x3
- 476 001b 0E       		.uleb128 0xe
- 477 001c 00       		.byte	0
- 478 001d 00       		.byte	0
- 479 001e 03       		.uleb128 0x3
- 480 001f 24       		.uleb128 0x24
- 481 0020 00       		.byte	0
- 482 0021 0B       		.uleb128 0xb
- 483 0022 0B       		.uleb128 0xb
- 484 0023 3E       		.uleb128 0x3e
- 485 0024 0B       		.uleb128 0xb
- 486 0025 03       		.uleb128 0x3
- 487 0026 08       		.uleb128 0x8
- 488 0027 00       		.byte	0
- 489 0028 00       		.byte	0
- 490 0029 04       		.uleb128 0x4
- 491 002a 16       		.uleb128 0x16
- 492 002b 00       		.byte	0
- 493 002c 03       		.uleb128 0x3
- 494 002d 0E       		.uleb128 0xe
- 495 002e 3A       		.uleb128 0x3a
- 496 002f 0B       		.uleb128 0xb
- 497 0030 3B       		.uleb128 0x3b
- 498 0031 0B       		.uleb128 0xb
- 499 0032 49       		.uleb128 0x49
- 500 0033 13       		.uleb128 0x13
- 501 0034 00       		.byte	0
- 502 0035 00       		.byte	0
- 503 0036 05       		.uleb128 0x5
- 504 0037 2E       		.uleb128 0x2e
- 505 0038 01       		.byte	0x1
- 506 0039 3F       		.uleb128 0x3f
- 507 003a 19       		.uleb128 0x19
- 508 003b 03       		.uleb128 0x3
- 509 003c 0E       		.uleb128 0xe
- 510 003d 3A       		.uleb128 0x3a
- 511 003e 0B       		.uleb128 0xb
- 512 003f 3B       		.uleb128 0x3b
- 513 0040 0B       		.uleb128 0xb
- 514 0041 49       		.uleb128 0x49
- 515 0042 13       		.uleb128 0x13
- 516 0043 11       		.uleb128 0x11
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 12
+ 458 0007 03       		.uleb128 0x3
+ 459 0008 0E       		.uleb128 0xe
+ 460 0009 1B       		.uleb128 0x1b
+ 461 000a 0E       		.uleb128 0xe
+ 462 000b 55       		.uleb128 0x55
+ 463 000c 17       		.uleb128 0x17
+ 464 000d 11       		.uleb128 0x11
+ 465 000e 01       		.uleb128 0x1
+ 466 000f 10       		.uleb128 0x10
+ 467 0010 17       		.uleb128 0x17
+ 468 0011 00       		.byte	0
+ 469 0012 00       		.byte	0
+ 470 0013 02       		.uleb128 0x2
+ 471 0014 24       		.uleb128 0x24
+ 472 0015 00       		.byte	0
+ 473 0016 0B       		.uleb128 0xb
+ 474 0017 0B       		.uleb128 0xb
+ 475 0018 3E       		.uleb128 0x3e
+ 476 0019 0B       		.uleb128 0xb
+ 477 001a 03       		.uleb128 0x3
+ 478 001b 0E       		.uleb128 0xe
+ 479 001c 00       		.byte	0
+ 480 001d 00       		.byte	0
+ 481 001e 03       		.uleb128 0x3
+ 482 001f 24       		.uleb128 0x24
+ 483 0020 00       		.byte	0
+ 484 0021 0B       		.uleb128 0xb
+ 485 0022 0B       		.uleb128 0xb
+ 486 0023 3E       		.uleb128 0x3e
+ 487 0024 0B       		.uleb128 0xb
+ 488 0025 03       		.uleb128 0x3
+ 489 0026 08       		.uleb128 0x8
+ 490 0027 00       		.byte	0
+ 491 0028 00       		.byte	0
+ 492 0029 04       		.uleb128 0x4
+ 493 002a 16       		.uleb128 0x16
+ 494 002b 00       		.byte	0
+ 495 002c 03       		.uleb128 0x3
+ 496 002d 0E       		.uleb128 0xe
+ 497 002e 3A       		.uleb128 0x3a
+ 498 002f 0B       		.uleb128 0xb
+ 499 0030 3B       		.uleb128 0x3b
+ 500 0031 0B       		.uleb128 0xb
+ 501 0032 49       		.uleb128 0x49
+ 502 0033 13       		.uleb128 0x13
+ 503 0034 00       		.byte	0
+ 504 0035 00       		.byte	0
+ 505 0036 05       		.uleb128 0x5
+ 506 0037 2E       		.uleb128 0x2e
+ 507 0038 01       		.byte	0x1
+ 508 0039 3F       		.uleb128 0x3f
+ 509 003a 19       		.uleb128 0x19
+ 510 003b 03       		.uleb128 0x3
+ 511 003c 0E       		.uleb128 0xe
+ 512 003d 3A       		.uleb128 0x3a
+ 513 003e 0B       		.uleb128 0xb
+ 514 003f 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 12
 
 
- 517 0044 01       		.uleb128 0x1
- 518 0045 12       		.uleb128 0x12
- 519 0046 06       		.uleb128 0x6
- 520 0047 40       		.uleb128 0x40
- 521 0048 18       		.uleb128 0x18
- 522 0049 9642     		.uleb128 0x2116
- 523 004b 19       		.uleb128 0x19
- 524 004c 01       		.uleb128 0x1
- 525 004d 13       		.uleb128 0x13
- 526 004e 00       		.byte	0
- 527 004f 00       		.byte	0
- 528 0050 06       		.uleb128 0x6
- 529 0051 34       		.uleb128 0x34
- 530 0052 00       		.byte	0
- 531 0053 03       		.uleb128 0x3
- 532 0054 0E       		.uleb128 0xe
- 533 0055 3A       		.uleb128 0x3a
- 534 0056 0B       		.uleb128 0xb
- 535 0057 3B       		.uleb128 0x3b
- 536 0058 0B       		.uleb128 0xb
- 537 0059 49       		.uleb128 0x49
- 538 005a 13       		.uleb128 0x13
- 539 005b 02       		.uleb128 0x2
- 540 005c 18       		.uleb128 0x18
- 541 005d 00       		.byte	0
- 542 005e 00       		.byte	0
- 543 005f 07       		.uleb128 0x7
- 544 0060 01       		.uleb128 0x1
- 545 0061 01       		.byte	0x1
- 546 0062 49       		.uleb128 0x49
- 547 0063 13       		.uleb128 0x13
- 548 0064 01       		.uleb128 0x1
- 549 0065 13       		.uleb128 0x13
- 550 0066 00       		.byte	0
- 551 0067 00       		.byte	0
- 552 0068 08       		.uleb128 0x8
- 553 0069 21       		.uleb128 0x21
- 554 006a 00       		.byte	0
- 555 006b 49       		.uleb128 0x49
- 556 006c 13       		.uleb128 0x13
- 557 006d 2F       		.uleb128 0x2f
- 558 006e 0B       		.uleb128 0xb
- 559 006f 00       		.byte	0
- 560 0070 00       		.byte	0
- 561 0071 09       		.uleb128 0x9
- 562 0072 0F       		.uleb128 0xf
- 563 0073 00       		.byte	0
- 564 0074 0B       		.uleb128 0xb
- 565 0075 0B       		.uleb128 0xb
- 566 0076 49       		.uleb128 0x49
- 567 0077 13       		.uleb128 0x13
- 568 0078 00       		.byte	0
- 569 0079 00       		.byte	0
- 570 007a 0A       		.uleb128 0xa
- 571 007b 2E       		.uleb128 0x2e
- 572 007c 00       		.byte	0
- 573 007d 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 13
+ 515 0040 0B       		.uleb128 0xb
+ 516 0041 49       		.uleb128 0x49
+ 517 0042 13       		.uleb128 0x13
+ 518 0043 11       		.uleb128 0x11
+ 519 0044 01       		.uleb128 0x1
+ 520 0045 12       		.uleb128 0x12
+ 521 0046 06       		.uleb128 0x6
+ 522 0047 40       		.uleb128 0x40
+ 523 0048 18       		.uleb128 0x18
+ 524 0049 9642     		.uleb128 0x2116
+ 525 004b 19       		.uleb128 0x19
+ 526 004c 01       		.uleb128 0x1
+ 527 004d 13       		.uleb128 0x13
+ 528 004e 00       		.byte	0
+ 529 004f 00       		.byte	0
+ 530 0050 06       		.uleb128 0x6
+ 531 0051 34       		.uleb128 0x34
+ 532 0052 00       		.byte	0
+ 533 0053 03       		.uleb128 0x3
+ 534 0054 0E       		.uleb128 0xe
+ 535 0055 3A       		.uleb128 0x3a
+ 536 0056 0B       		.uleb128 0xb
+ 537 0057 3B       		.uleb128 0x3b
+ 538 0058 0B       		.uleb128 0xb
+ 539 0059 49       		.uleb128 0x49
+ 540 005a 13       		.uleb128 0x13
+ 541 005b 02       		.uleb128 0x2
+ 542 005c 18       		.uleb128 0x18
+ 543 005d 00       		.byte	0
+ 544 005e 00       		.byte	0
+ 545 005f 07       		.uleb128 0x7
+ 546 0060 01       		.uleb128 0x1
+ 547 0061 01       		.byte	0x1
+ 548 0062 49       		.uleb128 0x49
+ 549 0063 13       		.uleb128 0x13
+ 550 0064 01       		.uleb128 0x1
+ 551 0065 13       		.uleb128 0x13
+ 552 0066 00       		.byte	0
+ 553 0067 00       		.byte	0
+ 554 0068 08       		.uleb128 0x8
+ 555 0069 21       		.uleb128 0x21
+ 556 006a 00       		.byte	0
+ 557 006b 49       		.uleb128 0x49
+ 558 006c 13       		.uleb128 0x13
+ 559 006d 2F       		.uleb128 0x2f
+ 560 006e 0B       		.uleb128 0xb
+ 561 006f 00       		.byte	0
+ 562 0070 00       		.byte	0
+ 563 0071 09       		.uleb128 0x9
+ 564 0072 0F       		.uleb128 0xf
+ 565 0073 00       		.byte	0
+ 566 0074 0B       		.uleb128 0xb
+ 567 0075 0B       		.uleb128 0xb
+ 568 0076 49       		.uleb128 0x49
+ 569 0077 13       		.uleb128 0x13
+ 570 0078 00       		.byte	0
+ 571 0079 00       		.byte	0
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 13
 
 
- 574 007e 19       		.uleb128 0x19
- 575 007f 03       		.uleb128 0x3
- 576 0080 0E       		.uleb128 0xe
- 577 0081 3A       		.uleb128 0x3a
- 578 0082 0B       		.uleb128 0xb
- 579 0083 3B       		.uleb128 0x3b
- 580 0084 0B       		.uleb128 0xb
- 581 0085 27       		.uleb128 0x27
- 582 0086 19       		.uleb128 0x19
- 583 0087 11       		.uleb128 0x11
- 584 0088 01       		.uleb128 0x1
- 585 0089 12       		.uleb128 0x12
- 586 008a 06       		.uleb128 0x6
- 587 008b 40       		.uleb128 0x40
- 588 008c 18       		.uleb128 0x18
- 589 008d 9642     		.uleb128 0x2116
- 590 008f 19       		.uleb128 0x19
- 591 0090 00       		.byte	0
- 592 0091 00       		.byte	0
- 593 0092 0B       		.uleb128 0xb
- 594 0093 34       		.uleb128 0x34
- 595 0094 00       		.byte	0
- 596 0095 03       		.uleb128 0x3
- 597 0096 0E       		.uleb128 0xe
- 598 0097 3A       		.uleb128 0x3a
- 599 0098 0B       		.uleb128 0xb
- 600 0099 3B       		.uleb128 0x3b
- 601 009a 0B       		.uleb128 0xb
- 602 009b 49       		.uleb128 0x49
- 603 009c 13       		.uleb128 0x13
- 604 009d 3F       		.uleb128 0x3f
- 605 009e 19       		.uleb128 0x19
- 606 009f 02       		.uleb128 0x2
- 607 00a0 18       		.uleb128 0x18
- 608 00a1 00       		.byte	0
- 609 00a2 00       		.byte	0
- 610 00a3 0C       		.uleb128 0xc
- 611 00a4 34       		.uleb128 0x34
- 612 00a5 00       		.byte	0
- 613 00a6 03       		.uleb128 0x3
- 614 00a7 0E       		.uleb128 0xe
- 615 00a8 3A       		.uleb128 0x3a
- 616 00a9 0B       		.uleb128 0xb
- 617 00aa 3B       		.uleb128 0x3b
- 618 00ab 0B       		.uleb128 0xb
- 619 00ac 49       		.uleb128 0x49
- 620 00ad 13       		.uleb128 0x13
- 621 00ae 3F       		.uleb128 0x3f
- 622 00af 19       		.uleb128 0x19
- 623 00b0 3C       		.uleb128 0x3c
- 624 00b1 19       		.uleb128 0x19
- 625 00b2 00       		.byte	0
- 626 00b3 00       		.byte	0
- 627 00b4 00       		.byte	0
- 628              		.section	.debug_aranges,"",%progbits
- 629 0000 24000000 		.4byte	0x24
- 630 0004 0200     		.2byte	0x2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 14
+ 572 007a 0A       		.uleb128 0xa
+ 573 007b 2E       		.uleb128 0x2e
+ 574 007c 00       		.byte	0
+ 575 007d 3F       		.uleb128 0x3f
+ 576 007e 19       		.uleb128 0x19
+ 577 007f 03       		.uleb128 0x3
+ 578 0080 0E       		.uleb128 0xe
+ 579 0081 3A       		.uleb128 0x3a
+ 580 0082 0B       		.uleb128 0xb
+ 581 0083 3B       		.uleb128 0x3b
+ 582 0084 0B       		.uleb128 0xb
+ 583 0085 27       		.uleb128 0x27
+ 584 0086 19       		.uleb128 0x19
+ 585 0087 11       		.uleb128 0x11
+ 586 0088 01       		.uleb128 0x1
+ 587 0089 12       		.uleb128 0x12
+ 588 008a 06       		.uleb128 0x6
+ 589 008b 40       		.uleb128 0x40
+ 590 008c 18       		.uleb128 0x18
+ 591 008d 9642     		.uleb128 0x2116
+ 592 008f 19       		.uleb128 0x19
+ 593 0090 00       		.byte	0
+ 594 0091 00       		.byte	0
+ 595 0092 0B       		.uleb128 0xb
+ 596 0093 34       		.uleb128 0x34
+ 597 0094 00       		.byte	0
+ 598 0095 03       		.uleb128 0x3
+ 599 0096 0E       		.uleb128 0xe
+ 600 0097 3A       		.uleb128 0x3a
+ 601 0098 0B       		.uleb128 0xb
+ 602 0099 3B       		.uleb128 0x3b
+ 603 009a 0B       		.uleb128 0xb
+ 604 009b 49       		.uleb128 0x49
+ 605 009c 13       		.uleb128 0x13
+ 606 009d 3F       		.uleb128 0x3f
+ 607 009e 19       		.uleb128 0x19
+ 608 009f 02       		.uleb128 0x2
+ 609 00a0 18       		.uleb128 0x18
+ 610 00a1 00       		.byte	0
+ 611 00a2 00       		.byte	0
+ 612 00a3 0C       		.uleb128 0xc
+ 613 00a4 34       		.uleb128 0x34
+ 614 00a5 00       		.byte	0
+ 615 00a6 03       		.uleb128 0x3
+ 616 00a7 0E       		.uleb128 0xe
+ 617 00a8 3A       		.uleb128 0x3a
+ 618 00a9 0B       		.uleb128 0xb
+ 619 00aa 3B       		.uleb128 0x3b
+ 620 00ab 0B       		.uleb128 0xb
+ 621 00ac 49       		.uleb128 0x49
+ 622 00ad 13       		.uleb128 0x13
+ 623 00ae 3F       		.uleb128 0x3f
+ 624 00af 19       		.uleb128 0x19
+ 625 00b0 3C       		.uleb128 0x3c
+ 626 00b1 19       		.uleb128 0x19
+ 627 00b2 00       		.byte	0
+ 628 00b3 00       		.byte	0
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 14
 
 
- 631 0006 00000000 		.4byte	.Ldebug_info0
- 632 000a 04       		.byte	0x4
- 633 000b 00       		.byte	0
- 634 000c 0000     		.2byte	0
- 635 000e 0000     		.2byte	0
- 636 0010 00000000 		.4byte	.LFB33
- 637 0014 9C000000 		.4byte	.LFE33-.LFB33
- 638 0018 00000000 		.4byte	.LFB34
- 639 001c 90000000 		.4byte	.LFE34-.LFB34
- 640 0020 00000000 		.4byte	0
- 641 0024 00000000 		.4byte	0
- 642              		.section	.debug_ranges,"",%progbits
- 643              	.Ldebug_ranges0:
- 644 0000 00000000 		.4byte	.LFB33
- 645 0004 9C000000 		.4byte	.LFE33
- 646 0008 00000000 		.4byte	.LFB34
- 647 000c 90000000 		.4byte	.LFE34
- 648 0010 00000000 		.4byte	0
- 649 0014 00000000 		.4byte	0
- 650              		.section	.debug_line,"",%progbits
- 651              	.Ldebug_line0:
- 652 0000 A3000000 		.section	.debug_str,"MS",%progbits,1
- 652      02005000 
- 652      00000201 
- 652      FB0E0D00 
- 652      01010101 
- 653              	.LASF6:
- 654 0000 6C6F6E67 		.ascii	"long long int\000"
- 654      206C6F6E 
- 654      6720696E 
- 654      7400
- 655              	.LASF20:
- 656 000e 766F6C75 		.ascii	"volume\000"
- 656      6D6500
- 657              	.LASF25:
- 658 0015 433A5C55 		.ascii	"C:\\Users\\TinyWindows\\Documents\\PSoC Creator\\pi"
- 658      73657273 
- 658      5C54696E 
- 658      7957696E 
- 658      646F7773 
- 659 0043 657A6F2D 		.ascii	"ezo-sensor\\My First Project.cydsn\000"
- 659      73656E73 
- 659      6F725C4D 
- 659      79204669 
- 659      72737420 
- 660              	.LASF8:
- 661 0065 756E7369 		.ascii	"unsigned int\000"
- 661      676E6564 
- 661      20696E74 
- 661      00
- 662              	.LASF22:
- 663 0072 6F6C6450 		.ascii	"oldPos\000"
- 663      6F7300
- 664              	.LASF27:
- 665 0079 6D61696E 		.ascii	"main\000"
- 665      00
- 666              	.LASF18:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 15
+ 629 00b4 00       		.byte	0
+ 630              		.section	.debug_aranges,"",%progbits
+ 631 0000 24000000 		.4byte	0x24
+ 632 0004 0200     		.2byte	0x2
+ 633 0006 00000000 		.4byte	.Ldebug_info0
+ 634 000a 04       		.byte	0x4
+ 635 000b 00       		.byte	0
+ 636 000c 0000     		.2byte	0
+ 637 000e 0000     		.2byte	0
+ 638 0010 00000000 		.4byte	.LFB33
+ 639 0014 A0000000 		.4byte	.LFE33-.LFB33
+ 640 0018 00000000 		.4byte	.LFB34
+ 641 001c 90000000 		.4byte	.LFE34-.LFB34
+ 642 0020 00000000 		.4byte	0
+ 643 0024 00000000 		.4byte	0
+ 644              		.section	.debug_ranges,"",%progbits
+ 645              	.Ldebug_ranges0:
+ 646 0000 00000000 		.4byte	.LFB33
+ 647 0004 A0000000 		.4byte	.LFE33
+ 648 0008 00000000 		.4byte	.LFB34
+ 649 000c 90000000 		.4byte	.LFE34
+ 650 0010 00000000 		.4byte	0
+ 651 0014 00000000 		.4byte	0
+ 652              		.section	.debug_line,"",%progbits
+ 653              	.Ldebug_line0:
+ 654 0000 A2000000 		.section	.debug_str,"MS",%progbits,1
+ 654      02005000 
+ 654      00000201 
+ 654      FB0E0D00 
+ 654      01010101 
+ 655              	.LASF6:
+ 656 0000 6C6F6E67 		.ascii	"long long int\000"
+ 656      206C6F6E 
+ 656      6720696E 
+ 656      7400
+ 657              	.LASF20:
+ 658 000e 766F6C75 		.ascii	"volume\000"
+ 658      6D6500
+ 659              	.LASF8:
+ 660 0015 756E7369 		.ascii	"unsigned int\000"
+ 660      676E6564 
+ 660      20696E74 
+ 660      00
+ 661              	.LASF22:
+ 662 0022 6F6C6450 		.ascii	"oldPos\000"
+ 662      6F7300
+ 663              	.LASF27:
+ 664 0029 6D61696E 		.ascii	"main\000"
+ 664      00
+ 665              	.LASF18:
+ 666 002e 6C656E67 		.ascii	"length\000"
+ 666      746800
+ 667              	.LASF13:
+ 668 0035 6D656C6F 		.ascii	"melody_simple\000"
+ 668      64795F73 
+ 668      696D706C 
+ 668      6500
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 15
 
 
- 667 007e 6C656E67 		.ascii	"length\000"
- 667      746800
- 668              	.LASF13:
- 669 0085 6D656C6F 		.ascii	"melody_simple\000"
- 669      64795F73 
- 669      696D706C 
- 669      6500
- 670              	.LASF17:
- 671 0093 746F6E65 		.ascii	"tone\000"
- 671      00
- 672              	.LASF16:
- 673 0098 6E6F7465 		.ascii	"note\000"
- 673      00
- 674              	.LASF5:
- 675 009d 6C6F6E67 		.ascii	"long unsigned int\000"
- 675      20756E73 
- 675      69676E65 
- 675      6420696E 
- 675      7400
- 676              	.LASF7:
- 677 00af 6C6F6E67 		.ascii	"long long unsigned int\000"
- 677      206C6F6E 
- 677      6720756E 
- 677      7369676E 
- 677      65642069 
- 678              	.LASF11:
- 679 00c6 63686172 		.ascii	"char\000"
- 679      00
- 680              	.LASF15:
- 681 00cb 74756E65 		.ascii	"tune_counter\000"
- 681      5F636F75 
- 681      6E746572 
- 681      00
- 682              	.LASF23:
- 683 00d8 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 683      4320342E 
- 683      382E3420 
- 683      32303134 
- 683      30353236 
- 684 010b 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 684      20726576 
- 684      6973696F 
- 684      6E203231 
- 684      31333538 
- 685 013e 30202D66 		.ascii	"0 -ffunction-sections\000"
- 685      66756E63 
- 685      74696F6E 
- 685      2D736563 
- 685      74696F6E 
- 686              	.LASF1:
- 687 0154 756E7369 		.ascii	"unsigned char\000"
- 687      676E6564 
- 687      20636861 
- 687      7200
- 688              	.LASF14:
- 689 0162 74756E65 		.ascii	"tune\000"
- 689      00
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccr4NCzt.s 			page 16
+ 669              	.LASF17:
+ 670 0043 746F6E65 		.ascii	"tone\000"
+ 670      00
+ 671              	.LASF16:
+ 672 0048 6E6F7465 		.ascii	"note\000"
+ 672      00
+ 673              	.LASF5:
+ 674 004d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 674      20756E73 
+ 674      69676E65 
+ 674      6420696E 
+ 674      7400
+ 675              	.LASF7:
+ 676 005f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 676      206C6F6E 
+ 676      6720756E 
+ 676      7369676E 
+ 676      65642069 
+ 677              	.LASF11:
+ 678 0076 63686172 		.ascii	"char\000"
+ 678      00
+ 679              	.LASF15:
+ 680 007b 74756E65 		.ascii	"tune_counter\000"
+ 680      5F636F75 
+ 680      6E746572 
+ 680      00
+ 681              	.LASF23:
+ 682 0088 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 682      4320342E 
+ 682      382E3420 
+ 682      32303134 
+ 682      30353236 
+ 683 00bb 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 683      20726576 
+ 683      6973696F 
+ 683      6E203231 
+ 683      31333538 
+ 684 00ee 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 684      66756E63 
+ 684      74696F6E 
+ 684      2D736563 
+ 684      74696F6E 
+ 685              	.LASF1:
+ 686 0104 756E7369 		.ascii	"unsigned char\000"
+ 686      676E6564 
+ 686      20636861 
+ 686      7200
+ 687              	.LASF14:
+ 688 0112 74756E65 		.ascii	"tune\000"
+ 688      00
+ 689              	.LASF4:
+ 690 0117 6C6F6E67 		.ascii	"long int\000"
+ 690      20696E74 
+ 690      00
+ 691              	.LASF2:
+ 692 0120 73686F72 		.ascii	"short int\000"
+ 692      7420696E 
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\cc04AK6Y.s 			page 16
 
 
- 690              	.LASF4:
- 691 0167 6C6F6E67 		.ascii	"long int\000"
- 691      20696E74 
- 691      00
- 692              	.LASF2:
- 693 0170 73686F72 		.ascii	"short int\000"
- 693      7420696E 
- 693      7400
- 694              	.LASF28:
- 695 017a 6361705F 		.ascii	"cap_sense_update_volume\000"
- 695      73656E73 
- 695      655F7570 
- 695      64617465 
- 695      5F766F6C 
- 696              	.LASF10:
- 697 0192 646F7562 		.ascii	"double\000"
- 697      6C6500
- 698              	.LASF3:
- 699 0199 73686F72 		.ascii	"short unsigned int\000"
- 699      7420756E 
- 699      7369676E 
- 699      65642069 
- 699      6E7400
- 700              	.LASF0:
- 701 01ac 7369676E 		.ascii	"signed char\000"
- 701      65642063 
- 701      68617200 
- 702              	.LASF19:
- 703 01b8 73746174 		.ascii	"state\000"
- 703      6500
- 704              	.LASF9:
- 705 01be 666C6F61 		.ascii	"float\000"
- 705      7400
- 706              	.LASF24:
- 707 01c4 2E5C6D61 		.ascii	".\\main.c\000"
- 707      696E2E63 
- 707      00
- 708              	.LASF26:
- 709 01cd 75696E74 		.ascii	"uint16\000"
- 709      313600
- 710              	.LASF21:
- 711 01d4 63757250 		.ascii	"curPos\000"
- 711      6F7300
- 712              	.LASF12:
- 713 01db 73697A65 		.ascii	"sizetype\000"
- 713      74797065 
- 713      00
- 714              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 692      7400
+ 693              	.LASF28:
+ 694 012a 6361705F 		.ascii	"cap_sense_update_volume\000"
+ 694      73656E73 
+ 694      655F7570 
+ 694      64617465 
+ 694      5F766F6C 
+ 695              	.LASF10:
+ 696 0142 646F7562 		.ascii	"double\000"
+ 696      6C6500
+ 697              	.LASF3:
+ 698 0149 73686F72 		.ascii	"short unsigned int\000"
+ 698      7420756E 
+ 698      7369676E 
+ 698      65642069 
+ 698      6E7400
+ 699              	.LASF0:
+ 700 015c 7369676E 		.ascii	"signed char\000"
+ 700      65642063 
+ 700      68617200 
+ 701              	.LASF19:
+ 702 0168 73746174 		.ascii	"state\000"
+ 702      6500
+ 703              	.LASF25:
+ 704 016e 443A5C55 		.ascii	"D:\\Users\\Ryan\\Documents\\PSoC Creator\\piezo-sen"
+ 704      73657273 
+ 704      5C527961 
+ 704      6E5C446F 
+ 704      63756D65 
+ 705 019c 736F725C 		.ascii	"sor\\My First Project.cydsn\000"
+ 705      4D792046 
+ 705      69727374 
+ 705      2050726F 
+ 705      6A656374 
+ 706              	.LASF9:
+ 707 01b7 666C6F61 		.ascii	"float\000"
+ 707      7400
+ 708              	.LASF24:
+ 709 01bd 2E5C6D61 		.ascii	".\\main.c\000"
+ 709      696E2E63 
+ 709      00
+ 710              	.LASF26:
+ 711 01c6 75696E74 		.ascii	"uint16\000"
+ 711      313600
+ 712              	.LASF21:
+ 713 01cd 63757250 		.ascii	"curPos\000"
+ 713      6F7300
+ 714              	.LASF12:
+ 715 01d4 73697A65 		.ascii	"sizetype\000"
+ 715      74797065 
+ 715      00
+ 716              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

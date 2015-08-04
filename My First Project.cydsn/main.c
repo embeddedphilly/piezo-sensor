@@ -53,7 +53,9 @@ int main()
     // CHANGE THIS FOR NEW TUNE
     tune = melody_simple;
     
-   
+    // Start Interrupt
+    ISR_1_Start();
+    
     for(;;)
     {
         /* Place your application code here. */

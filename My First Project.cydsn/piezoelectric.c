@@ -61,7 +61,7 @@ void piezo_stop()
 
 void piezo_play(uint16 frequency_value, uint8 note)
 {
-    
+    TRIGGER_TIMER_Write(0);
     // duty cycle ticks is a percentage of frequency based on volume
     int period_ticks = f_clock * freq_mod / frequency_value;
     uint16 compare_ticks = period_ticks * volume / 100;
@@ -77,7 +77,6 @@ void piezo_play(uint16 frequency_value, uint8 note)
     uint16 duration = 60000/tempo/note;
     Timer_1_WriteCompare(duration);
     TRIGGER_TIMER_Write(1);
-    //TRIGGER_TIMER_Write(0);
 }
 
 void piezo_rest(uint8 note)

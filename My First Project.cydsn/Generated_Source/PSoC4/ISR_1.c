@@ -19,7 +19,6 @@
 #include <cydevice_trm.h>
 #include <CyLib.h>
 #include <ISR_1.h>
-#include "state.h"
 
 #if !defined(ISR_1__REMOVED) /* Check for removal by optimization */
 
@@ -27,7 +26,7 @@
 *  Place your includes, defines and code here 
 ********************************************************************************/
 /* `#START ISR_1_intc` */
-
+#include "state.h"
 /* `#END` */
 
 extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];

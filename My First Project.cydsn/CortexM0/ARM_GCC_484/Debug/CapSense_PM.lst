@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
   26:.\Generated_Source\PSoC4/CapSense_PM.c **** * Function Name: CapSense_SaveConfig
   27:.\Generated_Source\PSoC4/CapSense_PM.c **** ********************************************************************************
   28:.\Generated_Source\PSoC4/CapSense_PM.c **** *
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 2
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 2
 
 
   29:.\Generated_Source\PSoC4/CapSense_PM.c **** * Summary:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
   60              		.section	.text.CapSense_Sleep,"ax",%progbits
   61              		.align	2
   62              		.global	CapSense_Sleep
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 3
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 3
 
 
   63              		.code	16
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
   82:.\Generated_Source\PSoC4/CapSense_PM.c **** 	#if(CapSense_IDAC_CNT == 2u)
   83:.\Generated_Source\PSoC4/CapSense_PM.c **** 		CapSense_CSD_CFG_REG &= ~(CapSense_CSD_CFG_ENABLE);
   88              		.loc 1 83 0
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 4
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 4
 
 
   89 001a 064B     		ldr	r3, .L6
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  108:.\Generated_Source\PSoC4/CapSense_PM.c **** *
  109:.\Generated_Source\PSoC4/CapSense_PM.c **** * Global Variables:
  110:.\Generated_Source\PSoC4/CapSense_PM.c **** *  CapSense_backup - used to save the component state before entering the sleep 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 5
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 5
 
 
  111:.\Generated_Source\PSoC4/CapSense_PM.c **** *  mode and none-retention registers.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  142              		.loc 1 141 0
  143              		.cfi_startproc
  144 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 6
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 6
 
 
  145              		.cfi_def_cfa_offset 8
@@ -352,18 +352,18 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  183 000b 01       		.uleb128 0x1
  184 000c 8E000000 		.4byte	.LASF21
  185 0010 01       		.byte	0x1
- 186 0011 91010000 		.4byte	.LASF22
- 187 0015 1D010000 		.4byte	.LASF23
+ 186 0011 41010000 		.4byte	.LASF22
+ 187 0015 9D010000 		.4byte	.LASF23
  188 0019 00000000 		.4byte	.Ldebug_ranges0+0
  189 001d 00000000 		.4byte	0
  190 0021 00000000 		.4byte	.Ldebug_line0
  191 0025 02       		.uleb128 0x2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 7
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 7
 
 
  192 0026 01       		.byte	0x1
  193 0027 06       		.byte	0x6
- 194 0028 D1010000 		.4byte	.LASF0
+ 194 0028 81010000 		.4byte	.LASF0
  195 002c 02       		.uleb128 0x2
  196 002d 01       		.byte	0x1
  197 002e 08       		.byte	0x8
@@ -371,15 +371,15 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  199 0033 02       		.uleb128 0x2
  200 0034 02       		.byte	0x2
  201 0035 05       		.byte	0x5
- 202 0036 F3010000 		.4byte	.LASF2
+ 202 0036 EC010000 		.4byte	.LASF2
  203 003a 02       		.uleb128 0x2
  204 003b 02       		.byte	0x2
  205 003c 07       		.byte	0x7
- 206 003d BE010000 		.4byte	.LASF3
+ 206 003d 6E010000 		.4byte	.LASF3
  207 0041 02       		.uleb128 0x2
  208 0042 04       		.byte	0x4
  209 0043 05       		.byte	0x5
- 210 0044 88010000 		.4byte	.LASF4
+ 210 0044 38010000 		.4byte	.LASF4
  211 0048 02       		.uleb128 0x2
  212 0049 04       		.byte	0x4
  213 004a 07       		.byte	0x7
@@ -399,7 +399,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  227 0064 02       		.uleb128 0x2
  228 0065 04       		.byte	0x4
  229 0066 07       		.byte	0x7
- 230 0067 FD010000 		.4byte	.LASF8
+ 230 0067 F6010000 		.4byte	.LASF8
  231 006b 04       		.uleb128 0x4
  232 006c 48000000 		.4byte	.LASF9
  233 0070 02       		.byte	0x2
@@ -413,12 +413,12 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  241 0081 02       		.uleb128 0x2
  242 0082 04       		.byte	0x4
  243 0083 04       		.byte	0x4
- 244 0084 ED010000 		.4byte	.LASF11
+ 244 0084 E6010000 		.4byte	.LASF11
  245 0088 02       		.uleb128 0x2
  246 0089 08       		.byte	0x8
  247 008a 04       		.byte	0x4
- 248 008b 81010000 		.4byte	.LASF12
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 8
+ 248 008b 31010000 		.4byte	.LASF12
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 8
 
 
  249 008f 02       		.uleb128 0x2
@@ -426,7 +426,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  251 0091 08       		.byte	0x8
  252 0092 18010000 		.4byte	.LASF13
  253 0096 05       		.uleb128 0x5
- 254 0097 B8010000 		.4byte	.LASF14
+ 254 0097 68010000 		.4byte	.LASF14
  255 009b 02       		.byte	0x2
  256 009c 5F01     		.2byte	0x15f
  257 009e A2000000 		.4byte	0xa2
@@ -435,7 +435,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  260 00a7 02       		.uleb128 0x2
  261 00a8 04       		.byte	0x4
  262 00a9 07       		.byte	0x7
- 263 00aa 0A020000 		.4byte	.LASF15
+ 263 00aa 03020000 		.4byte	.LASF15
  264 00ae 07       		.uleb128 0x7
  265 00af 01       		.byte	0x1
  266 00b0 03       		.byte	0x3
@@ -454,7 +454,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  279 00c9 90       		.byte	0x90
  280 00ca AE000000 		.4byte	0xae
  281 00ce 09       		.uleb128 0x9
- 282 00cf 6D010000 		.4byte	.LASF17
+ 282 00cf 1D010000 		.4byte	.LASF17
  283 00d3 01       		.byte	0x1
  284 00d4 2E       		.byte	0x2e
  285 00d5 00000000 		.4byte	.LFB33
@@ -462,7 +462,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  287 00dd 01       		.uleb128 0x1
  288 00de 9C       		.byte	0x9c
  289 00df 0A       		.uleb128 0xa
- 290 00e0 13020000 		.4byte	.LASF18
+ 290 00e0 0C020000 		.4byte	.LASF18
  291 00e4 01       		.byte	0x1
  292 00e5 49       		.byte	0x49
  293 00e6 00000000 		.4byte	.LFB34
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  303 00ff 01       		.uleb128 0x1
  304 0100 9C       		.byte	0x9c
  305 0101 0A       		.uleb128 0xa
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 9
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 9
 
 
  306 0102 21000000 		.4byte	.LASF20
@@ -489,7 +489,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  311 0110 01       		.uleb128 0x1
  312 0111 9C       		.byte	0x9c
  313 0112 0B       		.uleb128 0xb
- 314 0113 DD010000 		.4byte	.LASF25
+ 314 0113 8D010000 		.4byte	.LASF25
  315 0117 01       		.byte	0x1
  316 0118 13       		.byte	0x13
  317 0119 C3000000 		.4byte	0xc3
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  360 0024 0B       		.uleb128 0xb
  361 0025 03       		.uleb128 0x3
  362 0026 08       		.uleb128 0x8
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 10
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 10
 
 
  363 0027 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  417 005d 0B       		.uleb128 0xb
  418 005e 3B       		.uleb128 0x3b
  419 005f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 11
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 11
 
 
  420 0060 49       		.uleb128 0x49
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  474 0098 00       		.byte	0
  475 0099 03       		.uleb128 0x3
  476 009a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 12
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 12
 
 
  477 009b 3A       		.uleb128 0x3a
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  524 000e 75696E74 		.ascii	"uint32\000"
  524      333200
  525              	.LASF24:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 13
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 13
 
 
  526 0015 656E6162 		.ascii	"enableState\000"
@@ -778,80 +778,80 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 1
  544      20636861 
  544      7200
  545              	.LASF13:
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 14
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 14
 
 
  546 0118 63686172 		.ascii	"char\000"
  546      00
- 547              	.LASF23:
- 548 011d 433A5C55 		.ascii	"C:\\Users\\TinyWindows\\Documents\\PSoC Creator\\pi"
- 548      73657273 
- 548      5C54696E 
- 548      7957696E 
- 548      646F7773 
- 549 014b 657A6F2D 		.ascii	"ezo-sensor\\My First Project.cydsn\000"
- 549      73656E73 
- 549      6F725C4D 
- 549      79204669 
- 549      72737420 
- 550              	.LASF17:
- 551 016d 43617053 		.ascii	"CapSense_SaveConfig\000"
- 551      656E7365 
- 551      5F536176 
- 551      65436F6E 
- 551      66696700 
- 552              	.LASF12:
- 553 0181 646F7562 		.ascii	"double\000"
- 553      6C6500
- 554              	.LASF4:
- 555 0188 6C6F6E67 		.ascii	"long int\000"
- 555      20696E74 
- 555      00
- 556              	.LASF22:
- 557 0191 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\CapSense_PM.c\000"
- 557      6E657261 
- 557      7465645F 
- 557      536F7572 
- 557      63655C50 
- 558              	.LASF14:
- 559 01b8 72656733 		.ascii	"reg32\000"
- 559      3200
- 560              	.LASF3:
- 561 01be 73686F72 		.ascii	"short unsigned int\000"
- 561      7420756E 
- 561      7369676E 
- 561      65642069 
- 561      6E7400
- 562              	.LASF0:
- 563 01d1 7369676E 		.ascii	"signed char\000"
- 563      65642063 
- 563      68617200 
- 564              	.LASF25:
- 565 01dd 43617053 		.ascii	"CapSense_backup\000"
- 565      656E7365 
- 565      5F626163 
- 565      6B757000 
+ 547              	.LASF17:
+ 548 011d 43617053 		.ascii	"CapSense_SaveConfig\000"
+ 548      656E7365 
+ 548      5F536176 
+ 548      65436F6E 
+ 548      66696700 
+ 549              	.LASF12:
+ 550 0131 646F7562 		.ascii	"double\000"
+ 550      6C6500
+ 551              	.LASF4:
+ 552 0138 6C6F6E67 		.ascii	"long int\000"
+ 552      20696E74 
+ 552      00
+ 553              	.LASF22:
+ 554 0141 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\CapSense_PM.c\000"
+ 554      6E657261 
+ 554      7465645F 
+ 554      536F7572 
+ 554      63655C50 
+ 555              	.LASF14:
+ 556 0168 72656733 		.ascii	"reg32\000"
+ 556      3200
+ 557              	.LASF3:
+ 558 016e 73686F72 		.ascii	"short unsigned int\000"
+ 558      7420756E 
+ 558      7369676E 
+ 558      65642069 
+ 558      6E7400
+ 559              	.LASF0:
+ 560 0181 7369676E 		.ascii	"signed char\000"
+ 560      65642063 
+ 560      68617200 
+ 561              	.LASF25:
+ 562 018d 43617053 		.ascii	"CapSense_backup\000"
+ 562      656E7365 
+ 562      5F626163 
+ 562      6B757000 
+ 563              	.LASF23:
+ 564 019d 443A5C55 		.ascii	"D:\\Users\\Ryan\\Documents\\PSoC Creator\\piezo-sen"
+ 564      73657273 
+ 564      5C527961 
+ 564      6E5C446F 
+ 564      63756D65 
+ 565 01cb 736F725C 		.ascii	"sor\\My First Project.cydsn\000"
+ 565      4D792046 
+ 565      69727374 
+ 565      2050726F 
+ 565      6A656374 
  566              	.LASF11:
- 567 01ed 666C6F61 		.ascii	"float\000"
+ 567 01e6 666C6F61 		.ascii	"float\000"
  567      7400
  568              	.LASF2:
- 569 01f3 73686F72 		.ascii	"short int\000"
+ 569 01ec 73686F72 		.ascii	"short int\000"
  569      7420696E 
  569      7400
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\cc2K7JSZ.s 			page 15
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccI5Q2dr.s 			page 15
 
 
  570              	.LASF8:
- 571 01fd 756E7369 		.ascii	"unsigned int\000"
+ 571 01f6 756E7369 		.ascii	"unsigned int\000"
  571      676E6564 
  571      20696E74 
  571      00
  572              	.LASF15:
- 573 020a 73697A65 		.ascii	"sizetype\000"
+ 573 0203 73697A65 		.ascii	"sizetype\000"
  573      74797065 
  573      00
  574              	.LASF18:
- 575 0213 43617053 		.ascii	"CapSense_Sleep\000"
+ 575 020c 43617053 		.ascii	"CapSense_Sleep\000"
  575      656E7365 
  575      5F536C65 
  575      657000

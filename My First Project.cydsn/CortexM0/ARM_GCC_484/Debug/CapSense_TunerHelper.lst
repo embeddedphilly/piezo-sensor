@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 1
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccOozdF8.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 1
   30:.\Generated_Source\PSoC4/CapSense_TunerHelper.c **** /*******************************************************************************
   31:.\Generated_Source\PSoC4/CapSense_TunerHelper.c **** * Function Name: CapSense_TunerStart
   32:.\Generated_Source\PSoC4/CapSense_TunerHelper.c **** ********************************************************************************
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 2
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccOozdF8.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/CapSense_TunerHelper.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 1
   36              		@ sp needed
   37 0006 80BD     		pop	{r7, pc}
   38              		.cfi_endproc
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 3
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccOozdF8.s 			page 3
 
 
   39              	.LFE33:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 1
  113:.\Generated_Source\PSoC4/CapSense_TunerHelper.c **** 						(0u != CapSense_TOTAL_TRACKPAD_GESTURES_COUNT) ||\
  114:.\Generated_Source\PSoC4/CapSense_TunerHelper.c **** 		                (CapSense_TUNING_METHOD == CapSense__TUNING_MANUAL)) */
  115:.\Generated_Source\PSoC4/CapSense_TunerHelper.c **** 			
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 4
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccOozdF8.s 			page 4
 
 
  116:.\Generated_Source\PSoC4/CapSense_TunerHelper.c **** 			#if(0u != CapSense_CSHL_API_GENERATE)
@@ -219,40 +219,40 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 1
   70 0006 00000000 		.4byte	.Ldebug_abbrev0
   71 000a 04       		.byte	0x4
   72 000b 01       		.uleb128 0x1
-  73 000c C4000000 		.4byte	.LASF15
+  73 000c 74000000 		.4byte	.LASF15
   74 0010 01       		.byte	0x1
-  75 0011 6B000000 		.4byte	.LASF16
-  76 0015 0E000000 		.4byte	.LASF17
+  75 0011 1B000000 		.4byte	.LASF16
+  76 0015 59010000 		.4byte	.LASF17
   77 0019 00000000 		.4byte	.Ldebug_ranges0+0
   78 001d 00000000 		.4byte	0
   79 0021 00000000 		.4byte	.Ldebug_line0
   80 0025 02       		.uleb128 0x2
   81 0026 01       		.byte	0x1
   82 0027 06       		.byte	0x6
-  83 0028 8A010000 		.4byte	.LASF0
+  83 0028 3A010000 		.4byte	.LASF0
   84 002c 02       		.uleb128 0x2
   85 002d 01       		.byte	0x1
   86 002e 08       		.byte	0x8
-  87 002f 40010000 		.4byte	.LASF1
+  87 002f F0000000 		.4byte	.LASF1
   88 0033 02       		.uleb128 0x2
   89 0034 02       		.byte	0x2
   90 0035 05       		.byte	0x5
-  91 0036 AF010000 		.4byte	.LASF2
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 5
+  91 0036 A8010000 		.4byte	.LASF2
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccOozdF8.s 			page 5
 
 
   92 003a 02       		.uleb128 0x2
   93 003b 02       		.byte	0x2
   94 003c 07       		.byte	0x7
-  95 003d 77010000 		.4byte	.LASF3
+  95 003d 27010000 		.4byte	.LASF3
   96 0041 02       		.uleb128 0x2
   97 0042 04       		.byte	0x4
   98 0043 05       		.byte	0x5
-  99 0044 53010000 		.4byte	.LASF4
+  99 0044 03010000 		.4byte	.LASF4
  100 0048 02       		.uleb128 0x2
  101 0049 04       		.byte	0x4
  102 004a 07       		.byte	0x7
- 103 004b 9B000000 		.4byte	.LASF5
+ 103 004b 4B000000 		.4byte	.LASF5
  104 004f 02       		.uleb128 0x2
  105 0050 08       		.byte	0x8
  106 0051 05       		.byte	0x5
@@ -260,7 +260,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 1
  108 0056 02       		.uleb128 0x2
  109 0057 08       		.byte	0x8
  110 0058 07       		.byte	0x7
- 111 0059 AD000000 		.4byte	.LASF7
+ 111 0059 5D000000 		.4byte	.LASF7
  112 005d 03       		.uleb128 0x3
  113 005e 04       		.byte	0x4
  114 005f 05       		.byte	0x5
@@ -268,25 +268,25 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 1
  116 0064 02       		.uleb128 0x2
  117 0065 04       		.byte	0x4
  118 0066 07       		.byte	0x7
- 119 0067 5E000000 		.4byte	.LASF8
+ 119 0067 0E000000 		.4byte	.LASF8
  120 006b 02       		.uleb128 0x2
  121 006c 04       		.byte	0x4
  122 006d 04       		.byte	0x4
- 123 006e A9010000 		.4byte	.LASF9
+ 123 006e A2010000 		.4byte	.LASF9
  124 0072 02       		.uleb128 0x2
  125 0073 08       		.byte	0x8
  126 0074 04       		.byte	0x4
- 127 0075 70010000 		.4byte	.LASF10
+ 127 0075 20010000 		.4byte	.LASF10
  128 0079 02       		.uleb128 0x2
  129 007a 01       		.byte	0x1
  130 007b 08       		.byte	0x8
- 131 007c 4E010000 		.4byte	.LASF11
+ 131 007c FE000000 		.4byte	.LASF11
  132 0080 02       		.uleb128 0x2
  133 0081 04       		.byte	0x4
  134 0082 07       		.byte	0x7
- 135 0083 B9010000 		.4byte	.LASF12
+ 135 0083 B2010000 		.4byte	.LASF12
  136 0087 04       		.uleb128 0x4
- 137 0088 5C010000 		.4byte	.LASF13
+ 137 0088 0C010000 		.4byte	.LASF13
  138 008c 01       		.byte	0x1
  139 008d 31       		.byte	0x31
  140 008e 00000000 		.4byte	.LFB33
@@ -294,11 +294,11 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 1
  142 0096 01       		.uleb128 0x1
  143 0097 9C       		.byte	0x9c
  144 0098 04       		.uleb128 0x4
- 145 0099 96010000 		.4byte	.LASF14
+ 145 0099 46010000 		.4byte	.LASF14
  146 009d 01       		.byte	0x1
  147 009e 64       		.byte	0x64
  148 009f 00000000 		.4byte	.LFB34
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 6
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccOozdF8.s 			page 6
 
 
  149 00a3 08000000 		.4byte	.LFE34-.LFB34
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 1
  203 0030 3A       		.uleb128 0x3a
  204 0031 0B       		.uleb128 0xb
  205 0032 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 7
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccOozdF8.s 			page 7
 
 
  206 0033 0B       		.uleb128 0xb
@@ -409,108 +409,108 @@ ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 1
  246      206C6F6E 
  246      6720696E 
  246      7400
- 247              	.LASF17:
- 248 000e 433A5C55 		.ascii	"C:\\Users\\TinyWindows\\Documents\\PSoC Creator\\pi"
- 248      73657273 
- 248      5C54696E 
- 248      7957696E 
- 248      646F7773 
- 249 003c 657A6F2D 		.ascii	"ezo-sensor\\My First Project.cydsn\000"
- 249      73656E73 
- 249      6F725C4D 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 8
+ 247              	.LASF8:
+ 248 000e 756E7369 		.ascii	"unsigned int\000"
+ 248      676E6564 
+ 248      20696E74 
+ 248      00
+ 249              	.LASF16:
+ 250 001b 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\CapSense_TunerHelper.c\000"
+ 250      6E657261 
+ 250      7465645F 
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccOozdF8.s 			page 8
 
 
- 249      79204669 
- 249      72737420 
- 250              	.LASF8:
- 251 005e 756E7369 		.ascii	"unsigned int\000"
- 251      676E6564 
- 251      20696E74 
- 251      00
- 252              	.LASF16:
- 253 006b 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\CapSense_TunerHelper.c\000"
- 253      6E657261 
- 253      7465645F 
- 253      536F7572 
- 253      63655C50 
- 254              	.LASF5:
- 255 009b 6C6F6E67 		.ascii	"long unsigned int\000"
- 255      20756E73 
- 255      69676E65 
- 255      6420696E 
- 255      7400
- 256              	.LASF7:
- 257 00ad 6C6F6E67 		.ascii	"long long unsigned int\000"
- 257      206C6F6E 
- 257      6720756E 
- 257      7369676E 
- 257      65642069 
- 258              	.LASF15:
- 259 00c4 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 259      4320342E 
- 259      382E3420 
- 259      32303134 
- 259      30353236 
- 260 00f7 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
- 260      20726576 
- 260      6973696F 
- 260      6E203231 
- 260      31333538 
- 261 012a 30202D66 		.ascii	"0 -ffunction-sections\000"
- 261      66756E63 
- 261      74696F6E 
- 261      2D736563 
- 261      74696F6E 
- 262              	.LASF1:
- 263 0140 756E7369 		.ascii	"unsigned char\000"
- 263      676E6564 
- 263      20636861 
- 263      7200
- 264              	.LASF11:
- 265 014e 63686172 		.ascii	"char\000"
- 265      00
- 266              	.LASF4:
- 267 0153 6C6F6E67 		.ascii	"long int\000"
- 267      20696E74 
- 267      00
- 268              	.LASF13:
- 269 015c 43617053 		.ascii	"CapSense_TunerStart\000"
- 269      656E7365 
- 269      5F54756E 
-ARM GAS  C:\Users\TINYWI~1\AppData\Local\Temp\ccKEQLyA.s 			page 9
+ 250      536F7572 
+ 250      63655C50 
+ 251              	.LASF5:
+ 252 004b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 252      20756E73 
+ 252      69676E65 
+ 252      6420696E 
+ 252      7400
+ 253              	.LASF7:
+ 254 005d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 254      206C6F6E 
+ 254      6720756E 
+ 254      7369676E 
+ 254      65642069 
+ 255              	.LASF15:
+ 256 0074 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 256      4320342E 
+ 256      382E3420 
+ 256      32303134 
+ 256      30353236 
+ 257 00a7 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 257      20726576 
+ 257      6973696F 
+ 257      6E203231 
+ 257      31333538 
+ 258 00da 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 258      66756E63 
+ 258      74696F6E 
+ 258      2D736563 
+ 258      74696F6E 
+ 259              	.LASF1:
+ 260 00f0 756E7369 		.ascii	"unsigned char\000"
+ 260      676E6564 
+ 260      20636861 
+ 260      7200
+ 261              	.LASF11:
+ 262 00fe 63686172 		.ascii	"char\000"
+ 262      00
+ 263              	.LASF4:
+ 264 0103 6C6F6E67 		.ascii	"long int\000"
+ 264      20696E74 
+ 264      00
+ 265              	.LASF13:
+ 266 010c 43617053 		.ascii	"CapSense_TunerStart\000"
+ 266      656E7365 
+ 266      5F54756E 
+ 266      65725374 
+ 266      61727400 
+ 267              	.LASF10:
+ 268 0120 646F7562 		.ascii	"double\000"
+ 268      6C6500
+ 269              	.LASF3:
+ 270 0127 73686F72 		.ascii	"short unsigned int\000"
+ 270      7420756E 
+ 270      7369676E 
+ 270      65642069 
+ 270      6E7400
+ARM GAS  C:\Users\Ryan\AppData\Local\Temp\ccOozdF8.s 			page 9
 
 
- 269      65725374 
- 269      61727400 
- 270              	.LASF10:
- 271 0170 646F7562 		.ascii	"double\000"
- 271      6C6500
- 272              	.LASF3:
- 273 0177 73686F72 		.ascii	"short unsigned int\000"
- 273      7420756E 
- 273      7369676E 
- 273      65642069 
- 273      6E7400
- 274              	.LASF0:
- 275 018a 7369676E 		.ascii	"signed char\000"
- 275      65642063 
- 275      68617200 
- 276              	.LASF14:
- 277 0196 43617053 		.ascii	"CapSense_TunerComm\000"
- 277      656E7365 
- 277      5F54756E 
- 277      6572436F 
- 277      6D6D00
+ 271              	.LASF0:
+ 272 013a 7369676E 		.ascii	"signed char\000"
+ 272      65642063 
+ 272      68617200 
+ 273              	.LASF14:
+ 274 0146 43617053 		.ascii	"CapSense_TunerComm\000"
+ 274      656E7365 
+ 274      5F54756E 
+ 274      6572436F 
+ 274      6D6D00
+ 275              	.LASF17:
+ 276 0159 443A5C55 		.ascii	"D:\\Users\\Ryan\\Documents\\PSoC Creator\\piezo-sen"
+ 276      73657273 
+ 276      5C527961 
+ 276      6E5C446F 
+ 276      63756D65 
+ 277 0187 736F725C 		.ascii	"sor\\My First Project.cydsn\000"
+ 277      4D792046 
+ 277      69727374 
+ 277      2050726F 
+ 277      6A656374 
  278              	.LASF9:
- 279 01a9 666C6F61 		.ascii	"float\000"
+ 279 01a2 666C6F61 		.ascii	"float\000"
  279      7400
  280              	.LASF2:
- 281 01af 73686F72 		.ascii	"short int\000"
+ 281 01a8 73686F72 		.ascii	"short int\000"
  281      7420696E 
  281      7400
  282              	.LASF12:
- 283 01b9 73697A65 		.ascii	"sizetype\000"
+ 283 01b2 73697A65 		.ascii	"sizetype\000"
  283      74797065 
  283      00
  284              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
