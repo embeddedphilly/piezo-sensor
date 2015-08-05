@@ -87,6 +87,11 @@ void piezo_rest(uint8 note)
     CyDelay(duration);
 }
 
+void piezo_wait(uint8 note) {
+    uint16 duration = 60000/tempo/note;
+    CyDelay(duration);
+}
+
 void piezo_melody(uint16* frequencies, uint8 num)
 {
     uint8 i, note;
@@ -101,9 +106,11 @@ void piezo_melody(uint16* frequencies, uint8 num)
         }
         else 
         {
-            piezo_play(tone, note);
+            piezo_tone(tone);
+            piezo_wait(note);
         }
     }
+    piezo_stop();
 }
 
 /* [] END OF FILE */

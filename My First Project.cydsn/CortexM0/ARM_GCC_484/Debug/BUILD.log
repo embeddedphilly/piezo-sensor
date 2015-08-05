@@ -1,12 +1,28 @@
---------------- Build Started: 08/04/2015 09:16:06 Project: My First Project, Configuration: ARM GCC 4.8.4 Debug ---------------
+--------------- Build Started: 08/05/2015 07:15:33 Project: My First Project, Configuration: ARM GCC 4.8.4 Debug ---------------
 The code generation step is up to date.
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\main.c -o .\CortexM0\ARM_GCC_484\Debug\main.o
+.\main.c: In function 'main':
+.\main.c:51:21: warning: unused variable 'length' [-Wunused-variable]
+     int note, tone, length = 16;
+                     ^
+.\main.c:51:15: warning: unused variable 'tone' [-Wunused-variable]
+     int note, tone, length = 16;
+               ^
+.\main.c:51:9: warning: unused variable 'note' [-Wunused-variable]
+     int note, tone, length = 16;
+         ^
+.\main.c:49:9: warning: unused variable 'tune_counter' [-Wunused-variable]
+     int tune_counter = 0;
+         ^
+.\main.c:82:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/piezoelectric.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\piezoelectric.c -o .\CortexM0\ARM_GCC_484\Debug\piezoelectric.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/ISR_1.lst -g -D DEBUG -Wall -ffunction-sections -O0 -c .\Generated_Source\PSoC4\ISR_1.c -o .\CortexM0\ARM_GCC_484\Debug\ISR_1.o
 arm-none-eabi-ar.exe -rs ".\CortexM0\ARM_GCC_484\Debug\My First Project.a" .\CortexM0\ARM_GCC_484\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_484\Debug\PWM_1.o .\CortexM0\ARM_GCC_484\Debug\PWM_1_PM.o .\CortexM0\ARM_GCC_484\Debug\Clock_1.o .\CortexM0\ARM_GCC_484\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_484\Debug\CyFlash.o .\CortexM0\ARM_GCC_484\Debug\CyLib.o .\CortexM0\ARM_GCC_484\Debug\cyPm.o .\CortexM0\ARM_GCC_484\Debug\cyutils.o .\CortexM0\ARM_GCC_484\Debug\Clock_2.o .\CortexM0\ARM_GCC_484\Debug\PIEZO_PIN.o .\CortexM0\ARM_GCC_484\Debug\CyLFClk.o .\CortexM0\ARM_GCC_484\Debug\Timer_1.o .\CortexM0\ARM_GCC_484\Debug\Timer_1_PM.o .\CortexM0\ARM_GCC_484\Debug\TRIGGER_TIMER.o .\CortexM0\ARM_GCC_484\Debug\ISR_1.o .\CortexM0\ARM_GCC_484\Debug\CapSense.o .\CortexM0\ARM_GCC_484\Debug\CapSense_PM.o .\CortexM0\ARM_GCC_484\Debug\CapSense_CSHL.o .\CortexM0\ARM_GCC_484\Debug\CapSense_INT.o .\CortexM0\ARM_GCC_484\Debug\CapSense_TunerHelper.o .\CortexM0\ARM_GCC_484\Debug\CapSense_SMS.o .\CortexM0\ARM_GCC_484\Debug\CapSense_SampleClk.o .\CortexM0\ARM_GCC_484\Debug\CapSense_SenseClk.o
 arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_484\Debug\My First Project.a
 arm-none-eabi-gcc.exe -Wl,--start-group -o ".\CortexM0\ARM_GCC_484\Debug\My First Project.elf" .\CortexM0\ARM_GCC_484\Debug\main.o .\CortexM0\ARM_GCC_484\Debug\piezoelectric.o .\CortexM0\ARM_GCC_484\Debug\test.o .\CortexM0\ARM_GCC_484\Debug\cymetadata.o .\CortexM0\ARM_GCC_484\Debug\Cm0Start.o ".\CortexM0\ARM_GCC_484\Debug\My First Project.a" "D:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_P4_v2_20\PSoC4\Library\CapsenseP4Library_GCC.a" "D:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_484\Debug\CyComponentLibrary.a" -mcpu=cortex-m0 -mthumb -g -ffunction-sections -O0 "-Wl,-Map,.\CortexM0\ARM_GCC_484\Debug/My First Project.map" -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
 cyelftool.exe -C "D:\Users\Ryan\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\CortexM0\ARM_GCC_484\Debug\My First Project.elf" --flash_row_size 128 --flash_size 32768
 cyelftool.exe -S "D:\Users\Ryan\Documents\PSoC Creator\piezo-sensor\My First Project.cydsn\CortexM0\ARM_GCC_484\Debug\My First Project.elf"
-Flash used: 8064 of 32768 bytes (24.6 %).
+Flash used: 8192 of 32768 bytes (25.0 %).
 SRAM used: 1804 of 4096 bytes (44.0 %). Stack: 1024 bytes. Heap: 256 bytes.
---------------- Build Succeeded: 08/04/2015 09:16:07 ---------------
+--------------- Build Succeeded: 08/05/2015 07:15:38 ---------------

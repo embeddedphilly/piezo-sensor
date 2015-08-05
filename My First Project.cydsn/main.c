@@ -56,10 +56,11 @@ int main()
     // Start Interrupt
     ISR_1_Start();
     
+    piezo_melody(tune, 16);
+    /*
     for(;;)
     {
-        /* Place your application code here. */
-        
+       
         //cap_sense_update_volume();
         
         if(state == STATE_READY) {
@@ -77,7 +78,7 @@ int main()
         }
         
     }
-
+    */
 }
 
 void cap_sense_update_volume(void)
